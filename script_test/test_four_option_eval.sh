@@ -1,0 +1,12 @@
+python3 ../test_four_option_eval/test_unified.py \
+  --model_name gpt-4o \
+  --api_key sk-DXv1XQJr7HxWOZaVskIMYC0b7M8S9MAmlkjFMmffejDQ09GH \
+  --base_url https://xiaoai.plus/v1 \
+  --data_root /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332 \
+  --output_dir /home/student0/Physical_Intuition_test/test_results/four_option/gpt_4o \
+  --num_sets 10 \
+  --repetitions 4 \
+  --max_tokens 512 \
+  --temperature 0.7 \
+  --top_p 0.9 \
+  --game_type Basic

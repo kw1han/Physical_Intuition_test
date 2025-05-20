@@ -1,0 +1,2652 @@
+Evaluation Log - Started at 2025-04-08 10:26:54
+==================================================
+
+Found valid scene: Chaining_obj2, Failure cases: 129, Success cases: 9
+Found valid scene: Chaining_obj1, Failure cases: 105, Success cases: 80
+
+Starting evaluation for scene: Chaining_obj2
+This scene has 9 success cases
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, we analyze the positions and orientations of the red balls and the green target area. We consider the likelihood of each ball falling into the green area based on its initial height, orientation, and proximity to the target.
+
+- In Scene A, the red ball on the leftmost pillar is at the highest point, which makes it more likely to fall directly into the green area. The other balls are lower and have a less direct path to the target.
+
+- In Scene B, the red ball on the leftmost pillar is again at the highest point, but the ball on the rightmost pillar is closer to the green area than in Scene A. This could potentially make it easier for the ball to fall into the target.
+
+- In Scene C, the positions of the balls remain the same as in Scene A. The red ball on the leftmost pillar is at the highest point, which still gives it a direct path to the green area.
+
+- In Scene D, the red ball on the leftmost pillar is at the highest point, and the ball on the rightmost pillar is closer to the green area than in Scene B. This makes it likely for this ball to fall into the green area.
+
+Based on the physical reasoning chain, Scene D has the highest probability of success because the ball on the rightmost pillar is closer to the green target area than in any other scene, and the ball on the leftmost pillar has the highest starting point, ensuring a direct path to the target.
+
+Final Result: “I predict that scene D will succeed.”
+==========================
+
+Matches found:
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 1 (Repetition 1/4) -----
+Success case: Chaining_attempt_7_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): B
+Shuffle mapping: {1: 1, 2: 4, 3: 2, 4: 3}
+Model prediction: D
+Prediction incorrect
+Response time: 3.89 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_10/Chaining_attempt_6_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_10/Chaining_attempt_7_obj2_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_28/Chaining_attempt_8_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_6/Chaining_attempt_2_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+Scene A: 
+- There are two red balls on narrow vertical pillars. One is higher up, and the other is lower. The lower ball is in a position where it could fall due to gravity, but the higher ball is securely positioned. The red ball on the edge of the platform on the left will not fall into the green area as it is not in a position to do so. 
+- The red ball on the platform could fall if disturbed, but the initial setup suggests that it won't fall into the green area.
+- The red ball on the far right will remain on the platform and not fall into the green area.
+
+Conclusion: In Scene A, the red ball on the lower pillar will not fall into the green area. 
+
+Final Result: I predict that scene A will not succeed.
+
+Scene B: 
+- Similar to Scene A, the red ball on the lower pillar will not fall into the green area. The red ball on the edge of the platform on the left won't fall into the green area. 
+- The red ball on the far right will remain on the platform and not fall into the green area.
+
+Conclusion: In Scene B, the red ball on the lower pillar will not fall into the green area.
+
+Final Result: I predict that scene B will not succeed.
+
+Scene C: 
+- The red ball on the lower pillar is positioned in a way that it can fall into the green area if disturbed.
+- The red ball on the edge of the platform on the left won't fall into the green area. 
+- The red ball on the far right will remain on the platform and not fall into the green area.
+
+Conclusion: In Scene C, the red ball on the lower pillar is likely to fall into the green area.
+
+Final Result: I predict that scene C will succeed.
+
+Scene D: 
+- Similar to Scene C, the red ball on the lower pillar is positioned in a way that it can fall into the green area if disturbed.
+- The red ball on the edge of the platform on the left won't fall into the green area. 
+- The red ball on the far right will remain on the platform and not fall into the green area.
+
+Conclusion: In Scene D, the red ball on the lower pillar is likely to fall into the green area.
+
+Final Result: I predict that scene D will succeed.
+
+Based on the analysis, Scene C and Scene D both have a high likelihood of success, with Scene C being slightly more likely due to the red ball's more pronounced
+==========================
+
+Matches found:
+Letter: C, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene C will succeed
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: C, Pattern: ([A-D])\s*will succeed, Matched text: C will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 2 (Repetition 2/4) -----
+Success case: Chaining_attempt_7_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 2, 4: 3}
+Model prediction: C
+Prediction incorrect
+Response time: 6.55 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_10/Chaining_attempt_7_obj2_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_10/Chaining_attempt_6_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_28/Chaining_attempt_8_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_6/Chaining_attempt_2_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, the red balls will fall due to gravity. The probability of reaching the green target area depends on their initial positions and the stability of their initial positions.
+
+- **Scene A:** The red ball on the leftmost pillar will fall straight down. It will land in the green region. The other red ball on the rightmost pillar is likely to fall off the edge and not reach the green region. 
+
+- **Scene B:** The red ball on the leftmost pillar will fall straight down and reach the green region. The other red ball on the rightmost pillar is likely to fall off the edge and not reach the green region.
+
+- **Scene C:** The red ball on the leftmost pillar will fall straight down and reach the green region. The other red ball on the rightmost pillar is likely to fall off the edge and not reach the green region.
+
+- **Scene D:** The red ball on the leftmost pillar will fall straight down and reach the green region. The other red ball on the rightmost pillar is likely to fall off the edge and not reach the green region.
+
+All red balls will fall and reach the green region in Scenes A, B, C, and D. However, the stability and initial conditions of each red ball suggest that all have an equal chance of reaching the green region.
+
+Final Result: “I predict that scenes A, B, C, and D will succeed.”
+==========================
+
+Matches found:
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 3 (Repetition 3/4) -----
+Success case: Chaining_attempt_7_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): C
+Shuffle mapping: {1: 3, 2: 1, 3: 4, 4: 2}
+Model prediction: D
+Prediction incorrect
+Response time: 3.61 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_6/Chaining_attempt_2_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_10/Chaining_attempt_6_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_10/Chaining_attempt_7_obj2_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_28/Chaining_attempt_8_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+Scene A:
+- The red ball on the leftmost pillar is elevated and has no obstruction to its path to the green target area. 
+- The red ball on the rightmost pillar is also elevated but is more likely to be influenced by gravity and could potentially fall off if it is not secured.
+- The red ball on the upper left platform is not elevated and has no path to the green target area.
+- The red ball on the lower right platform is not elevated and has no path to the green target area.
+
+Conclusion: Scene A has a high probability of success as the leftmost red ball can easily fall into the green target area.
+
+Final Result: I predict that scene A will succeed.
+
+Scene B:
+- The red ball on the leftmost pillar is elevated and has no obstruction to its path to the green target area.
+- The red ball on the rightmost pillar is elevated but might fall off due to gravity.
+- The red ball on the upper left platform is not elevated and has no path to the green target area.
+- The red ball on the lower right platform is not elevated and has no path to the green target area.
+
+Conclusion: Scene B has a high probability of success as the leftmost red ball can easily fall into the green target area.
+
+Final Result: I predict that scene B will succeed.
+
+Scene C:
+- The red ball on the leftmost pillar is elevated and has no obstruction to its path to the green target area.
+- The red ball on the rightmost pillar is elevated but might fall off due to gravity.
+- The red ball on the upper left platform is not elevated and has no path to the green target area.
+- The red ball on the lower right platform is not elevated and has no path to the green target area.
+
+Conclusion: Scene C has a high probability of success as the leftmost red ball can easily fall into the green target area.
+
+Final Result: I predict that scene C will succeed.
+
+Scene D:
+- The red ball on the leftmost pillar is elevated and has no obstruction to its path to the green target area.
+- The red ball on the rightmost pillar is elevated but might fall off due to gravity.
+- The red ball on the upper left platform is not elevated and has no path to the green target area.
+- The red ball on the lower right platform is not elevated and has no path to the green target area.
+
+Conclusion: Scene D has a high probability of success as the leftmost red ball can easily fall into the green target area.
+
+Final Result
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: B, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene B will succeed
+Letter: C, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene C will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+Letter: B, Pattern: ([A-D])\s*will succeed, Matched text: B will succeed
+Letter: C, Pattern: ([A-D])\s*will succeed, Matched text: C will succeed
+
+----- Test Set 4 (Repetition 4/4) -----
+Success case: Chaining_attempt_7_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): D
+Shuffle mapping: {1: 2, 2: 1, 3: 3, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 5.51 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_28/Chaining_attempt_8_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_10/Chaining_attempt_6_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_6/Chaining_attempt_2_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_10/Chaining_attempt_7_obj2_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [3, 2, 2, 2]
+Is perfectly consistent: False
+Most frequently predicted image: 2
+Consistency ratio: 75.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+Scene A:
+- The red ball on the top left is on the edge of a platform.
+- The red ball on the narrow vertical pillar will fall straight down due to gravity.
+- The red ball on the lower vertical pillar will also fall straight down due to gravity.
+- The red ball on the far right is on the edge of a platform.
+- There is no blue object suspended in the air that could fall and influence the red balls.
+- No red ball is positioned to fall into the green target area.
+
+Scene B:
+- The red ball on the top left is on the edge of a platform.
+- The red ball on the narrow vertical pillar will fall straight down due to gravity.
+- The red ball on the lower vertical pillar will also fall straight down due to gravity.
+- The red ball on the far right is on the edge of a platform.
+- There is no blue object suspended in the air that could fall and influence the red balls.
+- No red ball is positioned to fall into the green target area.
+
+Scene C:
+- The red ball on the top left is on the edge of a platform.
+- The red ball on the narrow vertical pillar will fall straight down due to gravity.
+- The red ball on the lower vertical pillar will also fall straight down due to gravity.
+- The red ball on the far right is on the edge of a platform.
+- There is no blue object suspended in the air that could fall and influence the red balls.
+- No red ball is positioned to fall into the green target area.
+
+Scene D:
+- The red ball on the top left is on the edge of a platform.
+- The red ball on the narrow vertical pillar will fall straight down due to gravity.
+- The red ball on the lower vertical pillar will also fall straight down due to gravity.
+- The red ball on the far right is on the edge of a platform.
+- There is a blue object suspended in the air that will fall and fall towards the lower red ball, potentially pushing it into the green target area.
+
+Based on the physical reasoning and the presence of the blue object in scene D that can influence the trajectory of the red ball, scene D has the highest likelihood of success.
+
+Final Result: “I predict that scene D will succeed.”
+==========================
+
+Matches found:
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 5 (Repetition 1/4) -----
+Success case: Chaining_attempt_6_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): B
+Shuffle mapping: {1: 1, 2: 4, 3: 3, 4: 2}
+Model prediction: D
+Prediction incorrect
+Response time: 5.01 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_54/Chaining_attempt_0_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_14/Chaining_attempt_6_obj2_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_52/Chaining_attempt_3_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_27/Chaining_attempt_0_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the position of the red balls, the stability of their initial positions, and the likelihood of them falling into the green target area due to gravity and any interactions with other objects.
+
+Scene A: 
+- The red ball on the leftmost platform is at the edge and can fall straight down.
+- The red ball on the top pillar is stable as it is on a narrow vertical pillar.
+- The red ball on the bottom pillar is stable as it is also on a narrow vertical pillar.
+- The red ball on the rightmost platform is at the edge and can fall straight down.
+- The blue object is suspended in the air and will fall freely due to gravity.
+
+Considering the stability of the balls on the pillars, it is unlikely that they will fall into the green target area. The red balls on the edges have a higher chance of falling, but it is not guaranteed that they will reach the green area.
+
+Scene B:
+- The red ball on the leftmost platform is at the edge and can fall straight down.
+- The red ball on the top pillar is stable as it is on a narrow vertical pillar.
+- The red ball on the bottom pillar is stable as it is also on a narrow vertical pillar.
+- The red ball on the rightmost platform is at the edge and can fall straight down.
+- The blue object is suspended in the air and will fall freely due to gravity.
+
+This scene is identical to Scene A, so the probability of a red ball reaching the green area is the same.
+
+Scene C:
+- The red ball on the leftmost platform is at the edge and can fall straight down.
+- The red ball on the top pillar is stable as it is on a narrow vertical pillar.
+- The red ball on the bottom pillar is stable as it is also on a narrow vertical pillar.
+- The red ball on the rightmost platform is at the edge and can fall straight down.
+- The blue object is suspended in the air and will fall freely due to gravity.
+
+This scene is identical to Scene A, so the probability of a red ball reaching the green area is the same.
+
+Scene D:
+- The red ball on the leftmost platform is at the edge and can fall straight down.
+- The red ball on the top pillar is stable as it is on a narrow vertical pillar.
+- The red ball on the bottom pillar is stable as it is also on a narrow vertical pillar.
+- The red ball on the rightmost platform is at the edge and can fall straight down.
+
+==========================
+
+Found standalone letter: A
+
+----- Test Set 6 (Repetition 2/4) -----
+Success case: Chaining_attempt_6_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 3, 4: 2}
+Model prediction: A
+Prediction correct
+Response time: 5.45 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_14/Chaining_attempt_6_obj2_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_54/Chaining_attempt_0_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_52/Chaining_attempt_3_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_27/Chaining_attempt_0_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+- In Scene A, the red ball on the left vertical pillar is stable, and the ball on the right vertical pillar is positioned in a way that it is not likely to fall into the green area. The ball on the rightmost horizontal bar is also stable and unlikely to fall into the green area. Therefore, it is unlikely that any red ball will fall into the green region.
+
+- In Scene B, the red ball on the left vertical pillar is stable, but the ball on the right vertical pillar is positioned in such a way that it is likely to fall into the green area due to gravity. The ball on the rightmost horizontal bar is stable and unlikely to fall into the green area. Therefore, the red ball on the right vertical pillar is the most likely to fall into the green area.
+
+- In Scene C, the red ball on the left vertical pillar is stable, and the ball on the right vertical pillar is positioned in such a way that it is likely to fall into the green area due to gravity. The ball on the rightmost horizontal bar is stable and unlikely to fall into the green area. Therefore, the red ball on the right vertical pillar is the most likely to fall into the green area.
+
+- In Scene D, the red ball on the left vertical pillar is stable, and the ball on the right vertical pillar is positioned in such a way that it is likely to fall into the green area due to gravity. The ball on the rightmost horizontal bar is stable and unlikely to fall into the green area. Therefore, the red ball on the right vertical pillar is the most likely to fall into the green area.
+
+Final Result: "I predict that scene B will succeed."
+==========================
+
+Found prediction in Final Result: B
+
+----- Test Set 7 (Repetition 3/4) -----
+Success case: Chaining_attempt_6_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): C
+Shuffle mapping: {1: 3, 2: 2, 3: 4, 4: 1}
+Model prediction: B
+Prediction incorrect
+Response time: 4.56 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_52/Chaining_attempt_3_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_27/Chaining_attempt_0_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_14/Chaining_attempt_6_obj2_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_54/Chaining_attempt_0_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: Scene A: The red ball on the left vertical pillar is positioned near the top edge, which is the highest point it can reach. The red ball on the right vertical pillar is lower, and the red ball on the right platform is the lowest. The green target area is at the bottom of the scene. Given the ball's potential motion due to gravity, the ball on the left vertical pillar is likely to fall towards the green target area. The ball on the right vertical pillar will likely fall to the right, and the ball on the right platform will remain stationary or fall to the right as well. Therefore, the ball on the left vertical pillar has the highest chance of reaching the green target area.
+
+Reasoning: Scene B: The red ball on the left vertical pillar is positioned at the top, and the red ball on the right vertical pillar is lower. The green target area is at the bottom. The red ball on the right vertical pillar will likely fall towards the green target area, but the ball on the left vertical pillar has a higher chance of falling towards the green area due to its higher starting position.
+
+Reasoning: Scene C: The red ball on the left vertical pillar is at the top, and the red ball on the right vertical pillar is lower. The green target area is at the bottom. The red ball on the right vertical pillar will likely fall towards the green target area, but the ball on the left vertical pillar has a higher chance of falling towards the green area due to its higher starting position.
+
+Reasoning: Scene D: The red ball on the left vertical pillar is at the top, and the red ball on the right vertical pillar is lower. The green target area is at the bottom. The red ball on the right vertical pillar will likely fall towards the green target area, but the ball on the left vertical pillar has a higher chance of falling towards the green area due to its higher starting position.
+
+Final Result: I predict that scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 8 (Repetition 4/4) -----
+Success case: Chaining_attempt_6_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): D
+Shuffle mapping: {1: 3, 2: 2, 3: 1, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 4.67 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_52/Chaining_attempt_3_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_27/Chaining_attempt_0_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_54/Chaining_attempt_0_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_14/Chaining_attempt_6_obj2_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [2, 4, 2, 3]
+Is perfectly consistent: False
+Most frequently predicted image: 2
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will assess the likelihood of the red ball falling into the green region based on its initial position, the orientation of the pillars it is on, and the position of the green region.
+
+Scene A: The red ball on the left pillar is positioned such that it is above the green region, and there is no angle in the pillar that would allow the ball to roll into the green area. The ball on the right pillar is positioned horizontally and is unlikely to fall into the green area. Therefore, this scene has a low likelihood of success.
+
+Scene B: The red ball on the left pillar is positioned at an angle that allows it to roll down towards the green region. The ball on the right pillar is positioned horizontally, but the angle of the pillar is such that it could potentially roll into the green area. This scene has a higher likelihood of success compared to Scene A.
+
+Scene C: The red ball on the left pillar is positioned at an angle that allows it to roll down towards the green region. The ball on the right pillar is positioned horizontally, and the angle of the pillar is such that it could potentially roll into the green area. This scene is similar to Scene B in terms of likelihood of success.
+
+Scene D: The red ball on the left pillar is positioned at an angle that allows it to roll down towards the green region. The ball on the right pillar is positioned horizontally, and the angle of the pillar is such that it could potentially roll into the green area. This scene is similar to Scenes B and C in terms of likelihood of success.
+
+Final Result: Scene B, C, and D all have a high likelihood of success, but since they are equally likely, I predict that Scene B will succeed.
+==========================
+
+Matches found:
+Letter: B, Pattern: Scene\s*([A-D])\s*will succeed, Matched text: Scene B will succeed
+Letter: B, Pattern: ([A-D])\s*will succeed, Matched text: B will succeed
+
+----- Test Set 9 (Repetition 1/4) -----
+Success case: Chaining_attempt_8_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): C
+Shuffle mapping: {1: 2, 2: 3, 3: 4, 4: 1}
+Model prediction: B
+Prediction incorrect
+Response time: 3.96 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_7/Chaining_attempt_3_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_87/Chaining_attempt_0_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_33/Chaining_attempt_8_obj2_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_94/Chaining_attempt_8_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+Scene A: 
+- The red ball on the leftmost pillar is positioned at the top, and there is no immediate barrier to its descent. It will likely fall straight down into the green region.
+- The other red balls are either already in the green region or will not fall due to the lack of a clear path or any obstacles.
+
+Final Result: I predict that scene A will succeed.
+
+Scene B:
+- The red ball on the leftmost pillar is positioned at the top, and it will likely fall straight down into the green region.
+- The other red balls are either already in the green region or will not fall due to the lack of a clear path or any obstacles.
+
+Final Result: I predict that scene B will succeed.
+
+Scene C:
+- The red ball on the leftmost pillar is positioned at the top, and it will likely fall straight down into the green region.
+- The other red balls are either already in the green region or will not fall due to the lack of a clear path or any obstacles.
+
+Final Result: I predict that scene C will succeed.
+
+Scene D:
+- The red ball on the leftmost pillar is positioned at the top, and it will likely fall straight down into the green region.
+- The other red balls are either already in the green region or will not fall due to the lack of a clear path or any obstacles.
+
+Final Result: I predict that scene D will succeed.
+
+I predict that scene C will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: B, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene B will succeed
+Letter: C, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene C will succeed
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: C, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene C will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+Letter: B, Pattern: ([A-D])\s*will succeed, Matched text: B will succeed
+Letter: C, Pattern: ([A-D])\s*will succeed, Matched text: C will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+Letter: C, Pattern: ([A-D])\s*will succeed, Matched text: C will succeed
+
+----- Test Set 10 (Repetition 2/4) -----
+Success case: Chaining_attempt_8_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 2, 4: 3}
+Model prediction: A
+Prediction correct
+Response time: 3.84 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_33/Chaining_attempt_8_obj2_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_94/Chaining_attempt_8_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_7/Chaining_attempt_3_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_87/Chaining_attempt_0_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, we will analyze the initial positions and orientations of the red balls, the green target area, and any other objects that might influence the motion of the red balls.
+
+Scene A: 
+- The red ball on the leftmost pillar is positioned at the top of the pillar, which is the highest point in this scene. This ball is likely to fall due to gravity.
+- The other red ball on the rightmost pillar is also at the top, but it is slightly lower than the first ball. This ball is also likely to fall due to gravity.
+- The red ball on the bottom platform is in a position where it can fall directly into the green target area.
+- The blue object is not in a position to interact with the red balls.
+
+Scene B:
+- The red ball on the leftmost pillar is at the top and is likely to fall due to gravity.
+- The other red ball on the rightmost pillar is also at the top and is likely to fall due to gravity.
+- The red ball on the bottom platform is in a position where it can fall directly into the green target area.
+- The blue object is not in a position to interact with the red balls.
+
+Scene C:
+- The red ball on the leftmost pillar is at the top and is likely to fall due to gravity.
+- The other red ball on the rightmost pillar is also at the top and is likely to fall due to gravity.
+- The red ball on the bottom platform is in a position where it can fall directly into the green target area.
+- The blue object is not in a position to interact with the red balls.
+
+Scene D:
+- The red ball on the leftmost pillar is at the top and is likely to fall due to gravity.
+- The other red ball on the rightmost pillar is also at the top and is likely to fall due to gravity.
+- The red ball on the bottom platform is in a position where it can fall directly into the green target area.
+- The blue object is not in a position to interact with the red balls.
+
+In all four scenes, the red ball on the bottom platform has the highest chance of falling into the green target area. The red balls on the pillars are likely to fall due to gravity but are less likely to land in the green area compared to the ball on the bottom platform. The blue object does not interact with the red balls in any of the scenes.
+
+Final Result: "I predict that scene D will succeed."
+==========================
+
+Found prediction in Final Result: D
+
+----- Test Set 11 (Repetition 3/4) -----
+Success case: Chaining_attempt_8_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): D
+Shuffle mapping: {1: 1, 2: 2, 3: 3, 4: 4}
+Model prediction: D
+Prediction correct
+Response time: 5.42 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_94/Chaining_attempt_8_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_7/Chaining_attempt_3_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_87/Chaining_attempt_0_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_33/Chaining_attempt_8_obj2_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, we will analyze the initial positions of the red balls and their potential trajectories to determine if they will fall into the green target area.
+
+Scene A:
+- The red ball on the leftmost pillar will fall directly downward due to gravity. This ball will likely land outside the green area.
+- The red ball on the rightmost pillar will fall into the green area.
+
+Scene B:
+- The red ball on the leftmost pillar will fall directly downward due to gravity. This ball will likely land outside the green area.
+- The red ball on the rightmost pillar will fall into the green area.
+
+Scene C:
+- The red ball on the leftmost pillar will fall directly downward due to gravity. This ball will likely land outside the green area.
+- The red ball on the rightmost pillar will fall into the green area.
+
+Scene D:
+- The red ball on the leftmost pillar will fall directly downward due to gravity. This ball will likely land outside the green area.
+- The red ball on the rightmost pillar will fall into the green area.
+
+Final Result: “I predict that scene B will succeed.”
+==========================
+
+Matches found:
+Letter: B, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene B will succeed
+Letter: B, Pattern: ([A-D])\s*will succeed, Matched text: B will succeed
+
+----- Test Set 12 (Repetition 4/4) -----
+Success case: Chaining_attempt_8_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): B
+Shuffle mapping: {1: 1, 2: 4, 3: 2, 4: 3}
+Model prediction: B
+Prediction correct
+Response time: 4.06 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_94/Chaining_attempt_8_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_33/Chaining_attempt_8_obj2_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_7/Chaining_attempt_3_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_87/Chaining_attempt_0_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [3, 4, 4, 4]
+Is perfectly consistent: False
+Most frequently predicted image: 4
+Consistency ratio: 75.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+Scene A: 
+- The red ball on the leftmost vertical pillar is positioned at a higher elevation than the green target area. 
+- The red ball on the rightmost vertical pillar is also at a higher elevation than the green target area, but it is further away from the green area.
+- The red ball on the leftmost horizontal edge is at the same height as the green target area and is within reach.
+- The red ball on the rightmost horizontal edge is lower than the green target area and not within reach.
+
+Conclusion: In Scene A, only one red ball (the one on the leftmost horizontal edge) is within reach of the green target area.
+
+Reasoning: 
+
+Scene B: 
+- The red ball on the leftmost vertical pillar is positioned at a higher elevation than the green target area.
+- The red ball on the rightmost vertical pillar is also at a higher elevation than the green target area, but it is further away from the green area.
+- The red ball on the leftmost horizontal edge is at the same height as the green target area and is within reach.
+- The red ball on the rightmost horizontal edge is lower than the green target area and not within reach.
+
+Conclusion: In Scene B, only one red ball (the one on the leftmost horizontal edge) is within reach of the green target area.
+
+Reasoning: 
+
+Scene C: 
+- The red ball on the leftmost vertical pillar is positioned at a higher elevation than the green target area.
+- The red ball on the rightmost vertical pillar is also at a higher elevation than the green target area, but it is further away from the green area.
+- The red ball on the leftmost horizontal edge is at the same height as the green target area and is within reach.
+- The red ball on the rightmost horizontal edge is lower than the green target area and not within reach.
+
+Conclusion: In Scene C, only one red ball (the one on the leftmost horizontal edge) is within reach of the green target area.
+
+Reasoning: 
+
+Scene D: 
+- The red ball on the leftmost vertical pillar is positioned at a higher elevation than the green target area.
+- The red ball on the rightmost vertical pillar is also at a higher elevation than the green target area, but it is further away from the green area.
+- The red ball on the leftmost horizontal edge is at the same height as the green target area and is within reach.
+- The red ball on the rightmost horizontal edge
+==========================
+
+Found standalone letter: A
+
+----- Test Set 13 (Repetition 1/4) -----
+Success case: Chaining_attempt_0_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 2, 3: 3, 4: 1}
+Model prediction: A
+Prediction correct
+Response time: 5.16 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_35/Chaining_attempt_0_obj2_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_61/Chaining_attempt_11_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_50/Chaining_attempt_2_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_85/Chaining_attempt_2_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, we need to analyze the initial positions of the red balls and the potential for them to reach the green target area due to gravity and lack of stickiness.
+
+- **Scene A:** The red ball on the leftmost pillar is at a height where it can fall directly into the green area if it loses balance. The other red balls do not have a clear path to the green area. The ball on the top right pillar is too high and has no direct path to the green area. The ball on the rightmost horizontal bar is not likely to fall into the green area as it lacks a vertical path.
+
+- **Scene B:** The red ball on the leftmost pillar is again at a height where it can fall directly into the green area if it loses balance. The other red balls have no clear path to the green area, similar to Scene A.
+
+- **Scene C:** The red ball on the leftmost pillar is at a height where it can fall directly into the green area if it loses balance. The other red balls have no clear path to the green area. The ball on the top right pillar is too high and has no direct path to the green area. The ball on the rightmost horizontal bar is not likely to fall into the green area as it lacks a vertical path.
+
+- **Scene D:** The red ball on the leftmost pillar is at a height where it can fall directly into the green area if it loses balance. The other red balls have no clear path to the green area. The ball on the top right pillar is too high and has no direct path to the green area. The ball on the rightmost horizontal bar is not likely to fall into the green area as it lacks a vertical path.
+
+In all scenes, the red ball on the leftmost pillar is the most likely to fall into the green target area due to its height and the absence of any immediate obstacles preventing it from falling.
+
+Final Result: I predict that scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 14 (Repetition 2/4) -----
+Success case: Chaining_attempt_0_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): C
+Shuffle mapping: {1: 2, 2: 3, 3: 4, 4: 1}
+Model prediction: A
+Prediction incorrect
+Response time: 4.52 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_61/Chaining_attempt_11_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_50/Chaining_attempt_2_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_35/Chaining_attempt_0_obj2_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_85/Chaining_attempt_2_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+- **Scene A:** The red ball on the leftmost vertical pillar is at the highest point and has a clear path to the green target area. The other red balls are either on the same level or at lower points, making it less likely that they will fall into the green area. The ball on the rightmost pillar will not fall into the green area due to its position. 
+
+- **Scene B:** Similar to Scene A, the red ball on the leftmost vertical pillar has the highest initial position and the path to the green area is clear. The other red balls have less favorable positions for reaching the green area. The ball on the rightmost pillar will not fall into the green area.
+
+- **Scene C:** The red ball on the leftmost vertical pillar has the highest position, but the red ball on the middle pillar is slightly lower than the ball in Scene A and B. This slight difference in height means that the ball on the middle pillar may be more likely to fall into the green area than in Scenes A and B. The ball on the rightmost pillar will not fall into the green area.
+
+- **Scene D:** The red ball on the leftmost vertical pillar has the highest initial position, and the path to the green area is clear. The other red balls have less favorable positions for reaching the green area. The ball on the rightmost pillar will not fall into the green area.
+
+Final Result: Scene C has the highest likelihood of success because the red ball on the middle pillar has a slightly higher position compared to Scenes A and B, increasing the probability of it falling into the green area.
+==========================
+
+Found standalone letter: A
+
+----- Test Set 15 (Repetition 3/4) -----
+Success case: Chaining_attempt_0_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): B
+Shuffle mapping: {1: 3, 2: 4, 3: 1, 4: 2}
+Model prediction: A
+Prediction incorrect
+Response time: 4.11 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_50/Chaining_attempt_2_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_35/Chaining_attempt_0_obj2_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_85/Chaining_attempt_2_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_61/Chaining_attempt_11_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: In each scene, the red balls are positioned on narrow vertical pillars or platforms. The only potential for motion comes from the red balls falling due to gravity, as there is no stickiness or external force acting on them. The green rectangular region represents the target area.
+
+In Scene A, the red ball on the leftmost pillar is the closest to the green target area and has a direct path to fall into it. The other red balls are not positioned in a way that allows them to fall into the green area without additional movement or interaction with other objects.
+
+In Scene B, the red ball on the leftmost pillar is again the closest to the green target area, but the other red balls are positioned such that they will not fall into the green area without additional movement.
+
+In Scene C, the red ball on the leftmost pillar is still the closest to the green target area, and there is no obstruction that would prevent it from falling into the green area.
+
+In Scene D, the red ball on the leftmost pillar is the closest to the green target area, and there is no obstruction that would prevent it from falling into the green area.
+
+Given the initial positions of the red balls and the lack of external forces acting on them, the red balls in all scenes have a chance to fall into the green target area due to gravity. However, the red ball in Scene C is the closest to the green area and has the least amount of vertical distance to travel, making it the most likely to fall into the green target area.
+
+Final Result: "I predict that scene C will succeed."
+==========================
+
+Found prediction in Final Result: C
+
+----- Test Set 16 (Repetition 4/4) -----
+Success case: Chaining_attempt_0_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): D
+Shuffle mapping: {1: 3, 2: 1, 3: 2, 4: 4}
+Model prediction: C
+Prediction incorrect
+Response time: 4.25 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_50/Chaining_attempt_2_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_85/Chaining_attempt_2_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_61/Chaining_attempt_11_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_35/Chaining_attempt_0_obj2_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [4, 2, 3, 2]
+Is perfectly consistent: False
+Most frequently predicted image: 2
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+- **Scene A**: The red ball on the leftmost vertical pillar is positioned directly above the green target area. If this ball were to fall, it would likely land in the green region due to the vertical alignment. However, the ball on the rightmost vertical pillar is not directly above the green area and would not fall into it, as it is positioned on a higher level and further to the right.
+
+- **Scene B**: The red ball on the leftmost vertical pillar is again directly above the green target area, making it likely to fall into the green region if it were to fall. The ball on the rightmost vertical pillar is positioned similarly to Scene A, and would not fall into the green region.
+
+- **Scene C**: The red ball on the leftmost vertical pillar is positioned directly above the green target area, making it likely to fall into the green region if it were to fall. The ball on the rightmost vertical pillar is positioned similarly to Scenes A and B, and would not fall into the green region.
+
+- **Scene D**: The red ball on the leftmost vertical pillar is positioned directly above the green target area, making it likely to fall into the green region if it were to fall. The ball on the rightmost vertical pillar is positioned similarly to Scenes A, B, and C, and would not fall into the green region.
+
+Final Result: I predict that Scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: Scene\s*([A-D])\s*will succeed, Matched text: Scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 17 (Repetition 1/4) -----
+Success case: Chaining_attempt_3_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): C
+Shuffle mapping: {1: 1, 2: 2, 3: 4, 4: 3}
+Model prediction: A
+Prediction incorrect
+Response time: 3.73 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_28/Chaining_attempt_0_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_85/Chaining_attempt_3_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_36/Chaining_attempt_3_obj2_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_61/Chaining_attempt_9_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+For Scene A, the red ball on the top edge of the black platform will likely roll down due to gravity. However, it does not appear to have a clear path to the green region without hitting the gray obstacle.
+
+For Scene B, the red ball on the top edge of the black platform will likely roll down. There is a small gap between the gray obstacle and the green region, which might allow the ball to pass through and potentially reach the green area.
+
+For Scene C, the red ball on the top edge of the black platform will roll down. The gray obstacle is closer to the green region than in Scene B, which might make it more challenging for the ball to reach the green area.
+
+For Scene D, the red ball on the top edge of the black platform will roll down. The gray obstacle is positioned in such a way that it could block the path of the ball from reaching the green area.
+
+Based on these observations, Scene B has the highest chance of success because the ball has a slightly better chance of passing through the gap between the gray obstacle and the green region.
+
+Final Result: “I predict that scene B will succeed.”
+==========================
+
+Matches found:
+Letter: B, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene B will succeed
+Letter: B, Pattern: ([A-D])\s*will succeed, Matched text: B will succeed
+
+----- Test Set 18 (Repetition 2/4) -----
+Success case: Chaining_attempt_3_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): B
+Shuffle mapping: {1: 1, 2: 4, 3: 2, 4: 3}
+Model prediction: B
+Prediction correct
+Response time: 3.04 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_28/Chaining_attempt_0_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_36/Chaining_attempt_3_obj2_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_85/Chaining_attempt_3_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_61/Chaining_attempt_9_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+Scene A: The red ball on the leftmost vertical pillar is positioned high and will likely fall to the green target area if no external forces act on it. The red ball on the rightmost vertical pillar is also high, but it is not directly aligned with the green target area and may not fall into it.
+
+Scene B: The red ball on the leftmost vertical pillar is positioned high and will likely fall to the green target area if no external forces act on it. The red ball on the rightmost vertical pillar is also high, but it is not directly aligned with the green target area and may not fall into it.
+
+Scene C: The red ball on the leftmost vertical pillar is positioned high and will likely fall to the green target area if no external forces act on it. The red ball on the rightmost vertical pillar is also high, but it is not directly aligned with the green target area and may not fall into it.
+
+Scene D: The red ball on the leftmost vertical pillar is positioned high and will likely fall to the green target area if no external forces act on it. The red ball on the rightmost vertical pillar is also high, but it is not directly aligned with the green target area and may not fall into it.
+
+Final Result: "I predict that scene A will succeed."
+==========================
+
+Found prediction in Final Result: A
+
+----- Test Set 19 (Repetition 3/4) -----
+Success case: Chaining_attempt_3_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): D
+Shuffle mapping: {1: 3, 2: 1, 3: 2, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 3.43 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_61/Chaining_attempt_9_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_28/Chaining_attempt_0_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_85/Chaining_attempt_3_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_36/Chaining_attempt_3_obj2_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+- In Scene A, the red ball on the leftmost pillar is positioned at a height where it can roll towards the green region but is likely to be blocked by the rightmost red ball on the horizontal surface, preventing it from reaching the green area.
+- In Scene B, the red ball on the leftmost pillar is in a position that allows it to roll to the right, potentially reaching the green region if it avoids the rightmost red ball. However, the blue object hanging in the air might affect the trajectory of the rolling red ball, creating uncertainty in its path.
+- In Scene C, the red ball on the leftmost pillar has a clear path to roll to the right, and there are no immediate obstacles in its path to the green region. This scene provides the most straightforward route for the red ball to reach the green area without interference.
+- In Scene D, the red ball on the leftmost pillar has a clear path to roll to the right, similar to Scene C, but the position of the red ball on the horizontal surface might slightly alter its path, making it less certain than Scene C.
+
+Final Result: I predict that scene C will succeed.
+==========================
+
+Matches found:
+Letter: C, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene C will succeed
+Letter: C, Pattern: ([A-D])\s*will succeed, Matched text: C will succeed
+
+----- Test Set 20 (Repetition 4/4) -----
+Success case: Chaining_attempt_3_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 3, 4: 2}
+Model prediction: C
+Prediction incorrect
+Response time: 3.62 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_36/Chaining_attempt_3_obj2_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_28/Chaining_attempt_0_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_61/Chaining_attempt_9_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_85/Chaining_attempt_3_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [1, 4, 3, 3]
+Is perfectly consistent: False
+Most frequently predicted image: 3
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, the red balls are positioned in such a way that gravity will cause them to fall onto the green target area. The only difference between the scenes is the orientation and position of the red balls. In Scene A, the red ball on the left pillar will fall onto the green target area. In Scene B, the red ball on the left pillar will also fall onto the green target area. In Scene C, the red ball on the left pillar will fall onto the green target area, as well. In Scene D, the red ball on the right pillar will fall onto the green target area. Since all four scenes have at least one red ball that will fall into the green target area, we need to determine which one has the highest probability of success.
+
+Final Result: I predict that Scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: Scene\s*([A-D])\s*will succeed, Matched text: Scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 21 (Repetition 1/4) -----
+Success case: Chaining_attempt_7_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): C
+Shuffle mapping: {1: 2, 2: 1, 3: 4, 4: 3}
+Model prediction: A
+Prediction incorrect
+Response time: 2.98 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_22/Chaining_attempt_2_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Chaining_attempt_3_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_52/Chaining_attempt_7_obj2_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_94/Chaining_attempt_12_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, we analyze the initial positions of the red balls and the obstacles to determine the likelihood of a red ball reaching the green target area.
+
+- **Scene A:** The red ball on the left vertical pillar will fall due to gravity, but it will land on the left side of the green region. The other red ball on the right pillar will remain there. The red ball on the horizontal platform will fall, but it will land to the right of the green region. The blue object will fall freely and will not affect the red balls directly. Hence, none of the red balls will fall into the green region.
+
+- **Scene B:** The red ball on the left vertical pillar will fall due to gravity and land on the left side of the green region. The red ball on the right pillar will remain there. The red ball on the horizontal platform will fall and will land to the right of the green region. The blue object will fall freely and will not affect the red balls directly. Thus, none of the red balls will fall into the green region.
+
+- **Scene C:** The red ball on the left vertical pillar will fall due to gravity and land on the left side of the green region. The red ball on the right pillar will remain there. The red ball on the horizontal platform will fall and will land to the right of the green region. The blue object will fall freely and will not affect the red balls directly. Thus, none of the red balls will fall into the green region.
+
+- **Scene D:** The red ball on the left vertical pillar will fall due to gravity and land on the left side of the green region. The red ball on the right pillar will remain there. The red ball on the horizontal platform will fall and will land to the right of the green region. The blue object will fall freely and will not affect the red balls directly. Thus, none of the red balls will fall into the green region.
+
+Final Result: "I predict that none of the scenes will result in a red ball falling into the green target area."
+==========================
+
+Found standalone letter: A
+
+----- Test Set 22 (Repetition 2/4) -----
+Success case: Chaining_attempt_7_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): D
+Shuffle mapping: {1: 1, 2: 3, 3: 2, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 6.07 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Chaining_attempt_3_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_94/Chaining_attempt_12_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_22/Chaining_attempt_2_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_52/Chaining_attempt_7_obj2_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+Scene A: The red ball on the leftmost vertical pillar is at the top of the pillar and has the potential to roll down. However, there is no clear path for the ball to reach the green target area. Additionally, the ball on the rightmost pillar is not positioned to roll into the target area.
+
+Scene B: The red ball on the leftmost vertical pillar is at the top of the pillar and has the potential to roll down. There is a clear path for the ball to roll down and fall into the green target area. The ball on the rightmost pillar is positioned to roll into the green target area.
+
+Scene C: The red ball on the leftmost vertical pillar is at the top of the pillar and has the potential to roll down. However, there is no clear path for the ball to reach the green target area. The ball on the rightmost pillar is positioned to roll into the green target area.
+
+Scene D: The red ball on the leftmost vertical pillar is at the top of the pillar and has the potential to roll down. There is a clear path for the ball to roll down and fall into the green target area. The ball on the rightmost pillar is positioned to roll into the green target area.
+
+Based on the analysis, Scene B and Scene D both have a clear path for a red ball to reach the green target area. However, Scene D has an additional red ball that is positioned to roll into the green target area, increasing the likelihood of success.
+
+Final Result: I predict that Scene D will succeed.
+==========================
+
+Matches found:
+Letter: D, Pattern: Scene\s*([A-D])\s*will succeed, Matched text: Scene D will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 23 (Repetition 3/4) -----
+Success case: Chaining_attempt_7_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): B
+Shuffle mapping: {1: 2, 2: 4, 3: 1, 4: 3}
+Model prediction: D
+Prediction incorrect
+Response time: 3.92 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_22/Chaining_attempt_2_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_52/Chaining_attempt_7_obj2_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Chaining_attempt_3_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_94/Chaining_attempt_12_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the positions and movements of the red balls and determine if they are likely to fall into the green target area.
+
+Scene A: The red ball on the left vertical pillar will fall straight down due to gravity. The red ball on the right vertical pillar will not fall because it is on a higher platform, which is out of reach of the green target area. Therefore, this scene has a low chance of success.
+
+Scene B: The red ball on the left vertical pillar will fall straight down due to gravity. The red ball on the right vertical pillar will not fall because it is on a higher platform, which is out of reach of the green target area. Therefore, this scene has a low chance of success.
+
+Scene C: The red ball on the left vertical pillar will fall straight down due to gravity. The red ball on the right vertical pillar will not fall because it is on a higher platform, which is out of reach of the green target area. Therefore, this scene has a low chance of success.
+
+Scene D: The red ball on the left vertical pillar will fall straight down due to gravity. The red ball on the right vertical pillar will fall into the green target area because it will fall from a lower platform to a higher platform and then into the green area. Therefore, this scene has a high chance of success.
+
+Final Result: "I predict that scene D will succeed."
+==========================
+
+Found prediction in Final Result: D
+
+----- Test Set 24 (Repetition 4/4) -----
+Success case: Chaining_attempt_7_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 2, 4: 3}
+Model prediction: D
+Prediction incorrect
+Response time: 3.59 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_52/Chaining_attempt_7_obj2_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Chaining_attempt_3_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_22/Chaining_attempt_2_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_94/Chaining_attempt_12_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [2, 1, 3, 3]
+Is perfectly consistent: False
+Most frequently predicted image: 3
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+- **Scene A:** The red ball on the leftmost pillar is positioned at the highest point and is likely to fall due to gravity. The ball on the rightmost pillar is at a lower height and might not fall unless it is nudged or disturbed. The two balls on the horizontal platforms are not at risk of falling unless acted upon. Therefore, at least one ball is likely to fall into the green region.
+
+- **Scene B:** The red ball on the leftmost pillar is in a similar position as in Scene A, and is likely to fall due to gravity. The ball on the rightmost pillar is also at a lower height and might fall unless disturbed. The two balls on the horizontal platforms are not at risk unless acted upon. Thus, at least one ball is likely to fall into the green region.
+
+- **Scene C:** The red ball on the leftmost pillar is again in a position where gravity will likely cause it to fall. The ball on the rightmost pillar is at a lower height and might fall unless acted upon. The two balls on the horizontal platforms are not at risk unless disturbed. Therefore, at least one ball is likely to fall into the green region.
+
+- **Scene D:** The red ball on the leftmost pillar is in a similar position to the other scenes and is likely to fall due to gravity. The ball on the rightmost pillar is at a lower height and might fall unless acted upon. The two balls on the horizontal platforms are not at risk unless disturbed. Thus, at least one ball is likely to fall into the green region.
+
+**Final Result:** All scenes (A, B, C, D) have a similar likelihood of success because the positions of the red balls on the pillars suggest that gravity will cause them to fall. Therefore, any of these scenes could result in a red ball falling into the green target area. However, since the task asks for the scene with the highest likelihood of success, and assuming no additional disturbances are present, any of these scenes could be considered equally likely.
+==========================
+
+Found standalone letter: A
+
+----- Test Set 25 (Repetition 1/4) -----
+Success case: Chaining_attempt_8_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 2, 3: 3, 4: 1}
+Model prediction: A
+Prediction correct
+Response time: 18.85 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_65/Chaining_attempt_8_obj2_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_23/Chaining_attempt_2_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Chaining_attempt_8_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_87/Chaining_attempt_4_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+- In Scene A, the red ball on the leftmost pillar is at the highest point and is likely to roll down due to gravity. The red ball on the rightmost pillar is at a lower height and is unlikely to fall into the green area due to its position and orientation. The other two red balls are positioned on platforms and are not in a position to fall into the green area. Thus, Scene A is unlikely to result in any red ball reaching the green target area.
+- In Scene B, the red ball on the leftmost pillar is at the highest point and is likely to roll down. The red ball on the rightmost pillar is at a lower height and is unlikely to fall into the green area due to its position and orientation. The red ball on the leftmost platform is at a height where it could potentially fall into the green area if it were to roll down, but this depends on its initial conditions. The other red ball is positioned on a lower platform and is unlikely to fall into the green area. Thus, Scene B has a slight chance of success, but it is not the most likely to succeed.
+- In Scene C, the red ball on the leftmost pillar is at the highest point and is likely to roll down. The red ball on the rightmost pillar is at a lower height and is unlikely to fall into the green area due to its position and orientation. The red ball on the leftmost platform is at a height where it could potentially fall into the green area if it were to roll down, and the red ball on the rightmost platform is positioned in a way that it could also potentially fall into the green area if it were to roll down. Thus, Scene C has a higher chance of success compared to Scenes A and B.
+- In Scene D, the red ball on the leftmost pillar is at the highest point and is likely to roll down. The red ball on the rightmost pillar is at a lower height and is unlikely to fall into the green area due to its position and orientation. The red ball on the leftmost platform is at a height where it could potentially fall into the green area if it were to roll down, and the red ball on the rightmost platform is positioned in a way that it could also potentially fall into the green area if it were to roll down. The red ball on the leftmost pillar is at a height where it could potentially fall into the green area if it were to roll down, and the red ball on the rightmost
+==========================
+
+Found standalone letter: A
+
+----- Test Set 26 (Repetition 2/4) -----
+Success case: Chaining_attempt_8_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): C
+Shuffle mapping: {1: 1, 2: 3, 3: 4, 4: 2}
+Model prediction: A
+Prediction incorrect
+Response time: 9.24 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_87/Chaining_attempt_4_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Chaining_attempt_8_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_65/Chaining_attempt_8_obj2_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_23/Chaining_attempt_2_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the positions of the red balls and their potential motion based on gravity.
+
+Scene A: The red ball on the leftmost vertical pillar is positioned at a lower height than the green target area. This ball will likely fall due to gravity, but it is not in the optimal position to land in the green area. The other red ball on the rightmost pillar is higher and could potentially fall, but its path is more likely to miss the green area. The red ball on the leftmost platform is not in a position to fall into the green area. The ball on the rightmost platform is not in a position to fall into the green area. Therefore, in Scene A, none of the red balls are positioned in a way that ensures they will fall into the green area.
+
+Scene B: The red ball on the leftmost vertical pillar is positioned at a lower height than the green target area. This ball will likely fall due to gravity, but it is not in the optimal position to land in the green area. The other red ball on the rightmost pillar is higher and could potentially fall, but its path is more likely to miss the green area. The red ball on the leftmost platform is not in a position to fall into the green area. The ball on the rightmost platform is not in a position to fall into the green area. Therefore, in Scene B, none of the red balls are positioned in a way that ensures they will fall into the green area.
+
+Scene C: The red ball on the leftmost vertical pillar is positioned at a lower height than the green target area. This ball will likely fall due to gravity, but it is not in the optimal position to land in the green area. The other red ball on the rightmost pillar is higher and could potentially fall, but its path is more likely to miss the green area. The red ball on the leftmost platform is not in a position to fall into the green area. The ball on the rightmost platform is not in a position to fall into the green area. Therefore, in Scene C, none of the red balls are positioned in a way that ensures they will fall into the green area.
+
+Scene D: The red ball on the leftmost vertical pillar is positioned at a lower height than the green target area. This ball will likely fall due to gravity, but it is not in the optimal position to land in the green area. The other red ball on the rightmost pillar is higher and could potentially fall, but
+==========================
+
+Found standalone letter: A
+
+----- Test Set 27 (Repetition 3/4) -----
+Success case: Chaining_attempt_8_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): D
+Shuffle mapping: {1: 1, 2: 3, 3: 2, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 6.14 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_87/Chaining_attempt_4_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Chaining_attempt_8_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_23/Chaining_attempt_2_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_65/Chaining_attempt_8_obj2_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, the red balls are placed on narrow vertical pillars and edges of platforms. The green target area is at the bottom of the scene. We need to determine the likelihood of a red ball reaching the green area.
+
+- **Scene A**: The red ball on the leftmost pillar will likely fall down due to gravity, but it will not reach the green target area as it falls to the left. The other red ball on the top of the pillar might fall, but it's not clear if it will reach the green area due to the angle of the pillar.
+
+- **Scene B**: The red ball on the leftmost pillar will fall down and could potentially reach the green area if it falls at the right angle. The other red ball on the top of the pillar might fall, but its trajectory is unclear.
+
+- **Scene C**: The red ball on the leftmost pillar will fall down and reach the green area if it falls at the right angle. The other red ball on the top of the pillar might fall, but its trajectory is unclear.
+
+- **Scene D**: The red ball on the leftmost pillar will fall down and reach the green area if it falls at the right angle. The other red ball on the top of the pillar might fall, but its trajectory is unclear.
+
+**Final Result:** "I predict that scene C will succeed."
+==========================
+
+Found prediction in Final Result: C
+
+----- Test Set 28 (Repetition 4/4) -----
+Success case: Chaining_attempt_8_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): B
+Shuffle mapping: {1: 2, 2: 4, 3: 3, 4: 1}
+Model prediction: C
+Prediction incorrect
+Response time: 3.96 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_23/Chaining_attempt_2_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_65/Chaining_attempt_8_obj2_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Chaining_attempt_8_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_87/Chaining_attempt_4_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [4, 1, 1, 3]
+Is perfectly consistent: False
+Most frequently predicted image: 1
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+- **Scene A**: The red ball on the leftmost pillar is positioned such that it will not fall into the green target area because it is too far from the green region and is balanced on a narrow pillar.
+
+- **Scene B**: The red ball on the rightmost pillar will not fall into the green target area because it is similarly positioned too far from the green region and is balanced on a narrow pillar.
+
+- **Scene C**: The red ball on the leftmost pillar will not fall into the green target area because it is too far from the green region and is balanced on a narrow pillar. The red ball on the rightmost pillar will fall into the green target area because it is positioned closer to the green region and is balanced on a narrow pillar.
+
+- **Scene D**: The red ball on the leftmost pillar will not fall into the green target area because it is too far from the green region and is balanced on a narrow pillar. The red ball on the rightmost pillar will fall into the green target area because it is positioned closer to the green region and is balanced on a narrow pillar.
+
+Final Result: “I predict that scene C will succeed.”
+==========================
+
+Matches found:
+Letter: C, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene C will succeed
+Letter: C, Pattern: ([A-D])\s*will succeed, Matched text: C will succeed
+
+----- Test Set 29 (Repetition 1/4) -----
+Success case: Chaining_attempt_7_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): C
+Shuffle mapping: {1: 3, 2: 1, 3: 4, 4: 2}
+Model prediction: C
+Prediction correct
+Response time: 4.04 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_21/Chaining_attempt_1_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_71/Chaining_attempt_4_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_81/Chaining_attempt_7_obj2_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_21/Chaining_attempt_6_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+Scene A:
+- The red ball on the left pillar will fall straight down due to gravity and land on the black platform below.
+- The red ball on the right pillar will remain in place as it is on the edge of the platform.
+
+Scene B:
+- The red ball on the left pillar will fall straight down due to gravity and land on the black platform below.
+- The red ball on the right pillar will fall straight down due to gravity and land on the black platform below.
+
+Scene C:
+- The red ball on the left pillar will fall straight down due to gravity and land on the black platform below.
+- The red ball on the right pillar will fall straight down due to gravity and land on the black platform below.
+
+Scene D:
+- The red ball on the left pillar will fall straight down due to gravity and land on the black platform below.
+- The red ball on the right pillar will fall straight down due to gravity and land on the black platform below.
+
+Final Result: "I predict that scene C will succeed."
+==========================
+
+Found prediction in Final Result: C
+
+----- Test Set 30 (Repetition 2/4) -----
+Success case: Chaining_attempt_7_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): D
+Shuffle mapping: {1: 3, 2: 1, 3: 2, 4: 4}
+Model prediction: C
+Prediction incorrect
+Response time: 4.71 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_21/Chaining_attempt_1_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_71/Chaining_attempt_4_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_21/Chaining_attempt_6_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_81/Chaining_attempt_7_obj2_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+- **Scene A**: The red ball on the leftmost vertical pillar has a clear path to the green target area. However, the other red ball on the rightmost pillar is positioned higher and will likely fall off the pillar before reaching the green area.
+
+- **Scene B**: The red ball on the leftmost vertical pillar is in the same position as in Scene A. The other red ball on the rightmost pillar is also in the same position. Given the initial conditions, it's likely that the red ball on the rightmost pillar will fall off the pillar before reaching the green area.
+
+- **Scene C**: The red ball on the leftmost vertical pillar has a clear path to the green target area. The other red ball on the rightmost pillar is positioned higher and will likely fall off the pillar before reaching the green area.
+
+- **Scene D**: The red ball on the leftmost vertical pillar has a clear path to the green target area. The other red ball on the rightmost pillar is positioned higher and will likely fall off the pillar before reaching the green area.
+
+Final Result: "I predict that scene C will succeed."
+==========================
+
+Found prediction in Final Result: C
+
+----- Test Set 31 (Repetition 3/4) -----
+Success case: Chaining_attempt_7_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 3, 3: 2, 4: 1}
+Model prediction: C
+Prediction incorrect
+Response time: 3.30 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_81/Chaining_attempt_7_obj2_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_21/Chaining_attempt_1_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_21/Chaining_attempt_6_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_71/Chaining_attempt_4_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+Scene A: 
+- The red ball on the leftmost platform will fall due to gravity and will land on the lower black surface. It will not have enough momentum to reach the green target area. The other red balls are positioned in such a way that they will also fall due to gravity, but none of them will reach the green area. 
+- Conclusion: No red ball will fall into the green target area.
+
+Scene B: 
+- The red ball on the leftmost platform will fall, and it will land on the lower black surface. The other red balls will also fall due to gravity, but none of them will reach the green area. 
+- Conclusion: No red ball will fall into the green target area.
+
+Scene C: 
+- The red ball on the leftmost platform will fall, and it will land on the lower black surface. The red ball on the second pillar will fall, but due to the orientation, it will land slightly away from the green target area. The other red balls will also fall, but none of them will reach the green area. 
+- Conclusion: No red ball will fall into the green target area.
+
+Scene D: 
+- The red ball on the leftmost platform will fall, and it will land on the lower black surface. The red ball on the second pillar will fall, and due to the orientation, it will land precisely on the edge of the green target area. The other red balls will also fall, but none of them will reach the green area. 
+- Conclusion: One red ball will fall into the green target area.
+
+Final Result: Scene D has the highest likelihood of success as it has a red ball that will fall into the green target area.
+==========================
+
+Found standalone letter: A
+
+----- Test Set 32 (Repetition 4/4) -----
+Success case: Chaining_attempt_7_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): B
+Shuffle mapping: {1: 1, 2: 4, 3: 2, 4: 3}
+Model prediction: A
+Prediction incorrect
+Response time: 5.16 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_71/Chaining_attempt_4_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_81/Chaining_attempt_7_obj2_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_21/Chaining_attempt_6_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_21/Chaining_attempt_1_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [4, 2, 2, 1]
+Is perfectly consistent: False
+Most frequently predicted image: 2
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+- **Scene A:** The red ball on the leftmost pillar is in a position where it can potentially roll towards the green target area due to the slight tilt of the pillar. However, the ball on the rightmost pillar is too far from the green target area and lacks the necessary momentum to reach it. The red ball on the upper left platform is in a stable position and will not fall into the green area.
+- **Scene B:** The red ball on the leftmost pillar is in a position where it can roll towards the green target area due to the slight tilt of the pillar. The ball on the rightmost pillar is too far from the green target area and lacks the necessary momentum to reach it. The red ball on the upper left platform is in a stable position and will not fall into the green area.
+- **Scene C:** The red ball on the leftmost pillar is in a position where it can roll towards the green target area due to the slight tilt of the pillar. The ball on the rightmost pillar is too far from the green target area and lacks the necessary momentum to reach it. The red ball on the upper left platform is in a stable position and will not fall into the green area.
+- **Scene D:** The red ball on the leftmost pillar is in a position where it can roll towards the green target area due to the slight tilt of the pillar. The ball on the rightmost pillar is too far from the green target area and lacks the necessary momentum to reach it. The red ball on the upper left platform is in a stable position and will not fall into the green area.
+
+Final Result: “I predict that scene A will succeed.”
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 33 (Repetition 1/4) -----
+Success case: Chaining_attempt_0_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): B
+Shuffle mapping: {1: 3, 2: 4, 3: 1, 4: 2}
+Model prediction: A
+Prediction incorrect
+Response time: 4.32 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_63/Chaining_attempt_0_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_89/Chaining_attempt_0_obj2_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_28/Chaining_attempt_0_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_56/Chaining_attempt_2_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, analyze the position and orientation of the red balls and their potential paths:
+
+1. **Scene A**: The leftmost red ball is on a higher platform and cannot move left. The second red ball from the left is on a narrow vertical pillar, which makes it likely to fall into the green area if it loses balance. The other two red balls are on the same level and cannot reach the green area.
+
+2. **Scene B**: The leftmost red ball is on a higher platform and cannot move left. The second red ball from the left is on a narrow vertical pillar, which makes it likely to fall into the green area if it loses balance. The other two red balls are on the same level and cannot reach the green area.
+
+3. **Scene C**: The leftmost red ball is on a higher platform and cannot move left. The second red ball from the left is on a narrow vertical pillar, which makes it likely to fall into the green area if it loses balance. The other two red balls are on the same level and cannot reach the green area.
+
+4. **Scene D**: The leftmost red ball is on a higher platform and cannot move left. The second red ball from the left is on a narrow vertical pillar, which makes it likely to fall into the green area if it loses balance. The other two red balls are on the same level and cannot reach the green area.
+
+All scenes show a similar setup where the leftmost red ball is fixed in place, and the second red ball from the left is on a vertical pillar, which will fall into the green area if it loses balance. The other two red balls cannot reach the green area.
+
+Final Result: I predict that scene D will succeed.
+==========================
+
+Matches found:
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 34 (Repetition 2/4) -----
+Success case: Chaining_attempt_0_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): D
+Shuffle mapping: {1: 1, 2: 3, 3: 2, 4: 4}
+Model prediction: D
+Prediction correct
+Response time: 4.33 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_28/Chaining_attempt_0_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_63/Chaining_attempt_0_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_56/Chaining_attempt_2_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_89/Chaining_attempt_0_obj2_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the positions of the red balls, the green target area, and any potential obstructions. I will also consider the likelihood of the red ball falling into the green area based on the initial setup.
+
+Scene A:
+- Two red balls are on vertical pillars, and one is on a horizontal platform.
+- The green target area is positioned at the bottom of the scene.
+- The red ball on the horizontal platform is the most likely to fall into the green target area, as it is positioned directly above the green area.
+- The other red balls are positioned higher and further away from the green area, making it less likely for them to fall into the green region.
+
+Scene B:
+- The red ball on the horizontal platform is the most likely to fall into the green area.
+- The other red balls are positioned higher and further away from the green area.
+- The green target area is positioned at the bottom of the scene, making it accessible for the red ball on the horizontal platform.
+
+Scene C:
+- The red ball on the horizontal platform is the most likely to fall into the green area.
+- The other red balls are positioned higher and further away from the green area.
+- The green target area is positioned at the bottom of the scene, making it accessible for the red ball on the horizontal platform.
+
+Scene D:
+- The red ball on the horizontal platform is the most likely to fall into the green area.
+- The other red balls are positioned higher and further away from the green area.
+- The green target area is positioned at the bottom of the scene, making it accessible for the red ball on the horizontal platform.
+
+Final Result: I predict that scene B will succeed.
+==========================
+
+Matches found:
+Letter: B, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene B will succeed
+Letter: B, Pattern: ([A-D])\s*will succeed, Matched text: B will succeed
+
+----- Test Set 35 (Repetition 3/4) -----
+Success case: Chaining_attempt_0_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 3, 4: 2}
+Model prediction: B
+Prediction incorrect
+Response time: 4.23 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_89/Chaining_attempt_0_obj2_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_28/Chaining_attempt_0_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_63/Chaining_attempt_0_obj2_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_56/Chaining_attempt_2_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, analyze the positions of the red balls, the green target area, and any obstacles that might affect the ball's motion.
+
+- **Scene A**: The red ball on the leftmost pillar has a clear path to the green area if it rolls down. The red ball on the rightmost pillar is positioned high but is not directly above the green area. There are no immediate obstacles in its path. The red ball on the edge of the platform on the left might roll off, but it is not directly above the green area either. Therefore, at least one red ball is likely to reach the green area.
+
+- **Scene B**: The red ball on the leftmost pillar has a clear path to the green area if it rolls down. The red ball on the rightmost pillar is positioned high but is not directly above the green area. There are no immediate obstacles in its path. The red ball on the edge of the platform on the left might roll off, but it is not directly above the green area either. Therefore, at least one red ball is likely to reach the green area.
+
+- **Scene C**: The red ball on the leftmost pillar has a clear path to the green area if it rolls down. The red ball on the rightmost pillar is positioned high but is not directly above the green area. There are no immediate obstacles in its path. The red ball on the edge of the platform on the left might roll off, but it is not directly above the green area either. Therefore, at least one red ball is likely to reach the green area.
+
+- **Scene D**: The red ball on the leftmost pillar has a clear path to the green area if it rolls down. The red ball on the rightmost pillar is positioned high but is not directly above the green area. There are no immediate obstacles in its path. The red ball on the edge of the platform on the left might roll off, but it is not directly above the green area either. Therefore, at least one red ball is likely to reach the green area.
+
+Final Result: All scenes (A, B, C, and D) are equally likely to result in a red ball reaching the green target area.
+==========================
+
+Found standalone letter: A
+
+----- Test Set 36 (Repetition 4/4) -----
+Success case: Chaining_attempt_0_obj2_True
+Scene type: Chain Reaction Scene
+Scene ID: obj2
+Correct scene position (A-D): C
+Shuffle mapping: {1: 1, 2: 2, 3: 4, 4: 3}
+Model prediction: A
+Prediction incorrect
+Response time: 6.21 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_28/Chaining_attempt_0_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_56/Chaining_attempt_2_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_89/Chaining_attempt_0_obj2_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_63/Chaining_attempt_0_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [3, 4, 1, 1]
+Is perfectly consistent: False
+Most frequently predicted image: 1
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+Starting evaluation for scene: Chaining_obj1
+This scene has 80 success cases
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reason: In Scene A, the red ball on the leftmost vertical pillar is positioned very close to the edge, which makes it highly likely to roll off and fall into the green target area due to gravity. The other red balls are either on the platforms or not in a position to fall due to their orientation and proximity to the obstacles.
+
+Reason: In Scene B, the red ball on the leftmost vertical pillar is similarly positioned close to the edge, suggesting a high likelihood of it falling into the green target area. The other red balls are not in a position to fall due to their orientation and proximity to obstacles.
+
+Reason: In Scene C, the red ball on the leftmost vertical pillar is positioned similarly close to the edge, indicating a high likelihood of it falling into the green target area. The other red balls are not in a position to fall due to their orientation and proximity to obstacles.
+
+Reason: In Scene D, the red ball on the leftmost vertical pillar is positioned close to the edge, suggesting a high likelihood of it falling into the green target area. The other red balls are not in a position to fall due to their orientation and proximity to obstacles.
+
+Final Result: I predict that Scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: Scene\s*([A-D])\s*will succeed, Matched text: Scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 37 (Repetition 1/4) -----
+Success case: Chaining_attempt_10_obj1_True
+Scene type: Chain Reaction Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 1, 2: 3, 3: 2, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 3.48 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_33/Chaining_attempt_5_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_56/Chaining_attempt_5_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_81/Chaining_attempt_1_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Chaining_attempt_10_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reason: The red ball on the leftmost pillar is positioned at a higher elevation compared to the red ball on the rightmost pillar. In all scenes, the green target area is below the red balls. The red ball on the leftmost pillar has a clear path to the green area without any obstructions, as it can fall directly to the right and then roll down the black pillar to the green area. The red ball on the rightmost pillar, however, has a much more challenging trajectory. It needs to fall to the right, then roll down the black pillar to the green area. Additionally, the red ball on the rightmost pillar is further from the green area, making it less likely to reach the target.
+
+Final Result: I predict that scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 38 (Repetition 2/4) -----
+Success case: Chaining_attempt_10_obj1_True
+Scene type: Chain Reaction Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 3, 3: 2, 4: 1}
+Model prediction: A
+Prediction correct
+Response time: 3.44 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Chaining_attempt_10_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_56/Chaining_attempt_5_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_81/Chaining_attempt_1_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_33/Chaining_attempt_5_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the positions of the red balls and their potential paths to the green target area, considering the absence of stickiness and the influence of gravity.
+
+Scene A: The red ball on the top left platform has a clear path to the green target area, as it can fall directly into it. The other red balls do not have a clear path to the green area. Therefore, at least one red ball will fall into the green target area.
+
+Scene B: The red ball on the top left platform also has a clear path to the green target area. The other red balls have no direct path to the green area. Hence, at least one red ball will fall into the green target area.
+
+Scene C: The red ball on the top left platform has a clear path to the green target area. The other red balls do not have a direct path to the green area. Therefore, at least one red ball will fall into the green target area.
+
+Scene D: The red ball on the top left platform has a clear path to the green target area. The other red balls do not have a direct path to the green area. Hence, at least one red ball will fall into the green target area.
+
+Final Result: “I predict that scene A will succeed.”
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 39 (Repetition 3/4) -----
+Success case: Chaining_attempt_10_obj1_True
+Scene type: Chain Reaction Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 2, 2: 4, 3: 1, 4: 3}
+Model prediction: A
+Prediction incorrect
+Response time: 6.72 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_81/Chaining_attempt_1_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Chaining_attempt_10_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_33/Chaining_attempt_5_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_56/Chaining_attempt_5_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+- Scene A: The red ball on the leftmost pillar is at the top and will fall due to gravity. The other red ball on the rightmost pillar is also at the top and will fall. The two red balls on the platforms will remain stationary.
+- Scene B: The red ball on the leftmost pillar is at the top and will fall due to gravity. The other red ball on the rightmost pillar is also at the top and will fall. The two red balls on the platforms will remain stationary.
+- Scene C: The red ball on the leftmost pillar is at the top and will fall due to gravity. The other red ball on the rightmost pillar is also at the top and will fall. The two red balls on the platforms will remain stationary.
+- Scene D: The red ball on the leftmost pillar is at the top and will fall due to gravity. The other red ball on the rightmost pillar is also at the top and will fall. The two red balls on the platforms will remain stationary.
+
+All scenes have the same physical setup and initial conditions, so the outcome for each scene will be identical. Therefore, none of the scenes will result in a red ball falling into the green target area.
+
+Final Result: "I predict that none of the scenes will succeed."
+==========================
+
+Found standalone letter: A
+
+----- Test Set 40 (Repetition 4/4) -----
+Success case: Chaining_attempt_10_obj1_True
+Scene type: Chain Reaction Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 1, 2: 3, 3: 4, 4: 2}
+Model prediction: A
+Prediction incorrect
+Response time: 4.00 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_33/Chaining_attempt_5_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_56/Chaining_attempt_5_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Chaining_attempt_10_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_81/Chaining_attempt_1_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [1, 4, 2, 1]
+Is perfectly consistent: False
+Most frequently predicted image: 1
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reason: The blue object is suspended in the air and will fall due to gravity. Once it falls, it will likely strike the red ball on the narrow vertical pillar in the center, causing it to fall into the green target area.
+
+Final Result: “I predict that scene B will succeed.”
+==========================
+
+Matches found:
+Letter: B, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene B will succeed
+Letter: B, Pattern: ([A-D])\s*will succeed, Matched text: B will succeed
+
+----- Test Set 41 (Repetition 1/4) -----
+Success case: Chaining_attempt_0_obj1_True
+Scene type: Chain Reaction Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 3, 2: 2, 3: 4, 4: 1}
+Model prediction: B
+Prediction incorrect
+Response time: 2.33 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_84/Chaining_attempt_7_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_88/Chaining_attempt_1_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_10/Chaining_attempt_0_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Chaining_attempt_2_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+Scene A: The red ball on the leftmost pillar is in a stable position with no immediate forces acting on it. The ball on the rightmost pillar is in a similar position. The two red balls on the edge of the platforms are not in a position to roll into the green region unless they experience an external force, such as a collision or an external push.
+
+Scene B: The red ball on the leftmost pillar is stable. The ball on the rightmost pillar is in a position where it could potentially roll down due to gravity. The two red balls on the edge of the platforms are not in a position to roll into the green region unless they experience an external force.
+
+Scene C: The red ball on the leftmost pillar is stable. The ball on the rightmost pillar is in a position where it could potentially roll down due to gravity. The two red balls on the edge of the platforms are not in a position to roll into the green region unless they experience an external force.
+
+Scene D: The red ball on the leftmost pillar is stable. The ball on the rightmost pillar is in a position where it could potentially roll down due to gravity. The two red balls on the edge of the platforms are not in a position to roll into the green region unless they experience an external force.
+
+Final Result: I predict that scene D will succeed.
+==========================
+
+Matches found:
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 42 (Repetition 2/4) -----
+Success case: Chaining_attempt_0_obj1_True
+Scene type: Chain Reaction Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 2, 4: 3}
+Model prediction: D
+Prediction incorrect
+Response time: 3.51 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_10/Chaining_attempt_0_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Chaining_attempt_2_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_88/Chaining_attempt_1_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_84/Chaining_attempt_7_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+Scene A: In this scene, the red ball on the leftmost vertical pillar is positioned near the top and could potentially roll down due to gravity. However, the red ball on the rightmost vertical pillar is closer to the green target area and has a higher probability of rolling into it due to its position and the lack of obstacles between it and the target.
+
+Scene B: The red ball on the leftmost vertical pillar is in a similar position to scene A, but the red ball on the rightmost vertical pillar is further away from the green target area compared to scene A. This reduces its probability of rolling into the target.
+
+Scene C: The red ball on the leftmost vertical pillar is in the same position as in scenes A and B. The red ball on the rightmost vertical pillar is closer to the green target area than in scene B, but not as close as in scene A. The probability of it reaching the target is higher than in scene B but lower than in scene A.
+
+Scene D: The red ball on the leftmost vertical pillar is in the same position as in scenes A, B, and C. The red ball on the rightmost vertical pillar is positioned similarly to scene C, slightly closer to the green target area than in scene C but not as close as in scene A. The probability of it reaching the target is higher than in scene C but lower than in scene A.
+
+Final Result: I predict that scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 43 (Repetition 3/4) -----
+Success case: Chaining_attempt_0_obj1_True
+Scene type: Chain Reaction Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 1, 2: 4, 3: 3, 4: 2}
+Model prediction: A
+Prediction incorrect
+Response time: 4.07 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Chaining_attempt_2_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_10/Chaining_attempt_0_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_84/Chaining_attempt_7_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_88/Chaining_attempt_1_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reason: Analyzing the initial positions and orientations of the red balls, we see that the two red balls on the narrow vertical pillars are at a height where they can roll down and potentially fall into the green target area. The two red balls on the edge of the platforms are also at a height where they can roll down onto the pillars or fall directly into the green area if they are able to reach it.
+
+For Scene A, the red balls on the pillars are positioned in a way that allows them to roll down and reach the green area. The red ball on the edge of the platform can also roll down onto the pillar and potentially fall into the green area.
+
+For Scene B, the red balls on the pillars are similarly positioned to roll down and reach the green area. The red ball on the edge of the platform can also roll down onto the pillar and potentially fall into the green area.
+
+For Scene C, the red balls on the pillars are positioned in a way that allows them to roll down and reach the green area. The red ball on the edge of the platform can also roll down onto the pillar and potentially fall into the green area.
+
+For Scene D, the red balls on the pillars are positioned in a way that allows them to roll down and reach the green area. The red ball on the edge of the platform can also roll down onto the pillar and potentially fall into the green area.
+
+All scenes have a similar setup with the red balls positioned in a way that allows them to roll down and reach the green area. Therefore, all scenes have a high probability of at least one red ball falling into the green target area.
+
+Final Result: I predict that all scenes have a high probability of success.
+==========================
+
+Found standalone letter: A
+
+----- Test Set 44 (Repetition 4/4) -----
+Success case: Chaining_attempt_0_obj1_True
+Scene type: Chain Reaction Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 1, 2: 3, 3: 2, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 4.11 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Chaining_attempt_2_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_84/Chaining_attempt_7_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_88/Chaining_attempt_1_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_10/Chaining_attempt_0_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [2, 3, 1, 1]
+Is perfectly consistent: False
+Most frequently predicted image: 1
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: In all four scenes, the setup is identical with no differences in the initial positions of the objects or the layout. The only difference is the position of the blue object, which is the key to determining the success probability.
+
+- In Scene A, the blue object is hanging from the top left, not likely to fall due to the lack of any visible mechanism to dislodge it.
+- In Scene B, the blue object is hanging from the top left, but it is slightly more likely to fall due to its position being closer to the edge of the platform.
+- In Scene C, the blue object is hanging from the top left, but it is hanging lower than in Scene B, making it less likely to fall.
+- In Scene D, the blue object is hanging from the top left, and it is the lowest hanging compared to the other scenes, making it the most likely to fall.
+
+The falling of the blue object will create a chain reaction, where it will knock over the red ball on the rightmost narrow pillar. This red ball will then fall into the green target area. 
+
+Final Result: “I predict that Scene D will succeed.”
+==========================
+
+Matches found:
+Letter: D, Pattern: Scene\s*([A-D])\s*will succeed, Matched text: Scene D will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 45 (Repetition 1/4) -----
+Success case: Chaining_attempt_0_obj1_True
+Scene type: Chain Reaction Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 2, 2: 3, 3: 4, 4: 1}
+Model prediction: D
+Prediction incorrect
+Response time: 3.18 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_85/Chaining_attempt_6_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_61/Chaining_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_11/Chaining_attempt_0_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_66/Chaining_attempt_1_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reason: In Scene A, the red ball on the rightmost pillar is at the same height as the green target area, and there are no immediate obstructions to its path. The blue object above is not in the way of the red ball's trajectory. The ball is likely to roll off the pillar and fall into the green area.
+
+In Scene B, the red ball on the rightmost pillar is also at a height where it could fall into the green area if it were to roll off the pillar. However, the blue object above is positioned in a way that it might interfere with the ball's trajectory.
+
+In Scene C, the red ball on the rightmost pillar is again at a height that could allow it to fall into the green area. However, the blue object above is closer to the ball's path and could potentially obstruct it.
+
+In Scene D, the red ball on the rightmost pillar is at the same height as the green area, but the blue object above is closer to the ball's path and could obstruct its trajectory.
+
+Based on the analysis, Scene A has the least obstruction and the most direct path for the red ball to fall into the green area.
+
+Final Result: I predict that scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 46 (Repetition 2/4) -----
+Success case: Chaining_attempt_0_obj1_True
+Scene type: Chain Reaction Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 1, 2: 4, 3: 3, 4: 2}
+Model prediction: A
+Prediction incorrect
+Response time: 3.69 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_66/Chaining_attempt_1_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_11/Chaining_attempt_0_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_61/Chaining_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_85/Chaining_attempt_6_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reason: In each scene, the red balls are positioned on narrow vertical pillars. The goal is for at least one red ball to fall into the green target area. To determine the likelihood of a red ball falling into the green area, we need to consider the height and position of the red balls relative to the green area.
+
+- In Scene A, the red ball on the leftmost pillar is positioned relatively high, but it is not directly above the green area. Therefore, it is unlikely to fall into the green area.
+- In Scene B, the red ball on the leftmost pillar is also positioned high but slightly more aligned with the green area compared to Scene A. However, it still does not seem to have the best trajectory to fall into the green area.
+- In Scene C, the red ball on the leftmost pillar is at a similar height to Scene B but appears to have a slightly better alignment with the green area. However, it does not seem to be the most favorable position for falling into the green area.
+- In Scene D, the red ball on the leftmost pillar is positioned the highest among all the scenes and is directly above the green area. This gives it the best chance of falling into the green area due to its height and position.
+
+Based on the analysis, Scene D offers the most favorable conditions for a red ball to fall into the green target area.
+
+Final Result: “I predict that scene D will succeed.”
+==========================
+
+Matches found:
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 47 (Repetition 3/4) -----
+Success case: Chaining_attempt_0_obj1_True
+Scene type: Chain Reaction Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 1, 2: 2, 3: 3, 4: 4}
+Model prediction: D
+Prediction correct
+Response time: 4.25 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_66/Chaining_attempt_1_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_85/Chaining_attempt_6_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_61/Chaining_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_11/Chaining_attempt_0_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For Scene A, the red ball on the leftmost vertical pillar has the potential to roll down and land in the green area due to gravity. However, the ball on the rightmost pillar is positioned at a higher point and has a narrow path to the green area, making it less likely to fall into it. The other red balls are positioned in a way that they do not have a direct path to the green area.
+
+For Scene B, the red ball on the leftmost vertical pillar is in a similar position to Scene A, with the potential to roll down and fall into the green area. The red ball on the rightmost pillar also has a clear path to the green area, making it more likely to fall than in Scene A. The other red balls are again not positioned to fall into the green area.
+
+For Scene C, the red ball on the leftmost vertical pillar is again in a position where it can roll down and potentially fall into the green area. The red ball on the rightmost pillar has a slightly more challenging path to the green area, but it is still possible. The other red balls remain in positions that do not allow them to fall into the green area.
+
+For Scene D, the red ball on the leftmost vertical pillar is in a position similar to the previous scenes, with the potential to roll down and fall into the green area. The red ball on the rightmost pillar has a direct path to the green area, making it likely to fall. The other red balls are positioned in a way that they do not have a direct path to the green area.
+
+Based on the analysis of each scene, Scene B has the highest likelihood of success because the red ball on the rightmost pillar has the most direct and clear path to the green area. Additionally, the red ball on the leftmost pillar also has a good chance of falling into the green area.
+
+Final Result: I predict that scene B will succeed.
+==========================
+
+Matches found:
+Letter: B, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene B will succeed
+Letter: B, Pattern: ([A-D])\s*will succeed, Matched text: B will succeed
+
+----- Test Set 48 (Repetition 4/4) -----
+Success case: Chaining_attempt_0_obj1_True
+Scene type: Chain Reaction Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 3, 3: 1, 4: 2}
+Model prediction: B
+Prediction incorrect
+Response time: 4.87 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_11/Chaining_attempt_0_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_61/Chaining_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_66/Chaining_attempt_1_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_85/Chaining_attempt_6_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [1, 1, 4, 3]
+Is perfectly consistent: False
+Most frequently predicted image: 1
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+For Scene A, the red ball on the narrow vertical pillar closest to the green region is positioned at the top. It will not fall because it is not in contact with any other object that could potentially dislodge it.
+
+For Scene B, the red ball on the narrow vertical pillar closest to the green region is also at the top. This ball will not fall either because it is in contact with the black platform below and there are no other objects that could dislodge it.
+
+For Scene C, the red ball on the narrow vertical pillar closest to the green region is again at the top. This ball will not fall because it is in contact with the black platform below and there are no other objects that could dislodge it.
+
+For Scene D, the red ball on the narrow vertical pillar closest to the green region is at the top. However, this time there is a small gap between the red ball and the black platform below. This small gap means that if there is any disturbance, the red ball could potentially fall into the green region.
+
+Step-by-step physical reasoning:
+
+1. **Identify the position of the red ball in each scene**:
+   - Scene A: Red ball at the top of the narrow vertical pillar.
+   - Scene B: Red ball at the top of the narrow vertical pillar.
+   - Scene C: Red ball at the top of the narrow vertical pillar.
+   - Scene D: Red ball at the top of the narrow vertical pillar.
+
+2. **Analyze the stability of the red ball in each scene**:
+   - Scene A: The red ball is not in contact with any object that could dislodge it.
+   - Scene B: The red ball is in contact with the black platform below and there are no other objects that could dislodge it.
+   - Scene C: The red ball is in contact with the black platform below and there are no other objects that could dislodge it.
+   - Scene D: The red ball is in contact with the black platform below, but there is a small gap that could allow the ball to fall if disturbed.
+
+3. **Determine the likelihood of the red ball falling into the green region**:
+   - Scene A: The red ball will not fall.
+   - Scene B: The red ball will not fall.
+   - Scene C: The red ball will not fall.
+   - Scene D: The red ball could fall if disturbed.
+
+Final Result: “I predict that scene D will succeed.”
+==========================
+
+Matches found:
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 49 (Repetition 1/4) -----
+Success case: Chaining_attempt_1_obj1_True
+Scene type: Chain Reaction Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 1, 2: 4, 3: 2, 4: 3}
+Model prediction: D
+Prediction incorrect
+Response time: 6.15 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_61/Chaining_attempt_17_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_12/Chaining_attempt_1_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_46/Chaining_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_50/Chaining_attempt_4_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, analyze the positions of the red balls, the green target area, and the surrounding obstacles.
+
+Scene A: 
+The red ball on the narrow vertical pillar is in a precarious position, and there is no clear path to the green target area. The other red balls are placed on platforms, but their paths do not intersect with the green region.
+
+Scene B:
+The red ball on the narrow vertical pillar is also in a precarious position. The other red balls are placed on platforms, but none of them have a direct path to the green target area. The ball on the platform closest to the green area is not in a position to reach it.
+
+Scene C:
+The red ball on the narrow vertical pillar is in a precarious position. The other red balls are placed on platforms, but none of them have a direct path to the green target area. The ball on the platform closest to the green area is not in a position to reach it.
+
+Scene D:
+The red ball on the narrow vertical pillar is in a precarious position. The other red balls are placed on platforms, and there is a clear path from the red ball on the platform closest to the green area to the green target area. The ball is positioned in such a way that it can roll down the pillar and into the green area.
+
+Final Result: I predict that scene D will succeed.
+==========================
+
+Matches found:
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 50 (Repetition 2/4) -----
+Success case: Chaining_attempt_1_obj1_True
+Scene type: Chain Reaction Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 2, 2: 3, 3: 1, 4: 4}
+Model prediction: D
+Prediction correct
+Response time: 4.67 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_46/Chaining_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_50/Chaining_attempt_4_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_61/Chaining_attempt_17_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_12/Chaining_attempt_1_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, we will analyze the positions and stability of the red balls, and determine the likelihood of any ball falling into the green target area.
+
+Scene A:
+- There are two red balls on the edge of the platform.
+- The red balls are stable and not likely to fall off the platform.
+- The red balls are not positioned to fall into the green target area.
+- Conclusion: It is unlikely that a red ball will fall into the green target area.
+
+Scene B:
+- There are two red balls on the edge of the platform.
+- The red balls are stable and not likely to fall off the platform.
+- The red balls are not positioned to fall into the green target area.
+- Conclusion: It is unlikely that a red ball will fall into the green target area.
+
+Scene C:
+- There are two red balls on the edge of the platform.
+- The red balls are stable and not likely to fall off the platform.
+- The red balls are not positioned to fall into the green target area.
+- Conclusion: It is unlikely that a red ball will fall into the green target area.
+
+Scene D:
+- There are two red balls on the edge of the platform.
+- One of the red balls is positioned on a narrow vertical pillar.
+- The red ball on the pillar is unstable and is likely to fall due to gravity.
+- The falling red ball will have a trajectory that may allow it to land in the green target area.
+- Conclusion: It is likely that a red ball will fall into the green target area.
+
+Final Result: "I predict that scene D will succeed."
+==========================
+
+Found prediction in Final Result: D
+
+----- Test Set 51 (Repetition 3/4) -----
+Success case: Chaining_attempt_1_obj1_True
+Scene type: Chain Reaction Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 3, 2: 1, 3: 4, 4: 2}
+Model prediction: D
+Prediction incorrect
+Response time: 3.88 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_50/Chaining_attempt_4_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_61/Chaining_attempt_17_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_12/Chaining_attempt_1_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_46/Chaining_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+Scene A:
+- The red ball on the left vertical pillar is at the top edge and will likely fall straight down due to gravity.
+- The red ball on the right vertical pillar is slightly lower but still above the green target area.
+- The red ball on the left horizontal platform is not positioned to fall into the green target area.
+- The red ball on the right horizontal platform is at the same height as the green target area and could potentially fall into it.
+- Overall, at least one red ball is likely to fall into the green target area.
+
+Scene B:
+- The red ball on the left vertical pillar is at the top edge and will likely fall straight down due to gravity.
+- The red ball on the right vertical pillar is slightly lower but still above the green target area.
+- The red ball on the left horizontal platform is not positioned to fall into the green target area.
+- The red ball on the right horizontal platform is at the same height as the green target area and could potentially fall into it.
+- Overall, at least one red ball is likely to fall into the green target area.
+
+Scene C:
+- The red ball on the left vertical pillar is at the top edge and will likely fall straight down due to gravity.
+- The red ball on the right vertical pillar is slightly lower but still above the green target area.
+- The red ball on the left horizontal platform is not positioned to fall into the green target area.
+- The red ball on the right horizontal platform is at the same height as the green target area and could potentially fall into it.
+- Overall, at least one red ball is likely to fall into the green target area.
+
+Scene D:
+- The red ball on the left vertical pillar is at the top edge and will likely fall straight down due to gravity.
+- The red ball on the right vertical pillar is slightly lower but still above the green target area.
+- The red ball on the left horizontal platform is not positioned to fall into the green target area.
+- The red ball on the right horizontal platform is at the same height as the green target area and could potentially fall into it.
+- Overall, at least one red ball is likely to fall into the green target area.
+
+Final Result: "I predict that scene A will succeed."
+==========================
+
+Found prediction in Final Result: A
+
+----- Test Set 52 (Repetition 4/4) -----
+Success case: Chaining_attempt_1_obj1_True
+Scene type: Chain Reaction Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 3, 4: 2}
+Model prediction: A
+Prediction correct
+Response time: 5.79 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_12/Chaining_attempt_1_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_61/Chaining_attempt_17_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_50/Chaining_attempt_4_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_46/Chaining_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [3, 4, 2, 4]
+Is perfectly consistent: False
+Most frequently predicted image: 4
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system

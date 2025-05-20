@@ -1,0 +1,1057 @@
+Evaluation Log - Started at 2025-04-08 10:42:27
+==================================================
+
+Found valid scene: Launch_0, Failure cases: 63, Success cases: 31
+Found valid scene: Launch_1, Failure cases: 52, Success cases: 11
+Found valid scene: Launch_9, Failure cases: 24, Success cases: 1
+Found valid scene: Launch_10, Failure cases: 20, Success cases: 2
+Found valid scene: Launch_6, Failure cases: 33, Success cases: 2
+Found valid scene: Launch_5, Failure cases: 36, Success cases: 2
+Found valid scene: Launch_4, Failure cases: 38, Success cases: 2
+Found valid scene: Launch_7, Failure cases: 29, Success cases: 2
+Found valid scene: Launch_14, Failure cases: 10, Success cases: 1
+Found valid scene: Launch_13, Failure cases: 11, Success cases: 3
+Found valid scene: Launch_11, Failure cases: 15, Success cases: 1
+Found valid scene: Launch_2, Failure cases: 44, Success cases: 8
+Found valid scene: Launch_8, Failure cases: 27, Success cases: 2
+Found valid scene: Launch_3, Failure cases: 40, Success cases: 3
+Found valid scene: Launch_21, Failure cases: 3, Success cases: 1
+
+Starting evaluation for scene: Launch_0
+This scene has 31 success cases
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For Scene A, the red ball is positioned on the black platform, and there is a black rectangular object above it that will not move. The blue object is in the top-left corner. Since there is no additional force acting on the red ball and it is not close enough to the green target area, it is unlikely to roll into it.
+
+For Scene B, the setup is identical to Scene A, with the same lack of additional forces acting on the red ball. It is also not positioned close enough to the green target area to have a significant chance of reaching it.
+
+For Scene C, the blue object is now positioned closer to the red ball. This could potentially create an interaction if the blue object moves towards the red ball. However, there is no indication of any additional force or mechanism that would cause the blue object to interact with the red ball. Therefore, the red ball's motion remains unaffected by the blue object's proximity.
+
+For Scene D, the blue object is positioned at a different angle but still not directly interacting with the red ball. Similar to Scene C, there is no indication of any force or mechanism that would cause the blue object to affect the red ball's motion.
+
+Final Result: I predict that none of the scenes will result in the red ball successfully reaching the green target area due to the lack of an additional force or mechanism acting on the red ball.
+==========================
+
+Found standalone letter: A
+
+----- Test Set 1 (Repetition 1/4) -----
+Success case: Launch_B_attempt_0_obj2_True
+Scene type: Launching Scene
+Scene ID: 0
+Correct scene position (A-D): B
+Shuffle mapping: {1: 2, 2: 4, 3: 1, 4: 3}
+Model prediction: A
+Prediction incorrect
+Response time: 3.76 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_5/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_13/Launch_B_attempt_0_obj2_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_66/Launch_A_attempt_0_obj3_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_48/Launch_A_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the initial positions of the objects and predict the motion based on the laws of physics.
+
+- **Scene A**: The red ball is on the edge of the black platform. The blue object is in the top left corner, which means it will fall towards the red ball. The black rectangular object is above the red ball and will not move. Since the red ball is on the edge, it will roll off the black platform and fall downwards, likely reaching the green target area.
+
+- **Scene B**: The red ball is on the edge of the black platform, similar to Scene A. The blue object will fall towards the red ball. The black rectangular object is above the red ball and will not move. The red ball will roll off the edge and fall, likely reaching the green area.
+
+- **Scene C**: The red ball is on the edge of the black platform. The blue object is in the top left corner and will fall towards the red ball. The black rectangular object is above the red ball and will not move. The red ball will roll off the edge and fall, likely reaching the green area.
+
+- **Scene D**: The red ball is on the edge of the black platform. The blue object is in the top left corner and will fall towards the red ball. The black rectangular object is above the red ball and will not move. The red ball will roll off the edge and fall, likely reaching the green area.
+
+All the scenes have the same setup and initial conditions, so the red ball will roll off the edge of the black platform and fall, likely reaching the green target area in all cases. However, the initial positions of the objects do not provide any significant difference in the likelihood of the red ball reaching the green area.
+
+Final Result: "I predict that all scenes have an equal likelihood of success."
+==========================
+
+Found standalone letter: A
+
+----- Test Set 2 (Repetition 2/4) -----
+Success case: Launch_B_attempt_0_obj2_True
+Scene type: Launching Scene
+Scene ID: 0
+Correct scene position (A-D): C
+Shuffle mapping: {1: 3, 2: 2, 3: 4, 4: 1}
+Model prediction: A
+Prediction incorrect
+Response time: 5.54 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_48/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_5/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_13/Launch_B_attempt_0_obj2_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_66/Launch_A_attempt_0_obj3_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, the red ball will be launched into the air due to the blue object falling and striking the black rectangular object, which will act as a springboard. The red ball's trajectory will depend on the angle and speed of its launch, as well as the presence of any obstacles.
+
+Scene A: The blue object is positioned such that it will fall directly onto the black rectangular object, creating a vertical impact. This will likely launch the red ball upward and slightly forward, which may not be enough to clear the black rectangular object and reach the green target area.
+
+Scene B: Similar to Scene A, the blue object will fall directly onto the black rectangular object, but it is positioned slightly lower. This might result in a higher trajectory for the red ball, potentially clearing the black rectangular object and reaching the green target area.
+
+Scene C: The blue object is positioned to the right of the black rectangular object, and it will fall at an angle. This will likely create a diagonal trajectory for the red ball, which might be insufficient to clear the black rectangular object and reach the green target area.
+
+Scene D: The blue object is positioned to the left of the black rectangular object, and it will fall at an angle similar to Scene C. The red ball's trajectory will also be diagonal, which might not be enough to clear the black rectangular object and reach the green target area.
+
+Final Result: Scene B is most likely to result in the red ball falling into the green target area due to the higher trajectory created by the blue object's position.
+==========================
+
+Found standalone letter: A
+
+----- Test Set 3 (Repetition 3/4) -----
+Success case: Launch_B_attempt_0_obj2_True
+Scene type: Launching Scene
+Scene ID: 0
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 2, 3: 1, 4: 3}
+Model prediction: A
+Prediction correct
+Response time: 4.06 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_13/Launch_B_attempt_0_obj2_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_5/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_66/Launch_A_attempt_0_obj3_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_48/Launch_A_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+Scene A: The red ball is positioned on a black platform, and there is a blue object suspended in the air to the right of the red ball. The blue object will fall freely due to gravity, but it is not positioned close enough to interact with the red ball directly. Therefore, the red ball's motion will be primarily influenced by the black rectangular object above it. Given the position of the black rectangular object, it is likely that the red ball will roll towards the green target area if it starts rolling.
+
+Scene B: Similar to Scene A, the red ball is positioned on a black platform with a blue object suspended in the air. However, the blue object in this scene is positioned in such a way that it is closer to the red ball and could potentially interact with it. The closer proximity of the blue object may cause a slight disturbance to the red ball's trajectory, but it will still likely fall into the green target area due to the black rectangular object's influence.
+
+Scene C: The red ball is again positioned on a black platform, with the blue object suspended in the air. The blue object's position is slightly different from the previous scenes, but it is still in close proximity to the red ball. The red ball's motion will likely be influenced by the black rectangular object, and it will fall into the green target area, but the presence of the blue object could slightly alter its trajectory.
+
+Scene D: The red ball is positioned on a black platform with the blue object suspended in the air. The blue object is positioned in such a way that it is directly above the red ball. The proximity of the blue object could cause a significant disturbance to the red ball's trajectory, potentially causing it to deviate from the green target area. Therefore, the red ball is less likely to fall into the green target area in this scene.
+
+Final Result: I predict that scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 4 (Repetition 4/4) -----
+Success case: Launch_B_attempt_0_obj2_True
+Scene type: Launching Scene
+Scene ID: 0
+Correct scene position (A-D): D
+Shuffle mapping: {1: 1, 2: 3, 3: 2, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 4.56 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_66/Launch_A_attempt_0_obj3_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_48/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_5/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_13/Launch_B_attempt_0_obj2_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [2, 3, 4, 1]
+Is perfectly consistent: False
+Most frequently predicted image: 1
+Consistency ratio: 25.00%
+Correct image was: 4
+-------------------------------
+
+Warning: Could not find first frame image in /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_83/Launch_A_attempt_0_obj3_False, skipping this case
+Warning: Not enough valid cases in the current combination (need 4), skipping
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, we need to consider the positions of the objects and their relative positions to determine how the red ball will move under the influence of gravity and its initial placement.
+
+Scene A: The red ball is on the edge of the black platform, but the blue object is above it and not in its path. The black rectangular object is directly above the red ball and will not move. The green target area is to the right of the red ball. Given the setup, the red ball will roll off the platform towards the green target area, but it will likely be blocked by the black rectangular object.
+
+Scene B: Similar to Scene A, the red ball is on the edge of the black platform, and the blue object is above it. The black rectangular object is directly above the red ball. However, the red ball's trajectory will be slightly different due to the angle of the platform. It might roll off and reach the green target area more directly than in Scene A.
+
+Scene C: The red ball is again on the edge of the black platform. The blue object is above it, and the black rectangular object is directly above the red ball. The red ball's trajectory will likely be similar to Scene A, with the possibility of being blocked by the black rectangular object.
+
+Scene D: The red ball is on the edge of the black platform, the blue object is above it, and the black rectangular object is directly above the red ball. The red ball's trajectory will likely be similar to Scene A and C, with the possibility of being blocked by the black rectangular object.
+
+Based on the analysis, Scene B has the highest likelihood of success because the red ball's trajectory will allow it to roll off the platform more directly and reach the green target area, without being blocked by the black rectangular object.
+
+Final Result: I predict that scene B will succeed.
+==========================
+
+Matches found:
+Letter: B, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene B will succeed
+Letter: B, Pattern: ([A-D])\s*will succeed, Matched text: B will succeed
+
+----- Test Set 5 (Repetition 1/4) -----
+Success case: Launch_B_attempt_0_obj1_True
+Scene type: Launching Scene
+Scene ID: 0
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 2, 3: 1, 4: 3}
+Model prediction: B
+Prediction incorrect
+Response time: 4.32 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_18/Launch_B_attempt_0_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_48/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_16/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_52/Launch_A_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+Scene A: 
+- The red ball is positioned at the edge of the black platform.
+- The blue object is positioned above the red ball but not directly above it.
+- The black rectangular object is suspended directly above the red ball and will remain stationary.
+- The green target area is located to the right of the black platform.
+
+The blue object will fall freely due to gravity, potentially hitting the red ball and causing it to move. However, the black rectangular object may obstruct the path of the red ball. The red ball's trajectory will depend on the interaction between the falling blue object and the stationary black object.
+
+Scene B: 
+- The red ball is positioned at the edge of the black platform.
+- The blue object is positioned above the red ball but not directly above it.
+- The black rectangular object is suspended directly above the red ball and will remain stationary.
+- The green target area is located to the right of the black platform.
+
+The blue object will fall freely due to gravity, potentially hitting the red ball and causing it to move. The red ball's trajectory will depend on the interaction between the falling blue object and the stationary black object. The position of the blue object relative to the red ball may make it less likely to cause a successful fall into the green area.
+
+Scene C: 
+- The red ball is positioned at the edge of the black platform.
+- The blue object is positioned above the red ball but not directly above it.
+- The black rectangular object is suspended directly above the red ball and will remain stationary.
+- The green target area is located to the right of the black platform.
+
+The blue object will fall freely due to gravity, potentially hitting the red ball and causing it to move. The red ball's trajectory will depend on the interaction between the falling blue object and the stationary black object. The red ball's initial position at the edge of the platform suggests a higher likelihood of it falling into the green area compared to other scenes.
+
+Scene D: 
+- The red ball is positioned at the edge of the black platform.
+- The blue object is positioned above the red ball but not directly above it.
+- The black rectangular object is suspended directly above the red ball and will remain stationary.
+- The green target area is located to the right of the black platform.
+
+The blue object will fall freely due to gravity, potentially hitting the red ball and causing it to move. The red ball's trajectory will depend on the interaction between the falling blue object and the stationary black object. The red ball's initial position at the
+==========================
+
+Found standalone letter: A
+
+----- Test Set 6 (Repetition 2/4) -----
+Success case: Launch_B_attempt_0_obj1_True
+Scene type: Launching Scene
+Scene ID: 0
+Correct scene position (A-D): B
+Shuffle mapping: {1: 1, 2: 4, 3: 3, 4: 2}
+Model prediction: A
+Prediction incorrect
+Response time: 5.43 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_16/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_18/Launch_B_attempt_0_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_52/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_48/Launch_A_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the positions and orientations of the objects to predict the likelihood of the red ball reaching the green target area.
+
+Scene A:
+- The red ball is positioned near the edge of the black platform.
+- The blue object is positioned in the upper left corner, likely to fall towards the red ball due to gravity.
+- The black rectangular object is positioned above the red ball and will not move.
+- The red ball will likely fall off the platform due to the influence of gravity from the blue object and will not reach the green target area.
+
+Scene B:
+- The red ball is positioned near the edge of the black platform.
+- The blue object is positioned in the upper left corner, likely to fall towards the red ball due to gravity.
+- The black rectangular object is positioned above the red ball and will not move.
+- The red ball will likely fall off the platform due to the influence of gravity from the blue object and will not reach the green target area.
+
+Scene C:
+- The red ball is positioned near the edge of the black platform.
+- The blue object is positioned in the upper left corner, likely to fall towards the red ball due to gravity.
+- The black rectangular object is positioned above the red ball and will not move.
+- The red ball will likely fall off the platform due to the influence of gravity from the blue object and will not reach the green target area.
+
+Scene D:
+- The red ball is positioned near the edge of the black platform.
+- The blue object is positioned in the upper left corner, likely to fall towards the red ball due to gravity.
+- The black rectangular object is positioned above the red ball and will not move.
+- The red ball will likely fall off the platform due to the influence of gravity from the blue object and will not reach the green target area.
+
+Final Result: “I predict that none of the scenes will result in the red ball successfully reaching the green target area.”
+==========================
+
+Found standalone letter: A
+
+----- Test Set 7 (Repetition 3/4) -----
+Success case: Launch_B_attempt_0_obj1_True
+Scene type: Launching Scene
+Scene ID: 0
+Correct scene position (A-D): D
+Shuffle mapping: {1: 2, 2: 3, 3: 1, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 4.88 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_48/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_52/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_16/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_18/Launch_B_attempt_0_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+- **Scene A:** The red ball is placed on a black platform, with a black rectangular object suspended directly above it. The blue object is suspended in the air above the black rectangular object. The ball is positioned with a small gap between the edge of the black platform and the green target area. The ball is likely to fall off the edge of the black platform due to gravity, and without the black rectangular object obstructing its path, it has a chance to fall into the green target area. The high position of the blue object ensures the ball will not be struck by it.
+
+- **Scene B:** Similar to Scene A, the red ball is positioned with a small gap between the edge of the black platform and the green target area. The black rectangular object is directly above the ball, but the ball is positioned slightly higher on the edge of the black platform compared to Scene A. The ball is likely to fall off the edge due to gravity and has a higher chance of landing in the green target area because it is positioned closer to the edge.
+
+- **Scene C:** The red ball is positioned with a small gap between the edge of the black platform and the green target area, and the black rectangular object is directly above the ball. However, the ball is positioned lower on the edge of the black platform compared to Scene B. The ball is less likely to fall off the edge and reach the green target area due to its lower position.
+
+- **Scene D:** The red ball is positioned with a small gap between the edge of the black platform and the green target area, and the black rectangular object is directly above the ball. The ball is positioned slightly higher on the edge of the black platform compared to Scene C. The ball is more likely to fall off the edge and reach the green target area than in Scene C, but its position is slightly less favorable than in Scene B.
+
+Final Result: Scene B
+==========================
+
+Found standalone letter: A
+
+----- Test Set 8 (Repetition 4/4) -----
+Success case: Launch_B_attempt_0_obj1_True
+Scene type: Launching Scene
+Scene ID: 0
+Correct scene position (A-D): C
+Shuffle mapping: {1: 3, 2: 2, 3: 4, 4: 1}
+Model prediction: A
+Prediction incorrect
+Response time: 5.05 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_52/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_48/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_18/Launch_B_attempt_0_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_16/Launch_A_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [2, 1, 2, 3]
+Is perfectly consistent: False
+Most frequently predicted image: 2
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+Scene A: The red ball is positioned on a flat black platform, and there is no additional object above it that would influence its trajectory. The blue object is suspended in the air and will fall freely due to gravity. The red ball will roll off the edge of the platform and fall into the green target area.
+
+Scene B: Similar to Scene A, the red ball is positioned on a flat black platform, and the blue object is suspended above it, falling freely. The red ball will roll off the edge of the platform and fall into the green target area.
+
+Scene C: The red ball is positioned on a flat black platform, and the blue object is suspended above it, falling freely. The red ball will roll off the edge of the platform and fall into the green target area.
+
+Scene D: The red ball is positioned on a flat black platform, but the blue object is positioned at an angle, which could potentially influence the trajectory of the red ball. The red ball might not roll off the edge of the platform as it would in the other scenes. The red ball's trajectory will be altered by the angle of the blue object, and it is less likely to fall into the green target area.
+
+Final Result: I predict that Scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: Scene\s*([A-D])\s*will succeed, Matched text: Scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 9 (Repetition 1/4) -----
+Success case: Launch_B_attempt_0_obj2_True
+Scene type: Launching Scene
+Scene ID: 0
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 2, 4: 3}
+Model prediction: A
+Prediction correct
+Response time: 3.87 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_24/Launch_B_attempt_0_obj2_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_19/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_60/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_85/Launch_A_attempt_0_obj3_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, analyze the initial positions and movements of the objects:
+
+Scene A:
+- The red ball is on the edge of the black platform.
+- The blue object is above the red ball and will fall due to gravity.
+- The black rectangular object is above the red ball and will remain stationary.
+- The green target area is to the right of the red ball.
+- The blue object's fall will create an air current that may push the red ball toward the green target area.
+
+Scene B:
+- The red ball is on the edge of the black platform.
+- The blue object is above the red ball and will fall due to gravity.
+- The black rectangular object is above the red ball and will remain stationary.
+- The green target area is to the right of the red ball.
+- The blue object's fall will create an air current that may push the red ball toward the green target area.
+
+Scene C:
+- The red ball is on the edge of the black platform.
+- The blue object is above the red ball and will fall due to gravity.
+- The black rectangular object is above the red ball and will remain stationary.
+- The green target area is to the right of the red ball.
+- The blue object's fall will create an air current that may push the red ball toward the green target area.
+
+Scene D:
+- The red ball is on the edge of the black platform.
+- The blue object is above the red ball and will fall due to gravity.
+- The black rectangular object is above the red ball and will remain stationary.
+- The green target area is to the right of the red ball.
+- The blue object's fall will create an air current that may push the red ball toward the green target area.
+
+Final Result: Scene A.
+==========================
+
+Found standalone letter: A
+
+----- Test Set 10 (Repetition 2/4) -----
+Success case: Launch_B_attempt_0_obj2_True
+Scene type: Launching Scene
+Scene ID: 0
+Correct scene position (A-D): C
+Shuffle mapping: {1: 1, 2: 3, 3: 4, 4: 2}
+Model prediction: A
+Prediction incorrect
+Response time: 4.75 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_19/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_85/Launch_A_attempt_0_obj3_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_24/Launch_B_attempt_0_obj2_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_60/Launch_A_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the positions and movements of the red ball, the blue object, and the black rectangular object to determine the likelihood of the red ball reaching the green target area.
+
+Scene A: The red ball is positioned at the edge of the black platform, near the blue object. The blue object is leaning towards the red ball, and the black rectangular object is directly above it. The blue object will fall due to gravity and hit the red ball, which will then roll down the slope of the platform. Given the incline, it is likely that the red ball will reach the green target area.
+
+Scene B: The red ball is positioned on the flat part of the black platform, and the blue object is leaning towards it. The black rectangular object is above the red ball. The blue object will fall due to gravity and hit the red ball, which will roll down the slope. The red ball will reach the green target area, but the likelihood is slightly lower than in Scene A because the red ball has a flatter starting position.
+
+Scene C: The red ball is positioned on the edge of the black platform, and the blue object is leaning towards it, but the black rectangular object is not directly above it. The blue object will fall due to gravity and hit the red ball, which will roll down the slope. However, the red ball may not reach the green target area because the black rectangular object could obstruct its path.
+
+Scene D: The red ball is positioned at the edge of the black platform, near the blue object. The blue object is leaning towards the red ball, and the black rectangular object is directly above it. The blue object will fall due to gravity and hit the red ball, which will roll down the slope. The red ball will reach the green target area, but the likelihood is slightly lower than in Scene A because the red ball has a flatter starting position.
+
+Final Result: I predict that scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 11 (Repetition 3/4) -----
+Success case: Launch_B_attempt_0_obj2_True
+Scene type: Launching Scene
+Scene ID: 0
+Correct scene position (A-D): B
+Shuffle mapping: {1: 2, 2: 4, 3: 3, 4: 1}
+Model prediction: A
+Prediction incorrect
+Response time: 5.25 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_60/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_24/Launch_B_attempt_0_obj2_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_85/Launch_A_attempt_0_obj3_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_19/Launch_A_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, we will analyze the initial conditions and predict the motion of the red ball, considering gravity and the interactions with the other objects.
+
+- **Scene A**: The blue object is positioned above the red ball and is tilted, suggesting that it will fall towards the red ball. The black rectangular object above the red ball will remain stationary. Since the blue object will fall freely and potentially hit the red ball, the red ball might be pushed or moved, but it is not certain if it will fall into the green region. The red ball might roll down the slope but could also be stopped by the black rectangular object.
+
+- **Scene B**: The blue object is tilted towards the red ball, indicating that it will fall and potentially hit the red ball. The black rectangular object above the red ball will not move. The red ball could be pushed by the falling blue object, but it is uncertain if it will fall into the green region due to the potential obstruction by the black rectangular object.
+
+- **Scene C**: The blue object is positioned above the red ball and is tilted, suggesting it will fall towards the red ball. The black rectangular object above the red ball will remain stationary. Similar to Scene A, the red ball could be pushed or moved, but the probability of it falling into the green region is uncertain due to the potential obstruction by the black rectangular object.
+
+- **Scene D**: The blue object is positioned at the top left corner and is not tilted towards the red ball, suggesting it will not fall towards the red ball. The black rectangular object above the red ball will remain stationary. In this case, the red ball is most likely to roll down the slope and fall into the green region due to gravity, with no external obstructions.
+
+Final Result: I predict that scene D will succeed.
+==========================
+
+Matches found:
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 12 (Repetition 4/4) -----
+Success case: Launch_B_attempt_0_obj2_True
+Scene type: Launching Scene
+Scene ID: 0
+Correct scene position (A-D): D
+Shuffle mapping: {1: 2, 2: 3, 3: 1, 4: 4}
+Model prediction: D
+Prediction correct
+Response time: 13.03 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_60/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_85/Launch_A_attempt_0_obj3_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_19/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_24/Launch_B_attempt_0_obj2_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [4, 1, 2, 4]
+Is perfectly consistent: False
+Most frequently predicted image: 4
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+- **Scene A:** The blue object is positioned at the edge of the platform, directly above the red ball. When the blue object falls due to gravity, it will collide with the red ball. This collision will likely push the red ball off the edge of the platform, causing it to fall towards the green target area. Given the proximity of the blue object to the red ball, this interaction is highly likely to result in the red ball reaching the green area.
+
+- **Scene B:** The blue object is positioned further away from the red ball compared to Scene A. The distance between the blue object and the red ball is greater, so the likelihood of the blue object colliding with the red ball and causing it to fall is reduced. Therefore, the red ball is less likely to reach the green target area in this scene.
+
+- **Scene C:** Similar to Scene B, the blue object is further away from the red ball. The reduced distance between the blue object and the red ball means the probability of the blue object causing the red ball to fall is lower. Consequently, the red ball has a lower chance of reaching the green target area.
+
+- **Scene D:** The blue object is positioned directly above the red ball, similar to Scene A. However, the blue object is in a slightly different orientation. This slight difference in orientation might affect the angle of impact, but it is not significant enough to drastically change the likelihood of the red ball reaching the green area compared to Scene A.
+
+Final Result: “I predict that scene A will succeed.”
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 13 (Repetition 1/4) -----
+Success case: Launch_B_attempt_0_obj1_True
+Scene type: Launching Scene
+Scene ID: 0
+Correct scene position (A-D): B
+Shuffle mapping: {1: 1, 2: 4, 3: 2, 4: 3}
+Model prediction: A
+Prediction incorrect
+Response time: 14.00 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_20/Launch_A_attempt_0_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_28/Launch_B_attempt_0_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_12/Launch_B_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Launch_B_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+Scene A: 
+- The red ball is positioned on the black platform with the green target area on the right side. 
+- The blue object is suspended in the air above the red ball but to the left. 
+- Since there is no interaction between the blue object and the red ball, and the red ball is not initially moving, it will likely remain on the platform. 
+- The red ball is not positioned to roll towards the green target area, so it is unlikely to fall into it. 
+- Prediction: No.
+
+Scene B: 
+- The red ball is again on the black platform, but the blue object is positioned directly above the red ball and appears to be in a slightly tilted position. 
+- Given the orientation of the blue object, if it were to fall, it might strike the red ball and cause it to move. 
+- However, without more detail about the exact path of the falling blue object, it is uncertain whether the red ball will be displaced enough to reach the green target area. 
+- Prediction: Unlikely.
+
+Scene C: 
+- The red ball is on the black platform, and the blue object is positioned above and slightly to the left. 
+- The blue object's position suggests that it is likely to fall and hit the red ball, potentially displacing it. 
+- If the red ball moves, it could potentially roll towards the green target area. 
+- Prediction: Likely.
+
+Scene D: 
+- The red ball is on the black platform, and the blue object is positioned above and slightly to the left, similar to Scene C. 
+- The blue object's position also suggests it is likely to fall and hit the red ball, potentially displacing it. 
+- If the red ball moves, it could potentially roll towards the green target area. 
+- Prediction: Likely.
+
+Final Result: "I predict that Scene C will succeed."
+==========================
+
+Matches found:
+Letter: C, Pattern: Scene\s*([A-D])\s*will succeed, Matched text: Scene C will succeed
+Letter: C, Pattern: ([A-D])\s*will succeed, Matched text: C will succeed
+
+----- Test Set 14 (Repetition 2/4) -----
+Success case: Launch_B_attempt_0_obj1_True
+Scene type: Launching Scene
+Scene ID: 0
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 2, 4: 3}
+Model prediction: C
+Prediction incorrect
+Response time: 4.60 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_28/Launch_B_attempt_0_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_20/Launch_A_attempt_0_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_12/Launch_B_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Launch_B_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+Scene A:
+- The red ball is placed on the edge of a black platform, which is at an incline.
+- The black rectangular object is above the red ball but does not obstruct its path directly.
+- The blue object is positioned such that it will fall freely due to gravity.
+- The red ball will roll down the incline, potentially reaching the green target area.
+
+Scene B:
+- The red ball is positioned on the edge of the black platform, but the blue object is directly above it.
+- The blue object falling freely may hit the red ball, preventing it from reaching the green target area.
+- The black rectangular object above the red ball does not obstruct its path significantly.
+
+Scene C:
+- The red ball is on the edge of the black platform, and the blue object is above it.
+- The blue object falling freely may hit the red ball, preventing it from reaching the green target area.
+- The black rectangular object does not obstruct the red ball’s path.
+
+Scene D:
+- The red ball is on the edge of the black platform, and the blue object is above it.
+- The blue object falling freely may hit the red ball, preventing it from reaching the green target area.
+- The black rectangular object does not obstruct the red ball’s path.
+
+Final Result: “I predict that scene A will succeed.”
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 15 (Repetition 3/4) -----
+Success case: Launch_B_attempt_0_obj1_True
+Scene type: Launching Scene
+Scene ID: 0
+Correct scene position (A-D): D
+Shuffle mapping: {1: 1, 2: 3, 3: 2, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 3.58 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_20/Launch_A_attempt_0_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Launch_B_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_12/Launch_B_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_28/Launch_B_attempt_0_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, the red ball will be launched towards the green target area. The launch trajectory will depend on the red ball's interaction with the blue object, which will fall due to gravity, and the black rectangular object, which will remain stationary.
+
+- **Scene A**: The red ball is positioned directly under the blue object. When the blue object falls, it will hit the red ball, causing it to move horizontally towards the green target area. The red ball's trajectory is clear and unobstructed by the black rectangular object.
+
+- **Scene B**: Similar to Scene A, the red ball is directly under the blue object. When the blue object falls, it will hit the red ball, causing it to move towards the green target area. However, the red ball's path may be slightly altered by the black rectangular object's presence, which could potentially block or redirect the ball's trajectory.
+
+- **Scene C**: The red ball is positioned directly under the blue object, and the black rectangular object is not in its path. The blue object will fall and hit the red ball, sending it towards the green target area. This is a straightforward trajectory with no obstacles in the way.
+
+- **Scene D**: The red ball is positioned under the blue object, and the blue object is leaning towards the red ball. When the blue object falls, it will likely hit the red ball, causing it to move towards the green target area. However, the leaning position of the blue object may cause the red ball to move at an angle, potentially altering its trajectory.
+
+Final Result: I predict that scene C will succeed.
+==========================
+
+Matches found:
+Letter: C, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene C will succeed
+Letter: C, Pattern: ([A-D])\s*will succeed, Matched text: C will succeed
+
+----- Test Set 16 (Repetition 4/4) -----
+Success case: Launch_B_attempt_0_obj1_True
+Scene type: Launching Scene
+Scene ID: 0
+Correct scene position (A-D): C
+Shuffle mapping: {1: 3, 2: 2, 3: 4, 4: 1}
+Model prediction: C
+Prediction correct
+Response time: 3.86 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Launch_B_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_12/Launch_B_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_28/Launch_B_attempt_0_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_20/Launch_A_attempt_0_obj2_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [1, 2, 1, 4]
+Is perfectly consistent: False
+Most frequently predicted image: 1
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the position of the red ball relative to the black platform, the stationary black object, and the blue object. I will consider how the blue object's fall will influence the red ball's trajectory.
+
+Scene A:
+The red ball is positioned on the edge of the black platform. The blue object is positioned to the left of the red ball. Since the blue object is suspended in the air, it will fall freely due to gravity. The falling blue object will strike the red ball, potentially moving it off the platform. Therefore, the red ball has a chance to fall into the green target area if it is pushed off the platform.
+
+Scene B:
+The red ball is positioned on the edge of the black platform, similar to Scene A. The blue object is positioned above the red ball. The blue object will fall freely, but its impact with the red ball is uncertain. The red ball may not be moved off the platform, and thus it has a lower probability of falling into the green target area compared to Scene A.
+
+Scene C:
+The red ball is positioned on the edge of the black platform. The blue object is positioned to the right of the red ball. The blue object will fall freely, and it will likely strike the red ball. The impact may push the red ball off the platform, increasing the chance of it falling into the green target area. However, the positioning of the blue object may result in less momentum compared to Scene A.
+
+Scene D:
+The red ball is positioned on the edge of the black platform. The blue object is positioned directly above the red ball. The blue object will fall freely and will likely strike the red ball with enough force to push it off the platform. This positioning suggests a high probability of the red ball being moved into the green target area.
+
+Final Result: Scene D has the highest likelihood of success in allowing the red ball to fall into the green target area.
+==========================
+
+Found standalone letter: A
+
+----- Test Set 17 (Repetition 1/4) -----
+Success case: Launch_B_attempt_0_obj1_True
+Scene type: Launching Scene
+Scene ID: 0
+Correct scene position (A-D): B
+Shuffle mapping: {1: 1, 2: 4, 3: 2, 4: 3}
+Model prediction: A
+Prediction incorrect
+Response time: 4.88 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_75/Launch_A_attempt_0_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_32/Launch_B_attempt_0_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_91/Launch_B_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_70/Launch_A_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For Scene A, the blue object is on the left of the red ball, which will likely fall due to gravity and might not obstruct the red ball's path to the green area. The red ball is positioned on the black platform and does not have a direct path to the green area without an obstacle. Therefore, the red ball is unlikely to reach the green area in this configuration.
+
+For Scene B, the blue object is in a position where it could fall and potentially obstruct the red ball's path to the green area. Given the current setup, the red ball is unlikely to reach the green area.
+
+In Scene C, the blue object is located in the top-left corner and is not directly in the red ball's path to the green area. The red ball is positioned to potentially roll towards the green area without obstruction from the blue object.
+
+For Scene D, the blue object is on the right side of the red ball and is in a position where it could fall and obstruct the red ball's path to the green area. This setup would likely prevent the red ball from reaching the green area.
+
+Final Result: Scene C has the highest likelihood of success as it has the least obstruction from the blue object and a clear path for the red ball to reach the green area.
+==========================
+
+Found standalone letter: A
+
+----- Test Set 18 (Repetition 2/4) -----
+Success case: Launch_B_attempt_0_obj1_True
+Scene type: Launching Scene
+Scene ID: 0
+Correct scene position (A-D): C
+Shuffle mapping: {1: 1, 2: 3, 3: 4, 4: 2}
+Model prediction: A
+Prediction incorrect
+Response time: 3.68 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_75/Launch_A_attempt_0_obj2_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_70/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_32/Launch_B_attempt_0_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_91/Launch_B_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the initial conditions and predict the motion of the red ball:
+
+**Scene A:**
+- The red ball is on the black platform, and the blue object is in the air above it.
+- The black rectangular object is suspended above the red ball.
+- There are no immediate obstructions to the red ball's motion.
+- The blue object will fall due to gravity, but since it is above the red ball, it will not have a direct impact on the red ball's path.
+- The red ball will likely fall off the edge of the black platform and fall into the green target area.
+
+**Scene B:**
+- The red ball is on the black platform, and the blue object is in the air, but it is closer to the red ball.
+- The black rectangular object is suspended above the red ball.
+- The blue object will fall due to gravity, but since it is in close proximity to the red ball, it might potentially hit the red ball and alter its path.
+- The red ball may be deflected or blocked by the blue object, reducing the likelihood of it falling into the green target area.
+
+**Scene C:**
+- The red ball is on the black platform, and the blue object is in the air, positioned to the side.
+- The black rectangular object is suspended above the red ball.
+- The blue object will fall due to gravity, but since it is not directly above the red ball, it will not have a direct impact on the red ball's path.
+- The red ball will likely fall off the edge of the black platform and fall into the green target area.
+
+**Scene D:**
+- The red ball is on the black platform, and the blue object is in the air, positioned to the side.
+- The black rectangular object is suspended above the red ball.
+- The blue object will fall due to gravity, but since it is not directly above the red ball, it will not have a direct impact on the red ball's path.
+- The red ball will likely fall off the edge of the black platform and fall into the green target area.
+
+**Final Result:** I predict that scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 19 (Repetition 3/4) -----
+Success case: Launch_B_attempt_0_obj1_True
+Scene type: Launching Scene
+Scene ID: 0
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 2, 4: 3}
+Model prediction: A
+Prediction correct
+Response time: 5.56 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_32/Launch_B_attempt_0_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_75/Launch_A_attempt_0_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_91/Launch_B_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_70/Launch_A_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+Scene A: The blue object is positioned very close to the red ball and could potentially push it off the platform if it falls. The red ball is not in a stable position for a direct fall to the green target area, so the probability of success is low.
+
+Scene B: The blue object is positioned at the edge of the platform and is likely to fall, potentially pushing the red ball off the platform. The red ball is not in a stable position for a direct fall to the green target area, so the probability of success is low.
+
+Scene C: The blue object is positioned away from the red ball, so it will not affect its trajectory. The red ball is in a stable position for a direct fall to the green target area, so the probability of success is high.
+
+Scene D: The blue object is positioned very close to the red ball and could potentially push it off the platform if it falls. The red ball is not in a stable position for a direct fall to the green target area, so the probability of success is low.
+
+Final Result: “I predict that scene C will succeed.”
+==========================
+
+Matches found:
+Letter: C, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene C will succeed
+Letter: C, Pattern: ([A-D])\s*will succeed, Matched text: C will succeed
+
+----- Test Set 20 (Repetition 4/4) -----
+Success case: Launch_B_attempt_0_obj1_True
+Scene type: Launching Scene
+Scene ID: 0
+Correct scene position (A-D): D
+Shuffle mapping: {1: 3, 2: 1, 3: 2, 4: 4}
+Model prediction: C
+Prediction incorrect
+Response time: 3.02 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_70/Launch_A_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_75/Launch_A_attempt_0_obj2_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_91/Launch_B_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_32/Launch_B_attempt_0_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [1, 1, 4, 2]
+Is perfectly consistent: False
+Most frequently predicted image: 1
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system

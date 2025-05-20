@@ -1,0 +1,60 @@
+Evaluation Log - Started at 2025-04-09 10:19:52
+==================================================
+
+Found valid scene: Unsupport_obj1, Failure cases: 89, Success cases: 64
+Found valid scene: Unsupport_obj3, Failure cases: 130, Success cases: 21
+
+Starting evaluation for scene: Unsupport_obj1
+This scene has 64 success cases
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+Scene A: The red ball is placed on a horizontal blue bar near the top left corner. This bar will likely collapse due to gravity, causing the red ball to fall freely. Given that the green target area is in the center of the scene, the red ball has a high chance of landing in the green region if it is dropped directly downward. The vertical blue bar does not obstruct the trajectory of the red ball.
+
+Scene B: The red ball is placed on a horizontal blue bar near the top left corner, similar to Scene A. The bar will likely collapse, causing the red ball to fall. The green target area is in the center, making it probable for the red ball to land in the green region if it falls directly downward. The vertical blue bar does not obstruct the red ball's path.
+
+Scene C: The red ball is placed on a horizontal blue bar near the top left corner. The bar will likely collapse, causing the red ball to fall. The green target area is in the center, making it probable for the red ball to land in the green region if it falls directly downward. The vertical blue bar does not obstruct the red ball's path.
+
+Scene D: The red ball is placed on a horizontal blue bar near the top left corner. The bar will likely collapse, causing the red ball to fall. The green target area is in the center, making it probable for the red ball to land in the green region if it falls directly downward. The vertical blue bar does not obstruct the red ball's path.
+
+All scenes involve a red ball placed on a horizontal blue bar that will collapse, allowing the red ball to fall into the green target area. Since the vertical blue bar does not obstruct the red ball's path in any of the scenes, the probability of a red ball landing in the green region is high in all cases.
+
+Final Result: “I predict that all scenes will succeed.”
+==========================
+
+Found standalone letter: A
+
+----- Test Set 1 (Repetition 1/4) -----
+Success case: Unsupport_attempt_1_obj1_True
+Scene type: Support Removal Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 3, 2: 1, 3: 4, 4: 2}
+Model prediction: A
+Prediction incorrect
+Response time: 4.49 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_8/Unsupport_attempt_3_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_52/Unsupport_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Unsupport_attempt_1_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_42/Unsupport_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system

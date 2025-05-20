@@ -1,0 +1,757 @@
+Evaluation Log - Started at 2025-04-09 10:27:54
+==================================================
+
+Found valid scene: Unsupport_obj1, Failure cases: 89, Success cases: 64
+Found valid scene: Unsupport_obj3, Failure cases: 130, Success cases: 21
+
+Starting evaluation for scene: Unsupport_obj1
+This scene has 64 success cases
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: http://localhost:11434/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Here's a detailed analysis of each scene, followed by the final prediction:
+
+**Reasoning:**
+
+**Scene A:** The red ball at the top left is precariously balanced on a small ledge. Upon any slight disturbance, it will fall directly downwards. However, the trajectory will likely lead it to hit the gray block before reaching the green target. The other two red balls are either already grounded or will fall to the sides. Therefore, the probability of success is low. *Prediction: No.*
+
+**Scene B:** The red ball at the top is in a similar situation to Scene A, balanced on a ledge. However, the ledge is slightly more stable, and the ball's initial position is closer to the target area. If it falls, it has a slightly higher chance of landing in the green target, but still needs a precise trajectory. The other two balls are in similar situations as in Scene A. *Prediction: No.*
+
+**Scene C:** The red ball at the top is in a precarious position, but the ledge is quite stable. The ball is positioned in such a way that it's likely to fall in a trajectory that will lead it towards the green target. The other two balls are also likely to fall into positions that will not lead them to the target. *Prediction: Yes.*
+
+**Scene D:** Similar to scene B, the red ball at the top is balanced on a ledge. However, the ledge is less stable than in scene C. It's also further away from the target. The other two balls are also unlikely to fall into the target. *Prediction: No.*
+
+**Final Result:** I predict that scene C will succeed.
+==========================
+
+Matches found:
+Letter: C, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene C will succeed
+Letter: C, Pattern: ([A-D])\s*will succeed, Matched text: C will succeed
+
+----- Test Set 1 (Repetition 1/4) -----
+Success case: Unsupport_attempt_1_obj1_True
+Scene type: Support Removal Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 3, 2: 4, 3: 2, 4: 1}
+Model prediction: C
+Prediction incorrect
+Response time: 217.31 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_36/Unsupport_attempt_8_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Unsupport_attempt_1_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_36/Unsupport_attempt_39_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_37/Unsupport_attempt_5_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: http://localhost:11434/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Here's a detailed analysis of each scene, followed by the final prediction:
+
+**Reasoning:**
+
+**Scene A:** The red ball positioned above the structure is directly above a vertical blue bar. When the simulation starts, this bar will likely collapse due to gravity. The collapsing bar will push the red ball towards the green target area. The other two balls are too far from the target. Therefore, there's a high probability that the top red ball will fall into the green region.
+
+**Scene B:** Similar to scene A, the red ball positioned above the structure is directly above a vertical blue bar. When the simulation starts, this bar will likely collapse due to gravity. The collapsing bar will push the red ball towards the green target area. The other two balls are too far from the target. Therefore, there's a high probability that the top red ball will fall into the green region.
+
+**Scene C:** The red ball positioned above the structure is directly above a vertical blue bar. When the simulation starts, this bar will likely collapse due to gravity. The collapsing bar will push the red ball towards the green target area. The other two balls are too far from the target. Therefore, there's a high probability that the top red ball will fall into the green region.
+
+**Scene D:** The red ball positioned above the structure is directly above a vertical blue bar. When the simulation starts, this bar will likely collapse due to gravity. The collapsing bar will push the red ball towards the green target area. The other two balls are too far from the target. Therefore, there's a high probability that the top red ball will fall into the green region.
+
+All four scenes seem to have the same probability of success. However, if we look closely, the vertical blue bar in scene A is more stable than in other scenes. It has a more solid base and is less likely to fall in an unpredictable way. Therefore, scene A is slightly more likely to result in the red ball falling into the green target area.
+
+**Final Result:**
+
+I predict that scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 2 (Repetition 2/4) -----
+Success case: Unsupport_attempt_1_obj1_True
+Scene type: Support Removal Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 2, 2: 3, 3: 4, 4: 1}
+Model prediction: A
+Prediction incorrect
+Response time: 20.82 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_36/Unsupport_attempt_39_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_36/Unsupport_attempt_8_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Unsupport_attempt_1_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_37/Unsupport_attempt_5_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: http://localhost:11434/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Here's a detailed analysis of each scene, followed by the final prediction:
+
+**Reasoning:**
+
+**Scene A:** The red ball at the top-left is initially supported by a horizontal blue bar. This bar is likely to collapse under the weight of the ball, causing the ball to fall. However, the fall path is somewhat obstructed by the gray block directly below. It's possible the ball will land near the green target, but the geometry makes a direct hit unlikely. The other two balls are unsupported and will fall, but are too far to reach the target.
+
+**Scene B:** Similar to Scene A, the top-left red ball is supported by a horizontal blue bar that will likely collapse. The ball will fall, but the gray block below presents a similar obstruction. The other two balls are unsupported and will fall, but are too far to reach the target.
+
+**Scene C:** This scene is almost identical to Scene B. The red ball at the top-left will fall after the horizontal blue bar collapses. The gray block below presents a similar obstruction. The other two balls are unsupported and will fall, but are too far to reach the target.
+
+**Scene D:** The red ball at the top-left is supported by a horizontal blue bar that will likely collapse. Crucially, there is *no* gray block obstructing the fall path in this scene. This allows for a clear, direct fall towards the green target area. While not guaranteed, the unobstructed path greatly increases the probability of success. The other two balls are unsupported and will fall, but are too far to reach the target.
+
+**Final Result:** I predict that scene D will succeed.
+==========================
+
+Matches found:
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 3 (Repetition 3/4) -----
+Success case: Unsupport_attempt_1_obj1_True
+Scene type: Support Removal Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 1, 2: 2, 3: 3, 4: 4}
+Model prediction: D
+Prediction correct
+Response time: 17.73 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_37/Unsupport_attempt_5_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_36/Unsupport_attempt_39_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_36/Unsupport_attempt_8_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Unsupport_attempt_1_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: http://localhost:11434/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Here's a detailed analysis of each scene, followed by the final prediction:
+
+**Reasoning:**
+
+**Scene A:** The red ball at the top left is positioned above a solid gray block. When the support is removed, it will fall directly onto the gray block, and then potentially roll towards the green target area. The other two balls are positioned in a way that they will fall onto the solid surfaces and not reach the target. The trajectory of the top left ball is the most promising. **Prediction: Yes**
+
+**Scene B:** The red ball at the top is positioned above a gray block, similar to Scene A. However, the path to the target is obstructed by a vertical blue structure. When the support is removed, the ball will fall onto the gray block, but it's unlikely to navigate around the blue structure to reach the green target. The other two balls will fall onto the solid surfaces and not reach the target. **Prediction: No**
+
+**Scene C:** The red ball at the top is positioned above a gray block, similar to Scene A and B. However, the path to the target is obstructed by a vertical blue structure. When the support is removed, the ball will fall onto the gray block, but it's unlikely to navigate around the blue structure to reach the green target. The other two balls will fall onto the solid surfaces and not reach the target. **Prediction: No**
+
+**Scene D:** The red ball at the top is positioned above a gray block, similar to Scene A, B, and C. However, the path to the target is clear. When the support is removed, the ball will fall onto the gray block and then roll towards the green target area. The other two balls are positioned in a way that they will fall onto the solid surfaces and not reach the target. **Prediction: Yes**
+
+Comparing Scene A and D, Scene D is more likely to succeed because the path to the green target is more direct. The ball has a clear path after falling onto the gray block, without any significant obstacles.
+
+**Final Result: I predict that scene D will succeed.**
+==========================
+
+Matches found:
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 4 (Repetition 4/4) -----
+Success case: Unsupport_attempt_1_obj1_True
+Scene type: Support Removal Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 2, 3: 3, 4: 1}
+Model prediction: D
+Prediction incorrect
+Response time: 21.04 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Unsupport_attempt_1_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_36/Unsupport_attempt_39_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_36/Unsupport_attempt_8_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_37/Unsupport_attempt_5_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [2, 2, 4, 1]
+Is perfectly consistent: False
+Most frequently predicted image: 2
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: http://localhost:11434/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Here's a detailed analysis of each scene, followed by the final prediction:
+
+**Reasoning:**
+
+**Scene A:** The red ball at the top left is directly above a vertical blue structure. This structure is likely to collapse under the ball's weight, causing the ball to fall. However, the collapse may not directly send the ball *into* the green target area. The ball could fall to the side. The other two balls are in positions where they will simply fall straight down, and neither is near the target. Probability of success: Low.
+
+**Scene B:** The red ball at the top left is also above a vertical blue structure, similar to Scene A. The structure will collapse, but the angle of the fall is less direct toward the green target area compared to Scene A. The other two balls are also positioned to fall straight down, away from the target. Probability of success: Very Low.
+
+**Scene C:**  The red ball at the top left is again above a vertical blue structure, and will cause it to collapse. However, the position of the ball and the structure’s collapse seem to align more favorably with directing the ball towards the green target. The other two balls will fall straight down, away from the target. Probability of success: Moderate.
+
+**Scene D:** The red ball at the top left is above a vertical blue structure and will cause it to collapse. The position of the ball and the structure's collapse seem to align very favorably with directing the ball towards the green target. The other two balls will fall straight down, away from the target. Probability of success: High.
+
+Comparing all four scenes, Scene D appears to have the highest probability of success. The ball's initial position and the likely direction of the collapsing structure’s fall are most aligned with guiding the ball into the green target area.
+
+**Final Result:** I predict that scene D will succeed.
+==========================
+
+Matches found:
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 5 (Repetition 1/4) -----
+Success case: Unsupport_attempt_1_obj1_True
+Scene type: Support Removal Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 2, 2: 3, 3: 4, 4: 1}
+Model prediction: D
+Prediction incorrect
+Response time: 19.46 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_5/Unsupport_attempt_1_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_11/Unsupport_attempt_1_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_10/Unsupport_attempt_1_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_51/Unsupport_attempt_2_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: http://localhost:11434/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Here's my analysis of each scene, followed by the final prediction:
+
+**Reasoning:**
+
+**Scene A:** The red ball on the top left is positioned above a solid gray block. It will fall directly onto the block, and then potentially roll towards the green target. However, the path is somewhat obstructed by the vertical blue bar directly in front of the target. The other two balls are not positioned to reach the target.  The success depends on whether the ball rolls past the blue bar.
+
+**Scene B:** The red ball on the top left is positioned above a solid gray block. It will fall directly onto the block, and then potentially roll towards the green target. This scene is similar to scene A, but the vertical blue bar is even more directly obstructing the path to the target. The other two balls are not positioned to reach the target. The probability of success is lower than scene A.
+
+**Scene C:** The red ball on the top left is positioned above a solid gray block. It will fall directly onto the block, and then potentially roll towards the green target. This scene is similar to scene A and B, but the vertical blue bar is not directly obstructing the path to the target. The other two balls are not positioned to reach the target. The probability of success is higher than scene A and B.
+
+**Scene D:** The red ball on the top left is positioned above a solid gray block. It will fall directly onto the block, and then potentially roll towards the green target. This scene is similar to scene A, B and C, but the vertical blue bar is even more directly obstructing the path to the target. The other two balls are not positioned to reach the target. The probability of success is lower than scene A, B and C.
+
+Considering the above analysis, scene C provides the most direct and unobstructed path for the ball to reach the target.
+
+**Final Result:** I predict that scene C will succeed.
+==========================
+
+Matches found:
+Letter: C, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene C will succeed
+Letter: C, Pattern: ([A-D])\s*will succeed, Matched text: C will succeed
+
+----- Test Set 6 (Repetition 2/4) -----
+Success case: Unsupport_attempt_1_obj1_True
+Scene type: Support Removal Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 2, 4: 3}
+Model prediction: C
+Prediction incorrect
+Response time: 19.73 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_10/Unsupport_attempt_1_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_51/Unsupport_attempt_2_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_5/Unsupport_attempt_1_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_11/Unsupport_attempt_1_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: http://localhost:11434/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Here's a detailed analysis of each scene, followed by the final prediction:
+
+**Reasoning:**
+
+**Scene A:** The red ball on the top left is initially supported by a small horizontal blue segment. This segment is likely to fall quickly, causing the red ball to drop vertically. However, the ball will fall outside the green target area. The other two balls are not positioned to fall into the target area. Therefore, the probability of success is low. Prediction: No.
+
+**Scene B:** The red ball on the top left is also supported by a horizontal blue segment, which will fall, causing the ball to drop. The trajectory of the ball will be vertical, and it will fall outside the target area. The other two balls are not positioned to fall into the target area. Prediction: No.
+
+**Scene C:** The red ball on the top left is supported by a horizontal blue segment, which will fall, causing the ball to drop. The trajectory of the ball will be vertical, and it will fall outside the target area. The other two balls are not positioned to fall into the target area. Prediction: No.
+
+**Scene D:** The red ball on the top left is supported by a horizontal blue segment, which will fall, causing the ball to drop. Crucially, this ball's initial position and the expected vertical fall trajectory will place it directly *into* the green target area. The other two balls are not positioned to fall into the target area. Prediction: Yes.
+
+**Final Result:** I predict that scene D will succeed.
+==========================
+
+Matches found:
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 7 (Repetition 3/4) -----
+Success case: Unsupport_attempt_1_obj1_True
+Scene type: Support Removal Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 2, 2: 4, 3: 1, 4: 3}
+Model prediction: D
+Prediction incorrect
+Response time: 16.83 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_5/Unsupport_attempt_1_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_10/Unsupport_attempt_1_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_51/Unsupport_attempt_2_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_11/Unsupport_attempt_1_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: http://localhost:11434/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Here's a detailed analysis of each scene, followed by the final prediction:
+
+**Reasoning:**
+
+**Scene A:** The red ball positioned above the structure is directly above the vertical blue bar. When the support is removed, this vertical bar will likely collapse. The falling ball will then fall directly into the green target area. The other two balls are too far away to have any influence on the target. **Prediction: Yes.**
+
+**Scene B:** The red ball positioned above the structure is directly above the vertical blue bar. When the support is removed, this vertical bar will likely collapse. The falling ball will then fall directly into the green target area. The other two balls are too far away to have any influence on the target. **Prediction: Yes.**
+
+**Scene C:** The red ball positioned above the structure is directly above the vertical blue bar. When the support is removed, this vertical bar will likely collapse. The falling ball will then fall directly into the green target area. The other two balls are too far away to have any influence on the target. **Prediction: Yes.**
+
+**Scene D:** The red ball positioned above the structure is directly above the vertical blue bar. When the support is removed, this vertical bar will likely collapse. The falling ball will then fall directly into the green target area. The other two balls are too far away to have any influence on the target. **Prediction: Yes.**
+
+All scenes seem equally likely to succeed. However, a closer look reveals that scenes A, B, C, and D are identical. 
+
+**Final Result:** I predict that scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 8 (Repetition 4/4) -----
+Success case: Unsupport_attempt_1_obj1_True
+Scene type: Support Removal Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 3, 2: 1, 3: 2, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 17.22 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_11/Unsupport_attempt_1_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_51/Unsupport_attempt_2_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_5/Unsupport_attempt_1_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_10/Unsupport_attempt_1_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [1, 2, 3, 3]
+Is perfectly consistent: False
+Most frequently predicted image: 3
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: http://localhost:11434/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Here's a detailed analysis of each scene, followed by the final prediction:
+
+**Reasoning:**
+
+**Scene A:** The red ball at the top left is positioned far from any direct path towards the green target. The vertical blue bar is relatively stable, and the ball is unlikely to be affected by its collapse. The other two red balls are too high up and will fall away from the target area. Therefore, it's unlikely any ball will reach the green target. **Prediction: No.**
+
+**Scene B:** The red ball at the top is positioned directly above the green target, but it's supported by a precarious stack of blue segments. When the segments collapse, the ball will fall straight down into the green target area. The other two red balls are also likely to fall, but they will not fall into the target. **Prediction: Yes.**
+
+**Scene C:** The red ball at the top is positioned directly above the green target, but it's supported by a precarious stack of blue segments. However, the stack is slightly different from Scene B, and it appears less stable. While the ball may fall into the target, it's less certain than in Scene B. The other two red balls are also likely to fall, but they will not fall into the target. **Prediction: No.**
+
+**Scene D:** The red ball at the top is positioned directly above the green target, but it's supported by a precarious stack of blue segments. This stack appears to be the most stable of the four, but it is still likely to fall. The other two red balls are also likely to fall, but they will not fall into the target. **Prediction: No.**
+
+**Final Result:** I predict that scene B will succeed.
+==========================
+
+Matches found:
+Letter: B, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene B will succeed
+Letter: B, Pattern: ([A-D])\s*will succeed, Matched text: B will succeed
+
+----- Test Set 9 (Repetition 1/4) -----
+Success case: Unsupport_attempt_1_obj1_True
+Scene type: Support Removal Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 2, 2: 1, 3: 4, 4: 3}
+Model prediction: B
+Prediction incorrect
+Response time: 18.30 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_16/Unsupport_attempt_3_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_37/Unsupport_attempt_5_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_12/Unsupport_attempt_1_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_78/Unsupport_attempt_1_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: http://localhost:11434/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Here's a detailed analysis of each scene, followed by my final prediction:
+
+**Reasoning:**
+
+**Scene A:** The red ball at the top is initially supported by a small horizontal blue segment. This segment is likely to detach quickly, causing the ball to fall. The fall will be relatively straight down, and it's highly probable the ball will land *within* the green target area. The other two balls are not in a position to reach the target. Therefore, Scene A has a good probability of success.
+
+**Scene B:** The red ball at the top is supported by a similar structure to Scene A. However, the horizontal blue segment seems a bit longer, and the vertical structure beneath it looks more stable. It's still likely to fall, but the trajectory might be slightly altered by the vertical blue structure. The ball could potentially bounce off, making it less likely to land in the target area. The other two balls are not in a position to reach the target.
+
+**Scene C:** The red ball at the top is supported by the same structure as the previous two scenes. However, the vertical structure beneath the horizontal blue segment seems less stable than in Scene B. It is likely to fall and land in the target. The other two balls are not in a position to reach the target.
+
+**Scene D:** The red ball at the top is supported by the same structure as the previous three scenes. However, the vertical structure beneath the horizontal blue segment seems more stable than in Scene C. It is likely to fall and land in the target. The other two balls are not in a position to reach the target.
+
+Comparing all four scenes, Scene A has the most straightforward path for the ball to fall directly into the target area, without significant potential for deflection.
+
+**Final Result:**
+
+I predict that scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 10 (Repetition 2/4) -----
+Success case: Unsupport_attempt_1_obj1_True
+Scene type: Support Removal Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 1, 2: 2, 3: 3, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 21.91 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_37/Unsupport_attempt_5_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_16/Unsupport_attempt_3_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_78/Unsupport_attempt_1_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_12/Unsupport_attempt_1_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: http://localhost:11434/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Here's an analysis of each scene, followed by the final prediction:
+
+**Reasoning:**
+
+**Scene A:** The red ball at the top left is positioned directly above a vertical blue structure. When the simulation starts, this structure will likely collapse under the ball's weight. The ball will then fall downwards. However, the geometry of the surrounding blocks and the green target area suggests that the ball will likely bounce off the grey blocks and not fall into the green target. The other two balls are positioned in ways that will lead to them falling on solid ground, far from the target. Therefore, the probability of success is low. **Prediction: No.**
+
+**Scene B:** Similar to Scene A, the red ball at the top left is poised above a vertical blue structure. The collapse of this structure will initiate the ball's descent. However, the arrangement of the grey blocks surrounding the green target area is slightly more open than in Scene A. This could potentially allow the ball to fall into the target area after bouncing off the grey blocks. The other two balls are also in positions that will lead to them falling on solid ground, far from the target. **Prediction: No.**
+
+**Scene C:** The red ball at the top left is above a vertical blue structure, which will collapse, causing the ball to fall. The surrounding geometry is similar to Scenes A and B, but the ball's initial position is slightly different. This could lead to a slightly different trajectory after the structure collapses. However, the probability of landing in the green target area remains low. The other two balls will fall on solid ground. **Prediction: No.**
+
+**Scene D:** The red ball at the top left is above a vertical blue structure. The collapse of this structure will initiate the ball's descent. Crucially, the arrangement of the surrounding blocks in Scene D is the most open, providing a clear path for the ball to fall into the green target area after the structure collapses. The other two balls are positioned to fall on solid ground. This scene offers the highest probability of success. **Prediction: Yes.**
+
+**Final Result:** I predict that scene D will succeed.
+==========================
+
+Matches found:
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 11 (Repetition 3/4) -----
+Success case: Unsupport_attempt_1_obj1_True
+Scene type: Support Removal Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 3, 3: 2, 4: 1}
+Model prediction: D
+Prediction incorrect
+Response time: 21.30 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_12/Unsupport_attempt_1_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_78/Unsupport_attempt_1_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_16/Unsupport_attempt_3_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_37/Unsupport_attempt_5_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: http://localhost:11434/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Here's a detailed analysis of each scene, followed by my final prediction:
+
+**Reasoning:**
+
+**Scene A:** The red ball at the top left is suspended over a solid block. It will fall vertically downwards. However, it will land on the solid block, and there is no clear path for it to reach the green target. The other two balls are positioned in a way that they will fall and land on solid surfaces, and cannot reach the target area. Therefore, the probability of success is low. **Prediction: No.**
+
+**Scene B:** The red ball at the top is suspended over a horizontal blue structure. This structure appears unstable and will likely collapse when the ball falls. If it collapses, the ball will fall downwards, potentially onto the grey block, but it's unlikely to land directly into the green target area. The other two balls will fall on solid blocks and won’t reach the target. **Prediction: No.**
+
+**Scene C:** The red ball at the top is suspended over a horizontal blue structure. Similar to Scene B, this structure will likely collapse upon impact. However, the collapse may cause the ball to fall in a direction that allows it to land on the grey block and potentially roll towards the green target. The other two balls will fall on solid blocks and won’t reach the target. **Prediction: Possibly.**
+
+**Scene D:** The red ball at the top is suspended over a horizontal blue structure. This structure will likely collapse upon impact. The collapse may cause the ball to fall in a direction that allows it to land on the grey block and potentially roll towards the green target. The other two balls will fall on solid blocks and won’t reach the target. **Prediction: Possibly.**
+
+Comparing Scene C and Scene D, it is difficult to determine which one has a higher probability of success. However, the initial position of the ball in Scene D is slightly closer to the target, and the angle of the collapse may be more favorable.
+
+**Final Result: I predict that scene D will succeed.**
+==========================
+
+Matches found:
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 12 (Repetition 4/4) -----
+Success case: Unsupport_attempt_1_obj1_True
+Scene type: Support Removal Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 2, 2: 4, 3: 1, 4: 3}
+Model prediction: D
+Prediction incorrect
+Response time: 20.45 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_16/Unsupport_attempt_3_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_12/Unsupport_attempt_1_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_37/Unsupport_attempt_5_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_78/Unsupport_attempt_1_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [1, 1, 1, 3]
+Is perfectly consistent: False
+Most frequently predicted image: 1
+Consistency ratio: 75.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: http://localhost:11434/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Here's an analysis of each scene, followed by my final prediction:
+
+**Reasoning:**
+
+**Scene A:** The top red ball is initially positioned directly above the green target area. However, it's supported by a vertical blue bar that appears precarious. The blue bar is composed of multiple segments, and the slightest disturbance could cause it to topple. If the bar falls, the ball will fall directly into the green area. The other two balls are positioned in areas that would not lead to the target. Therefore, there is a high probability that this scene will lead to success.
+
+**Scene B:** Similar to scene A, the top red ball is positioned directly above the target. However, the supporting blue bar is even more precarious in this scene. It appears to have fewer supporting segments and a less stable base. This makes it even more likely to fall, potentially sending the ball into the target area. The other two balls are positioned in areas that would not lead to the target. Therefore, there is a high probability that this scene will lead to success.
+
+**Scene C:** Similar to scenes A and B, the top red ball is positioned directly above the target. However, the supporting blue bar is even more precarious in this scene. It appears to have fewer supporting segments and a less stable base. This makes it even more likely to fall, potentially sending the ball into the target area. The other two balls are positioned in areas that would not lead to the target. Therefore, there is a high probability that this scene will lead to success.
+
+**Scene D:** The top red ball is positioned directly above the target. However, the supporting blue bar is even more precarious in this scene. It appears to have fewer supporting segments and a less stable base. This makes it even more likely to fall, potentially sending the ball into the target area. The other two balls are positioned in areas that would not lead to the target. Therefore, there is a high probability that this scene will lead to success.
+
+Considering all scenes, they all have similar structures and the same likelihood of success. However, scene B has the most precarious structure, so it has the highest probability of success.
+
+**Final Result:**
+
+I predict **Scene B** will lead to success.
+==========================
+
+Found standalone letter: A
+
+----- Test Set 13 (Repetition 1/4) -----
+Success case: Unsupport_attempt_0_obj1_True
+Scene type: Support Removal Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 2, 2: 1, 3: 4, 4: 3}
+Model prediction: A
+Prediction incorrect
+Response time: 21.90 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_52/Unsupport_attempt_6_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_59/Unsupport_attempt_7_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_15/Unsupport_attempt_0_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_65/Unsupport_attempt_20_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: http://localhost:11434/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Here's a detailed analysis of each scene, followed by the final prediction:
+
+**Reasoning:**
+
+**Scene A:** The red ball at the top left is positioned above a solid gray block, which is supported by a vertical blue structure. This structure looks relatively stable. The ball will fall directly downwards onto the gray block. From there, it will likely roll towards the green target area. The red ball on the top right is suspended in the air and will fall onto the gray block, but it is unlikely to roll into the target area. The bottom red ball is suspended in the air and will fall onto the ground. Therefore, Scene A has a moderate chance of success.
+
+**Scene B:** The red ball at the top is positioned above a solid gray block, which is supported by a vertical blue structure. This structure looks relatively stable. The ball will fall directly downwards onto the gray block. From there, it will likely roll towards the green target area. The red ball on the top right is suspended in the air and will fall onto the gray block, but it is unlikely to roll into the target area. The bottom red ball is suspended in the air and will fall onto the ground. Therefore, Scene B has a moderate chance of success.
+
+**Scene C:** The red ball at the top is positioned above a solid gray block, which is supported by a vertical blue structure. This structure looks relatively stable. The ball will fall directly downwards onto the gray block. From there, it will likely roll towards the green target area. The red ball on the top right is suspended in the air and will fall onto the gray block, but it is unlikely to roll into the target area. The bottom red ball is suspended in the air and will fall onto the ground. Therefore, Scene C has a moderate chance of success.
+
+**Scene D:** The red ball at the top is positioned above a solid gray block, which is supported by a vertical blue structure. This structure looks relatively stable. The ball will fall directly downwards onto the gray block. From there, it will likely roll towards the green target area. The red ball on the top right is suspended in the air and will fall onto the gray block, but it is unlikely to roll into the target area. The bottom red ball is suspended in the air and will fall onto the ground. Therefore, Scene D has a moderate chance of success.
+
+Considering the relative stability of the supporting structures and the direct path of the falling ball towards the target area, all scenes have a
+==========================
+
+Found standalone letter: A
+
+----- Test Set 14 (Repetition 2/4) -----
+Success case: Unsupport_attempt_0_obj1_True
+Scene type: Support Removal Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 2, 3: 1, 4: 3}
+Model prediction: A
+Prediction correct
+Response time: 23.68 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_15/Unsupport_attempt_0_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_52/Unsupport_attempt_6_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_59/Unsupport_attempt_7_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_65/Unsupport_attempt_20_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: http://localhost:11434/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Here's a detailed analysis of each scene, followed by the final prediction:
+
+**Reasoning:**
+
+**Scene A:** The red ball on the top left is positioned above a solid gray block. When the supporting blue structure collapses, the ball will fall directly onto this block. From there, it would need to overcome a small lip to reach the green target. This is unlikely as the ball will likely roll off the block. The other two balls are not positioned to directly affect the target area. Prediction: No.
+
+**Scene B:** The red ball on the top left is positioned above a solid gray block, similar to Scene A. However, the supporting structure seems more precarious. When the blue structure collapses, the ball will fall directly onto this block. The ball will likely roll off the block, and it is unlikely to fall into the green target. The other two balls are not positioned to directly affect the target area. Prediction: No.
+
+**Scene C:** The red ball on the top left is positioned above a solid gray block, and the supporting structure seems more precarious. However, there is a blue block directly below the gray block, and this could potentially redirect the ball towards the target. The collapse of the blue structure will cause the ball to fall onto the gray block, and then onto the blue block. This could give the ball the necessary trajectory to reach the green target area. The other two balls are not positioned to directly affect the target area. Prediction: Yes.
+
+**Scene D:** The red ball on the top left is positioned above a solid gray block, similar to Scene A and B. The collapse of the blue structure will cause the ball to fall onto this block. From there, it would need to overcome a small lip to reach the green target. This is unlikely as the ball will likely roll off the block. The other two balls are not positioned to directly affect the target area. Prediction: No.
+
+**Final Result:** I predict that scene C will succeed.
+==========================
+
+Matches found:
+Letter: C, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene C will succeed
+Letter: C, Pattern: ([A-D])\s*will succeed, Matched text: C will succeed
+
+----- Test Set 15 (Repetition 3/4) -----
+Success case: Unsupport_attempt_0_obj1_True
+Scene type: Support Removal Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 2, 2: 4, 3: 3, 4: 1}
+Model prediction: C
+Prediction incorrect
+Response time: 19.91 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_52/Unsupport_attempt_6_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_15/Unsupport_attempt_0_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_65/Unsupport_attempt_20_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_59/Unsupport_attempt_7_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: http://localhost:11434/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system

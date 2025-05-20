@@ -1,0 +1,2999 @@
+Evaluation Log - Started at 2025-04-08 10:38:08
+==================================================
+
+Found valid scene: Gap_obj1, Failure cases: 63, Success cases: 53
+Found valid scene: Gap_obj2, Failure cases: 66, Success cases: 37
+Found valid scene: Gap_obj3, Failure cases: 20, Success cases: 1
+
+Starting evaluation for scene: Gap_obj1
+This scene has 53 success cases
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, we will analyze the initial positions and orientations of the objects, and predict the trajectory of the red ball. We will also consider the impact of the blue objects on the ball's motion.
+
+- **Scene A:**
+  - The red ball is positioned high above the black region and is likely to fall due to gravity.
+  - The blue object below the ball is a triangle pointing downwards, which may cause the ball to bounce off it.
+  - The green target area is below the ball but to the right.
+  - The ball may not fall into the green region because it will likely bounce off the blue triangle.
+
+- **Scene B:**
+  - The red ball is also high above the black region and will fall due to gravity.
+  - The blue object below the ball is a triangle pointing downwards.
+  - The green target area is below the ball and to the right.
+  - The ball may not fall into the green region because the blue triangle could cause the ball to bounce off it.
+
+- **Scene C:**
+  - The red ball is high above the black region and will fall due to gravity.
+  - The blue object below the ball is a triangle pointing downwards.
+  - The green target area is below the ball and to the right.
+  - The ball may not fall into the green region because the blue triangle could cause the ball to bounce off it.
+
+- **Scene D:**
+  - The red ball is high above the black region and will fall due to gravity.
+  - The blue object below the ball is a triangle pointing downwards.
+  - The green target area is below the ball and to the right.
+  - The ball may not fall into the green region because the blue triangle could cause the ball to bounce off it.
+
+Final Result: “I predict that scene A will succeed.”
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 1 (Repetition 1/4) -----
+Success case: Gap_attempt_3_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 2, 2: 4, 3: 3, 4: 1}
+Model prediction: A
+Prediction incorrect
+Response time: 5.18 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_70/Gap_attempt_1_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Gap_attempt_3_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_34/Gap_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_66/Gap_attempt_3_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, analyze the positions of the objects and predict the motion of the red ball.
+
+Scene A:
+The red ball is positioned above the green target area, and there is a blue triangle above the red ball. The blue triangle will fall due to gravity and potentially collide with the red ball. This collision might change the trajectory of the red ball, making it less likely to fall directly into the green target area.
+
+Scene B:
+The red ball is positioned above the green target area, and the blue triangle is directly below the red ball. The blue triangle will fall due to gravity and could collide with the red ball, altering its trajectory and reducing the chance of the red ball reaching the green area.
+
+Scene C:
+The red ball is positioned above the green target area, and there is a blue rectangle below the red ball. The blue rectangle will fall due to gravity, but it is positioned such that it will not likely interfere with the red ball's path to the green area. The red ball is likely to fall directly into the green target area.
+
+Scene D:
+The red ball is positioned above the green target area, and the blue triangle is directly below the red ball. Similar to Scene B, the blue triangle will fall due to gravity and could collide with the red ball, altering its trajectory and reducing the chance of the red ball reaching the green area.
+
+Final Result: “I predict that scene C will succeed.”
+==========================
+
+Matches found:
+Letter: C, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene C will succeed
+Letter: C, Pattern: ([A-D])\s*will succeed, Matched text: C will succeed
+
+----- Test Set 2 (Repetition 2/4) -----
+Success case: Gap_attempt_3_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 3, 4: 2}
+Model prediction: C
+Prediction incorrect
+Response time: 4.68 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Gap_attempt_3_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_66/Gap_attempt_3_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_34/Gap_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_70/Gap_attempt_1_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+**Scene A**: The red ball is positioned above a blue triangular object, which is pointing downwards. The ball will fall due to gravity. Given the blue object's orientation, it will likely obstruct the red ball’s path to the green target area. The ball is more likely to bounce off the blue object than fall into the green region. 
+
+**Scene B**: The red ball is positioned above the same blue triangular object as in Scene A. The ball will fall due to gravity. The blue object is again oriented in a way that it will obstruct the ball’s path to the green target area. The ball is more likely to bounce off the blue object than fall into the green region.
+
+**Scene C**: The red ball is positioned above a horizontal blue rectangular object. The ball will fall due to gravity. This blue object is less likely to obstruct the ball’s path compared to the triangular object in Scenes A and B. The ball might have a higher chance of falling into the green target area if it does not collide with the blue object.
+
+**Scene D**: The red ball is positioned above a blue triangular object, similar to Scenes A and B. The ball will fall due to gravity. The blue object is again oriented in a way that it will obstruct the ball’s path to the green target area. The ball is more likely to bounce off the blue object than fall into the green region.
+
+**Final Result**: Scene C has the highest likelihood of success. The red ball is less likely to be obstructed by the horizontal blue rectangular object compared to the triangular object in Scenes A, B, and D.
+==========================
+
+Found standalone letter: A
+
+----- Test Set 3 (Repetition 3/4) -----
+Success case: Gap_attempt_3_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 1, 2: 2, 3: 3, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 4.30 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_66/Gap_attempt_3_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_70/Gap_attempt_1_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_34/Gap_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Gap_attempt_3_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the initial positions and orientations of the red ball, blue objects, and the green target area. I will determine the likely motion of the red ball based on gravity and the presence of any obstacles.
+
+**Scene A:**
+- The red ball is positioned above the green region but does not appear to be in a direct path to the green region.
+- The blue object is positioned in a way that seems to block the red ball from falling directly into the green region.
+- The red ball will likely fall towards the green region but will be hindered by the blue object.
+
+**Scene B:**
+- The red ball is positioned similarly to Scene A but has a different orientation.
+- The blue object is also positioned to block the red ball from falling into the green region.
+- The red ball will likely fall towards the green region but will be hindered by the blue object.
+
+**Scene C:**
+- The red ball is positioned above the green region in a way that suggests it might fall directly into the green region.
+- The blue object is positioned below the red ball and does not seem to be in the way.
+- The red ball will likely fall directly into the green region.
+
+**Scene D:**
+- The red ball is positioned above the green region in a similar manner to Scene C.
+- The blue object is positioned below the red ball and does not seem to be in the way.
+- The red ball will likely fall directly into the green region.
+
+**Final Result:** "I predict that scene C will succeed."
+==========================
+
+Found prediction in Final Result: C
+
+----- Test Set 4 (Repetition 4/4) -----
+Success case: Gap_attempt_3_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 3, 2: 1, 3: 4, 4: 2}
+Model prediction: C
+Prediction correct
+Response time: 4.28 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_34/Gap_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_66/Gap_attempt_3_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Gap_attempt_3_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_70/Gap_attempt_1_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [2, 3, 1, 4]
+Is perfectly consistent: False
+Most frequently predicted image: 1
+Consistency ratio: 25.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the initial positions and the potential motion paths of the objects involved.
+
+**Scene A:**
+- The red ball is suspended above the blue horizontal bar.
+- The blue triangle is positioned above the red ball.
+- The green target area is located at the bottom right.
+- The red ball will fall due to gravity.
+- The blue triangle is far enough away to not interfere with the red ball's path.
+- The red ball will fall directly into the green target area.
+
+**Scene B:**
+- The red ball is suspended above the blue horizontal bar.
+- The blue triangle is positioned above the red ball, closer than in Scene A.
+- The green target area is located at the bottom right.
+- The red ball will fall due to gravity.
+- The blue triangle could potentially interfere with the red ball's path as it falls, but it is not positioned directly in the way.
+- The red ball will likely fall into the green target area.
+
+**Scene C:**
+- The red ball is suspended above the blue horizontal bar.
+- The blue triangle is positioned directly above the red ball.
+- The green target area is located at the bottom right.
+- The red ball will fall due to gravity.
+- The blue triangle is directly in the red ball's path.
+- The red ball will likely be deflected by the blue triangle and not fall into the green target area.
+
+**Scene D:**
+- The red ball is suspended above the blue horizontal bar.
+- The blue triangle is positioned above the red ball, but not as close as in Scene B.
+- The green target area is located at the bottom right.
+- The red ball will fall due to gravity.
+- The blue triangle could potentially interfere with the red ball's path, but it is not positioned directly in the way.
+- The red ball will likely fall into the green target area.
+
+Final Result: “I predict that Scene A will succeed.”
+==========================
+
+Matches found:
+Letter: A, Pattern: Scene\s*([A-D])\s*will succeed, Matched text: Scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 5 (Repetition 1/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 1, 2: 3, 3: 4, 4: 2}
+Model prediction: A
+Prediction incorrect
+Response time: 4.42 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_83/Gap_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_70/Gap_attempt_1_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_12/Gap_attempt_0_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_70/Gap_attempt_3_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, we'll analyze the positions of the red ball, the blue objects, and the green target area to predict how the red ball will fall and whether it will reach the green region.
+
+Scene A:
+- The red ball is at a higher position and will fall downward due to gravity.
+- The blue triangle is positioned above the red ball, and it will not interfere with its motion.
+- The blue rectangle is positioned below the red ball, but it will not obstruct its path to the green region.
+- The red ball will fall down the slope and reach the green region without any obstructions.
+
+Reasoning: In this scene, the red ball will fall straight down the slope and reach the green region without any obstructions from the blue objects.
+
+Final Result: “I predict that scene A will succeed.”
+
+Reasoning: For Scene B:
+- The red ball will fall downward due to gravity.
+- The blue triangle is above the red ball and will not interfere with its path.
+- The blue rectangle is below the red ball and will not obstruct its path to the green region.
+- The red ball will fall down the slope and reach the green region without any obstructions.
+
+Reasoning: In this scene, the red ball will fall straight down the slope and reach the green region without any obstructions from the blue objects.
+
+Final Result: “I predict that scene B will succeed.”
+
+Reasoning: For Scene C:
+- The red ball will fall downward due to gravity.
+- The blue triangle is positioned above the red ball and will not interfere with its path.
+- The blue rectangle is positioned below the red ball but is closer to the slope than in Scene A and B.
+- The red ball will fall down the slope and reach the green region without any obstructions.
+
+Reasoning: In this scene, the red ball will fall straight down the slope and reach the green region without any obstructions from the blue objects.
+
+Final Result: “I predict that scene C will succeed.”
+
+Reasoning: For Scene D:
+- The red ball will fall downward due to gravity.
+- The blue triangle is positioned above the red ball and will not interfere with its path.
+- The blue rectangle is positioned below the red ball but is closer to the slope than in Scene A and B.
+- However, the blue rectangle is positioned in such a way that it may create a small gap or a narrow passage that the red ball might need to navigate carefully to reach the green region without touching the blue rectangle.
+
+Reasoning: In this scene,
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: B, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene B will succeed
+Letter: C, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene C will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+Letter: B, Pattern: ([A-D])\s*will succeed, Matched text: B will succeed
+Letter: C, Pattern: ([A-D])\s*will succeed, Matched text: C will succeed
+
+----- Test Set 6 (Repetition 2/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 2, 3: 1, 4: 3}
+Model prediction: A
+Prediction correct
+Response time: 5.90 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_12/Gap_attempt_0_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_70/Gap_attempt_3_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_83/Gap_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_70/Gap_attempt_1_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+- **Scene A:** The red ball is positioned relatively close to the green target area, and there are no blue objects directly in its path. The blue triangle is higher and further away, while the blue rectangle is lower and directly in the path. Given the absence of an obstruction in the red ball's path, it is likely to fall into the green area.
+  
+- **Scene B:** Similar to Scene A, the red ball is positioned close to the green area, with the blue objects located in the way. The blue triangle is higher and further away, while the blue rectangle is lower and directly in the path. This setup is identical to Scene A, so the red ball will likely fall into the green area.
+
+- **Scene C:** The red ball is again close to the green area, but the blue triangle is now positioned directly above the red ball. Given the proximity and the absence of an obstruction, it is likely that the red ball will fall into the green area.
+
+- **Scene D:** The red ball is close to the green area, but the blue triangle is positioned above and to the right of the red ball. There is no direct obstruction in its path, but the blue triangle is relatively close. Given the initial positioning, it is likely that the red ball will fall into the green area.
+
+Final Result: “I predict that Scene A will succeed.”
+==========================
+
+Matches found:
+Letter: A, Pattern: Scene\s*([A-D])\s*will succeed, Matched text: Scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 7 (Repetition 3/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 2, 2: 1, 3: 3, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 3.71 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_70/Gap_attempt_3_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_83/Gap_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_70/Gap_attempt_1_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_12/Gap_attempt_0_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+Scene A: The red ball will fall freely downward due to gravity. The blue triangle will likely fall in the opposite direction and may potentially collide with the red ball, which could alter its path. However, there is enough vertical space between the red ball and the green target, so the ball could still fall into the green area after passing by the blue triangle.
+
+Scene B: The red ball will fall freely downward. The blue triangle will also fall in the opposite direction, possibly colliding with the red ball and changing its trajectory. Similar to Scene A, the vertical distance to the green area is sufficient for the red ball to reach it after passing by the blue triangle.
+
+Scene C: The red ball will fall freely downward. The blue triangle will fall in the opposite direction and may collide with the red ball, which could change its trajectory. The vertical distance to the green area is again sufficient for the red ball to reach it after passing by the blue triangle.
+
+Scene D: The red ball will fall freely downward. The blue triangle will fall in the opposite direction and may collide with the red ball, which could change its trajectory. The vertical distance to the green area is sufficient for the red ball to reach it after passing by the blue triangle.
+
+Final Result: “I predict that scenes A, B, C, and D will succeed, as all have sufficient vertical distance to the green target area, and the blue triangle’s collision with the red ball will likely only slightly alter its path.”
+==========================
+
+Matches found:
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 8 (Repetition 4/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 3, 2: 4, 3: 1, 4: 2}
+Model prediction: D
+Prediction incorrect
+Response time: 3.59 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_70/Gap_attempt_1_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_12/Gap_attempt_0_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_83/Gap_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_70/Gap_attempt_3_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [1, 4, 2, 2]
+Is perfectly consistent: False
+Most frequently predicted image: 2
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, we will analyze the position of the red ball, the blue objects, and the obstacles (black and green areas) to predict the motion of the red ball.
+
+Scene A:
+- The red ball is positioned near the top left corner.
+- The blue triangle is in the upper left corner, and the blue rectangle is in the lower middle.
+- The black area forms a sloped surface to the right, and the green area is at the bottom right.
+- The red ball will fall due to gravity, likely rolling towards the green area. The blue triangle is too far away to affect the red ball's motion, and the blue rectangle will not hinder it.
+
+Prediction: The red ball will fall into the green area.
+
+Scene B:
+- The red ball is in the same position as in Scene A.
+- The blue triangle is in the upper middle, and the blue rectangle is in the lower middle.
+- The black area and green area remain the same.
+- The red ball will fall towards the green area. The blue triangle is in a position that is unlikely to influence the red ball's path, and the blue rectangle will not hinder it.
+
+Prediction: The red ball will fall into the green area.
+
+Scene C:
+- The red ball is in the same position as in Scene A.
+- The blue triangle is in the upper middle, and the blue rectangle is in the lower middle.
+- The black area and green area remain the same.
+- The red ball will fall towards the green area. The blue triangle is in a position that is unlikely to influence the red ball's path, and the blue rectangle will not hinder it.
+
+Prediction: The red ball will fall into the green area.
+
+Scene D:
+- The red ball is in the same position as in Scene A.
+- The blue triangle is in the upper middle, and the blue rectangle is in the lower middle.
+- The black area and green area remain the same.
+- The red ball will fall towards the green area. The blue triangle is in a position that is unlikely to influence the red ball's path, and the blue rectangle will not hinder it.
+
+Prediction: The red ball will fall into the green area.
+
+Final Result: I predict that scene D will succeed.
+==========================
+
+Matches found:
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 9 (Repetition 1/4) -----
+Success case: Gap_attempt_1_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 2, 2: 4, 3: 1, 4: 3}
+Model prediction: D
+Prediction incorrect
+Response time: 5.16 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_84/Gap_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_13/Gap_attempt_1_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_3_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_8_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+Scene A: The red ball is positioned near the top left corner, and there is a blue triangle above it. The green target area is on the right. The red ball will start falling due to gravity and will be influenced by any nearby objects. The blue triangle could potentially block the red ball's path, preventing it from reaching the green target area.
+
+Scene B: The red ball is positioned similarly to Scene A, but the blue triangle is directly above it. This positioning might not significantly affect the ball's trajectory compared to Scene A, as the triangle is still directly above the ball.
+
+Scene C: The red ball is again positioned near the top left corner, with the blue triangle above it. However, there is an additional blue rectangle below the triangle. This rectangle could potentially obstruct the red ball's path, making it less likely to reach the green target area.
+
+Scene D: The red ball is positioned near the top left corner, with the blue triangle above it. There is no additional blue object obstructing the red ball's path in this scene. The trajectory of the red ball will be influenced solely by gravity and the blue triangle, which might not block its path.
+
+Final Result: "I predict that scene D will succeed."
+==========================
+
+Found prediction in Final Result: D
+
+----- Test Set 10 (Repetition 2/4) -----
+Success case: Gap_attempt_1_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 2, 3: 1, 4: 3}
+Model prediction: D
+Prediction incorrect
+Response time: 4.04 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_13/Gap_attempt_1_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_84/Gap_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_3_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_8_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, analyze the initial positions and orientations of the red ball, blue objects, and the green target area, and predict the motion and final position of the red ball.
+
+- **Scene A:** The red ball is positioned near the top left corner of the image, and there is a blue triangle and a blue rectangle below it. The blue triangle appears to be pointing upwards, and the blue rectangle is horizontally aligned. The green target area is to the right of the blue objects. Given the red ball’s position and orientation, it will likely fall downward due to gravity and may be deflected by the blue triangle. However, if the ball lands on the blue rectangle, it may roll forward, potentially reaching the green target area. There is a moderate chance of success.
+
+- **Scene B:** The red ball is again positioned near the top left corner. This time, the blue triangle is pointing downwards, and the blue rectangle is horizontally aligned below it. The green target area is to the right of the blue objects. The red ball will likely fall downward and may be deflected by the blue triangle. If it lands on the blue rectangle, it may roll forward, potentially reaching the green target area. The orientation of the blue triangle could either help or hinder the ball, making the success probability moderate.
+
+- **Scene C:** The red ball is positioned near the top left corner, with the blue triangle pointing downwards and the blue rectangle horizontally aligned below it. The green target area is to the right of the blue objects. The red ball will likely fall downward and may be deflected by the blue triangle. If it lands on the blue rectangle, it may roll forward, potentially reaching the green target area. The positioning of the blue triangle and the rectangle suggests a similar success probability as in Scene B.
+
+- **Scene D:** The red ball is again positioned near the top left corner. The blue triangle is pointing downwards, and the blue rectangle is horizontally aligned below it. The green target area is to the right of the blue objects. The red ball will likely fall downward and may be deflected by the blue triangle. If it lands on the blue rectangle, it may roll forward, potentially reaching the green target area. The orientation and positioning of the blue objects seem favorable for the red ball to reach the green target area.
+
+Final Result: "I predict that scene D will succeed."
+==========================
+
+Found prediction in Final Result: D
+
+----- Test Set 11 (Repetition 3/4) -----
+Success case: Gap_attempt_1_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 1, 2: 2, 3: 4, 4: 3}
+Model prediction: D
+Prediction incorrect
+Response time: 5.46 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_3_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_84/Gap_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_13/Gap_attempt_1_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_8_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+**Scene A:**
+- The red ball will fall due to gravity.
+- The blue triangle is above the red ball and will not interfere with its fall.
+- The blue rectangle is below the red ball but on the same vertical line.
+- The green target area is on the right side of the red ball.
+- The red ball will fall and reach the green area, as it has no obstructions in its path.
+
+**Scene B:**
+- The red ball will fall due to gravity.
+- The blue triangle is above the red ball and will not interfere with its fall.
+- The blue rectangle is below the red ball but on the same vertical line.
+- The green target area is on the right side of the red ball.
+- The red ball will fall and reach the green area, as it has no obstructions in its path.
+
+**Scene C:**
+- The red ball will fall due to gravity.
+- The blue triangle is above the red ball and will not interfere with its fall.
+- The blue rectangle is below the red ball but on the same vertical line.
+- The green target area is on the right side of the red ball.
+- The red ball will fall and reach the green area, as it has no obstructions in its path.
+
+**Scene D:**
+- The red ball will fall due to gravity.
+- The blue triangle is above the red ball and will not interfere with its fall.
+- The blue rectangle is below the red ball but on the same vertical line.
+- The green target area is on the right side of the red ball.
+- The red ball will fall and reach the green area, as it has no obstructions in its path.
+
+Final Result: I predict that all scenes (A, B, C, and D) will succeed.
+==========================
+
+Found standalone letter: A
+
+----- Test Set 12 (Repetition 4/4) -----
+Success case: Gap_attempt_1_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 1, 2: 2, 3: 3, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 4.87 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_3_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_84/Gap_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_8_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_13/Gap_attempt_1_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [3, 3, 3, 1]
+Is perfectly consistent: False
+Most frequently predicted image: 3
+Consistency ratio: 75.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, analyze the positions and orientations of the red ball, blue objects, and green target area to predict the motion of the red ball:
+
+Scene A: The red ball is positioned near the top left, while the blue triangle is above the red ball. The blue rectangle is below the red ball and to the right. The green target area is at the bottom right. The red ball will fall downward, and the blue triangle could potentially block or redirect its path, making it unlikely for the red ball to reach the green area.
+
+Scene B: The red ball is positioned near the top left, with the blue triangle above it and the blue rectangle below it. The green target area is at the bottom right. The red ball will fall downward, and the blue triangle could potentially block or redirect its path, making it unlikely for the red ball to reach the green area.
+
+Scene C: The red ball is positioned near the top left, with the blue triangle above it and the blue rectangle below it. The green target area is at the bottom right. The red ball will fall downward, and the blue triangle could potentially block or redirect its path, making it unlikely for the red ball to reach the green area.
+
+Scene D: The red ball is positioned near the top left, with the blue triangle above it and the blue rectangle below it. The green target area is at the bottom right. The red ball will fall downward, and the blue triangle could potentially block or redirect its path, making it unlikely for the red ball to reach the green area.
+
+Final Result: “I predict that none of the scenes will allow the red ball to fall into the green target area.”
+==========================
+
+Found standalone letter: A
+
+----- Test Set 13 (Repetition 1/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 2, 2: 3, 3: 4, 4: 1}
+Model prediction: A
+Prediction incorrect
+Response time: 5.28 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_6/Gap_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_4_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_14/Gap_attempt_0_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_4_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+- **Scene A**: The red ball will fall due to gravity. The blue triangle and blue rectangle will not interfere with the ball's trajectory, as they are positioned in a way that does not block the ball's path to the green region. The ball will likely roll down the slope and reach the green region.
+- **Scene B**: The red ball will fall due to gravity. The blue triangle is positioned above the ball, and it will likely not affect the ball's trajectory. The blue rectangle will not interfere with the ball's path either. The ball will likely roll down the slope and reach the green region.
+- **Scene C**: The red ball will fall due to gravity. The blue triangle and blue rectangle are positioned in a way that will not block the ball's path to the green region. The ball will likely roll down the slope and reach the green region.
+- **Scene D**: The red ball will fall due to gravity. The blue triangle and blue rectangle are positioned in a way that will not block the ball's path to the green region. The ball will likely roll down the slope and reach the green region.
+
+Final Result: I predict that all scenes will succeed.
+==========================
+
+Found standalone letter: A
+
+----- Test Set 14 (Repetition 2/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 2, 2: 3, 3: 1, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 3.62 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_6/Gap_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_4_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_4_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_14/Gap_attempt_0_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+Scene A: The red ball is positioned high above the blue objects. Given the lack of stickiness and the free fall due to gravity, the red ball will likely fall straight down, passing through the blue objects. The trajectory will lead the red ball directly into the green target area. The blue objects do not obstruct the red ball's path, so the red ball should reach the green region.
+
+Scene B: The red ball is also high above the blue objects. Similar to Scene A, the red ball will fall straight down, passing through the blue objects without obstruction. The trajectory will again lead the red ball directly into the green target area. The blue objects do not interfere with the red ball's fall.
+
+Scene C: The red ball is positioned slightly lower than in Scenes A and B, but it is still above the blue objects. The red ball will fall straight down, passing through the blue objects. The trajectory will lead the red ball into the green target area. The blue objects do not obstruct the red ball's path.
+
+Scene D: The red ball is positioned high above the blue objects, similar to Scenes A, B, and C. The red ball will fall straight down, passing through the blue objects. The trajectory will lead the red ball directly into the green target area. The blue objects do not interfere with the red ball's fall.
+
+Final Result: All scenes (A, B, C, and D) will allow the red ball to fall into the green target area due to the lack of obstacles and the free fall due to gravity. However, Scene A might have a slightly higher likelihood of success because it provides the most direct and unobstructed path to the green target area.
+
+I predict that scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 15 (Repetition 3/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 2, 4: 3}
+Model prediction: A
+Prediction correct
+Response time: 4.88 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_14/Gap_attempt_0_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_4_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_6/Gap_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_4_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+Scene A: The red ball is suspended in the air and there is a blue triangle and a blue rectangle. The blue triangle is above and to the right of the red ball, and the blue rectangle is directly below the blue triangle. Since the red ball will fall due to gravity, it will likely roll to the left and eventually fall into the green target area. The blue objects do not obstruct the path of the red ball.
+
+Reasoning: 
+
+Scene B: Similar to Scene A, the red ball is suspended in the air with a blue triangle and a blue rectangle. The blue triangle is above and to the right of the red ball, and the blue rectangle is directly below the blue triangle. The red ball will fall and roll to the left, reaching the green target area. The blue objects do not obstruct the path.
+
+Reasoning: 
+
+Scene C: The red ball is suspended in the air with a blue triangle and a blue rectangle. The blue triangle is above and to the left of the red ball, and the blue rectangle is directly below the blue triangle. The red ball will fall and roll to the left, reaching the green target area. The blue objects do not obstruct the path.
+
+Reasoning: 
+
+Scene D: The red ball is suspended in the air with a blue triangle and a blue rectangle. The blue triangle is above and to the right of the red ball, and the blue rectangle is directly below the blue triangle. The red ball will fall and roll to the left, reaching the green target area. The blue objects do not obstruct the path.
+
+Final Result: “I predict that Scene B will succeed.”
+==========================
+
+Matches found:
+Letter: B, Pattern: Scene\s*([A-D])\s*will succeed, Matched text: Scene B will succeed
+Letter: B, Pattern: ([A-D])\s*will succeed, Matched text: B will succeed
+
+----- Test Set 16 (Repetition 4/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 3, 2: 4, 3: 2, 4: 1}
+Model prediction: B
+Prediction correct
+Response time: 4.10 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_4_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_14/Gap_attempt_0_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_6/Gap_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_4_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [2, 2, 4, 4]
+Is perfectly consistent: False
+Most frequently predicted image: 2
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the initial positions and orientations of the objects and predict the motion of the red ball.
+
+Scene A: The red ball is positioned near the top left, and the blue triangle is directly above it. The red ball will fall due to gravity and will likely be deflected by the blue triangle, preventing it from reaching the green area.
+
+Scene B: The red ball is positioned near the top left, and the blue triangle is directly above it, similar to Scene A. The blue triangle will likely deflect the red ball, preventing it from reaching the green area.
+
+Scene C: The red ball is positioned near the top left, and the blue triangle is below it. The red ball will fall due to gravity and will not be deflected by the blue triangle, allowing it to potentially reach the green area.
+
+Scene D: The red ball is positioned near the top left, and the blue triangle is directly below it. The red ball will fall due to gravity and will be deflected by the blue triangle, preventing it from reaching the green area.
+
+Final Result: "I predict that scene C will succeed."
+==========================
+
+Found prediction in Final Result: C
+
+----- Test Set 17 (Repetition 1/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 2, 2: 3, 3: 1, 4: 4}
+Model prediction: C
+Prediction incorrect
+Response time: 3.13 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_71/Gap_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_72/Gap_attempt_3_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_15/Gap_attempt_0_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+**Scene A:** 
+- The red ball is suspended above the black slope.
+- The blue triangle is positioned directly below the red ball, and the blue rectangle is placed horizontally to the left of the triangle.
+- The red ball will fall due to gravity, and since there is no stickiness or static friction, it will roll down the black slope.
+- The blue triangle and blue rectangle are not in the direct path of the red ball's trajectory and will not affect its fall.
+
+**Scene B:** 
+- The red ball is positioned similarly to Scene A.
+- The blue triangle and blue rectangle are in the same positions as in Scene A.
+- The red ball will fall due to gravity and roll down the black slope.
+- The blue triangle and blue rectangle are not in the direct path of the red ball's trajectory and will not affect its fall.
+
+**Scene C:** 
+- The red ball is positioned above the black slope.
+- The blue triangle is placed directly below the red ball, and the blue rectangle is positioned horizontally to the left of the triangle.
+- The red ball will fall due to gravity and roll down the black slope.
+- The blue triangle is positioned such that it may obstruct the red ball's path if it is not in the green region when the red ball falls. However, since the blue rectangle is not in the red ball's path, the red ball should still reach the green region.
+
+**Scene D:** 
+- The red ball is suspended above the black slope.
+- The blue triangle is positioned above the red ball.
+- The red ball will fall due to gravity and roll down the black slope.
+- The blue triangle is positioned such that it may obstruct the red ball's path if it is not in the green region when the red ball falls. However, since the blue rectangle is not in the red ball's path, the red ball should still reach the green region.
+
+Final Result: I predict that Scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: Scene\s*([A-D])\s*will succeed, Matched text: Scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 18 (Repetition 2/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 1, 2: 3, 3: 4, 4: 2}
+Model prediction: A
+Prediction incorrect
+Response time: 5.35 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_72/Gap_attempt_3_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_15/Gap_attempt_0_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_71/Gap_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the positions and orientations of the objects and how they will interact with each other when the red ball begins to fall.
+
+Scene A: The red ball is positioned at the top left corner, and there is a blue rectangle and a blue triangle below it. The blue rectangle is directly beneath the red ball, and the blue triangle is to the right of the rectangle. The green target area is to the right of the blue triangle. Since the blue rectangle is directly below the red ball, it will likely block the red ball's path, preventing it from reaching the green target area.
+
+Reasoning: The red ball will fall due to gravity and will likely collide with the blue rectangle, preventing it from reaching the green target area.
+
+Final Result: I predict that scene A will fail.
+
+Reasoning: For scene B, the red ball is still positioned at the top left corner, and there is a blue triangle and a blue rectangle below it. However, the blue triangle is positioned to the left of the red ball, and the blue rectangle is to the right of the blue triangle. The green target area is to the right of the blue rectangle. The blue triangle is positioned in such a way that it will not block the red ball's path, allowing it to fall towards the green target area.
+
+Reasoning: The red ball will fall towards the green target area, as there are no objects directly in its path.
+
+Final Result: I predict that scene B will succeed.
+
+Reasoning: In scene C, the red ball is positioned at the top left corner, and there is a blue triangle and a blue rectangle below it. The blue triangle is directly above the red ball, and the blue rectangle is to the right of the blue triangle. The green target area is to the right of the blue rectangle. The blue triangle is directly above the red ball, so it will likely block the red ball's path, preventing it from reaching the green target area.
+
+Reasoning: The red ball will fall towards the blue triangle, which will block its path, preventing it from reaching the green target area.
+
+Final Result: I predict that scene C will fail.
+
+Reasoning: For scene D, the red ball is positioned at the top left corner, and there is a blue triangle and a blue rectangle below it. The blue triangle is directly above the red ball, and the blue rectangle is to the right of the blue triangle. The green target area is to the right of the blue rectangle. The blue triangle is directly above
+==========================
+
+Matches found:
+Letter: B, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene B will succeed
+Letter: B, Pattern: ([A-D])\s*will succeed, Matched text: B will succeed
+
+----- Test Set 19 (Repetition 3/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 3, 4: 2}
+Model prediction: B
+Prediction incorrect
+Response time: 5.42 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_15/Gap_attempt_0_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_72/Gap_attempt_3_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_71/Gap_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the initial positions and orientations of the objects, the effects of gravity on the red ball, and how the blue objects might influence the ball's motion.
+
+Scene A: The red ball is positioned above the green target area, with a blue triangle above it and a blue rectangle below. The ball will fall straight down due to gravity. The blue triangle and rectangle do not have any apparent ability to alter the ball's trajectory, and the ball will likely roll or bounce off the black surface before reaching the green area. The likelihood of the red ball reaching the green area is low.
+
+Reason: The red ball will likely bounce off the black surface and not fall into the green target area.
+
+Final Result: No
+
+Scene B: The red ball is positioned above the green target area, with a blue triangle below it and a blue rectangle above. The ball will fall straight down due to gravity. The blue triangle is positioned directly below the red ball, which could potentially alter its trajectory if it hits the ball. The blue rectangle is positioned above the ball, not interfering with its path. The likelihood of the red ball reaching the green area is moderate.
+
+Reason: The blue triangle could potentially change the ball's trajectory, but the blue rectangle does not interfere.
+
+Final Result: No
+
+Scene C: The red ball is positioned above the green target area, with a blue triangle below it and a blue rectangle above. The ball will fall straight down due to gravity. The blue triangle is positioned below the red ball, which could potentially alter its trajectory if it hits the ball. The blue rectangle is positioned above the ball, not interfering with its path. The likelihood of the red ball reaching the green area is moderate.
+
+Reason: The blue triangle could potentially change the ball's trajectory, but the blue rectangle does not interfere.
+
+Final Result: No
+
+Scene D: The red ball is positioned above the green target area, with a blue triangle above it and a blue rectangle below. The ball will fall straight down due to gravity. The blue triangle is positioned above the red ball, which could potentially alter its trajectory if it hits the ball. The blue rectangle is positioned below the ball, not interfering with its path. The likelihood of the red ball reaching the green area is moderate.
+
+Reason: The blue triangle could potentially change the ball's trajectory, but the blue rectangle does not interfere.
+
+Final Result: No
+
+Which initial scene is most likely to result in the red ball falling into the green target area?
+
+Reason: In all scenes
+==========================
+
+Found standalone letter: A
+
+----- Test Set 20 (Repetition 4/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 3, 2: 4, 3: 1, 4: 2}
+Model prediction: A
+Prediction incorrect
+Response time: 6.01 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_15/Gap_attempt_0_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_72/Gap_attempt_3_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_71/Gap_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [1, 1, 1, 3]
+Is perfectly consistent: False
+Most frequently predicted image: 1
+Consistency ratio: 75.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+Scene A: 
+The red ball is positioned to the left of the blue triangle and the blue bar. The blue triangle is at the top, and the blue bar is below it. The red ball will fall due to gravity. The blue triangle and bar are in the way of the red ball's path to the green target area. The red ball will likely hit the blue triangle or the blue bar, preventing it from reaching the green area. 
+Final Result: No
+
+Scene B: 
+The red ball is positioned similarly to Scene A, but this time the blue triangle is directly above the green target area. The red ball will fall and will likely be blocked by the blue triangle before it can reach the green area. 
+Final Result: No
+
+Scene C: 
+The red ball is positioned similarly to Scenes A and B. The blue triangle is at the top, and the blue bar is below it. The red ball will fall and will likely be blocked by the blue triangle before it can reach the green area. 
+Final Result: No
+
+Scene D: 
+The red ball is positioned to the left of the blue triangle and the blue bar. The blue triangle is at the bottom, and the blue bar is above it. The red ball will fall and will likely roll towards the green target area, avoiding the blue triangle and bar. 
+Final Result: Yes
+
+Which initial scene is most likely to result in the red ball falling into the green target area?
+I predict that scene D will succeed.
+==========================
+
+Matches found:
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 21 (Repetition 1/4) -----
+Success case: Gap_attempt_6_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 2, 2: 1, 3: 3, 4: 4}
+Model prediction: D
+Prediction correct
+Response time: 3.61 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Gap_attempt_2_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_69/Gap_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_4_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_16/Gap_attempt_6_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+Scene A: 
+- The red ball will fall from its initial position towards the green region.
+- The blue objects, a triangle and a rectangle, are positioned such that they will not directly interfere with the red ball's path.
+- The ball has a clear trajectory to the green region without any obstacles in its way.
+
+Scene B:
+- The red ball will fall and initially pass by the blue triangle and rectangle.
+- The blue triangle and rectangle are positioned in such a way that they will not block the ball's path directly.
+- The ball's trajectory is clear, and it can reach the green region without obstruction.
+
+Scene C:
+- The red ball will fall and pass by the blue triangle and rectangle.
+- The blue triangle and rectangle are positioned similarly to Scene B, with no direct obstruction to the ball's path.
+- The ball's trajectory remains clear, allowing it to reach the green region.
+
+Scene D:
+- The red ball will fall and pass by the blue triangle and rectangle.
+- The blue triangle and rectangle are positioned in the same way as in Scenes B and C, with no direct obstruction to the ball's path.
+- The ball's trajectory remains clear, allowing it to reach the green region.
+
+Final Result: I predict that scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 22 (Repetition 2/4) -----
+Success case: Gap_attempt_6_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 3, 4: 2}
+Model prediction: A
+Prediction correct
+Response time: 3.39 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_16/Gap_attempt_6_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_69/Gap_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_4_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Gap_attempt_2_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the positions, orientations, and potential interactions of the objects, particularly focusing on how they will influence the red ball’s motion.
+
+Scene A:
+- The red ball is positioned near the top left corner.
+- The blue triangle is positioned directly above the red ball, and the blue rectangle is below it.
+- The green target area is on the right side.
+- The blue triangle and rectangle will not obstruct the red ball’s path.
+- The red ball will fall straight down due to gravity and will likely hit the blue rectangle first, potentially bouncing off it.
+
+Prediction: The red ball will not reach the green target area.
+
+Reasoning: The red ball will likely be deflected by the blue rectangle, preventing it from reaching the green area.
+
+Scene B:
+- The red ball is positioned near the top left corner.
+- The blue triangle is directly above the red ball, and the blue rectangle is below it.
+- The green target area is on the right side.
+- The blue triangle and rectangle will not obstruct the red ball’s path.
+- The red ball will fall straight down due to gravity and will likely hit the green target area directly.
+
+Prediction: The red ball will reach the green target area.
+
+Reasoning: The red ball will have a clear path to the green area without any obstructions, allowing it to fall directly into the target.
+
+Scene C:
+- The red ball is positioned near the top left corner.
+- The blue triangle is inverted and positioned directly below the red ball, and the blue rectangle is above it.
+- The green target area is on the right side.
+- The red ball will fall straight down due to gravity.
+- The blue triangle is positioned in such a way that it will block the red ball’s path to the green area.
+
+Prediction: The red ball will not reach the green target area.
+
+Reasoning: The blue triangle will block the red ball’s path, preventing it from reaching the green area.
+
+Scene D:
+- The red ball is positioned near the top left corner.
+- The blue triangle is directly above the red ball, and the blue rectangle is below it.
+- The green target area is on the right side.
+- The blue triangle and rectangle will not obstruct the red ball’s path.
+- The red ball will fall straight down due to gravity and will likely hit the blue rectangle first, potentially bouncing off it.
+
+Prediction: The red ball will not reach the green target area.
+
+Reasoning: The red
+==========================
+
+Found standalone letter: A
+
+----- Test Set 23 (Repetition 3/4) -----
+Success case: Gap_attempt_6_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 1, 2: 3, 3: 4, 4: 2}
+Model prediction: A
+Prediction incorrect
+Response time: 5.23 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_69/Gap_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_4_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_16/Gap_attempt_6_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Gap_attempt_2_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the initial positions of the red ball and blue objects, their orientations, and their potential interactions with each other and the obstacles.
+
+Scene A:
+- The red ball is positioned in the upper left corner.
+- The blue triangle is positioned above the green region, and the blue rectangle is below the green region.
+- The red ball will fall due to gravity. The blue triangle is positioned in a way that it will not directly block the path of the red ball, but the blue rectangle could potentially cause the red ball to bounce off the black obstacle or redirect its path.
+- The red ball is unlikely to reach the green region without bouncing off the black obstacle or the blue rectangle.
+
+Final Result: I predict that scene A will not succeed.
+
+Scene B:
+- The red ball is positioned in the upper left corner.
+- The blue triangle is positioned above the green region, and the blue rectangle is below the green region.
+- The red ball will fall due to gravity. The blue triangle is positioned in a way that it will not directly block the path of the red ball, but the blue rectangle could potentially cause the red ball to bounce off the black obstacle or redirect its path.
+- The red ball is unlikely to reach the green region without bouncing off the black obstacle or the blue rectangle.
+
+Final Result: I predict that scene B will not succeed.
+
+Scene C:
+- The red ball is positioned in the upper left corner.
+- The blue triangle is positioned above the green region, and the blue rectangle is below the green region.
+- The red ball will fall due to gravity. The blue triangle is positioned in a way that it will not directly block the path of the red ball, but the blue rectangle could potentially cause the red ball to bounce off the black obstacle or redirect its path.
+- The red ball is unlikely to reach the green region without bouncing off the black obstacle or the blue rectangle.
+
+Final Result: I predict that scene C will not succeed.
+
+Scene D:
+- The red ball is positioned in the upper left corner.
+- The blue triangle is positioned above the green region, and the blue rectangle is below the green region.
+- The red ball will fall due to gravity. The blue triangle is positioned in a way that it will not directly block the path of the red ball, but the blue rectangle could potentially cause the red ball to bounce off the black obstacle or redirect its path.
+- The red ball is unlikely to reach the green region without bouncing off the black obstacle or the blue rectangle.
+
+Final
+==========================
+
+Found standalone letter: A
+
+----- Test Set 24 (Repetition 4/4) -----
+Success case: Gap_attempt_6_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 2, 2: 4, 3: 1, 4: 3}
+Model prediction: A
+Prediction incorrect
+Response time: 5.32 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_1/Gap_attempt_2_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_16/Gap_attempt_6_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_69/Gap_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_4_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [4, 4, 1, 2]
+Is perfectly consistent: False
+Most frequently predicted image: 4
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+**Scene A**: The red ball is positioned at a higher point and is likely to fall towards the green target area. The blue objects are above the ball and do not seem to obstruct the path directly. The ball will fall, possibly rolling or bouncing off the blue object, but it has a clear path to the green region. 
+
+**Scene B**: The red ball is again at a higher point, but the blue triangle is positioned closer to the green region than in Scene A. The red ball might bounce off the blue triangle before falling into the green region. The path is more obstructed than in Scene A, making it less likely for the ball to reach the green area directly.
+
+**Scene C**: The red ball is at a similar position as in Scene A. The blue triangle is positioned similarly to Scene B, but the blue rectangle is also present. The ball might bounce off the rectangle before reaching the green region, making the path more complex and reducing the likelihood of direct entry into the green area.
+
+**Scene D**: The red ball is at the highest point compared to other scenes. The blue triangle is positioned further from the green region, and the blue rectangle is also present but in a different orientation. The ball might bounce off the blue rectangle, but its path still leads to the green region. This scene has the most direct and least obstructed path among all.
+
+Final Result: "I predict that scene D will succeed."
+==========================
+
+Found prediction in Final Result: D
+
+----- Test Set 25 (Repetition 1/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 1, 2: 2, 3: 4, 4: 3}
+Model prediction: D
+Prediction incorrect
+Response time: 5.43 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_3_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_70/Gap_attempt_2_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_18/Gap_attempt_0_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+**Scene A:** 
+- The red ball is positioned near the top left corner of the image.
+- The blue triangle is located at the top of the scene, while the blue rectangle is placed horizontally in the middle of the white area.
+- The green target area is on the right side of the scene, near the bottom.
+
+The red ball will fall due to gravity. However, the blue triangle and the blue rectangle may influence the ball's trajectory. The triangle is positioned directly above the ball, which could cause the ball to collide with it, potentially redirecting the ball upwards or to the left. The blue rectangle is further from the ball and may not have a significant impact on its trajectory. Given these considerations, the red ball is likely to miss the green target area.
+
+**Scene B:**
+- The red ball is positioned near the top left corner of the image.
+- The blue triangle is located at the bottom of the scene, while the blue rectangle is placed horizontally in the middle of the white area.
+- The green target area is on the right side of the scene, near the bottom.
+
+The red ball will fall due to gravity. The blue triangle is directly below the ball, which could cause the ball to collide with it, potentially redirecting the ball downwards. The blue rectangle is further from the ball and may not have a significant impact on its trajectory. Given these considerations, the red ball is likely to miss the green target area.
+
+**Scene C:**
+- The red ball is positioned near the top left corner of the image.
+- The blue triangle is located at the bottom of the scene, while the blue rectangle is placed horizontally in the middle of the white area.
+- The green target area is on the right side of the scene, near the bottom.
+
+The red ball will fall due to gravity. The blue triangle is directly below the ball, which could cause the ball to collide with it, potentially redirecting the ball downwards. The blue rectangle is further from the ball and may not have a significant impact on its trajectory. Given these considerations, the red ball is likely to miss the green target area.
+
+**Scene D:**
+- The red ball is positioned near the top left corner of the image.
+- The blue triangle is located at the top of the scene, while the blue rectangle is placed horizontally in the middle of the white area.
+- The green target area is on the right side of the scene, near the bottom.
+
+The red ball will fall due to gravity. The blue triangle is positioned
+==========================
+
+Found standalone letter: A
+
+----- Test Set 26 (Repetition 2/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 3, 2: 4, 3: 2, 4: 1}
+Model prediction: A
+Prediction incorrect
+Response time: 6.08 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_18/Gap_attempt_0_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_70/Gap_attempt_2_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_3_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, we'll analyze the positions of the red ball, the blue objects, and the green target area to determine the likelihood of the red ball reaching the green region.
+
+Scene A:
+- The red ball is at a higher position and will fall straight down due to gravity.
+- The blue objects are below the red ball and will not interfere with its trajectory.
+- The green target area is directly below the red ball’s path.
+- The red ball will fall into the green target area.
+
+Scene B:
+- The red ball is at a higher position and will fall straight down due to gravity.
+- The blue triangle is positioned directly above the red ball and will likely block the red ball from reaching the green target area.
+- The red ball will not fall into the green target area.
+
+Scene C:
+- The red ball is at a higher position and will fall straight down due to gravity.
+- The blue triangle is positioned directly above the red ball and will likely block the red ball from reaching the green target area.
+- The red ball will not fall into the green target area.
+
+Scene D:
+- The red ball is at a higher position and will fall straight down due to gravity.
+- The blue triangle is positioned directly below the red ball and will not interfere with its trajectory.
+- The red ball will fall into the green target area.
+
+Final Result: “I predict that scene A and scene D will succeed.”
+==========================
+
+Matches found:
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 27 (Repetition 3/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 3, 4: 2}
+Model prediction: D
+Prediction incorrect
+Response time: 3.59 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_18/Gap_attempt_0_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_3_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_70/Gap_attempt_2_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, the red ball will fall due to gravity. The blue objects will not affect the motion of the red ball directly because they are not stickily attached to it. The outcome depends on the ball's trajectory and the positions of the blue objects.
+
+Scene A: The red ball will fall straight down due to gravity. The blue triangle is positioned directly below the red ball and will likely block its path. The blue rectangle is above the ball and does not interfere. Prediction: No, the red ball will not reach the green region.
+
+Reasoning: The red ball will fall straight down. The blue triangle is below and will block the red ball's path, preventing it from reaching the green region. Prediction: No, the red ball will not reach the green region.
+
+Reasoning: The red ball will fall straight down. The blue triangle is above and does not interfere with the ball's path. The blue rectangle is below the ball and will not block it. Prediction: Yes, the red ball will reach the green region.
+
+Reasoning: The red ball will fall straight down. The blue triangle is below and will block the red ball's path. The blue rectangle is above and does not interfere. Prediction: No, the red ball will not reach the green region.
+
+Final Result: “I predict that scene C will succeed.”
+==========================
+
+Matches found:
+Letter: C, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene C will succeed
+Letter: C, Pattern: ([A-D])\s*will succeed, Matched text: C will succeed
+
+----- Test Set 28 (Repetition 4/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 2, 2: 1, 3: 3, 4: 4}
+Model prediction: C
+Prediction incorrect
+Response time: 4.72 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_70/Gap_attempt_2_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_3_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_18/Gap_attempt_0_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [3, 3, 2, 3]
+Is perfectly consistent: False
+Most frequently predicted image: 3
+Consistency ratio: 75.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the positions and orientations of the objects, predict the motion of the red ball, and determine if it has a clear path to the green target area.
+
+**Scene A:**
+- The red ball is positioned on a sloped surface with a blue triangular object above it.
+- The red ball will likely roll down the slope towards the green target area.
+- The blue triangular object is above and will not interfere with the red ball’s motion.
+- The red ball will likely bounce off the edge of the green target area and fall down, possibly into the green region.
+- **Prediction:** The red ball will eventually fall into the green target area.
+
+**Scene B:**
+- The red ball is positioned on a sloped surface with a blue triangular object above it.
+- The red ball will likely roll down the slope towards the green target area.
+- The blue triangular object is above and will not interfere with the red ball’s motion.
+- The red ball will likely bounce off the edge of the green target area and fall down, possibly into the green region.
+- **Prediction:** The red ball will eventually fall into the green target area.
+
+**Scene C:**
+- The red ball is positioned on a sloped surface with a blue triangular object above it.
+- The red ball will likely roll down the slope towards the green target area.
+- The blue triangular object is above and will not interfere with the red ball’s motion.
+- The red ball will likely bounce off the edge of the green target area and fall down, possibly into the green region.
+- **Prediction:** The red ball will eventually fall into the green target area.
+
+**Scene D:**
+- The red ball is positioned on a sloped surface with a blue triangular object below it.
+- The red ball will likely roll down the slope towards the green target area.
+- The blue triangular object is below and will not interfere with the red ball’s motion.
+- The red ball will likely bounce off the edge of the green target area and fall down, possibly into the green region.
+- **Prediction:** The red ball will eventually fall into the green target area.
+
+**Final Result:** Scene D has the highest likelihood of success. The red ball will most likely roll down the slope, bounce off the edge of the green target area, and fall into the green region.
+==========================
+
+Found standalone letter: A
+
+----- Test Set 29 (Repetition 1/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 2, 2: 1, 3: 3, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 7.64 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_72/Gap_attempt_3_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_62/Gap_attempt_4_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_19/Gap_attempt_0_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the positions and orientations of the red ball, blue objects, and green target area to predict the motion of the red ball and whether it will reach the green target.
+
+Scene A:
+- The red ball is near the top left corner.
+- There are two blue objects: a horizontal rectangle and a downward-facing triangle.
+- The green target area is at the bottom right corner.
+- The red ball is suspended in the air and will fall due to gravity.
+- The blue triangle is oriented downward, which could potentially obstruct the red ball's path.
+- The horizontal rectangle does not seem to be positioned to block or guide the red ball.
+
+In this scene, the red ball will likely fall toward the green target area. However, the downward-facing triangle might obstruct or redirect its path.
+
+Final Result: I predict that scene A will succeed.
+
+Scene B:
+- The red ball is near the top left corner.
+- There are two blue objects: a horizontal rectangle and a downward-facing triangle.
+- The green target area is at the bottom right corner.
+- The red ball will fall due to gravity.
+- The horizontal rectangle is positioned to potentially block or redirect the red ball.
+- The downward-facing triangle could obstruct the red ball's path.
+
+In this scene, the red ball is more likely to be obstructed by the horizontal rectangle, which might prevent it from reaching the green target area.
+
+Final Result: I predict that scene B will not succeed.
+
+Scene C:
+- The red ball is near the top left corner.
+- There are two blue objects: a horizontal rectangle and a downward-facing triangle.
+- The green target area is at the bottom right corner.
+- The red ball will fall due to gravity.
+- The horizontal rectangle is positioned to potentially block or redirect the red ball.
+- The downward-facing triangle is oriented downward but not directly in the path of the red ball.
+
+In this scene, the red ball is likely to fall toward the green target area, and the downward-facing triangle does not seem to be a significant obstruction.
+
+Final Result: I predict that scene C will succeed.
+
+Scene D:
+- The red ball is near the top left corner.
+- There are two blue objects: a horizontal rectangle and a downward-facing triangle.
+- The green target area is at the bottom right corner.
+- The red ball will fall due to gravity.
+- The horizontal rectangle is positioned to potentially block or redirect the red ball.
+- The downward-facing triangle is oriented downward but not directly in the path of the red ball
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: C, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene C will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+Letter: C, Pattern: ([A-D])\s*will succeed, Matched text: C will succeed
+
+----- Test Set 30 (Repetition 2/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 1, 2: 4, 3: 2, 4: 3}
+Model prediction: A
+Prediction incorrect
+Response time: 6.64 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_62/Gap_attempt_4_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_19/Gap_attempt_0_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_72/Gap_attempt_3_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+Scene A: The red ball will fall and will be stopped by the blue rectangular object. The ball will not be able to continue to the green area due to the obstacle.
+
+Scene B: The red ball will fall and will be stopped by the blue triangular object. The ball will not be able to continue to the green area due to the obstacle.
+
+Scene C: The red ball will fall and will not be stopped by any of the blue objects. The ball will continue to fall and reach the green area.
+
+Scene D: The red ball will fall and will be stopped by the blue triangular object. The ball will not be able to continue to the green area due to the obstacle.
+
+Final Result: “I predict that scene C will succeed.”
+==========================
+
+Matches found:
+Letter: C, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene C will succeed
+Letter: C, Pattern: ([A-D])\s*will succeed, Matched text: C will succeed
+
+----- Test Set 31 (Repetition 3/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 3, 4: 2}
+Model prediction: C
+Prediction incorrect
+Response time: 2.95 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_19/Gap_attempt_0_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_62/Gap_attempt_4_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_72/Gap_attempt_3_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+- **Scene A:** 
+  - The red ball will fall straight down due to gravity.
+  - The blue triangle will not affect the red ball's motion as it is above the red ball and will not obstruct its path.
+  - The blue rectangle is below the red ball and will not interfere.
+  - The red ball will likely fall into the green region as it falls directly down.
+
+- **Scene B:** 
+  - The red ball will fall straight down due to gravity.
+  - The blue triangle will not affect the red ball's motion as it is above the red ball and will not obstruct its path.
+  - The blue rectangle is below the red ball and will not interfere.
+  - The red ball will likely fall into the green region as it falls directly down.
+
+- **Scene C:** 
+  - The red ball will fall straight down due to gravity.
+  - The blue triangle is above the red ball and will not obstruct its path.
+  - The blue rectangle is below the red ball and will not interfere.
+  - The red ball will likely fall into the green region as it falls directly down.
+
+- **Scene D:** 
+  - The red ball will fall straight down due to gravity.
+  - The blue triangle is above the red ball and will not obstruct its path.
+  - The blue rectangle is below the red ball and will not interfere.
+  - The red ball will likely fall into the green region as it falls directly down.
+
+Final Result: “I predict that scene A will succeed.”
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 32 (Repetition 4/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 1, 2: 2, 3: 4, 4: 3}
+Model prediction: A
+Prediction incorrect
+Response time: 4.87 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_62/Gap_attempt_4_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_72/Gap_attempt_3_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_19/Gap_attempt_0_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [2, 1, 3, 1]
+Is perfectly consistent: False
+Most frequently predicted image: 1
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the positions and orientations of the red ball, blue objects, and the green target area. I will determine how these objects will interact and whether the red ball will be able to reach the green target area.
+
+Scene A: The red ball is positioned at the top left of the image. The blue objects (a triangle and a horizontal bar) are above the red ball. The green target area is at the bottom right. The blue objects are not in the direct path of the red ball. The red ball will fall straight down and reach the green target area.
+
+Scene B: The red ball is positioned at the top left of the image. The blue objects (a triangle and a horizontal bar) are above the red ball. The green target area is at the bottom right. The blue objects are not in the direct path of the red ball. The red ball will fall straight down and reach the green target area.
+
+Scene C: The red ball is positioned at the top left of the image. The blue objects (a triangle and a horizontal bar) are above the red ball. The green target area is at the bottom right. The blue objects are not in the direct path of the red ball. The red ball will fall straight down and reach the green target area.
+
+Scene D: The red ball is positioned at the top left of the image. The blue objects (a triangle and a horizontal bar) are above the red ball. The green target area is at the bottom right. The blue object (a triangle) is closer to the red ball and might potentially interfere with its path. The red ball will fall straight down but might not reach the green target area due to the proximity of the blue object.
+
+Final Result: "I predict that scene A will succeed."
+==========================
+
+Found prediction in Final Result: A
+
+----- Test Set 33 (Repetition 1/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 1, 2: 2, 3: 3, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 5.03 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_34/Gap_attempt_1_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_16/Gap_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_34/Gap_attempt_2_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_2/Gap_attempt_0_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+**Scene A:**
+- The red ball is positioned at the top-left corner.
+- The green region is on the bottom right.
+- There is a blue object (a rectangle) near the green region and a blue triangle at the top.
+- The red ball will fall due to gravity and will likely bounce off the blue rectangle.
+- The bounce will likely direct the ball towards the green region.
+- However, the blue triangle at the top could potentially obstruct the path.
+
+**Scene B:**
+- The red ball is at the top-left corner.
+- The green region is on the bottom right.
+- A blue triangle is at the top, and a blue rectangle is near the green region.
+- The red ball will fall and will likely bounce off the blue rectangle.
+- The bounce will direct the ball towards the green region.
+- The blue triangle at the top does not seem to obstruct the path significantly.
+
+**Scene C:**
+- The red ball is at the top-left corner.
+- The green region is on the bottom right.
+- A blue triangle is at the top, and a blue rectangle is near the green region.
+- The red ball will fall and will likely bounce off the blue rectangle.
+- The bounce will direct the ball towards the green region.
+- The blue triangle at the top does not obstruct the path significantly.
+
+**Scene D:**
+- The red ball is at the top-left corner.
+- The green region is on the bottom right.
+- A blue triangle is at the top, and a blue rectangle is near the green region.
+- The red ball will fall and will likely bounce off the blue rectangle.
+- The bounce will direct the ball towards the green region.
+- The blue triangle at the top does not obstruct the path significantly.
+
+**Prediction:**
+- Scenes A, B, C, and D all have similar conditions with the red ball likely bouncing off the blue rectangle and reaching the green region.
+- However, in Scene A, the blue triangle at the top is slightly more likely to obstruct the path compared to the other scenes, making Scene B the most likely to succeed.
+
+Final Result: I predict that scene B will succeed.
+==========================
+
+Matches found:
+Letter: B, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene B will succeed
+Letter: B, Pattern: ([A-D])\s*will succeed, Matched text: B will succeed
+
+----- Test Set 34 (Repetition 2/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 3, 2: 2, 3: 4, 4: 1}
+Model prediction: B
+Prediction incorrect
+Response time: 4.77 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_34/Gap_attempt_2_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_16/Gap_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_2/Gap_attempt_0_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_34/Gap_attempt_1_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+**Scene A:**
+- The red ball is positioned in the top-left corner.
+- The blue triangle is below the red ball and to the right of the green region.
+- The blue rectangle is to the left of the green region.
+- Since the red ball will fall due to gravity, it will likely move towards the green region.
+- The blue triangle and blue rectangle do not seem to obstruct the red ball's path significantly.
+
+**Scene B:**
+- The red ball is in the same position as in Scene A.
+- The blue triangle is above the red ball, and the blue rectangle is to the left of the green region.
+- The blue triangle could potentially block the red ball's path if it falls in a way that intersects with the red ball's trajectory.
+- The blue rectangle might not obstruct the red ball significantly.
+
+**Scene C:**
+- The red ball is again in the top-left corner.
+- The blue triangle is above the red ball, and the blue rectangle is to the left of the green region.
+- The blue triangle could potentially block the red ball's path if it falls in a way that intersects with the red ball's trajectory.
+- The blue rectangle might not obstruct the red ball significantly.
+
+**Scene D:**
+- The red ball is in the same position as in the previous scenes.
+- The blue triangle is above the red ball, and the blue rectangle is to the left of the green region.
+- The blue triangle could potentially block the red ball's path if it falls in a way that intersects with the red ball's trajectory.
+- The blue rectangle might not obstruct the red ball significantly.
+
+**Final Result:**
+I predict that scene D will succeed.
+==========================
+
+Matches found:
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 35 (Repetition 3/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 3, 4: 2}
+Model prediction: D
+Prediction incorrect
+Response time: 4.52 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_2/Gap_attempt_0_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_34/Gap_attempt_1_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_34/Gap_attempt_2_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_16/Gap_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+**Scene A:**
+- The red ball is positioned to the left of the blue triangle.
+- The red ball will fall downward due to gravity.
+- The blue triangle is positioned above the green target area and is not likely to obstruct the red ball's path.
+- The blue rectangle is positioned below the red ball and will not affect its trajectory.
+- The red ball's trajectory will likely result in it falling into the green target area.
+
+**Scene B:**
+- The red ball is positioned to the left of the blue triangle.
+- The red ball will fall downward due to gravity.
+- The blue triangle is positioned above the green target area and is not likely to obstruct the red ball's path.
+- The blue rectangle is positioned below the red ball and will not affect its trajectory.
+- The red ball's trajectory will likely result in it falling into the green target area.
+
+**Scene C:**
+- The red ball is positioned to the left of the blue triangle.
+- The red ball will fall downward due to gravity.
+- The blue triangle is positioned above the green target area and is not likely to obstruct the red ball's path.
+- The blue rectangle is positioned below the red ball and will not affect its trajectory.
+- The red ball's trajectory will likely result in it falling into the green target area.
+
+**Scene D:**
+- The red ball is positioned to the left of the blue triangle.
+- The red ball will fall downward due to gravity.
+- The blue triangle is positioned above the green target area and is not likely to obstruct the red ball's path.
+- The blue rectangle is positioned below the red ball and will not affect its trajectory.
+- The red ball's trajectory will likely result in it falling into the green target area.
+
+**Final Result:**
+I predict that scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 36 (Repetition 4/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 1, 2: 4, 3: 2, 4: 3}
+Model prediction: A
+Prediction incorrect
+Response time: 4.36 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_34/Gap_attempt_1_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_2/Gap_attempt_0_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_16/Gap_attempt_0_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_34/Gap_attempt_2_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [1, 2, 2, 1]
+Is perfectly consistent: False
+Most frequently predicted image: 1
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the positions and orientations of the red ball, the blue objects, and the green target area to determine the likely motion and success of the red ball.
+
+- **Scene A:**
+  - The red ball is positioned above the green region and the blue objects.
+  - The blue objects are oriented such that they do not obstruct the red ball's path.
+  - Given the red ball's position, it will fall due to gravity, and its trajectory will likely allow it to clear the obstacles and reach the green region.
+  - **Conclusion:** The red ball will likely reach the green region.
+
+- **Scene B:**
+  - The red ball is positioned above the green region and the blue objects.
+  - The blue objects are oriented such that they do not obstruct the red ball's path.
+  - Similar to Scene A, the red ball will fall due to gravity, and its trajectory will likely allow it to clear the obstacles and reach the green region.
+  - **Conclusion:** The red ball will likely reach the green region.
+
+- **Scene C:**
+  - The red ball is positioned above the green region and the blue objects.
+  - The blue objects are oriented such that they do not obstruct the red ball's path.
+  - The red ball will fall due to gravity, and its trajectory will likely allow it to clear the obstacles and reach the green region.
+  - **Conclusion:** The red ball will likely reach the green region.
+
+- **Scene D:**
+  - The red ball is positioned above the green region and the blue objects.
+  - The blue objects are oriented such that they do not obstruct the red ball's path.
+  - The red ball will fall due to gravity, and its trajectory will likely allow it to clear the obstacles and reach the green region.
+  - **Conclusion:** The red ball will likely reach the green region.
+
+**Final Result:** I predict that scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 37 (Repetition 1/4) -----
+Success case: Gap_attempt_1_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 3, 3: 2, 4: 1}
+Model prediction: A
+Prediction correct
+Response time: 4.86 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_21/Gap_attempt_1_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_6_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_6_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_23/Gap_attempt_2_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, the red ball will start falling due to gravity and may interact with the blue objects, which could potentially alter its trajectory. The goal is to determine whether the ball will land within the green region.
+
+Scene A:
+- The red ball is above the blue triangle and will likely fall past it.
+- The blue triangle is below the red ball, so it will not interact with the ball.
+- The red ball will fall to the right side of the green region and miss it.
+
+Final Result: “I predict that scene A will fail to reach the green region.”
+
+Scene B:
+- The red ball will fall past the blue triangle, which is above it.
+- The blue triangle is not in the ball's path, so it will not affect the ball's trajectory.
+- The red ball will fall to the right of the green region and miss it.
+
+Final Result: “I predict that scene B will fail to reach the green region.”
+
+Scene C:
+- The red ball is above the blue triangle and will likely fall past it.
+- The blue triangle is directly below the red ball and will collide with the ball.
+- The collision with the blue triangle will alter the ball's trajectory, making it less likely to reach the green region.
+
+Final Result: “I predict that scene C will fail to reach the green region.”
+
+Scene D:
+- The red ball is above the blue triangle and will likely fall past it.
+- The blue triangle is below the red ball, so it will not interact with the ball.
+- The red ball will fall to the right side of the green region and miss it.
+
+Final Result: “I predict that scene D will fail to reach the green region.”
+
+Scene A:
+Reasoning: The red ball will fall past the blue triangle, which is above it. The blue triangle will not interact with the ball, and the ball will fall to the right of the green region, missing it.
+
+Final Result: “I predict that scene A will fail to reach the green region.”
+
+Scene B:
+Reasoning: The red ball will fall past the blue triangle, which is above it. The blue triangle will not interact with the ball, and the ball will fall to the right of the green region, missing it.
+
+Final Result: “I predict that scene B will fail to reach the green region.”
+
+Scene C:
+Reasoning: The red ball will fall past the blue triangle, which is directly below it. The collision with the blue triangle will alter the ball's trajectory, making it less likely to
+==========================
+
+Found standalone letter: A
+
+----- Test Set 38 (Repetition 2/4) -----
+Success case: Gap_attempt_1_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 2, 2: 3, 3: 4, 4: 1}
+Model prediction: A
+Prediction incorrect
+Response time: 6.10 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_6_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_6_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_21/Gap_attempt_1_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_23/Gap_attempt_2_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+**Scene A:**
+- The red ball is positioned near the top left corner.
+- There is a blue triangle and a blue rectangle in the middle of the scene.
+- The green target area is at the bottom right.
+- The red ball is likely to fall due to gravity and will not be hindered by the blue objects.
+- The trajectory of the red ball will likely be curved around the blue objects, potentially reaching the green area.
+
+**Scene B:**
+- The red ball is in the same position as in Scene A.
+- The blue triangle and rectangle are in the same positions.
+- The red ball's trajectory will be similar to Scene A, potentially reaching the green area.
+- The blue objects are not likely to significantly alter the path of the red ball.
+
+**Scene C:**
+- The red ball is in the same position as in the previous scenes.
+- The blue triangle and rectangle are in the same positions.
+- The trajectory of the red ball will likely be curved around the blue objects, potentially reaching the green area.
+- The red ball's motion is not significantly affected by the blue objects.
+
+**Scene D:**
+- The red ball is in the same position as in the previous scenes.
+- The blue triangle is inverted and is positioned at the bottom left of the scene.
+- The blue rectangle is positioned in the middle.
+- The red ball's trajectory will likely be curved around the blue objects, potentially reaching the green area.
+- The red ball's motion is not significantly affected by the blue objects.
+
+Final Result: I predict that scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 39 (Repetition 3/4) -----
+Success case: Gap_attempt_1_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 2, 2: 1, 3: 3, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 3.77 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_6_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_23/Gap_attempt_2_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_6_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_21/Gap_attempt_1_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the positions and orientations of the objects, the forces acting on them, and the potential interactions that may affect the red ball's trajectory.
+
+Scene A:
+- The red ball is above the blue object and near the edge of the gap.
+- The blue object is a rectangular prism and does not obstruct the red ball's path.
+- The green target area is at the bottom of the gap, which is the intended destination for the red ball.
+- The red ball will fall due to gravity and will not bounce off the blue object.
+
+Prediction: The red ball will fall into the green region.
+
+Reasoning: For Scene B:
+- The red ball is again above the blue object and near the edge of the gap.
+- The blue object is a triangular prism and does not obstruct the red ball's path.
+- The green target area is at the bottom of the gap.
+- The red ball will fall due to gravity and will not bounce off the blue object.
+
+Prediction: The red ball will fall into the green region.
+
+Reasoning: For Scene C:
+- The red ball is positioned similarly to the previous scenes, above the blue object and near the edge of the gap.
+- The blue object is a rectangular prism and does not obstruct the red ball's path.
+- The green target area is at the bottom of the gap.
+- The red ball will fall due to gravity and will not bounce off the blue object.
+
+Prediction: The red ball will fall into the green region.
+
+Reasoning: For Scene D:
+- The red ball is positioned similarly to the previous scenes, above the blue object and near the edge of the gap.
+- The blue object is a triangular prism and does not obstruct the red ball's path.
+- The green target area is at the bottom of the gap.
+- The red ball will fall due to gravity and will not bounce off the blue object.
+
+Prediction: The red ball will fall into the green region.
+
+Final Result: All four scenes have a similar setup with no obstacles for the red ball, leading it to fall into the green region. However, based on the visual analysis, Scene D appears to have the highest likelihood of success due to the positioning of the blue object, which does not interfere with the red ball's path.
+
+I predict that scene D will succeed.
+==========================
+
+Matches found:
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 40 (Repetition 4/4) -----
+Success case: Gap_attempt_1_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 1, 2: 4, 3: 3, 4: 2}
+Model prediction: D
+Prediction incorrect
+Response time: 5.73 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_23/Gap_attempt_2_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_21/Gap_attempt_1_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_6_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_6_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [4, 2, 2, 2]
+Is perfectly consistent: False
+Most frequently predicted image: 2
+Consistency ratio: 75.00%
+Correct image was: 4
+-------------------------------
+
+Warning: Could not find first frame image in /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_72/Gap_attempt_5_obj1_False, skipping this case
+Warning: Not enough valid cases in the current combination (need 4), skipping
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+- **Scene A:** The red ball is positioned at the top left corner of the white region. The blue object is below the red ball and seems to be on a slight incline. Given the lack of any sticky surfaces and the fact that all objects will fall due to gravity, the red ball will likely roll down towards the green target area. The blue object does not seem to interfere with the red ball's path. The trajectory of the red ball suggests it will roll down and potentially reach the green area.
+
+- **Scene B:** Similar to Scene A, the red ball is at the top left corner of the white region. The blue object is directly below the red ball, and the red ball will likely roll down towards the green target area. The blue object does not seem to obstruct the red ball's path. The ball's trajectory indicates it will fall into the green area.
+
+- **Scene C:** The red ball is positioned at the top left corner of the white region, and the blue object is below it. The blue object appears to be closer to the red ball than in the previous scenes. This close proximity might make it more likely that the red ball will bounce off the blue object, which could redirect its path away from the green area. The trajectory of the red ball suggests it might not reach the green area.
+
+- **Scene D:** The red ball is positioned at the top left corner of the white region, and the blue object is below it, similar to Scene C. The blue object's proximity to the red ball suggests a higher likelihood of a bounce. This bounce might redirect the red ball away from the green area. The trajectory of the red ball suggests it might not reach the green area.
+
+Final Result: "I predict that Scene A will succeed."
+==========================
+
+Matches found:
+Letter: A, Pattern: Scene\s*([A-D])\s*will succeed, Matched text: Scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 41 (Repetition 1/4) -----
+Success case: Gap_attempt_2_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 3, 2: 2, 3: 1, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 4.18 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_23/Gap_attempt_2_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_46/Gap_attempt_2_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_24/Gap_attempt_2_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: 
+
+Scene A:
+The red ball is positioned high on the left side of the image. It will fall straight down due to gravity. The blue triangle and the blue rectangle below the red ball do not obstruct its path to the green region. Therefore, the red ball will likely fall into the green target area. The blue objects do not affect the trajectory of the red ball.
+
+Scene B:
+The red ball will fall straight down due to gravity, as in Scene A. However, the blue triangle is positioned such that it will likely block the path of the red ball, preventing it from reaching the green target area. Therefore, the red ball will not fall into the green region.
+
+Scene C:
+The red ball will fall straight down due to gravity, as in Scene A. The blue triangle and the blue rectangle are positioned such that they will not obstruct the red ball’s path to the green region. Thus, the red ball will likely fall into the green target area. The blue objects do not affect the trajectory of the red ball.
+
+Scene D:
+The red ball will fall straight down due to gravity, as in Scene A. The blue triangle and the blue rectangle are positioned in a way that they will obstruct the red ball’s path to the green region, similar to Scene B. Therefore, the red ball will not fall into the green region.
+
+Final Result: “I predict that scene A will succeed.”
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 42 (Repetition 2/4) -----
+Success case: Gap_attempt_2_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 2, 3: 3, 4: 1}
+Model prediction: A
+Prediction correct
+Response time: 3.95 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_24/Gap_attempt_2_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_23/Gap_attempt_2_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_46/Gap_attempt_2_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, we need to analyze the positions and orientations of the red ball, blue objects, and the green target area to determine the likelihood of the red ball falling into the green area.
+
+Scene A: 
+- The red ball is positioned above the green target area.
+- The blue object below the red ball will not affect its motion as it is horizontally aligned with the red ball's path and not in the way of the ball's fall.
+- The red ball will fall directly into the green target area.
+
+Scene B: 
+- The red ball is positioned above the green target area.
+- The blue object is oriented in a way that it may obstruct the red ball's path, especially if the red ball falls in the direction of the blue object.
+- The red ball is unlikely to fall directly into the green target area.
+
+Scene C:
+- The red ball is positioned above the green target area.
+- The blue object is positioned below the red ball and to the right of its fall path.
+- The red ball will fall directly into the green target area.
+
+Scene D:
+- The red ball is positioned above the green target area.
+- The blue object is positioned below the red ball and to the left of its fall path.
+- The red ball will fall directly into the green target area.
+
+Final Result: I predict that scene A and scene C will succeed.
+==========================
+
+Matches found:
+Letter: C, Pattern: ([A-D])\s*will succeed, Matched text: C will succeed
+
+----- Test Set 43 (Repetition 3/4) -----
+Success case: Gap_attempt_2_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 2, 2: 1, 3: 4, 4: 3}
+Model prediction: C
+Prediction correct
+Response time: 4.68 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_46/Gap_attempt_2_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_24/Gap_attempt_2_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_23/Gap_attempt_2_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the positions and orientations of the objects, predict the motion of the red ball, and determine whether it will reach the green region.
+
+Scene A:
+- The red ball is suspended at a higher position, and the blue objects are below it. 
+- The blue triangle is positioned such that it could potentially block the red ball if it falls.
+- The red ball might be able to fall past the blue triangle if it moves downward.
+
+Reasoning: The red ball might have a chance of reaching the green region if it moves past the blue triangle, but the blue triangle's position creates uncertainty.
+
+Final Result: I predict that scene A will succeed.
+
+Scene B:
+- The red ball is positioned higher than the blue objects, and the blue triangle is directly below it.
+- The blue triangle could potentially block the red ball if it falls.
+
+Reasoning: The red ball has a high chance of falling past the blue triangle and reaching the green region.
+
+Final Result: I predict that scene B will succeed.
+
+Scene C:
+- The red ball is positioned higher than the blue objects, and the blue triangle is directly below it.
+- The blue triangle could potentially block the red ball if it falls.
+
+Reasoning: Similar to Scene B, the red ball has a high chance of falling past the blue triangle and reaching the green region.
+
+Final Result: I predict that scene C will succeed.
+
+Scene D:
+- The red ball is positioned higher than the blue objects, and the blue triangle is above and to the right of the blue rectangle.
+- The blue triangle is positioned such that it could potentially block the red ball if it falls.
+
+Reasoning: The red ball might be able to fall past the blue triangle if it moves downward, but the blue triangle's position creates uncertainty.
+
+Final Result: I predict that scene D will succeed.
+
+Based on this analysis, Scene C has the highest chance of success because the red ball is positioned such that it has the least obstruction from the blue triangle and is most likely to fall past it into the green region.
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: B, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene B will succeed
+Letter: C, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene C will succeed
+Letter: D, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene D will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+Letter: B, Pattern: ([A-D])\s*will succeed, Matched text: B will succeed
+Letter: C, Pattern: ([A-D])\s*will succeed, Matched text: C will succeed
+Letter: D, Pattern: ([A-D])\s*will succeed, Matched text: D will succeed
+
+----- Test Set 44 (Repetition 4/4) -----
+Success case: Gap_attempt_2_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 3, 2: 4, 3: 1, 4: 2}
+Model prediction: A
+Prediction incorrect
+Response time: 4.74 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_23/Gap_attempt_2_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_24/Gap_attempt_2_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_46/Gap_attempt_2_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_9/Gap_attempt_0_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [3, 4, 4, 3]
+Is perfectly consistent: False
+Most frequently predicted image: 3
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, the red ball will fall due to gravity and may interact with the blue objects. The goal is to predict whether the red ball will reach the green target area.
+
+Scene A: The red ball is positioned high and to the left. It will fall towards the green area. The blue triangle is directly below the red ball, which may influence its trajectory if it comes into contact with it. The blue rectangle is to the left and slightly below the red ball. If the red ball comes into contact with the blue triangle, it might be deflected upwards or downwards, potentially away from the green area. The red ball could still reach the green area if it avoids the blue triangle.
+
+Scene B: The red ball is in the same position as in Scene A. The blue triangle is directly below the red ball, and the blue rectangle is to the left. Similar to Scene A, the red ball may be deflected by the blue triangle, potentially away from the green area. However, the red ball could still reach the green area if it avoids the blue triangle.
+
+Scene C: The red ball is again in the same position as in Scenes A and B. The blue triangle is directly below the red ball, and the blue rectangle is to the left. The red ball may be deflected by the blue triangle, potentially away from the green area. The red ball could still reach the green area if it avoids the blue triangle.
+
+Scene D: The red ball is in the same position as in Scenes A, B, and C. The blue triangle is directly below the red ball, and the blue rectangle is to the left. The red ball may be deflected by the blue triangle, potentially away from the green area. The red ball could still reach the green area if it avoids the blue triangle.
+
+Final Result: Scene D is most likely to result in the red ball falling into the green target area. The red ball has the least obstruction from the blue objects in this scene, and the blue triangle is directly below the red ball, minimizing the chance of deflection.
+==========================
+
+Found standalone letter: A
+
+----- Test Set 45 (Repetition 1/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 2, 2: 4, 3: 1, 4: 3}
+Model prediction: A
+Prediction incorrect
+Response time: 4.43 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_23/Gap_attempt_1_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_25/Gap_attempt_0_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_66/Gap_attempt_4_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_6_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the initial positions of the red ball, blue objects, and the green target area to determine the likely motion of the red ball and whether it will reach the green region.
+
+Scene A: 
+- The red ball is at the top left corner of the scene.
+- There is one blue object (a triangle) positioned below the red ball.
+- The green target area is at the bottom right corner of the scene.
+- The red ball will fall straight down due to gravity.
+- The blue object (triangle) is positioned in such a way that it will not obstruct the red ball's fall path.
+- The red ball has a clear trajectory to reach the green target area.
+
+Scene B: 
+- The red ball is at the top left corner of the scene.
+- There is one blue object (a triangle) positioned below the red ball.
+- The green target area is at the bottom right corner of the scene.
+- The red ball will fall straight down due to gravity.
+- The blue object (triangle) is positioned in such a way that it will not obstruct the red ball's fall path.
+- The red ball has a clear trajectory to reach the green target area.
+
+Scene C: 
+- The red ball is at the top left corner of the scene.
+- There is one blue object (a triangle) positioned below the red ball.
+- The green target area is at the bottom right corner of the scene.
+- The red ball will fall straight down due to gravity.
+- The blue object (triangle) is positioned in such a way that it will not obstruct the red ball's fall path.
+- The red ball has a clear trajectory to reach the green target area.
+
+Scene D: 
+- The red ball is at the top left corner of the scene.
+- There is one blue object (a triangle) positioned below the red ball.
+- The green target area is at the bottom right corner of the scene.
+- The red ball will fall straight down due to gravity.
+- The blue object (triangle) is positioned in such a way that it will obstruct the red ball's fall path.
+- The red ball's trajectory will be blocked by the blue object, preventing it from reaching the green target area.
+
+Final Result: I predict that scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 46 (Repetition 2/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 1, 2: 3, 3: 2, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 5.13 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_66/Gap_attempt_4_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_6_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_23/Gap_attempt_1_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_25/Gap_attempt_0_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, we will analyze the position and orientation of the red ball, blue objects, and the green target area to predict the motion of the red ball.
+
+- **Scene A**: The red ball is positioned at the top-left corner of the white region, and the blue object (a horizontal bar and a triangle) is positioned in front of the green target area. The blue object is not obstructing the red ball's path, so the ball will fall straight down. Given the ball's trajectory and the green target's position, the red ball will likely fall into the green region.
+
+- **Scene B**: Similar to Scene A, the red ball is positioned at the top-left corner, and the blue object is positioned in front of the green target area. The ball will fall straight down, and the green target is within its trajectory, so the red ball will likely fall into the green region.
+
+- **Scene C**: The red ball is positioned at the top-left corner, and the blue object (a horizontal bar and a triangle) is positioned in front of the green target area. The ball will fall straight down, and the green target is within its trajectory, so the red ball will likely fall into the green region.
+
+- **Scene D**: The red ball is positioned at the top-left corner, and the blue object (a horizontal bar and a triangle) is positioned in front of the green target area. The ball will fall straight down, and the green target is within its trajectory, so the red ball will likely fall into the green region.
+
+Final Result: I predict that scene A, B, C, and D will all succeed, as all of them have the red ball falling into the green target area.
+==========================
+
+Found standalone letter: A
+
+----- Test Set 47 (Repetition 3/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 3, 4: 2}
+Model prediction: A
+Prediction correct
+Response time: 4.41 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_25/Gap_attempt_0_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_66/Gap_attempt_4_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_6_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_23/Gap_attempt_1_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+Scene A:
+- The red ball will fall due to gravity.
+- The blue triangular object and the blue rectangular object are positioned such that they do not obstruct the red ball’s path.
+- The green target area is directly below the red ball’s initial position.
+- The black triangular obstacle does not block the red ball’s path.
+- The red ball will fall straight down and likely reach the green target area.
+
+Scene B:
+- Similar to Scene A, the red ball will fall due to gravity.
+- The blue triangular object and the blue rectangular object are in a similar position relative to the red ball’s trajectory.
+- The green target area is below the red ball’s initial position.
+- The black triangular obstacle does not block the red ball’s path.
+- The red ball will fall straight down and likely reach the green target area.
+
+Scene C:
+- The red ball will fall due to gravity.
+- The blue triangular object is directly below the red ball, potentially obstructing its path.
+- The green target area is below the red ball’s initial position.
+- The red ball may bounce off the blue triangular object before reaching the green target area.
+- The red ball’s path is uncertain due to the obstruction by the blue triangular object.
+
+Scene D:
+- The red ball will fall due to gravity.
+- The blue triangular object is positioned directly below the red ball, potentially obstructing its path.
+- The green target area is below the red ball’s initial position.
+- The red ball may bounce off the blue triangular object before reaching the green target area.
+- The red ball’s path is uncertain due to the obstruction by the blue triangular object.
+
+Final Result: “I predict that scene A will succeed.”
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 48 (Repetition 4/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 2, 2: 3, 3: 4, 4: 1}
+Model prediction: A
+Prediction incorrect
+Response time: 4.26 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_23/Gap_attempt_1_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_74/Gap_attempt_6_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_25/Gap_attempt_0_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_66/Gap_attempt_4_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [2, 1, 4, 2]
+Is perfectly consistent: False
+Most frequently predicted image: 2
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the positions and orientations of the red ball, the blue objects, and the green target area to determine the likely outcome.
+
+Scene A:
+The red ball is positioned high above the green region. The blue triangle is directly above the red ball. The blue rectangle is below the red ball. Given the lack of direct physical contact between the objects, the red ball will fall due to gravity. The blue triangle might slightly influence its trajectory, but it is unlikely to block the path significantly. The red ball will likely fall into the green region.
+
+Reasoning: The red ball will fall freely due to gravity. The blue triangle and the blue rectangle do not obstruct the path significantly, and the green region is directly below the red ball's trajectory. The red ball will likely fall into the green region.
+
+Reasoning: The red ball is positioned high above the green region. The blue triangle is directly above the red ball, and the blue rectangle is below it. The red ball will fall due to gravity. The blue triangle and the blue rectangle do not significantly obstruct the path, and the green region is directly below the red ball's trajectory. The red ball will likely fall into the green region.
+
+Reasoning: The red ball is positioned high above the green region. The blue triangle is directly above the red ball, and the blue rectangle is below it. The red ball will fall due to gravity. The blue triangle and the blue rectangle do not significantly obstruct the path, and the green region is directly below the red ball's trajectory. The red ball will likely fall into the green region.
+
+Final Result: I predict that scene A will succeed.
+==========================
+
+Matches found:
+Letter: A, Pattern: I predict that scene\s*([A-D])\s*will succeed, Matched text: I predict that scene A will succeed
+Letter: A, Pattern: ([A-D])\s*will succeed, Matched text: A will succeed
+
+----- Test Set 49 (Repetition 1/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 3, 2: 1, 3: 4, 4: 2}
+Model prediction: A
+Prediction incorrect
+Response time: 4.42 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_51/Gap_attempt_4_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_23/Gap_attempt_1_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_27/Gap_attempt_0_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_6/Gap_attempt_1_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: For each scene, I will analyze the positions and orientations of the objects, and predict the motion of the red ball based on physical principles.
+
+Scene A:
+- The red ball is positioned at the top left corner.
+- There is a blue object (a triangle) near the top center, and a blue object (a rectangle) near the center.
+- The green region is at the bottom right corner.
+- The blue objects are positioned such that the red ball is likely to pass between them and continue its trajectory downward.
+- The red ball will likely fall straight down, avoiding the blue objects, and land in the green region.
+
+Scene B:
+- The red ball is positioned at the top left corner.
+- The blue triangle is near the top center, and the blue rectangle is near the center.
+- The green region is at the bottom right corner.
+- The red ball will likely fall straight down, avoiding the blue objects, and land in the green region.
+- The placement of the blue objects is such that the red ball will not be hindered.
+
+Scene C:
+- The red ball is positioned at the top left corner.
+- The blue triangle is near the top center, and the blue rectangle is near the center.
+- The green region is at the bottom right corner.
+- The red ball will likely fall straight down, avoiding the blue objects, and land in the green region.
+- The blue objects are positioned in a way that they will not block the red ball's path.
+
+Scene D:
+- The red ball is positioned at the top left corner.
+- The blue triangle is near the top center, and the blue rectangle is near the center.
+- The green region is at the bottom right corner.
+- The red ball will likely fall straight down, avoiding the blue objects, and land in the green region.
+- The blue objects are positioned such that the red ball will not be hindered.
+
+Final Result: "I predict that scene A will succeed."
+==========================
+
+Found prediction in Final Result: A
+
+----- Test Set 50 (Repetition 2/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): B
+Shuffle mapping: {1: 2, 2: 4, 3: 1, 4: 3}
+Model prediction: A
+Prediction incorrect
+Response time: 4.81 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_6/Gap_attempt_1_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_27/Gap_attempt_0_obj1_True/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_23/Gap_attempt_1_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_51/Gap_attempt_4_obj1_False/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning:
+
+Scene A:
+- The red ball is positioned on the left side of the image, above the black slope and to the left of the blue triangle.
+- The blue triangle is positioned above the red ball, and the blue rectangle is below the red ball, but there is no direct interaction between them.
+- The green target area is on the right side of the image.
+- The red ball will fall due to gravity, but its trajectory will be affected by the presence of the blue triangle. The blue triangle is positioned in such a way that it could potentially block or redirect the red ball's path.
+- Given the red ball's initial position and the blue triangle's position, the red ball is unlikely to reach the green target area without interference.
+
+Scene B:
+- The red ball is positioned on the left side of the image, above the black slope and to the left of the blue triangle.
+- The blue triangle is positioned above the red ball, and the blue rectangle is below the red ball, but there is no direct interaction between them.
+- The green target area is on the right side of the image.
+- The red ball will fall due to gravity, but its trajectory will be affected by the presence of the blue triangle. The blue triangle is positioned in such a way that it could potentially block or redirect the red ball's path.
+- Given the red ball's initial position and the blue triangle's position, the red ball is unlikely to reach the green target area without interference.
+
+Scene C:
+- The red ball is positioned on the left side of the image, above the black slope and to the left of the blue triangle.
+- The blue triangle is positioned above the red ball, and the blue rectangle is below the red ball, but there is no direct interaction between them.
+- The green target area is on the right side of the image.
+- The red ball will fall due to gravity, and there are no obstacles directly in its path to the green target area.
+- The red ball's trajectory is unobstructed, and it is likely to reach the green target area.
+
+Scene D:
+- The red ball is positioned on the left side of the image, above the black slope and to the left of the blue triangle.
+- The blue triangle is positioned above the red ball, and the blue rectangle is below the red ball, but there is no direct interaction between them.
+- The green target area is on the right side of the image.
+- The red ball will fall due to gravity, but its trajectory will be affected
+==========================
+
+Found standalone letter: A
+
+----- Test Set 51 (Repetition 3/4) -----
+Success case: Gap_attempt_0_obj1_True
+Scene type: Gap Crossing Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 3, 2: 2, 3: 1, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 5.48 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_51/Gap_attempt_4_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_6/Gap_attempt_1_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_23/Gap_attempt_1_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/rendered_all_trials_20250403_020332/Subj_27/Gap_attempt_0_obj1_True/frame_0000.png
+
+Results saved to: results/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: deepseek-ai/deepseek-vl2
+Using API URL: https://api.siliconflow.cn/v1/
+API key (first 5 chars): sk-ur...
+Number of messages: 2
+First message role: system
