@@ -1,0 +1,15 @@
+python3 ../test_four_option_eval/test_unified.py \
+  --model_name deepseek-ai/deepseek-vl2 \
+  --api_key sk-uruhfkcrzkebvehlyoeradzzwentjyjpqbteiryddkkpahpe \
+  --base_url https://api.siliconflow.cn/v1 \
+  --data_root /home/student0/Physical_Intuition_test/balanced_dataset \
+  --output_dir /home/student0/Physical_Intuition_test/test_results/four_option/deepseek-vl2 \
+  --num_sets 10 \
+  --repetitions 4 \
+  --max_tokens 512 \
+  --temperature 0.7 \
+  --top_p 0.7 \
+  --game_type Basic \
+  --stream False \
+  --frequency_penalty 0.5 \
+  --n 1

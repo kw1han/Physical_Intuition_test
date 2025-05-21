@@ -1,0 +1,15 @@
+python3 ../test_four_option_eval/test_unified.py \
+  --model_name qwen3-8b \
+  --api_key sk-195225bba1f44e37aa394f1841d86a8e \
+  --base_url https://dashscope.aliyuncs.com/compatible-mode/v1 \
+  --data_root /home/student0/Physical_Intuition_test/balanced_dataset \
+  --output_dir /home/student0/Physical_Intuition_test/test_results/four_option/qwen3-8b \
+  --num_sets 10 \
+  --repetitions 4 \
+  --max_tokens 512 \
+  --temperature 0.7 \
+  --top_p 0.8 \
+  --stream True \
+  --game_type Basic \
+  --stream True \
+  --presence_penalty 1.5 

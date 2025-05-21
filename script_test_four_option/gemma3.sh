@@ -1,0 +1,15 @@
+python3 ../test_four_option_eval/test_unified.py \
+  --model_name gemma3:27b \
+  --api_key ollama \
+  --base_url http://localhost:11434/v1 \
+  --data_root /home/student0/Physical_Intuition_test/balanced_dataset \
+  --output_dir /home/student0/Physical_Intuition_test/test_results/four_option/gemma3 \
+  --num_sets 10 \
+  --repetitions 4 \
+  --max_tokens 8192 \
+  --temperature 1.0 \
+  --top_p 0.95 \
+  --game_type Basic \
+  --stream False \
+  --frequency_penalty 0.5 \
+  --n 1  

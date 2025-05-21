@@ -1,0 +1,208 @@
+Evaluation Log - Started at 2025-05-21 06:54:18
+==================================================
+
+Found valid scene: Basic_obj1, Failure cases: 47, Success cases: 14
+Found valid scene: Basic_obj2, Failure cases: 21, Success cases: 11
+Found valid scene: Basic_obj3, Failure cases: 10, Success cases: 1
+
+Starting evaluation for scene: Basic_obj1
+This scene has 14 success cases
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: llama3.2-vision:latest
+Using API URL: http://localhost:11434/v1/
+API key (first 5 chars): ollam...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+**Reasoning**
+
+### Scene A
+
+*   The red ball is placed on a black platform at the edge, near the blue object suspended in the air.
+*   Gravity will cause the blue object to fall towards the ground, but since it's not directly above or below the red ball, it won't obstruct its path initially.
+*   As the blue object falls, if it lands close enough to the black platform where the red ball is, it might roll off the platform and into the green target area.
+*   However, without more context on the exact timing of events and potential interactions between the objects due to their initial positions, predicting a successful landing in the target area based solely on physical principles from the start seems challenging.
+
+### Scene B
+
+*   The red ball is also placed at an edge but closer to the corner of the black platform compared to Scene A.
+*   Similar to Scene A, the blue object will fall due to gravity. Given its position near the corner where the red ball is located, there's a higher chance that the falling blue object could knock the red ball off the platform towards the green target area as it falls and rolls.
+*   This scenario offers a more direct potential path for the red ball into the target area compared to Scene A due to its proximity to the corner of the platform.
+
+### Scene C
+
+*   The red ball is placed centrally on the black platform, away from any edges or corners where objects might interact with it.
+*   The blue object suspended in the air will fall but won't have a direct path to affect the red ball's trajectory unless it lands very close to the central area of the platform.
+*   Given its distance from any edges and potential interaction points, this scenario presents a lower chance for successful landing in the green target area compared to Scenes A and B.
+
+### Scene D
+
+*   The red ball is placed at an edge but closer to the middle than the corner compared to Scenes A and B.
+*   Similar to previous scenes, the blue object will fall due to gravity. However, its initial placement seems less directly impactful on either knocking off or guiding the red ball into the target area as in Scenes A and B.
+*   Without a clear path for interaction (knocking off the platform) or guidance towards the target area, this scenario presents an even lower chance of success compared to Scenes A and B.
+
+**Final Result**
+
+I predict that scene **B** will succeed.
+==========================
+
+Found standalone letter: A
+
+----- Test Set 1 (Repetition 1/4) -----
+Success case: Basic_attempt_0_obj1_True
+Scene type: Basic Physical Scene
+Scene ID: obj1
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 2, 3: 1, 4: 3}
+Model prediction: A
+Prediction correct
+Response time: 85.81 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/balanced_dataset/Subj_11/Basic_attempt_0_obj1_True/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/balanced_dataset/Subj_64/Basic_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/balanced_dataset/Subj_41/Basic_attempt_2_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/balanced_dataset/Subj_44/Basic_attempt_1_obj1_False/frame_0000.png
+
+Results saved to: /home/student0/Physical_Intuition_test/test_results/four_option/llama3.2-vision:latest/evaluation_log_20250521_065418/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: llama3.2-vision:latest
+Using API URL: http://localhost:11434/v1/
+API key (first 5 chars): ollam...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+**Reasoning for Scene A**
+
+1. The red ball is placed on a black platform, which means it is initially at rest due to the lack of any force acting upon it.
+2. There are no obstacles or objects in direct contact with the red ball that could cause it to move instantly.
+3. Gravity will eventually pull the red ball down towards the ground.
+4. The blue object suspended in the air does not affect the initial motion of the red ball since there's no interaction between them initially.
+5. As the red ball falls, its trajectory will be influenced by gravity and possibly air resistance (though minimal), which might cause it to slightly deviate from a perfectly vertical path.
+6. The green target area is below the starting position of the red ball, so eventually, under the sole influence of gravity, the red ball should fall into this region.
+
+**Conclusion for Scene A:** Yes, the red ball will likely fall into the green target area due to the sole action of gravity without any immediate obstacles or forces deflecting it from its path down towards the ground.
+
+**Scene B Analysis**
+
+1. The setup is similar to Scene A with no direct interaction between objects at the start.
+2. Gravity's effect remains constant as in Scene A, pulling the red ball downwards.
+3. Unlike Scene A, there might be a slight increase in air resistance due to the presence of another object in the scene, but this won't significantly alter the overall trajectory.
+4. The green target area is still below the starting position of the red ball, ensuring it will fall into this region under gravity's influence.
+
+**Conclusion for Scene B:** Yes, similar to Scene A, the red ball should also fall into the green target area due to gravity alone.
+
+**Scene C Analysis**
+
+1. In contrast to Scenes A and B, the blue object in Scene C is much closer to both the red ball and the ground.
+2. As the red ball falls under gravity, it will likely collide with or be deflected by the blue object before reaching the ground.
+3. The interaction between the red ball and the blue object could change its trajectory significantly, potentially preventing it from falling directly into the green target area.
+
+**Conclusion for Scene C:** No, due to the increased likelihood of collision or deflection by the blue object, the red ball may not successfully fall into the green target area.
+
+**Scene D Analysis**
+
+1. Similar to Scenes A and B, gravity's effect is the primary force influencing the red ball's motion.
+2. However,
+==========================
+
+Found standalone letter: A
+
+----- Test Set 2 (Repetition 2/4) -----
+Success case: Basic_attempt_0_obj1_True
+Scene type: Basic Physical Scene
+Scene ID: obj1
+Correct scene position (A-D): C
+Shuffle mapping: {1: 3, 2: 2, 3: 4, 4: 1}
+Model prediction: A
+Prediction incorrect
+Response time: 16.66 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/balanced_dataset/Subj_44/Basic_attempt_1_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/balanced_dataset/Subj_64/Basic_attempt_0_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/balanced_dataset/Subj_11/Basic_attempt_0_obj1_True/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/balanced_dataset/Subj_41/Basic_attempt_2_obj1_False/frame_0000.png
+
+Results saved to: /home/student0/Physical_Intuition_test/test_results/four_option/llama3.2-vision:latest/evaluation_log_20250521_065418/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: llama3.2-vision:latest
+Using API URL: http://localhost:11434/v1/
+API key (first 5 chars): ollam...
+Number of messages: 2
+First message role: system
+API call successful!
+
+=== Model Response Text ===
+Reasoning: Scene A
+In this scene, the red ball is positioned directly above the green target area. The blue object suspended in the air does not seem to pose any immediate threat or obstacle to prevent the ball from falling into the target area.
+
+Step-by-step analysis:
+- The red ball will roll off the platform due to gravity.
+- It will continue to roll until it reaches the bottom of the platform, where it has an unobstructed path towards the green target area.
+- Given that there are no other obstacles (such as walls or barriers) in this scene, the ball is expected to fall directly into the green region.
+
+Prediction: Yes
+
+Reasoning: Scene B
+In this scenario, the red ball is also positioned above the green target area but slightly to one side. The blue object is closer to the target than in Scene A, which might suggest a potential threat or interference with the ball's trajectory.
+
+Step-by-step analysis:
+- Similar to Scene A, the red ball will initially roll off the platform due to gravity.
+- However, as it rolls down, the presence of the blue object could potentially alter its path if it falls near enough to interact with the ball.
+- Without clear indication of where exactly the blue object would land or how close it is to the target area in relation to the ball's trajectory, we cannot conclusively predict whether the ball will fall into the green region.
+
+Prediction: Unknown
+
+Reasoning: Scene C
+In this scene, the red ball and the blue object are both suspended above the green target area. The red ball has a considerable distance to travel before reaching the bottom of its platform and then onto the ground towards the target.
+
+Step-by-step analysis:
+- Both objects will fall freely due to gravity once released.
+- Given their starting positions relative to each other, there's a high likelihood that they could interact upon landing on the ground or in mid-air if they are close enough.
+- However, without specific information on how close the blue object is to the target area and whether it lands near or far from the green region, we cannot accurately predict the ball's trajectory into the target.
+
+Prediction: Unknown
+
+Reasoning: Scene D
+In this scenario, the red ball is positioned at a significant angle away from the green target area. The blue object is also suspended above but closer to the side of the platform rather than directly over the target.
+
+Step-by-step analysis:
+- The red ball will roll off due to gravity and follow its path based on the initial incline.
+- Given
+==========================
+
+Found standalone letter: A
+
+----- Test Set 3 (Repetition 3/4) -----
+Success case: Basic_attempt_0_obj1_True
+Scene type: Basic Physical Scene
+Scene ID: obj1
+Correct scene position (A-D): D
+Shuffle mapping: {1: 2, 2: 1, 3: 3, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 17.27 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/balanced_dataset/Subj_64/Basic_attempt_0_obj1_False/frame_0000.png
+Scene B: /home/student0/Physical_Intuition_test/balanced_dataset/Subj_41/Basic_attempt_2_obj1_False/frame_0000.png
+Scene C: /home/student0/Physical_Intuition_test/balanced_dataset/Subj_44/Basic_attempt_1_obj1_False/frame_0000.png
+Scene D: /home/student0/Physical_Intuition_test/balanced_dataset/Subj_11/Basic_attempt_0_obj1_True/frame_0000.png
+
+Results saved to: /home/student0/Physical_Intuition_test/test_results/four_option/llama3.2-vision:latest/evaluation_log_20250521_065418/physical_intuition_results.json
+
+
+Attempt 1/3 to call API with model: llama3.2-vision:latest
+Using API URL: http://localhost:11434/v1/
+API key (first 5 chars): ollam...
+Number of messages: 2
+First message role: system

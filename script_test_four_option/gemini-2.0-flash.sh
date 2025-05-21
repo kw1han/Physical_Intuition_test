@@ -1,0 +1,15 @@
+python3 ../test_four_option_eval/test_unified.py \
+  --model_name gemini-2.0-flash \
+  --api_key sk-DXv1XQJr7HxWOZaVskIMYC0b7M8S9MAmlkjFMmffejDQ09GH \
+  --base_url https://xiaoai.plus/v1 \
+  --data_root /home/student0/Physical_Intuition_test/balanced_dataset \
+  --output_dir /home/student0/Physical_Intuition_test/test_results/four_option/gemini-2.0-flash \
+  --num_sets 10 \
+  --repetitions 4 \
+  --max_tokens 8192 \
+  --temperature 1.0 \
+  --top_p 0.95 \
+  --game_type Basic \
+  --stream False \
+  --frequency_penalty 0.5 \
+  --n 1  

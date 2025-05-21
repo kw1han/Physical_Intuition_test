@@ -50,15 +50,25 @@ def encode_image_to_base64(image_path):
 
 class PhysicalIntuitionEvaluator:
     def __init__(self,
-                 data_root: str,
-                 model_name: str = "gpt-4o",
-                 api_key: Optional[str] = None,
-                 base_url: Optional[str] = None,
-                 output_dir: str = "results",
-                 game_type: Optional[str] = None,
-                 max_tokens: int = 512,
-                 temperature: float = 0.7,
-                 top_p: float = 0.9):
+                data_root: str,
+                model_name: str = "gpt-4o",
+                api_key: Optional[str] = None,
+                base_url: Optional[str] = None,
+                output_dir: str = "results",
+                game_type: Optional[str] = None,
+                max_tokens: int = 512,
+                temperature: float = 0.7,
+                top_p: float = 0.9,
+                #top_k: int = 50,
+                frequency_penalty: float = 0.0,
+                presence_penalty: float = 0.0,
+                n: int = 1,
+                stream: bool = False):
+        #self.top_k = top_k
+        self.frequency_penalty = frequency_penalty
+        self.presence_penalty = presence_penalty
+        self.n = n
+        self.stream = stream
         self.data_root = Path(data_root)
         self.model_name = model_name
         self.output_dir = Path(output_dir)
@@ -93,17 +103,22 @@ class PhysicalIntuitionEvaluator:
 
     def _init_client(self):
         # Ollama优先（本地推理）
-        if self.base_url and "localhost" in self.base_url:
-            if OpenAI is not None:
-                return OpenAI(
-                    api_key=self.api_key or "ollama",
-                    base_url=self.base_url,
-                    default_headers={"Authorization": f"Bearer {self.api_key}"} if self.api_key else None
-                )
-            elif ollama is not None:
+        if self.base_url and "localhost" in self.base_url or self.api_key == "ollama":
+            #if OpenAI is not None:
+            #    return OpenAI(
+            #        api_key=self.api_key or "ollama",
+            #        base_url=self.base_url,
+            #        default_headers={"Authorization": f"Bearer {self.api_key}"} if self.api_key else None
+            #    )
+            #elif ollama is not None:
+            #    return ollama.Client(host=self.base_url)
+            #else:
+            #    raise ImportError("Neither openai nor ollama package is available.")
+            if ollama is not None:
+                self.logger.log("Using Ollama local client...")
                 return ollama.Client(host=self.base_url)
             else:
-                raise ImportError("Neither openai nor ollama package is available.")
+                raise ImportError("Ollama package is not available.")
         # OpenAI/DeepSeek等兼容API
         if OpenAI is not None:
             return OpenAI(
@@ -142,26 +157,45 @@ class PhysicalIntuitionEvaluator:
                     self.logger.log(f"API key (first 5 chars): {str(self.api_key)[:5]}...")
                     self.logger.log(f"Number of messages: {len(messages)}")
                     self.logger.log(f"First message role: {messages[0]['role']}")
-                # OpenAI兼容API
+
+                # ✅ OpenAI兼容API（包括 DashScope）
                 if hasattr(self.client, 'chat'):
+                    stream_required = "qwen" in self.model_name.lower()  # Qwen 系列要求开启 stream
                     request_data = {
                         "model": self.model_name,
                         "messages": messages,
                         "max_tokens": self.max_tokens,
                         "temperature": self.temperature,
                         "top_p": self.top_p,
-                        "stream": False
+                        #"top_k": self.top_k,
+                        "frequency_penalty": self.frequency_penalty,
+                        "presence_penalty": self.presence_penalty,
+                        "n": self.n,
+                        "stream": self.stream or stream_required  # 覆盖某些模型强制stream=True
                     }
                     response = self.client.chat.completions.create(**request_data)
-                    self.logger.log("API call successful!")
-                    return response
-                # Ollama原生API
+
+                    if stream_required:
+                        # 🔁 拼接流式返回内容
+                        full_content = ""
+                        for chunk in response:
+                            delta = getattr(chunk.choices[0].delta, "content", "") or ""
+                            full_content += delta
+                        self.logger.log("Streamed response received.")
+                        return {"choices": [{"message": {"content": full_content}}]}
+                    else:
+                        self.logger.log("API call successful!")
+                        return response
+
+                # ✅ Ollama原生API
                 elif hasattr(self.client, 'generate'):
                     response = self.client.generate(model=self.model_name, prompt=messages[-1]['content'])
                     self.logger.log("Ollama call successful!")
                     return response
+
                 else:
                     raise RuntimeError("Unknown client type.")
+
             except Exception as e:
                 error_msg = str(e)
                 self.logger.log(f"API调用错误 (Attempt {attempt+1}/{max_retries}): {error_msg}")
@@ -173,8 +207,85 @@ class PhysicalIntuitionEvaluator:
                 if attempt < max_retries - 1:
                     self.logger.log(f"等待 {retry_delay} 秒后重试...")
                     time.sleep(retry_delay)
+
         self.logger.log("所有重试尝试都失败，返回None")
         return None
+
+    def save_detailed_analysis(self, game_type_results, test_groups=None):
+        """保存详细分析结果"""
+        analysis_file = self.logger.log_subdir / 'physical_intuition_analysis.txt'
+        with open(analysis_file, 'w', encoding='utf-8') as f:
+            # 定义字母数组
+            letters = ['A', 'B', 'C', 'D']
+            
+            # 1. 总体统计
+            f.write("===== Overall Statistics =====\n")
+            total_sets = len(self.results)
+            correct_predictions = sum(1 for r in self.results if r['correct'])
+            f.write(f"Total test sets: {total_sets}\n")
+            f.write(f"Correct predictions: {correct_predictions}\n")
+            f.write(f"Overall accuracy: {correct_predictions/total_sets:.2%}\n\n")
+            
+            # 2. 一致性分析
+            f.write("===== Consistency Analysis =====\n")
+            if test_groups:
+                consistency_scores = []
+                for group_key, group_results in test_groups.items():
+                    original_predictions = [r['original_predicted_index'] for r in group_results if r['original_predicted_index'] > 0]
+                    if not original_predictions:
+                        continue
+                    
+                    most_common = max(set(original_predictions), key=original_predictions.count)
+                    consistency_ratio = original_predictions.count(most_common) / len(original_predictions)
+                    consistency_scores.append(consistency_ratio)
+                    
+                    f.write(f"Group {group_key[0]}_{group_key[1]}:\n")
+                    f.write(f"  Original predictions: {original_predictions}\n")
+                    f.write(f"  Most common prediction: {most_common}\n")
+                    f.write(f"  Consistency ratio: {consistency_ratio:.2%}\n")
+                    f.write(f"  Original correct index: {group_results[0]['original_correct_index']}\n\n")
+                
+                if consistency_scores:
+                    avg_consistency = sum(consistency_scores) / len(consistency_scores)
+                    f.write(f"Average consistency across all groups: {avg_consistency:.2%}\n")
+                    perfect_consistent_groups = sum(1 for score in consistency_scores if score == 1.0)
+                    f.write(f"Groups with perfect consistency: {perfect_consistent_groups}/{len(consistency_scores)} ({perfect_consistent_groups/len(consistency_scores):.1%})\n\n")
+            
+            # 3. 响应时间分析
+            avg_response_time = sum(self.response_times) / len(self.response_times)
+            min_response_time = min(self.response_times)
+            max_response_time = max(self.response_times)
+            f.write("===== Response Time Analysis =====\n")
+            f.write(f"Average response time: {avg_response_time:.2f} seconds\n")
+            f.write(f"Minimum response time: {min_response_time:.2f} seconds\n")
+            f.write(f"Maximum response time: {max_response_time:.2f} seconds\n\n")
+            
+            # 4. 按物理场景类型分析
+            f.write("===== Analysis by Scene Type =====\n")
+            for game_type, stats in game_type_results.items():
+                type_accuracy = stats['correct'] / stats['total']
+                avg_time = sum(stats['times']) / len(stats['times'])
+                f.write(f"\n{self.game_type_desc.get(game_type, game_type)}:\n")
+                f.write(f"  Accuracy: {type_accuracy:.2%} ({stats['correct']}/{stats['total']})\n")
+                f.write(f"  Average response time: {avg_time:.2f} seconds\n")
+            
+            # 5. 详细结果记录
+            f.write("\n===== Detailed Results =====\n")
+            for i, result in enumerate(self.results, 1):
+                f.write(f"\n--- Test Set {i} (Rep {result.get('repetition', 1)}) ---\n")
+                f.write(f"Scene type: {self.game_type_desc.get(result['game_type'], result['game_type'])}\n")
+                f.write(f"Scene ID: {result['scene_id']}\n")
+                f.write(f"Correct scene: {letters[result['correct_index']-1]}\n")
+                f.write(f"Predicted scene: {letters[result['predicted_index']-1] if result['predicted_index'] > 0 else 'Invalid prediction'}\n")
+                f.write(f"Original correct index: {result.get('original_correct_index', 'N/A')}\n")
+                f.write(f"Original predicted index: {result.get('original_predicted_index', 'N/A')}\n")
+                f.write(f"Prediction result: {'Correct' if result['correct'] else 'Incorrect'}\n")
+                f.write(f"Response time: {result['response_time']:.2f} seconds\n")
+                if 'shuffle_mapping' in result:
+                    f.write(f"Shuffle mapping: {result['shuffle_mapping']}\n")
+                f.write("\nModel response:\n")
+                f.write(result['response'])
+                f.write("\n" + "="*50 + "\n")
 
     def run_evaluation(self, num_sets: int = 5, repetitions: int = 4):
         self.results = []
@@ -295,7 +406,7 @@ class PhysicalIntuitionEvaluator:
                         frame_path = next(case.glob("frame_0000.png"))
                         self.logger.log(f"Scene {letters[i]}: {frame_path}")
                     self.logger.log("")
-                    self.save_results("physical_intuition_results.json")
+                    #self.save_results("physical_intuition_results.json")
                 original_predictions = [r['original_predicted_index'] for r in consistency_results if r['original_predicted_index'] > 0]
                 if original_predictions:
                     is_consistent = all(p == original_predictions[0] for p in original_predictions)
@@ -423,6 +534,8 @@ class PhysicalIntuitionEvaluator:
         self.logger.log("\nError Pattern Analysis:")
         for error_type, count in error_analysis.items():
             self.logger.log(f"{error_type}: {count} times")
+        filename = f"physical_intuition_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        self.save_results(filename)
         self.save_detailed_analysis(game_type_results, test_groups)
 
     def analyze_error_patterns(self) -> Dict[str, int]:
@@ -515,6 +628,12 @@ def main():
     parser.add_argument('--max_tokens', type=int, default=512, help='Maximum number of tokens to generate')
     parser.add_argument('--temperature', type=float, default=0.7, help='Sampling temperature')
     parser.add_argument('--top_p', type=float, default=0.9, help='Nucleus sampling parameter')
+    #parser.add_argument('--top_k', type=int, default=50, help='Top-k sampling')
+    parser.add_argument('--frequency_penalty', type=float, default=0.0, help='Frequency penalty')
+    parser.add_argument('--presence_penalty', type=float, default=0.0, help='Presence penalty')
+    parser.add_argument('--n', type=int, default=1, help='Number of completions to return')
+    parser.add_argument('--stream', type=lambda x: x.lower() == "true", default=False, help='Whether to use streaming')
+    
     args = parser.parse_args()
     output_dir = Path(args.output_dir)
     output_dir.mkdir(exist_ok=True)
@@ -536,9 +655,19 @@ def main():
         game_type=args.game_type,
         max_tokens=args.max_tokens,
         temperature=args.temperature,
-        top_p=args.top_p
+        top_p=args.top_p,
+        #top_k=args.top_k,
+        frequency_penalty=args.frequency_penalty,
+        presence_penalty=args.presence_penalty,
+        n=args.n,
+        stream=args.stream
     )
     evaluator.run_evaluation(num_sets=args.num_sets, repetitions=args.repetitions)
+    #logger.log(f"Top K: {args.top_k}")
+    logger.log(f"Frequency Penalty: {args.frequency_penalty}")
+    logger.log(f"Presence Penalty: {args.presence_penalty}")
+    logger.log(f"Stream: {args.stream}")
+    logger.log(f"Num Completions (n): {args.n}")
     logger.log_section("Evaluation Summary")
     logger.log(f"Evaluation completed at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     logger.log(f"Results saved in: {output_dir}")
