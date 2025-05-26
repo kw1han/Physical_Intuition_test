@@ -1,4 +1,4 @@
-SCENES=("Collide" "Contain" "Drop" "Link" "Roll" "Support" "Drape" "Dominoes")
+SCENES=("Support" "Drape" "Dominoes")
 
 BASE_PARAMS=" --model_name gemma3:27b \
   --api_key ollama \

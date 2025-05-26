@@ -10,6 +10,7 @@ import re
 from datetime import datetime
 import pandas as pd
 import matplotlib.pyplot as plt
+import requests
 
 try:
     from openai import OpenAI
@@ -77,28 +78,24 @@ class PhysicalIntuitionEvaluator:
         self.max_tokens = max_tokens
         self.temperature = temperature
         self.top_p = top_p
-        self.prompt_dir = Path("/home/student0/Physical_Intuition_test/prompt")
+        self.prompt_dir = Path("/home/student0/Physical_Intuition_test/3d/3D_prompt_four_option")
         self.logger = Logger(self.output_dir)
         self.api_key = api_key or os.environ.get("OPENAI_API_KEY")
         self.base_url = base_url
         self.client = self._init_client()
         self.results = []
         self.response_times = []
-        self.subjects = sorted([d for d in self.data_root.iterdir() if d.is_dir() and d.name.startswith("Subj_")])
+        self.subjects = sorted([d for d in self.data_root.iterdir() if d.is_dir()])
+        #self.subjects = sorted([d for d in self.data_root.iterdir() if d.is_dir() and d.name.startswith("Subj_")])
         self.game_type_desc = {
-            "Basic": "Basic Physical Scene",
-            "Bridge": "Bridge Building Scene",
-            "Catapult": "Catapult Scene",
-            "Chaining": "Chain Reaction Scene",
-            "Falling": "Object Falling Scene",
-            "Gap": "Gap Crossing Scene",
-            "Launch": "Launching Scene",
-            "Prevention": "Motion Prevention Scene",
-            "SeeSaw": "Seesaw Scene",
-            "Shafts": "Shaft Scene",
-            "Table": "Table Scene",
-            "Unbox": "Unboxing Scene",
-            "Unsupport": "Support Removal Scene"
+            "Collide": "Collision Scene",
+            "Contain": "Containment Scene",
+            "Drop": "Dropping Scene",
+            "Link": "Linking Scene",
+            "Roll": "Rolling Scene",
+            "Support": "Support Scene",
+            "Drape": "Draping Scene",
+            "Dominoes": "Dominoes Scene"
         }
 
     def _init_client(self):
@@ -116,7 +113,9 @@ class PhysicalIntuitionEvaluator:
             #    raise ImportError("Neither openai nor ollama package is available.")
             if ollama is not None:
                 self.logger.log("Using Ollama local client...")
-                return ollama.Client(host=self.base_url)
+                # 去除/v1后缀，使用ollama原生端口
+                ollama_host = self.base_url.replace("/v1", "") if self.base_url else "http://localhost:11434"
+                return ollama.Client(host=ollama_host)
             else:
                 raise ImportError("Ollama package is not available.")
         # OpenAI/DeepSeek等兼容API
@@ -145,7 +144,102 @@ class PhysicalIntuitionEvaluator:
                     continue
                 all_trials.append(trial_folder)
         return all_trials
-
+    def _call_deepseek_api(self, messages):
+        """专门处理 DeepSeek API 的调用"""
+        self.logger.log("Using DeepSeek API...")
+        
+        # 提取系统消息和用户消息
+        system_msg = next((msg['content'] for msg in messages if msg['role'] == 'system'), '')
+        user_msg = next((msg for msg in messages if msg['role'] == 'user'), None)
+        
+        if not user_msg:
+            raise ValueError("No user message found")
+            
+        # 构建 DeepSeek 消息格式
+        deepseek_message = {
+            "role": "user",
+            "content": []
+        }
+        
+        # 添加系统消息作为文本
+        if system_msg:
+            deepseek_message["content"].append({
+                "type": "text",
+                "text": system_msg
+            })
+        
+        # 处理用户消息
+        if isinstance(user_msg['content'], list):
+            # 处理多模态内容
+            for item in user_msg['content']:
+                if item['type'] == 'text':
+                    deepseek_message["content"].append({
+                        "type": "text",
+                        "text": item['text']
+                    })
+                elif item['type'] == 'image_url':
+                    image_url = item['image_url']['url']
+                    if image_url.startswith('data:image/png;base64,'):
+                        deepseek_message["content"].append({
+                            "type": "image_url",
+                            "image_url": {
+                                "url": image_url
+                            }
+                        })
+                    else:
+                        deepseek_message["content"].append({
+                            "type": "image_url",
+                            "image_url": {
+                                "url": f"data:image/png;base64,{image_url}"
+                            }
+                        })
+        else:
+            # 处理纯文本消息
+            deepseek_message["content"].append({
+                "type": "text",
+                "text": user_msg['content']
+            })
+        
+        # 构建请求数据
+        request_data = {
+            "model": self.model_name,
+            "messages": [deepseek_message],
+            "max_tokens": self.max_tokens,
+            "temperature": self.temperature,
+            "top_p": self.top_p,
+            "stream": self.stream
+        }
+        
+        # 调试日志
+        self.logger.log("\nDeepSeek Request Data:")
+        self.logger.log(f"Model: {request_data['model']}")
+        self.logger.log(f"Message content types: {[item['type'] for item in request_data['messages'][0]['content']]}")
+        
+        # 发送请求
+        headers = {
+            "Authorization": f"Bearer {self.api_key}",
+            "Content-Type": "application/json"
+        }
+        
+        response = requests.post(
+            f"{self.base_url}/chat/completions",
+            headers=headers,
+            json=request_data
+        )
+        
+        if response.status_code != 200:
+            error_msg = response.text
+            self.logger.log(f"DeepSeek API Error: {error_msg}")
+            raise Exception(f"Error code: {response.status_code} - {error_msg}")
+        
+        response_json = response.json()
+        return {
+            "choices": [{
+                "message": {
+                    "content": response_json["choices"][0]["message"]["content"]
+                }
+            }]
+        }
     def call_model(self, messages: List[Dict]) -> Dict:
         max_retries = 3
         retry_delay = 3
@@ -158,8 +252,104 @@ class PhysicalIntuitionEvaluator:
                     self.logger.log(f"Number of messages: {len(messages)}")
                     self.logger.log(f"First message role: {messages[0]['role']}")
 
+                # DeepSeek API
+                if "deepseek" in self.model_name.lower():
+                    return self._call_deepseek_api(messages)
+                
+                # Ollama原生客户端
+                elif isinstance(self.client, ollama.Client):
+                    self.logger.log("Using Ollama native API...")
+                    # 转换消息格式为 ollama 可以理解的格式
+                    ollama_messages = []
+                    
+                    # # 打印原始消息内容
+                    # self.logger.log("\n=== Original Messages ===")
+                    # for msg in messages:
+                    #     self.logger.log(f"\nRole: {msg['role']}")
+                    #     if isinstance(msg['content'], list):
+                    #         self.logger.log("Content (list):")
+                    #         for item in msg['content']:
+                    #             if item['type'] == 'text':
+                    #                 self.logger.log(f"Text: {item['text']}")
+                    #             elif item['type'] == 'image_url':
+                    #                 self.logger.log("Image: [base64 data]")
+                    #     else:
+                    #         self.logger.log(f"Content: {msg['content']}")
+                    
+                    for msg in messages:
+                        if msg['role'] == 'system':
+                            # 系统消息直接转换
+                            ollama_messages.append({
+                                'role': 'system',
+                                'content': msg['content']
+                            })
+                        elif msg['role'] == 'user':
+                            content = msg['content']
+                            if isinstance(content, list):
+                                # 处理包含图片的复杂内容
+                                main_prompt = None
+                                scene_messages = []
+                                
+                                # 遍历内容列表，收集文本和图片
+                                for i, item in enumerate(content):
+                                    if item['type'] == 'text':
+                                        if main_prompt is None:
+                                            main_prompt = item['text']  # 第一个文本是主提示
+                                        else:
+                                            # 存储场景描述文本
+                                            scene_messages.append({
+                                                'text': item['text'],
+                                                'image': None
+                                            })
+                                    elif item['type'] == 'image_url':
+                                        # 将图片添加到最后一个场景消息中
+                                        if scene_messages:
+                                            scene_messages[-1]['image'] = item['image_url']['url'].split(',')[1]
+                                
+                                # 添加主提示
+                                if main_prompt:
+                                    ollama_messages.append({
+                                        'role': 'user',
+                                        'content': main_prompt
+                                    })
+                                
+                                # 为每个场景创建单独的消息
+                                for scene in scene_messages:
+                                    if scene['text'] and scene['image']:
+                                        ollama_messages.append({
+                                            'role': 'user',
+                                            'content': scene['text'],
+                                            'images': [scene['image']]
+                                        })
+                                
+                                # 添加最后的提示
+                                # ollama_messages.append({
+                                #     'role': 'user',
+                                #     'content': "Based on the above scenes, which scene (A, B, C, or D) do you predict will succeed? Please provide your reasoning and final answer in the format specified."
+                                # })
+                            else:
+                                # 简单文本内容
+                                ollama_messages.append({
+                                    'role': 'user',
+                                    'content': content
+                                })
+                    
+                    # 打印调试信息
+                    #self.logger.log("\nOllama messages structure:")
+                    #for i, msg in enumerate(ollama_messages):
+                    #    self.logger.log(f"\nMessage {i+1}:")
+                    ##    self.logger.log(f"Role: {msg['role']}")
+                    ##    self.logger.log(f"Content length: {len(msg['content'])}")
+                    ##    if 'images' in msg:
+                    #        self.logger.log(f"Number of images: {len(msg['images'])}")
+                    
+                    self.logger.log("\n=== Calling Ollama API ===")
+                    response = self.client.chat(model=self.model_name, messages=ollama_messages)
+                    self.logger.log("Ollama call successful!")
+                    return response
+
                 # ✅ OpenAI兼容API（包括 DashScope）
-                if hasattr(self.client, 'chat'):
+                elif hasattr(self.client, 'chat') and hasattr(self.client.chat, 'completions'):
                     stream_required = "qwen" in self.model_name.lower()  # Qwen 系列要求开启 stream
                     request_data = {
                         "model": self.model_name,
@@ -167,7 +357,6 @@ class PhysicalIntuitionEvaluator:
                         "max_tokens": self.max_tokens,
                         "temperature": self.temperature,
                         "top_p": self.top_p,
-                        #"top_k": self.top_k,
                         "frequency_penalty": self.frequency_penalty,
                         "presence_penalty": self.presence_penalty,
                         "n": self.n,
@@ -186,12 +375,6 @@ class PhysicalIntuitionEvaluator:
                     else:
                         self.logger.log("API call successful!")
                         return response
-
-                # ✅ Ollama原生API
-                elif hasattr(self.client, 'generate'):
-                    response = self.client.generate(model=self.model_name, prompt=messages[-1]['content'])
-                    self.logger.log("Ollama call successful!")
-                    return response
 
                 else:
                     raise RuntimeError("Unknown client type.")
@@ -239,7 +422,7 @@ class PhysicalIntuitionEvaluator:
                     consistency_ratio = original_predictions.count(most_common) / len(original_predictions)
                     consistency_scores.append(consistency_ratio)
                     
-                    f.write(f"Group {group_key[0]}_{group_key[1]}:\n")
+                    f.write(f"Group {group_key[0]}:\n")
                     f.write(f"  Original predictions: {original_predictions}\n")
                     f.write(f"  Most common prediction: {most_common}\n")
                     f.write(f"  Consistency ratio: {consistency_ratio:.2%}\n")
@@ -273,8 +456,7 @@ class PhysicalIntuitionEvaluator:
             f.write("\n===== Detailed Results =====\n")
             for i, result in enumerate(self.results, 1):
                 f.write(f"\n--- Test Set {i} (Rep {result.get('repetition', 1)}) ---\n")
-                f.write(f"Scene type: {self.game_type_desc.get(result['game_type'], result['game_type'])}\n")
-                f.write(f"Scene ID: {result['scene_id']}\n")
+                f.write(f"Scene type: {self.game_type_desc.get(result['game_type'], result['game_type'])}")
                 f.write(f"Correct scene: {letters[result['correct_index']-1]}\n")
                 f.write(f"Predicted scene: {letters[result['predicted_index']-1] if result['predicted_index'] > 0 else 'Invalid prediction'}\n")
                 f.write(f"Original correct index: {result.get('original_correct_index', 'N/A')}\n")
@@ -292,57 +474,78 @@ class PhysicalIntuitionEvaluator:
         self.response_times = []
         valid_scenes = self.find_same_scene_trials()
         if not valid_scenes:
-            self.logger.log("No valid scenes found (require at least 3 failure cases and 1 success case in the same scene)")
+            self.logger.log("No valid scenes found (require at least 3 failure cases and 1 success case in the same scene type)")
             return
+        # 限制测试场景数量
+        #scenes_to_test = valid_scenes[:num_sets]
+        #self.logger.log(f"\nTesting {len(scenes_to_test)} scenes (limited by num_sets={num_sets})")
+        total_sets = 0
         for failure_trials, success_trials in valid_scenes:
-            self.logger.log(f"\nStarting evaluation for scene: {success_trials[0].name.split('_')[0]}_{success_trials[0].name.split('_')[3]}")
-            self.logger.log(f"This scene has {len(success_trials)} success cases")
-            current_game_type = success_trials[0].name.split('_')[0]
+            #if total_sets >= num_sets:  # 移到外层循环
+            #    break  # 使用 break 而不是 return
+            
+            # 获取场景类型
+            current_game_type = success_trials[0].parent.parent.name
+            self.logger.log(f"\nStarting evaluation for scene type: {current_game_type}")
+            self.logger.log(f"This scene type has {len(success_trials)} success cases")
+            
             for success_case in success_trials:
+                #if total_sets >= num_sets:
+                #    break
+
                 selected_failures = random.sample(failure_trials, 3)
                 all_cases = selected_failures + [success_case]
                 valid_cases = []
                 valid_images = []
+                
                 for case in all_cases:
                     try:
-                        first_frame = next(case.glob("frame_0000.png"))
-                        base64_img = encode_image_to_base64(str(first_frame))
+                        # 直接使用图片文件路径
+                        base64_img = encode_image_to_base64(str(case))
                         valid_images.append(base64_img)
                         valid_cases.append(case)
-                    except (StopIteration, FileNotFoundError) as e:
-                        self.logger.log(f"Warning: Could not find first frame image in {case}, skipping this case")
+                    except Exception as e:
+                        self.logger.log(f"警告: 处理图片 {case} 时出错: {str(e)}")
+                        
                 if len(valid_cases) < 4:
                     self.logger.log(f"Warning: Not enough valid cases in the current combination (need 4), skipping")
                     continue
+                    
                 all_cases = valid_cases
                 original_correct_index = all_cases.index(success_case) + 1
                 consistency_results = []
+                
                 self.logger.log(f"\n----- Starting {repetitions} repetition tests for the same image set -----")
                 target_positions = list(range(4))
                 if repetitions > 4:
                     extra_positions = [random.randint(0, 3) for _ in range(repetitions - 4)]
                     target_positions.extend(extra_positions)
                 random.shuffle(target_positions)
+                
                 for rep in range(repetitions):
                     target_position = target_positions[rep]
                     cases_without_success = [case for case in all_cases if case != success_case]
                     random.shuffle(cases_without_success)
                     shuffled_cases = cases_without_success.copy()
                     shuffled_cases.insert(target_position, success_case)
+                    
                     shuffled_images = []
                     for case in shuffled_cases:
                         idx = all_cases.index(case)
                         shuffled_images.append(valid_images[idx])
+                        
                     correct_index = shuffled_cases.index(success_case) + 1
                     random_indices = []
                     for case in shuffled_cases:
                         random_indices.append(all_cases.index(case))
+                        
                     letters = ['A', 'B', 'C', 'D']
                     prompt_text = self.load_prompt_from_file(current_game_type)
                     messages = []
                     system_message = {
                         "role": "system",
-                        "content": "You are an AI assistant with strong physical intuition. You need to analyze four physical scene images in their initial states and determine which scene will allow the red ball to successfully reach the green target area. These scenes come from the same physical environment setup but with slightly different initial conditions. Carefully observe the details of object positions, orientations, and obstacle distributions in each scene. Important note: Scenes are labeled with letters A-D, and the order has no correlation with success probability. Please make judgments completely based on physical principles. Structure your answer with a detailed reasoning for each scene followed by a final result statement."
+                        #"content": "You are an AI assistant with strong physical intuition. You need to analyze four physical scene images in their initial states and determine which scene will allow the red ball to successfully reach the green target area. These scenes come from the same physical environment setup but with slightly different initial conditions. Carefully observe the details of object positions, orientations, and obstacle distributions in each scene. Important note: Scenes are labeled with letters A-D, and the order has no correlation with success probability. Please make judgments completely based on physical principles. Structure your answer with a detailed reasoning for each scene followed by a final result statement."
+                        "content": "You are a physical intuition expert."
                     }
                     messages.append(system_message)
                     prompt_content = [
@@ -354,12 +557,21 @@ class PhysicalIntuitionEvaluator:
                             {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{base64_img}"}}
                         ])
                     messages.append({"role": "user", "content": prompt_content})
+                    
+                    # 添加最后的格式提醒
+                    messages.append({
+                        "role": "system",
+                        "content": "Remember to end your response with exactly: Final Result: \"I predict that scene [A/B/C/D] will succeed.\" "
+                    })
+                    
                     start_time = time.time()
                     response = self.call_model(messages)
                     response_time = time.time() - start_time
                     self.response_times.append(response_time)
+                    
                     if not response:
                         continue
+                        
                     if hasattr(response, 'choices'):
                         response_text = response.choices[0].message.content
                     elif hasattr(response, 'message'):
@@ -368,11 +580,13 @@ class PhysicalIntuitionEvaluator:
                         response_text = response['choices'][0]['message']['content']
                     else:
                         response_text = str(response)
+                        
                     predicted_index = self.extract_predicted_scene_number(response_text)
                     original_predicted_index = -1
                     if predicted_index > 0:
                         predicted_case_index = random_indices[predicted_index - 1]
                         original_predicted_index = predicted_case_index + 1
+                        
                     result = {
                         "set_index": len(self.results) + 1,
                         "repetition": rep + 1,
@@ -385,17 +599,17 @@ class PhysicalIntuitionEvaluator:
                         "response_time": response_time,
                         "trial_names": [case.name for case in shuffled_cases],
                         "original_trial_names": [case.name for case in all_cases],
-                        "game_type": all_cases[0].name.split('_')[0],
-                        "scene_id": all_cases[0].name.split('_')[3],
+                        "game_type": current_game_type,
                         "success_case": success_case.name,
                         "shuffle_mapping": dict(zip(range(1, 5), [i+1 for i in random_indices]))
                     }
+                    
                     self.results.append(result)
                     consistency_results.append(result)
+                    
                     self.logger.log(f"\n----- Test Set {len(self.results)} (Repetition {rep+1}/{repetitions}) -----")
                     self.logger.log(f"Success case: {success_case.name}")
                     self.logger.log(f"Scene type: {self.game_type_desc.get(result['game_type'], result['game_type'])}")
-                    self.logger.log(f"Scene ID: {result['scene_id']}")
                     self.logger.log(f"Correct scene position (A-D): {letters[correct_index-1]}")
                     self.logger.log(f"Shuffle mapping: {result['shuffle_mapping']}")
                     self.logger.log(f"Model prediction: {letters[predicted_index-1] if predicted_index > 0 else 'Invalid prediction'}")
@@ -403,10 +617,9 @@ class PhysicalIntuitionEvaluator:
                     self.logger.log(f"Response time: {response_time:.2f} seconds")
                     self.logger.log("\nImage paths:")
                     for i, case in enumerate(shuffled_cases):
-                        frame_path = next(case.glob("frame_0000.png"))
-                        self.logger.log(f"Scene {letters[i]}: {frame_path}")
+                        self.logger.log(f"Scene {letters[i]}: {case}")
                     self.logger.log("")
-                    #self.save_results("physical_intuition_results.json")
+                    
                 original_predictions = [r['original_predicted_index'] for r in consistency_results if r['original_predicted_index'] > 0]
                 if original_predictions:
                     is_consistent = all(p == original_predictions[0] for p in original_predictions)
@@ -419,7 +632,11 @@ class PhysicalIntuitionEvaluator:
                     self.logger.log(f"Consistency ratio: {consistency_ratio:.2%}")
                     self.logger.log(f"Correct image was: {original_correct_index}")
                     self.logger.log("-------------------------------\n")
-        self.analyze_results()
+                # 在每个测试集完成后更新计数
+                total_sets += 1
+            
+        self.logger.log(f"\nReached requested number of test sets ({num_sets}), completing evaluation")
+        self.analyze_results()  # 确保在循环结束后调用 analyze_results
 
     def extract_predicted_scene_number(self, response_text: str) -> int:
         self.logger.log("\n=== Model Response Text ===")
@@ -489,10 +706,12 @@ class PhysicalIntuitionEvaluator:
         self.logger.log("\nConsistency Analysis:")
         test_groups = {}
         for result in self.results:
-            group_key = (result['game_type'], result['scene_id'], result['success_case'])
+            # 修改分组键，只使用game_type和success_case
+            group_key = (result['game_type'], result['success_case'])
             if group_key not in test_groups:
                 test_groups[group_key] = []
             test_groups[group_key].append(result)
+        
         consistency_scores = []
         for group_key, group_results in test_groups.items():
             original_predictions = [r['original_predicted_index'] for r in group_results if r['original_predicted_index'] > 0]
@@ -501,7 +720,7 @@ class PhysicalIntuitionEvaluator:
             most_common = max(set(original_predictions), key=original_predictions.count)
             consistency_ratio = original_predictions.count(most_common) / len(original_predictions)
             consistency_scores.append(consistency_ratio)
-            self.logger.log(f"Group {group_key[0]}_{group_key[1]}: Consistency ratio: {consistency_ratio:.2%}")
+            self.logger.log(f"Group {group_key[0]}: Consistency ratio: {consistency_ratio:.2%}")
         if consistency_scores:
             avg_consistency = sum(consistency_scores) / len(consistency_scores)
             self.logger.log(f"Average consistency across all groups: {avg_consistency:.2%}")
@@ -537,6 +756,7 @@ class PhysicalIntuitionEvaluator:
         filename = f"physical_intuition_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
         self.save_results(filename)
         self.save_detailed_analysis(game_type_results, test_groups)
+        self.save_results_to_csv(game_type_results, test_groups)
 
     def analyze_error_patterns(self) -> Dict[str, int]:
         error_patterns = {
@@ -562,33 +782,49 @@ class PhysicalIntuitionEvaluator:
         return error_patterns
 
     def find_same_scene_trials(self) -> List[Tuple[List[Path], List[Path]]]:
-        scene_trials = {}
-        for subject in self.subjects:
-            for trial_folder in subject.iterdir():
-                if not trial_folder.is_dir():
-                    continue
-                parts = trial_folder.name.split('_')
-                if len(parts) < 5:
-                    continue
-                game_type = parts[0]
-                if self.game_type and game_type != self.game_type:
-                    continue
-                scene_id = parts[3]
-                is_success = parts[-1] == "True"
-                key = (game_type, scene_id)
-                if key not in scene_trials:
-                    scene_trials[key] = {"success": [], "failure": []}
-                if is_success:
-                    scene_trials[key]["success"].append(trial_folder)
-                else:
-                    scene_trials[key]["failure"].append(trial_folder)
+        """Find trials from the same scene with at least 3 failures and 1 success"""
         valid_scenes = []
-        for (game_type, scene_id), trials in scene_trials.items():
-            if len(trials["failure"]) >= 3 and len(trials["success"]) >= 1:
-                valid_scenes.append((trials["failure"], trials["success"]))
-                self.logger.log(f"Found valid scene: {game_type}_{scene_id}, "
-                              f"Failure cases: {len(trials['failure'])}, "
-                              f"Success cases: {len(trials['success'])}")
+        
+        # 遍历每个场景类型文件夹（如Link, Dominoes等）
+        scene_type_dirs = [d for d in Path(self.data_root).glob("*") if d.is_dir()]
+        
+        for scene_type_dir in scene_type_dirs:
+            # 获取场景类型名称
+            scene_type = scene_type_dir.name
+            
+            # 检查是否指定了特定场景类型
+            if self.game_type and scene_type != self.game_type:
+                continue
+            
+            # 获取mp4s-redyellow目录
+            image_dir = scene_type_dir / "mp4s-redyellow"
+            if not image_dir.exists():
+                self.logger.log(f"Warning: mp4s-redyellow directory not found in {scene_type}")
+                continue
+            
+            # 收集所有png文件并分类
+            success_trials = []
+            failure_trials = []
+            
+            for img_file in image_dir.glob("*.png"):
+                # 根据文件名判断是否为失败案例
+                is_success = not img_file.name.startswith("False")
+                
+                if is_success:
+                    success_trials.append(img_file)
+                else:
+                    failure_trials.append(img_file)
+            
+            # 检查是否有足够的成功和失败案例
+            if len(failure_trials) >= 3 and len(success_trials) >= 1:
+                valid_scenes.append((failure_trials, success_trials))
+                self.logger.log(f"Found valid scene type: {scene_type}, "
+                              f"Failure cases: {len(failure_trials)}, "
+                              f"Success cases: {len(success_trials)}")
+        
+        if not valid_scenes:
+            self.logger.log("No valid scenes found (require at least 3 failure cases and 1 success case in the same scene type)")
+        
         return valid_scenes
 
     def save_results(self, filename: str):
@@ -615,9 +851,122 @@ class PhysicalIntuitionEvaluator:
             else:
                 return f'Please carefully observe the following four scenes, where the positions of objects are slightly different in each scene. Your task is to determine which scene will allow the red ball to successfully reach the green target area.\n\nImportant notes:\n1. Scenes are labeled with letters A-D, and the order has no correlation with success probability\n2. Please analyze each scene based on physical principles\n\nPlease structure your answer as follows:\nReasoning: For each scene, explain step by step what will happen, whether the red ball will reach the green target area, and why you believe scene X has the highest chance of success.\nFinal Result: "I predict that scene X will succeed."'
 
+    def save_results_to_csv(self, game_type_results, test_groups=None):
+        """将测试结果保存为CSV格式"""
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        
+        # 1. 保存详细结果
+        detailed_results_file = self.logger.log_subdir / f'detailed_results_{timestamp}.csv'
+        detailed_results = []
+        letters = ['A', 'B', 'C', 'D']
+        
+        for result in self.results:
+            # 从文件名中提取场景信息
+            success_case_parts = result['success_case'].split('_')
+            is_success = success_case_parts[0]  # True/False
+            scene_type = result['game_type']  # 使用game_type作为场景类型
+            
+            row = {
+                'Test_Set': len(detailed_results) + 1,
+                'Repetition': result.get('repetition', 1),
+                'Scene_Type': self.game_type_desc.get(scene_type, scene_type),
+                'Success_Status': is_success,
+                'Correct_Scene': letters[result['correct_index']-1],
+                'Predicted_Scene': letters[result['predicted_index']-1] if result['predicted_index'] > 0 else 'Invalid',
+                'Original_Correct_Index': result.get('original_correct_index', 'N/A'),
+                'Original_Predicted_Index': result.get('original_predicted_index', 'N/A'),
+                'Is_Correct': 'Yes' if result['correct'] else 'No',
+                'Response_Time': f"{result['response_time']:.2f}",
+                'Success_Case': result['success_case'],
+                'Model_Response': result['response'].replace('\n', ' ').replace(',', ';')
+            }
+            detailed_results.append(row)
+        
+        pd.DataFrame(detailed_results).to_csv(detailed_results_file, index=False, encoding='utf-8')
+        
+        # 2. 保存场景类型分析结果
+        scene_analysis_file = self.logger.log_subdir / f'scene_type_analysis_{timestamp}.csv'
+        scene_analysis = []
+        
+        for game_type, stats in game_type_results.items():
+            type_accuracy = stats['correct'] / stats['total']
+            avg_time = sum(stats['times']) / len(stats['times'])
+            row = {
+                'Scene_Type': self.game_type_desc.get(game_type, game_type),
+                'Total_Cases': stats['total'],
+                'Correct_Cases': stats['correct'],
+                'Accuracy': f"{type_accuracy:.2%}",
+                'Average_Response_Time': f"{avg_time:.2f}"
+            }
+            scene_analysis.append(row)
+        
+        pd.DataFrame(scene_analysis).to_csv(scene_analysis_file, index=False, encoding='utf-8')
+        
+        # 3. 保存一致性分析结果
+        if test_groups:
+            consistency_file = self.logger.log_subdir / f'consistency_analysis_{timestamp}.csv'
+            consistency_analysis = []
+            
+            for group_key, group_results in test_groups.items():
+                original_predictions = [r['original_predicted_index'] for r in group_results if r['original_predicted_index'] > 0]
+                if not original_predictions:
+                    continue
+                
+                most_common = max(set(original_predictions), key=original_predictions.count)
+                consistency_ratio = original_predictions.count(most_common) / len(original_predictions)
+                
+                row = {
+                    'Scene_Type': group_key[0],
+                    'Success_Case': group_key[1],
+                    'Predictions': str(original_predictions),
+                    'Most_Common_Prediction': most_common,
+                    'Consistency_Ratio': f"{consistency_ratio:.2%}",
+                    'Original_Correct_Index': group_results[0]['original_correct_index']
+                }
+                consistency_analysis.append(row)
+            
+            pd.DataFrame(consistency_analysis).to_csv(consistency_file, index=False, encoding='utf-8')
+        
+        # 4. 保存错误模式分析结果
+        error_analysis = self.analyze_error_patterns()
+        error_analysis_file = self.logger.log_subdir / f'error_analysis_{timestamp}.csv'
+        error_df = pd.DataFrame([{'Error_Type': k, 'Count': v} for k, v in error_analysis.items()])
+        error_df.to_csv(error_analysis_file, index=False, encoding='utf-8')
+        
+        # 5. 保存总体统计结果
+        summary_file = self.logger.log_subdir / f'summary_statistics_{timestamp}.csv'
+        total_sets = len(self.results)
+        correct_predictions = sum(1 for r in self.results if r['correct'])
+        avg_response_time = sum(self.response_times) / len(self.response_times)
+        
+        summary_stats = [{
+            'Metric': 'Total_Test_Sets',
+            'Value': total_sets
+        }, {
+            'Metric': 'Correct_Predictions',
+            'Value': correct_predictions
+        }, {
+            'Metric': 'Overall_Accuracy',
+            'Value': f"{correct_predictions/total_sets:.2%}"
+        }, {
+            'Metric': 'Average_Response_Time',
+            'Value': f"{avg_response_time:.2f}"
+        }]
+        
+        pd.DataFrame(summary_stats).to_csv(summary_file, index=False, encoding='utf-8')
+        
+        self.logger.log(f"\n测试结果已保存为CSV格式：")
+        self.logger.log(f"1. 详细结果：{detailed_results_file}")
+        self.logger.log(f"2. 场景类型分析：{scene_analysis_file}")
+        self.logger.log(f"3. 一致性分析：{consistency_file}")
+        self.logger.log(f"4. 错误模式分析：{error_analysis_file}")
+        self.logger.log(f"5. 总体统计：{summary_file}")
+
 def main():
     parser = argparse.ArgumentParser(description='Evaluate visual language models\' physical intuition capabilities (Unified Version)')
-    parser.add_argument('--data_root', type=str, required=True, help='Data root directory')
+    parser.add_argument('--data_root', type=str, 
+                       default='/home/student0/Physical_Intuition_test/3d/Physion/Physion_image',
+                       help='3D数据根目录')
     parser.add_argument('--model_name', type=str, required=True, help='Model name')
     parser.add_argument('--api_key', type=str, default=None, help='API key')
     parser.add_argument('--base_url', type=str, default=None, help='API base URL')

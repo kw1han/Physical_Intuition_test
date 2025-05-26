@@ -203,6 +203,42 @@ Please provide a clear judgment and explain your physical reasoning process.
         self.logger.log(f"总共找到 {len(all_videos)} 个视频文件")
         return all_videos
 
+    def find_image_files(self) -> List[Path]:
+        """
+        查找符合条件的图像文件
+        
+        Returns:
+            符合条件的图像文件路径列表
+        """
+        all_images = []
+        
+        if not self.data_root.exists():
+            self.logger.log("错误: 数据目录不存在")
+            return all_images
+        
+        self.logger.log(f"正在搜索数据目录: {self.data_root}")
+        
+        # 假设physion_image的目录结构与原来类似，但是存储的是图像而不是视频
+        for game_folder in self.data_root.iterdir():
+            if not game_folder.is_dir():
+                self.logger.log(f"跳过非目录文件: {game_folder}")
+                continue
+            
+            game_type = game_folder.name
+            self.logger.log(f"正在处理游戏类型目录: {game_type}")
+            
+            if game_types and game_type not in game_types:
+                self.logger.log(f"跳过非指定游戏类型: {game_type}")
+                continue
+            
+            # 修改为直接查找图像文件
+            for image_file in game_folder.glob("*.png"):  # 或者其他图像格式 (*.jpg, *.jpeg)
+                self.logger.log(f"找到图像文件: {image_file.name}")
+                all_images.append(image_file)
+            
+        self.logger.log(f"总共找到 {len(all_images)} 个图像文件")
+        return all_images
+
     def extract_frames_from_video(self, video_path: Path, frame_count: int = 4) -> List[str]:
         """
         从视频中提取指定数量的帧并保存为临时文件
@@ -538,41 +574,41 @@ Please provide a clear judgment and explain your physical reasoning process.
         # 返回选中的视频
         return candidates
 
-    def run_evaluation(self, num_videos=20, shot_counts=[0,1,2]):
+    def run_evaluation(self, num_images=20, shot_counts=[0,1,2]):
         """运行评估"""
-        # 只选择一次视频
-        selected_videos = self.select_diverse_videos(num_videos)
+        # 选择图像
+        selected_images = self.select_diverse_images(num_images)
         
-        if not selected_videos:
-            self.logger.log("错误: 没有找到任何视频文件，请检查数据目录")
+        if not selected_images:
+            self.logger.log("错误: 没有找到任何图像文件，请检查数据目录")
             return
         
-        self.logger.log(f"找到 {len(selected_videos)} 个视频文件")
+        self.logger.log(f"找到 {len(selected_images)} 个图像文件")
         if self.game_type:
-            self.logger.log(f"仅测试 {self.game_type} 类型的视频")
+            self.logger.log(f"仅测试 {self.game_type} 类型的图像")
         
-        # 按游戏类型统计选中的视频
-        videos_by_type = {}
-        for video in selected_videos:
-            game_type = video.parent.parent.name
-            if game_type not in videos_by_type:
-                videos_by_type[game_type] = []
-            videos_by_type[game_type].append(video)
+        # 按游戏类型统计选中的图像
+        images_by_type = {}
+        for image in selected_images:
+            game_type = image.parent.name
+            if game_type not in images_by_type:
+                images_by_type[game_type] = []
+            images_by_type[game_type].append(image)
         
-        self.logger.log("\n选中视频的分布:")
-        for game_type, videos in videos_by_type.items():
-            self.logger.log(f"{game_type}: {len(videos)} 个视频")
+        self.logger.log("\n选中图像的分布:")
+        for game_type, images in images_by_type.items():
+            self.logger.log(f"{game_type}: {len(images)} 个图像")
         
         # 对每个shot设置进行评估
         for shot in shot_counts:
             self.logger.log_section(f"当前Shot设置: {shot}")
             self.results = []  # 重置结果列表
-            for video in selected_videos:
-                result = self.evaluate_video(video, shot)
+            for image in selected_images:
+                result = self.evaluate_image(image, shot)
                 if result:
-                    self.logger.log(f"结果: {result['correct']} ({video.parent.parent.name})")
+                    self.logger.log(f"结果: {result['correct']} ({image.parent.name})")
             
-            self.save_results(f"3d_results_{shot}shot.json")
+            self.save_results(f"physion_image_results_{shot}shot.json")
         
         if self.results:
             self.analyze_results()
@@ -627,12 +663,44 @@ Please provide a clear judgment and explain your physical reasoning process.
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(self.results, f, ensure_ascii=False, indent=2)
 
+    def evaluate_image(self, image_path: Path, shot_count: int) -> Dict:
+        """评估单个图像"""
+        self.logger.log(f"评估: {image_path.name}")
+        
+        messages, true_result, game_type = self.build_prompt(image_path, shot_count)
+        if not messages:
+            return None
+        
+        start_time = time.time()
+        response = self.call_model(messages)
+        response_time = time.time() - start_time
+        self.response_times.append(response_time)
+        
+        if not response:
+            return None
+        
+        response_text = response.choices[0].message.content
+        prediction = self.parse_prediction(response_text)
+        
+        result = {
+            "image": image_path.name,
+            "game_type": game_type,
+            "true_result": true_result,
+            "prediction": prediction,
+            "correct": prediction == true_result,
+            "response": response_text,
+            "response_time": response_time
+        }
+        
+        self.results.append(result)
+        return result
+
 def main():
     """主函数"""
     parser = argparse.ArgumentParser(description='三维物理直觉评估')
     parser.add_argument('--data_root', required=True, help='数据根目录')
     parser.add_argument('--output_dir', default='3d_results', help='输出目录')
-    parser.add_argument('--num_videos', type=int, default=20, help='测试视频数量')
+    parser.add_argument('--num_images', type=int, default=20, help='测试图像数量')
     parser.add_argument('--shots', nargs='+', type=int, default=[0,1,2], help='Shot设置')
     parser.add_argument('--game_type', type=str, choices=['Collide', 'Contain', 'Dominoes', 'Drape', 'Drop', 'Link', 'Roll', 'Support'],
                       help='要测试的游戏类型，如果不指定则测试所有类型')
@@ -652,7 +720,7 @@ def main():
     )
     
     evaluator.run_evaluation(
-        num_videos=args.num_videos,
+        num_images=args.num_images,
         shot_counts=args.shots
     )
 

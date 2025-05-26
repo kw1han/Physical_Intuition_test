@@ -9,6 +9,7 @@ import random
 import base64
 import json
 from typing import List, Dict, Tuple, Optional, Union
+import csv
 
 def encode_image_to_base64(image_path):
     """将图像编码为base64格式"""
@@ -20,9 +21,11 @@ class PhysicalIntuitionOllamaEvaluator:
                  data_root: str, 
                  model_name: str = "gemma3:27b",
                  base_url: str = "http://localhost:11434/v1",
+                 api_key: str = "ollama",
                  output_dir: str = "results_ollama",
                  prompt_dir: str = "prompt1",
-                 result_folder: str = None):
+                 result_folder: str = None,
+                 shot_condition: str = "0shot"):
         """
         Initialize the physical intuition evaluator for Ollama models
         
@@ -30,29 +33,33 @@ class PhysicalIntuitionOllamaEvaluator:
             data_root: Data root directory
             model_name: Model name to test (e.g., gemma3:27b, llama3.2-vision:11b, minicpm-v:8b)
             base_url: API base URL for Ollama
+            api_key: API key for service
             output_dir: Results output directory
             prompt_dir: Directory containing scenario-specific prompts
             result_folder: Subfolder within output_dir to save results (defaults to timestamp if None)
+            shot_condition: Shot condition for the experiment (e.g., "0shot", "success_1shot", etc.)
         """
         self.data_root = Path(data_root)
         self.model_name = model_name
+        self.api_key = api_key
         self.output_dir = Path(output_dir)
-        self.output_dir.mkdir(exist_ok=True)
+        self.output_dir.mkdir(parents=True, exist_ok=True)
+        self.shot_condition = shot_condition
         
         # Create result subfolder with timestamp if not specified
         if result_folder is None:
             timestamp = time.strftime("%Y%m%d_%H%M%S")
-            result_folder = f"{model_name.replace(':', '_')}_{timestamp}"
+            result_folder = f"{model_name.replace(':', '_')}_{shot_condition}_{timestamp}"
         
         self.result_folder = result_folder
         self.result_dir = self.output_dir / self.result_folder
-        self.result_dir.mkdir(exist_ok=True)
+        self.result_dir.mkdir(parents=True, exist_ok=True)
         
         self.prompt_dir = Path(prompt_dir)
         
         # Initialize API client for Ollama's OpenAI-compatible API
         self.client = OpenAI(
-            api_key="ollama",  # Required but unused by Ollama
+            api_key=self.api_key,  # Required but unused by Ollama
             base_url=base_url,
         )
         
@@ -88,6 +95,9 @@ class PhysicalIntuitionOllamaEvaluator:
         # Load scenario-specific prompts
         self.scenario_prompts = {}
         self._load_scenario_prompts()
+        
+        # Initialize shot examples cache
+        self.shot_examples_cache = {}
     
     def _load_scenario_prompts(self):
         """Load scenario-specific prompts from the prompt directory"""
@@ -102,7 +112,12 @@ class PhysicalIntuitionOllamaEvaluator:
             print(f"警告: 提示目录不存在: {self.prompt_dir}")
             
         for game_type in self.game_type_desc.keys():
-            base_game_type = game_type.split('A')[0].split('B')[0]
+            # 修复游戏类型名称处理
+            base_game_type = game_type
+            if 'A' in game_type:
+                base_game_type = game_type.split('A')[0]
+            elif 'B' in game_type and not game_type.startswith(('Basic', 'Bridge')):
+                base_game_type = game_type.split('B')[0]
             
             # 尝试多种可能的文件名格式
             possible_filenames = [
@@ -126,7 +141,21 @@ class PhysicalIntuitionOllamaEvaluator:
                         print(f"警告: 无法加载 {game_type} 的提示文件 {prompt_file}: {e}")
             
             if not found:
-                print(f"警告: 未找到 {game_type} 的提示文件，尝试了以下文件名: {possible_filenames}")
+                print(f"警告: 未找到 {game_type} 的提示文件 {base_game_type}.txt")
+                # 尝试直接使用文件名匹配
+                for existing_file in existing_files:
+                    if existing_file.stem.lower() == base_game_type.lower():
+                        try:
+                            with open(existing_file, 'r') as f:
+                                self.scenario_prompts[game_type] = f.read().strip()
+                            print(f"已通过直接匹配加载 {game_type} 的提示文件: {existing_file}")
+                            found = True
+                            break
+                        except Exception as e:
+                            print(f"警告: 无法加载 {game_type} 的提示文件 {existing_file}: {e}")
+                
+                if not found:
+                    print(f"警告: 所有尝试加载 {game_type} 的提示文件都失败了")
     
     def find_trial_folders(self, success_only: bool = None, game_types: List[str] = None) -> List[Path]:
         """
@@ -166,16 +195,173 @@ class PhysicalIntuitionOllamaEvaluator:
         
         return all_trials
     
-    def build_prompt(self, test_trial: Path) -> Tuple[List, bool, str]:
+    def _get_best_1shot_strategy(self, game_type: str) -> str:
         """
-        构建提示 (0-shot)
+        基于之前的1-shot实验结果确定最佳策略
+        """
+        one_shot_results = {
+            "success": [],
+            "failure": []
+        }
         
-        Args:
-            test_trial: 要测试的试验
-            
-        Returns:
-            messages, true_result, game_type
+        for result in self.results:
+            if result["game_type"] == game_type and "_1shot" in result["shot_condition"]:
+                if result["shot_condition"] == "success_1shot":
+                    one_shot_results["success"].append(result["correct"])
+                elif result["shot_condition"] == "failure_1shot":
+                    one_shot_results["failure"].append(result["correct"])
+        
+        # 计算每种策略的准确率
+        strategy_accuracy = {}
+        for strategy, results in one_shot_results.items():
+            if results:
+                accuracy = sum(results) / len(results)
+                strategy_accuracy[strategy] = accuracy
+        
+        if not strategy_accuracy:
+            return "success"
+        
+        return max(strategy_accuracy.items(), key=lambda x: x[1])[0]
+
+    def _get_best_2shot_strategy(self, game_type: str, best_1shot: str) -> str:
         """
+        基于最佳1-shot策略确定2-shot的第二个示例类型
+        """
+        two_shot_results = {
+            "success": [],
+            "failure": []
+        }
+        
+        for result in self.results:
+            if result["game_type"] == game_type and "_2shot" in result["shot_condition"]:
+                if best_1shot == "success":
+                    if result["shot_condition"] == "success_success_2shot":
+                        two_shot_results["success"].append(result["correct"])
+                    elif result["shot_condition"] == "success_failure_2shot":
+                        two_shot_results["failure"].append(result["correct"])
+                elif best_1shot == "failure":
+                    if result["shot_condition"] == "failure_success_2shot":
+                        two_shot_results["success"].append(result["correct"])
+                    elif result["shot_condition"] == "failure_failure_2shot":
+                        two_shot_results["failure"].append(result["correct"])
+        
+        strategy_accuracy = {}
+        for strategy, results in two_shot_results.items():
+            if results:
+                accuracy = sum(results) / len(results)
+                strategy_accuracy[strategy] = accuracy
+        
+        if not strategy_accuracy:
+            return "failure" if best_1shot == "success" else "success"
+        
+        return max(strategy_accuracy.items(), key=lambda x: x[1])[0]
+
+    def _get_shot_examples(self, game_type: str, test_trial: Path, all_trials: List[Path]) -> List[Dict]:
+        """获取shot示例"""
+        if self.shot_condition == "0shot":
+            return []
+        
+        available_trials = [
+            t for t in all_trials 
+            if t.name.split('_')[0] == game_type and t != test_trial
+        ]
+        
+        success_trials = [t for t in available_trials if t.name.endswith("True")]
+        failure_trials = [t for t in available_trials if t.name.endswith("False")]
+        
+        examples = []
+        used_trials = set()
+        
+        # 1-shot 情况：直接使用指定的条件
+        if "_1shot" in self.shot_condition:
+            is_success = "success" in self.shot_condition
+            available = success_trials if is_success else failure_trials
+            if available:
+                example = random.choice(available)
+                examples.append({
+                    "trial_path": example,
+                    "true_result": is_success,
+                    "obj": example.name.split('_')[3]
+                })
+            return examples
+        
+        # 获取1-shot的结果
+        one_shot_condition = "success_1shot" if self.shot_condition.startswith("success") else "failure_1shot"
+        one_shot_results = [r for r in self.results if r["game_type"] == game_type and r["shot_condition"] == one_shot_condition]
+        
+        # 使用1-shot的示例作为第一个示例
+        if one_shot_results:
+            # 找到对应的trial
+            one_shot_trial = next(
+                (t for t in available_trials if t.name == one_shot_results[-1]["trial"]),
+                None
+            )
+            if one_shot_trial:
+                examples.append({
+                    "trial_path": one_shot_trial,
+                    "true_result": one_shot_trial.name.endswith("True"),
+                    "obj": one_shot_trial.name.split('_')[3]
+                })
+                used_trials.add(one_shot_trial)
+        
+        # 2-shot 情况：使用1-shot的结果加上新的示例
+        if "_2shot" in self.shot_condition:
+            # 获取第二个shot的条件
+            second_shot_type = self.shot_condition.split('_')[1]
+            is_second_success = second_shot_type == "success"
+            
+            # 添加第二个示例
+            available = [
+                t for t in (success_trials if is_second_success else failure_trials)
+                if t not in used_trials
+            ]
+            if available:
+                second_example = random.choice(available)
+                examples.append({
+                    "trial_path": second_example,
+                    "true_result": is_second_success,
+                    "obj": second_example.name.split('_')[3]
+                })
+            return examples
+        
+        # 3-shot 情况：使用2-shot的结果加上新的示例
+        if "best2shot" in self.shot_condition:
+            # 获取2-shot的结果
+            two_shot_condition = f"{one_shot_condition.split('_')[0]}_{self.shot_condition.split('_')[-1]}_2shot"
+            two_shot_results = [r for r in self.results if r["game_type"] == game_type and r["shot_condition"] == two_shot_condition]
+            
+            if two_shot_results:
+                # 找到对应的第二个trial
+                two_shot_trial = next(
+                    (t for t in available_trials if t.name == two_shot_results[-1]["trial"]),
+                    None
+                )
+                if two_shot_trial and two_shot_trial not in used_trials:
+                    examples.append({
+                        "trial_path": two_shot_trial,
+                        "true_result": two_shot_trial.name.endswith("True"),
+                        "obj": two_shot_trial.name.split('_')[3]
+                    })
+                    used_trials.add(two_shot_trial)
+            
+            # 添加第三个示例
+            is_third_success = "success" in self.shot_condition.split('_')[-1]
+            available = [
+                t for t in (success_trials if is_third_success else failure_trials)
+                if t not in used_trials
+            ]
+            if available:
+                third_example = random.choice(available)
+                examples.append({
+                    "trial_path": third_example,
+                    "true_result": is_third_success,
+                    "obj": third_example.name.split('_')[3]
+                })
+        
+        return examples
+    
+    def build_prompt(self, test_trial: Path, all_trials: List[Path]) -> Tuple[List, bool, str]:
+        """构建提示 (包含shot示例)"""
         # 尝试获取测试试验的第一帧
         try:
             first_frame = next(test_trial.glob("frame_0000.png"))
@@ -183,7 +369,7 @@ class PhysicalIntuitionOllamaEvaluator:
             print(f"警告: 在 {test_trial} 中找不到第一帧图像，跳过此试验")
             return None, None, None
         
-        # 获取真实结果
+        # 获取真实结果和游戏类型
         true_result = test_trial.name.endswith("True")
         game_type = test_trial.name.split('_')[0]
         base_game_type = game_type.split('A')[0].split('B')[0]
@@ -197,6 +383,23 @@ class PhysicalIntuitionOllamaEvaluator:
             system_content = self.scenario_prompts[game_type]
         elif base_game_type in self.scenario_prompts:
             system_content = self.scenario_prompts[base_game_type]
+            
+        # 添加shot示例
+        if self.shot_condition != "0shot":
+            shot_examples = self._get_shot_examples(game_type, test_trial, all_trials)
+            if shot_examples:
+                system_content += "\n\nHere are some example scenarios and their outcomes:\n"
+                for i, example in enumerate(shot_examples, 1):
+                    example_path = example["trial_path"]
+                    example_frame = next(example_path.glob("frame_0000.png"))
+                    example_result = "YES" if example["true_result"] else "NO"
+                    
+                    system_content += f"\nExample {i}:\n"
+                    if self.is_vision_model:
+                        example_base64 = encode_image_to_base64(str(example_frame))
+                        system_content += f"[Example Image {i}]\n"
+                    system_content += f"Q: Will the red ball reach the green target area in this physical scenario?\n"
+                    system_content += f"A: {example_result}. [Detailed explanation would be provided here]\n"
         
         messages.append({
             "role": "system", 
@@ -215,6 +418,18 @@ class PhysicalIntuitionOllamaEvaluator:
                 {"type": "text", "text": question_text},
                 {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{base64_first}"}}
             ]
+            
+            # 如果有shot示例，添加示例图像
+            if self.shot_condition != "0shot":
+                shot_examples = self._get_shot_examples(game_type, test_trial, all_trials)
+                for example in shot_examples:
+                    example_frame = next(example["trial_path"].glob("frame_0000.png"))
+                    example_base64 = encode_image_to_base64(str(example_frame))
+                    question_content.insert(-1, {
+                        "type": "image_url",
+                        "image_url": {"url": f"data:image/png;base64,{example_base64}"}
+                    })
+            
             messages.append({"role": "user", "content": question_content})
         else:
             # 对于仅文本模型，只包含文本描述
@@ -233,6 +448,8 @@ class PhysicalIntuitionOllamaEvaluator:
         Returns:
             模型响应
         """
+        start_time = time.time()
+        response_time = None
         try:
             # 处理非视觉模型的消息
             if not self.is_vision_model:
@@ -267,6 +484,7 @@ class PhysicalIntuitionOllamaEvaluator:
                     print(chunk.choices[0].delta.content, end="", flush=True)
             
             print("\n")  # 换行
+            response_time = time.time() - start_time
             
             # 创建简化的响应对象
             class SimpleResponse:
@@ -280,8 +498,11 @@ class PhysicalIntuitionOllamaEvaluator:
                 
                 def __init__(self, content):
                     self.choices = [self.Choice(content)]
+                    self.response_time = None  # 添加响应时间字段
             
-            return SimpleResponse(response_content)
+            response_obj = SimpleResponse(response_content)
+            response_obj.response_time = response_time  # 设置响应时间
+            return response_obj
             
         except Exception as e:
             print(f"\nAPI调用错误: {e}")
@@ -289,19 +510,23 @@ class PhysicalIntuitionOllamaEvaluator:
             # 尝试非流式模式
             try:
                 print("尝试非流式模式...")
+                non_stream_start = time.time()
                 response = self.client.chat.completions.create(
                     model=self.model_name,
                     messages=messages,
                     temperature=temperature,
                     stream=False
                 )
-                
-                # 直接返回非流式响应
+                response_time = time.time() - non_stream_start
+                response.response_time = response_time  # 为非流式响应也添加时间
                 return response
                 
             except Exception as e2:
                 print(f"重试失败: {e2}")
                 return None
+        finally:
+            if response_time is not None:
+                print(f"响应时间: {response_time:.2f}秒")
     
     def parse_prediction(self, response_text: str) -> bool:
         """
@@ -376,7 +601,7 @@ class PhysicalIntuitionOllamaEvaluator:
         """评估单个试验 (zero-shot)"""
         print(f"评估试验: {trial_path.name}")
         
-        messages, true_result, game_type = self.build_prompt(trial_path)
+        messages, true_result, game_type = self.build_prompt(trial_path, self.find_trial_folders())
         if messages is None:  # 检查是否应该跳过此试验
             return None
         
@@ -388,7 +613,8 @@ class PhysicalIntuitionOllamaEvaluator:
                 "true_result": true_result,
                 "prediction": None,
                 "correct": None,
-                "response": None
+                "response": None,
+                "response_time": None
             }
         
         response_text = response.choices[0].message.content
@@ -400,7 +626,8 @@ class PhysicalIntuitionOllamaEvaluator:
             "true_result": true_result,
             "prediction": prediction,
             "correct": prediction == true_result,
-            "response": response_text
+            "response": response_text,
+            "response_time": getattr(response, 'response_time', None)  # 添加响应时间
         }
         
         # 保存结果
@@ -421,143 +648,206 @@ class PhysicalIntuitionOllamaEvaluator:
         with open(self.result_dir / filename, 'w', encoding='utf-8') as f:
             json.dump(self.results, f, ensure_ascii=False, indent=2)
     
-    def select_diverse_trials(self, num_trials, balance_success=True):
+    def save_results_csv(self, filename: str = None):
         """
-        选择多样化的试验样本，保证游戏类型和成功/失败案例的平衡
+        保存结果到CSV文件
         
         Args:
-            num_trials: 要选择的试验数量
-            balance_success: 是否平衡成功和失败案例
-            
-        Returns:
-            选择的试验路径列表
+            filename: 自定义文件名
         """
+        if filename is None:
+            filename = f"results_{self.model_name.replace(':', '_')}.csv"
+        
+        with open(self.result_dir / filename, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.writer(f)
+            # 写入表头
+            writer.writerow([
+                "trial_name", "game_type", "true_result", "prediction", 
+                "correct", "shot_condition", "response_time", "response"  # 添加response_time字段
+            ])
+            # 写入数据
+            for result in self.results:
+                writer.writerow([
+                    result["trial"],
+                    result["game_type"],
+                    result["true_result"],
+                    result["prediction"],
+                    result["correct"],
+                    self.shot_condition,
+                    result.get("response_time", None),  # 添加响应时间
+                    result["response"]
+                ])
+    
+    def select_diverse_trials(self, num_trials, balance_success=True, all_samples=False):
+        """选择多样化的试验样本"""
         all_trials = self.find_trial_folders()
         
-        if balance_success:
-            # 按成功/失败分类
-            success_trials = [t for t in all_trials if t.name.endswith("True")]
-            failure_trials = [t for t in all_trials if t.name.endswith("False")]
-            
-            # 确定每类选择的数量
-            num_per_category = num_trials // 2
-            remainder = num_trials % 2
-            
-            # 打乱每类列表
-            random.shuffle(success_trials)
-            random.shuffle(failure_trials)
-            
-            # 从每类中选择相等数量
-            selected_trials = success_trials[:num_per_category + remainder] + failure_trials[:num_per_category]
-            
-            # 再次打乱以随机化顺序
-            random.shuffle(selected_trials)
-            
-            return selected_trials
-        else:
+        if all_samples:
+            return all_trials
+        
             # 按游戏类型分组
             game_type_trials = {}
             for trial in all_trials:
                 game_type = trial.name.split('_')[0]
                 if game_type not in game_type_trials:
-                    game_type_trials[game_type] = []
-                game_type_trials[game_type].append(trial)
-            
-            # 从每种游戏类型中选择近似相等数量的试验
+                game_type_trials[game_type] = {
+                    'success': [],
+                    'failure': []
+                }
+            # 按成功/失败分类
+            if trial.name.endswith("True"):
+                game_type_trials[game_type]['success'].append(trial)
+            else:
+                game_type_trials[game_type]['failure'].append(trial)
+        
             selected_trials = []
-            game_types = list(game_type_trials.keys())
+        # 从每个游戏类型中选择固定数量的样本
+        samples_per_type = num_trials // len(game_type_trials)
+        if samples_per_type == 0:
+            samples_per_type = 1
+        
+        success_per_type = samples_per_type // 4  # 保持1:3比例
+        failure_per_type = samples_per_type - success_per_type
+        
+        for game_type, trials in game_type_trials.items():
+            # 随机选择成功案例
+            if trials['success']:
+                random.shuffle(trials['success'])
+                selected_trials.extend(trials['success'][:success_per_type])
             
-            while len(selected_trials) < num_trials and game_types:
-                for game_type in list(game_types):
-                    if game_type_trials[game_type]:
-                        trial = random.choice(game_type_trials[game_type])
-                        game_type_trials[game_type].remove(trial)
-                        selected_trials.append(trial)
-                        
-                        if len(selected_trials) >= num_trials:
-                            break
-                    else:
-                        game_types.remove(game_type)
-            
+            # 随机选择失败案例
+            if trials['failure']:
+                random.shuffle(trials['failure'])
+                selected_trials.extend(trials['failure'][:failure_per_type])
+        
+        # 打乱最终的选择顺序
+        random.shuffle(selected_trials)
             return selected_trials
     
-    def run_experiment(self, num_trials=10, temperature=0.0):
-        """
-        运行实验
+    def get_trials_for_game_type(self, game_type: str, num_trials: int = 52) -> List[Path]:
+        """获取指定游戏类型的试验样本"""
+        # 获取该游戏类型的所有样本
+        all_trials = [t for t in self.find_trial_folders() if t.name.split('_')[0] == game_type]
         
-        Args:
-            num_trials: 试验数量
-            temperature: 温度参数
-        """
-        # 重置结果
-        self.results = []
+        # 如果样本数量不足，返回全部样本
+        if len(all_trials) <= num_trials:
+            return all_trials
         
-        # 生成时间戳
-        timestamp = time.strftime("%Y%m%d_%H%M%S")
+        # 随机选择指定数量的样本
+        return random.sample(all_trials, num_trials)
+
+    def test_single_trial_all_shots(self, trial: Path, game_type: str) -> List[Dict]:
+        """测试单个样本在所有shot条件下的表现"""
+        results = []
         
-        # 保存实验参数
-        experiment_params = {
-            "experiment_type": "ollama_experiment",
-            "num_trials": num_trials,
-            "temperature": temperature,
-            "model_name": self.model_name,
-            "timestamp": timestamp
-        }
+        # 获取所有可用的样本（用于选择shot示例）
+        all_trials = self.find_trial_folders()
         
-        with open(self.result_dir / "experiment_params.json", 'w', encoding='utf-8') as f:
-            json.dump(experiment_params, f, ensure_ascii=False, indent=2)
+        # 缓存第一帧图像
+        try:
+            first_frame = next(trial.glob("frame_0000.png"))
+            first_frame_base64 = encode_image_to_base64(str(first_frame))
+        except StopIteration:
+            print(f"警告: 在 {trial} 中找不到第一帧图像")
+            return results
         
-        # 选择多样化的试验样本
-        print(f"选择 {num_trials} 个多样化试验样本...")
-        test_trials = self.select_diverse_trials(num_trials)
+        # 获取真实结果
+        true_result = trial.name.endswith("True")
         
-        # 记录试验选择信息以便验证
-        trial_info = [{"name": t.name, 
-                       "game_type": t.name.split('_')[0], 
-                       "is_success": t.name.endswith("True")} for t in test_trials]
-        
-        with open(self.result_dir / "selected_trials.json", 'w', encoding='utf-8') as f:
-            json.dump(trial_info, f, ensure_ascii=False, indent=2)
-        
-        # 统计成功和失败案例数量
-        success_count = sum(1 for t in test_trials if t.name.endswith("True"))
-        failure_count = sum(1 for t in test_trials if t.name.endswith("False"))
-        print(f"选择的试验: {success_count} 个成功案例, {failure_count} 个失败案例")
-        
-        # 打印游戏类型分布
-        game_type_counts = {}
-        for trial in test_trials:
-            game_type = trial.name.split('_')[0]
-            game_type_counts[game_type] = game_type_counts.get(game_type, 0) + 1
-        
-        print("游戏类型分布:")
-        for game_type, count in game_type_counts.items():
-            print(f"  {game_type}: {count}")
-        
-        # 评估每个试验
-        for i, trial in enumerate(test_trials):
-            print(f"\n===== 测试试验 {i+1}/{len(test_trials)}: {trial.name} =====")
+        # 对每个shot条件进行测试
+        for shot_condition in [
+            "0shot",
+            "success_1shot", "failure_1shot",
+            "success_success_2shot", "success_failure_2shot",
+            "failure_success_2shot", "failure_failure_2shot",
+            "best2shot_success_3shot", "best2shot_failure_3shot"
+        ]:
+            print(f"\nTesting {shot_condition}...")
             
-            result = self.evaluate_trial(trial)
-            if result:
-                prediction_str = "成功" if result["prediction"] else "失败"
-                actual_str = "成功" if result["true_result"] else "失败"
-                correct_str = "正确" if result["correct"] else "错误"
-                print(f"  结果: {correct_str} (预测: {prediction_str}, 实际: {actual_str})")
+            # 设置当前的shot条件
+            self.shot_condition = shot_condition
+            
+            # 构建提示
+            messages, _, _ = self.build_prompt(trial, all_trials)
+            if messages is None:
+                continue
+            
+            # 调用模型
+            response = self.call_model(messages)
+            if not response:
+                continue
+            
+            response_text = response.choices[0].message.content
+            prediction = self.parse_prediction(response_text)
+            
+            # 记录结果
+            result = {
+                "trial": trial.name,
+                "game_type": game_type,
+                "shot_condition": shot_condition,
+                "true_result": true_result,
+                "prediction": prediction,
+                "correct": prediction == true_result,
+                "response": response_text
+            }
+            
+            results.append(result)
             
             # 保存中间结果
-            self.save_results(f"intermediate_results_{i+1}.json")
+            self.results.extend([result])
+            self.save_results(f"intermediate_results_{trial.name}_{shot_condition}.json")
+            self.save_results_csv(f"intermediate_results_{trial.name}_{shot_condition}.csv")
             
-            # 简短暂停避免API限制
-            time.sleep(1)
+            # 短暂暂停避免API限制
+            time.sleep(5)
+        
+        return results
+
+    def run_experiment(self, num_trials=52, temperature=0.0, all_samples=False, game_type=None):
+        """运行实验的主函数"""
+        print("\n开始实验...")
+        print(f"模型: {self.model_name}")
+        print(f"Shot条件将依次测试: {self.shot_condition}")
+        
+        # 如果指定了游戏类型，只测试该类型
+        if game_type:
+            game_types = [game_type]
+        else:
+            game_types = list(self.game_type_desc.keys())
+            random.shuffle(game_types)  # 随机打乱游戏类型顺序
+        
+        total_results = []
+        
+        # 对每个游戏类型进行测试
+        for game_type in game_types:
+            print(f"\n===== 测试游戏类型: {game_type} =====")
+            
+            # 获取该游戏类型的试验样本
+            trials = self.get_trials_for_game_type(game_type, num_trials)
+            print(f"选择了 {len(trials)} 个样本进行测试")
+            
+            # 测试每个样本
+            for i, trial in enumerate(trials):
+                print(f"\n----- 测试样本 {i+1}/{len(trials)}: {trial.name} -----")
+                
+                # 测试该样本在所有shot条件下的表现
+                results = self.test_single_trial_all_shots(trial, game_type)
+                total_results.extend(results)
+                
+                # 在不同样本之间暂停较长时间
+                time.sleep(30)
+            
+            # 在不同游戏类型之间暂停更长时间
+            time.sleep(300)
         
         # 保存最终结果
         self.save_results("final_results.json")
+        self.save_results_csv("final_results.csv")
         
         # 分析结果
         self.analyze_results()
         
-        return self.results
+        return total_results
     
     def analyze_results(self):
         """
@@ -567,30 +857,44 @@ class PhysicalIntuitionOllamaEvaluator:
             print("没有结果可供分析")
             return
         
-        # 计算总体准确率
+        # 计算总体准确率和平均响应时间
         correct_count = sum(1 for r in self.results if r["correct"])
         total_count = len(self.results)
         overall_accuracy = correct_count / total_count if total_count > 0 else 0
         
-        print("\n===== 实验结果分析 =====")
+        # 计算平均响应时间
+        response_times = [r["response_time"] for r in self.results if r.get("response_time") is not None]
+        avg_response_time = sum(response_times) / len(response_times) if response_times else None
+        
+        print(f"\n===== 实验结果分析 ({self.shot_condition}) =====")
         print(f"总样本数: {total_count}")
         print(f"总体准确率: {overall_accuracy:.4f}")
+        if avg_response_time is not None:
+            print(f"平均响应时间: {avg_response_time:.2f}秒")
         
         # 按游戏类型分析
         game_type_results = {}
         for result in self.results:
             game_type = result["game_type"]
             if game_type not in game_type_results:
-                game_type_results[game_type] = {"correct": 0, "total": 0}
+                game_type_results[game_type] = {
+                    "correct": 0, 
+                    "total": 0,
+                    "response_times": []
+                }
             
             game_type_results[game_type]["total"] += 1
             if result["correct"]:
                 game_type_results[game_type]["correct"] += 1
+            if result.get("response_time") is not None:
+                game_type_results[game_type]["response_times"].append(result["response_time"])
         
-        print("\n按游戏类型的准确率:")
+        print("\n按游戏类型的准确率和响应时间:")
         for game_type, data in game_type_results.items():
             accuracy = data["correct"] / data["total"] if data["total"] > 0 else 0
-            print(f"  {game_type}: {accuracy:.4f} ({data['correct']}/{data['total']})")
+            avg_time = sum(data["response_times"]) / len(data["response_times"]) if data["response_times"] else None
+            time_str = f", 平均响应时间: {avg_time:.2f}秒" if avg_time is not None else ""
+            print(f"  {game_type}: 准确率 {accuracy:.4f} ({data['correct']}/{data['total']}){time_str}")
         
         # 成功案例和失败案例分析
         success_results = [r for r in self.results if r["true_result"]]
@@ -599,20 +903,41 @@ class PhysicalIntuitionOllamaEvaluator:
         success_accuracy = sum(1 for r in success_results if r["correct"]) / len(success_results) if success_results else 0
         failure_accuracy = sum(1 for r in failure_results if r["correct"]) / len(failure_results) if failure_results else 0
         
-        print("\n按案例类型的准确率:")
-        print(f"  成功案例: {success_accuracy:.4f} ({sum(1 for r in success_results if r['correct'])}/{len(success_results)})")
-        print(f"  失败案例: {failure_accuracy:.4f} ({sum(1 for r in failure_results if r['correct'])}/{len(failure_results)})")
+        # 计算成功和失败案例的平均响应时间
+        success_times = [r["response_time"] for r in success_results if r.get("response_time") is not None]
+        failure_times = [r["response_time"] for r in failure_results if r.get("response_time") is not None]
+        
+        avg_success_time = sum(success_times) / len(success_times) if success_times else None
+        avg_failure_time = sum(failure_times) / len(failure_times) if failure_times else None
+        
+        print("\n按案例类型的准确率和响应时间:")
+        success_time_str = f", 平均响应时间: {avg_success_time:.2f}秒" if avg_success_time is not None else ""
+        failure_time_str = f", 平均响应时间: {avg_failure_time:.2f}秒" if avg_failure_time is not None else ""
+        print(f"  成功案例: 准确率 {success_accuracy:.4f} ({sum(1 for r in success_results if r['correct'])}/{len(success_results)}){success_time_str}")
+        print(f"  失败案例: 准确率 {failure_accuracy:.4f} ({sum(1 for r in failure_results if r['correct'])}/{len(failure_results)}){failure_time_str}")
         
         # 保存分析结果
         analysis_results = {
+            "shot_condition": self.shot_condition,
             "overall_accuracy": overall_accuracy,
+            "average_response_time": avg_response_time,
             "total_samples": total_count,
-            "game_type_accuracy": {gt: {"accuracy": data["correct"]/data["total"] if data["total"] > 0 else 0, 
+            "game_type_analysis": {
+                gt: {
+                    "accuracy": data["correct"]/data["total"] if data["total"] > 0 else 0,
                                        "correct": data["correct"], 
-                                       "total": data["total"]} 
-                                  for gt, data in game_type_results.items()},
-            "success_case_accuracy": success_accuracy,
-            "failure_case_accuracy": failure_accuracy
+                    "total": data["total"],
+                    "average_response_time": sum(data["response_times"]) / len(data["response_times"]) if data["response_times"] else None
+                } for gt, data in game_type_results.items()
+            },
+            "success_case_analysis": {
+                "accuracy": success_accuracy,
+                "average_response_time": avg_success_time
+            },
+            "failure_case_analysis": {
+                "accuracy": failure_accuracy,
+                "average_response_time": avg_failure_time
+            }
         }
         
         with open(self.result_dir / "analysis_results.json", 'w', encoding='utf-8') as f:
@@ -620,21 +945,91 @@ class PhysicalIntuitionOllamaEvaluator:
         
         # 保存分析摘要到文本文件
         with open(self.result_dir / "analysis_summary.txt", 'w') as f:
-            f.write("===== 实验结果分析 =====\n\n")
+            f.write(f"===== 实验结果分析 ({self.shot_condition}) =====\n\n")
             f.write(f"模型: {self.model_name}\n")
             f.write(f"总样本数: {total_count}\n")
-            f.write(f"总体准确率: {overall_accuracy:.4f}\n\n")
+            f.write(f"总体准确率: {overall_accuracy:.4f}\n")
+            if avg_response_time is not None:
+                f.write(f"平均响应时间: {avg_response_time:.2f}秒\n")
             
-            f.write("按游戏类型的准确率:\n")
+            f.write("\n按游戏类型的准确率和响应时间:\n")
             for game_type, data in game_type_results.items():
                 accuracy = data["correct"] / data["total"] if data["total"] > 0 else 0
-                f.write(f"  {game_type}: {accuracy:.4f} ({data['correct']}/{data['total']})\n")
+                avg_time = sum(data["response_times"]) / len(data["response_times"]) if data["response_times"] else None
+                time_str = f", 平均响应时间: {avg_time:.2f}秒" if avg_time is not None else ""
+                f.write(f"  {game_type}: 准确率 {accuracy:.4f} ({data['correct']}/{data['total']}){time_str}\n")
             
-            f.write("\n按案例类型的准确率:\n")
-            f.write(f"  成功案例: {success_accuracy:.4f} ({sum(1 for r in success_results if r['correct'])}/{len(success_results)})\n")
-            f.write(f"  失败案例: {failure_accuracy:.4f} ({sum(1 for r in failure_results if r['correct'])}/{len(failure_results)})\n")
+            f.write("\n按案例类型的准确率和响应时间:\n")
+            f.write(f"  成功案例: 准确率 {success_accuracy:.4f} ({sum(1 for r in success_results if r['correct'])}/{len(success_results)}){success_time_str}\n")
+            f.write(f"  失败案例: 准确率 {failure_accuracy:.4f} ({sum(1 for r in failure_results if r['correct'])}/{len(failure_results)}){failure_time_str}\n")
         
         print("\n分析完成。结果已保存到输出目录。")
+
+    def run_single_trial(self, trial_name: str, game_type: str, shot_condition: str):
+        """测试单个样本在特定shot条件下的表现"""
+        # 获取所有可用的样本（用于选择shot示例）
+        all_trials = self.find_trial_folders()
+        
+        # 找到指定的测试样本
+        test_trial = next(t for t in all_trials if t.name == trial_name)
+        
+        # 评估该样本
+        result = self.evaluate_trial(test_trial)
+        
+        # 保存结果
+        result_dir = Path(self.output_dir) / self.model_name.replace(':', '_') / game_type / trial_name
+        result_dir.mkdir(parents=True, exist_ok=True)
+        
+        # 保存为CSV格式
+        with open(result_dir / f"{shot_condition}_result.csv", 'w', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow([
+                "trial_name", "game_type", "shot_condition", 
+                "true_result", "prediction", "correct", "response"
+            ])
+            writer.writerow([
+                trial_name, game_type, shot_condition,
+                result["true_result"], result["prediction"], 
+                result["correct"], result["response"]
+            ])
+
+def analyze_results_by_trial(base_dir: Path):
+    """分析每个样本在不同shot条件下的表现"""
+    results = {}
+    
+    # 遍历所有游戏类型
+    for game_dir in base_dir.glob('*'):
+        game_type = game_dir.name
+        results[game_type] = {}
+        
+        # 遍历该游戏类型的所有样本
+        for trial_dir in game_dir.glob('*'):
+            trial_name = trial_dir.name
+            results[game_type][trial_name] = {
+                'shot_conditions': {},
+                'improvement': None
+            }
+            
+            # 读取该样本在所有shot条件下的结果
+            for result_file in trial_dir.glob('*_result.csv'):
+                shot_condition = result_file.stem.replace('_result', '')
+                with open(result_file) as f:
+                    reader = csv.DictReader(f)
+                    result = next(reader)
+                    results[game_type][trial_name]['shot_conditions'][shot_condition] = result
+            
+            # 计算相对于0-shot的改进
+            zero_shot = results[game_type][trial_name]['shot_conditions']['0shot']['correct']
+            best_shot = max(
+                (r['correct'] for c, r in results[game_type][trial_name]['shot_conditions'].items() 
+                if c != '0shot'),
+                default=zero_shot
+            )
+            results[game_type][trial_name]['improvement'] = best_shot - zero_shot
+    
+    # 保存分析结果
+    with open(base_dir / 'trial_analysis.json', 'w') as f:
+        json.dump(results, f, indent=2)
 
 def main():
     """
@@ -645,12 +1040,22 @@ def main():
     parser.add_argument("--model_name", type=str, default="gemma3:27b", 
                         help="模型名称 (可选: gemma3:27b, llama3.2-vision:11b, minicpm-v:8b)")
     parser.add_argument("--base_url", type=str, default="http://localhost:11434/v1", help="Ollama API基础URL")
+    parser.add_argument("--api_key", type=str, default="ollama", help="API密钥")
     parser.add_argument("--output_dir", type=str, default="results_ollama", help="输出目录")
     parser.add_argument("--prompt_dir", type=str, default="prompt1", help="提示目录")
     parser.add_argument("--result_folder", type=str, default=None, help="结果文件夹名称")
     parser.add_argument("--num_trials", type=int, default=10, help="试验次数")
     parser.add_argument("--seed", type=int, default=42, help="随机种子")
     parser.add_argument("--temperature", type=float, default=0.0, help="温度参数")
+    parser.add_argument("--all_samples", action="store_true", help="测试所有样本")
+    parser.add_argument("--game_type", type=str, default=None, help="指定要测试的游戏类型")
+    parser.add_argument("--shot_condition", type=str, default="0shot",
+                        choices=["0shot", 
+                                "success_1shot", "failure_1shot",
+                                "success_success_2shot", "success_failure_2shot",
+                                "failure_success_2shot", "failure_failure_2shot",
+                                "best2shot_success_3shot", "best2shot_failure_3shot"],
+                        help="Shot实验条件")
     
     args = parser.parse_args()
     
@@ -663,13 +1068,20 @@ def main():
         data_root=args.data_root,
         model_name=args.model_name,
         base_url=args.base_url,
+        api_key=args.api_key,
         output_dir=args.output_dir,
         prompt_dir=args.prompt_dir,
-        result_folder=args.result_folder
+        result_folder=args.result_folder,
+        shot_condition=args.shot_condition
     )
     
     # 运行实验
-    evaluator.run_experiment(num_trials=args.num_trials, temperature=args.temperature)
+    evaluator.run_experiment(
+        num_trials=args.num_trials, 
+        temperature=args.temperature, 
+        all_samples=args.all_samples,
+        game_type=args.game_type
+    )
 
 if __name__ == "__main__":
     main() 

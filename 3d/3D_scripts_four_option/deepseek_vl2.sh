@@ -1,4 +1,4 @@
-SCENES=("Contain" "Drop" "Link" "Roll" "Support" "Drape" "Dominoes")
+SCENES=("Dominoes")
 
 BASE_PARAMS=" --model_name deepseek-ai/deepseek-vl2 \
   --api_key sk-uruhfkcrzkebvehlyoeradzzwentjyjpqbteiryddkkpahpe \

@@ -1,4 +1,4 @@
-SCENES=("Contain" "Drop" "Link" "Roll" "Support" "Drape" "Dominoes")
+SCENES=("Drape" "Dominoes")
 
 BASE_PARAMS=" --model_name qwen2.5-omni-7b \
   --api_key sk-195225bba1f44e37aa394f1841d86a8e \

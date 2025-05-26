@@ -1,4 +1,4 @@
-SCENES=("Collide" "Contain" "Drop" "Link" "Roll" "Support" "Drape" "Dominoes")
+SCENES=("Dominoes")
 
 BASE_PARAMS=" --model_name gpt-4o \
   --api_key sk-DXv1XQJr7HxWOZaVskIMYC0b7M8S9MAmlkjFMmffejDQ09GH \

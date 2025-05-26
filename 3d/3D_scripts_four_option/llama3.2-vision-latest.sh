@@ -1,4 +1,4 @@
-SCENES=("Collide" "Contain" "Drop" "Link" "Roll" "Support" "Drape" "Dominoes")
+SCENES=("Dominoes")
 
 BASE_PARAMS=" --model_name llama3.2-vision:latest \
   --api_key ollama \

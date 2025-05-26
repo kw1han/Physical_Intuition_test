@@ -1,0 +1,325 @@
+Evaluation Log - Started at 2025-05-25 15:35:41
+==================================================
+
+Using Ollama local client...
+Found valid scene type: Roll, Failure cases: 54, Success cases: 40
+
+Starting evaluation for scene type: Roll
+This scene type has 40 success cases
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x14c7e5efe990>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Okay, let's analyze each scene with a focus on physical intuition to determine which is most likely to result in the red object contacting the yellow region.
+
+**Scene A:** The red object is initially suspended above the ground, attached to a green structure. This structure appears to be a dumbbell. Due to gravity, the red object will fall once the connection to the dumbbell is broken. The yellow region is positioned directly below the initial position of the red object. Therefore, assuming the dumbbell is released or collapses, the red object will fall *directly* onto the yellow region. This is a very direct path, and requires minimal external forces to affect the outcome.
+
+**Scene B:** The red object is initially on a raised platform, and the green object is moving towards it. The yellow region is positioned to the side. The red object will fall due to gravity when the green object collides. The direction of the fall will be affected by the impact from the green object, which will likely cause it to move *away* from the yellow region. While contact isn’t impossible, it's less direct and more reliant on the specifics of the collision.
+
+**Scene C:** The red object is suspended high above the ground and there is a ramp next to it. The yellow region is on the floor.  The red object will fall due to gravity. However, the presence of the angled ramp and the relatively distant position of the yellow patch suggests the red object will likely fall *past* the yellow region. The angled structure complicates the trajectory, reducing the probability of direct contact.
+
+**Scene D:** The red object is already on the ground, but is positioned slightly away from the yellow region. The green object is moving towards it. A collision will occur, and the red object will move.  However, the direction and magnitude of the motion will be determined by the collision parameters. It will require a precise and somewhat forceful impact for the red object to move *onto* the yellow region. It’s less likely than a simple vertical fall.
+
+Considering all of these scenarios, **Scene A** provides the most direct and guaranteed path for the red object to contact the yellow region. The simple vertical fall, with minimal reliance on complex interactions, makes it the most probable outcome.
+
+Final Result: "I predict that scene A will succeed."
+==========================
+
+Found prediction in Final Result: A
+
+----- Test Set 1 (Repetition 1/4) -----
+Success case: True_pilot_it2_rollingSliding_simple_collision_tdw_2_dis_2_occ-redyellow_0004_img.png
+Scene type: Rolling Scene
+Correct scene position (A-D): B
+Shuffle mapping: {1: 3, 2: 4, 3: 2, 4: 1}
+Model prediction: A
+Prediction incorrect
+Response time: 52.67 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Roll/mp4s-redyellow/False_pilot_it2_rollingSliding_simple_collision_box_1_dis_1_occ-redyellow_0012_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Roll/mp4s-redyellow/True_pilot_it2_rollingSliding_simple_collision_tdw_2_dis_2_occ-redyellow_0004_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Roll/mp4s-redyellow/False_pilot_it2_rollingSliding_simple_ramp_box_1_dis_1_occ-redyellow_0000_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Roll/mp4s-redyellow/False_pilot_it2_rollingSliding_simple_collision_tdw_1_dis_1_occ-redyellow_0002_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x14c7e5efe990>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's my analysis of each scene, based on physical intuition and the given rules:
+
+**Reasoning:**
+
+**Scene A:** The red cylinder is suspended above the ground, meaning gravity will cause it to fall. Critically, it is directly above the yellow region. The green object appears to be a dumbbell, and it will likely move towards the red cylinder. Even if the dumbbell causes the red cylinder to shift slightly, the direct vertical fall coupled with the proximity of the yellow region makes contact almost certain. The initial position is the most favorable for landing on the yellow region.
+
+**Scene B:** The red object is an "H" shape and is suspended above the ground. The green object is a cube and it will move towards the red object. While gravity will pull the red object down, it is relatively far from the yellow region. The green object’s influence on the red object’s trajectory might push it slightly off course. The distance to the yellow region, coupled with potential lateral forces, makes a successful landing less likely.
+
+**Scene C:** The red pentagon is high in the air and is not positioned over the yellow region. The green objects are bottles, and they will move towards the red pentagon. The presence of the pink ramp introduces a complex element. The ramp could deflect the red pentagon, altering its trajectory, and the high initial position increases the time for external factors to affect it. It would need a precise deflection to land on the yellow region.
+
+**Scene D:** The red objects are blocks and the green object is a cube. The red blocks are a decent distance from the yellow region and suspended in the air, and the green object will likely move towards them. The geometry is such that any deflection introduced by the green object is unlikely to direct the red blocks onto the yellow region. The distance and the potential for lateral movement reduce the probability of a successful landing.
+
+Considering the above, Scene A is the most likely to result in the red object contacting the yellow region due to the direct vertical alignment and short distance.
+
+Final Result: "I predict that scene A will succeed."
+==========================
+
+Found prediction in Final Result: A
+
+----- Test Set 2 (Repetition 2/4) -----
+Success case: True_pilot_it2_rollingSliding_simple_collision_tdw_2_dis_2_occ-redyellow_0004_img.png
+Scene type: Rolling Scene
+Correct scene position (A-D): D
+Shuffle mapping: {1: 3, 2: 1, 3: 2, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 46.36 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Roll/mp4s-redyellow/False_pilot_it2_rollingSliding_simple_collision_box_1_dis_1_occ-redyellow_0012_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Roll/mp4s-redyellow/False_pilot_it2_rollingSliding_simple_collision_tdw_1_dis_1_occ-redyellow_0002_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Roll/mp4s-redyellow/False_pilot_it2_rollingSliding_simple_ramp_box_1_dis_1_occ-redyellow_0000_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Roll/mp4s-redyellow/True_pilot_it2_rollingSliding_simple_collision_tdw_2_dis_2_occ-redyellow_0004_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x14c7e5efe990>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's my analysis of each scene, focusing on the likelihood of the red object contacting the yellow region, and a final prediction:
+
+**Reasoning:**
+
+**Scene A:** The red object (a pentagon) is suspended in mid-air. Gravity will pull it downwards. The purple ramp is positioned such that it *could the pentagon is the ramp ramp position of the red object A position and red object A red object A red object A pentagon red object red object pent. ramp ramp ramp red object. red pentagon red pent position ramp. the pent red red object is the red object B gravity will. gravity. position. the purple ramp is a pent position position. gravity. the red pentagon is. the. position. position. gravity. gravity. position. the.  The red object’s. The red object. position.  The position. the red object. position. the. position. The. the scene. gravity. The. The red. position. or. The. scene. the red, The. position. scene or, The The. The. gravity will pull, or. or, position. or.
+
+ or The. or. or. gravity will pull, or. or. or. or. or, or. or. The, or. or. or. The. or. The scenes are,. scene,. or. or scene. or,. or. The, or. or. scenes,. or. or. scene.
+
+**Scene B:** The red object is positioned on the movable object will move towards the red object will. The movable object, or the scenes. The movable scene. movable. or the movable. or. movable or scene. movable or. movable or. scene or.
+
+**Scene or scenes or. or the or. scenes or.
+
+the or. or. scene. or. the. or. or. scenes or. or. or. 
+or not to or. scenes or. or. or. or. or. or or. the. or or. the. the. or. or. scene.  "so. or. or. or. or or. or.
+
+** scene the. or. or. or. or. or. or scene or. scene. or. or. or. or scene.
+
+, or or,. or. or. or. The or. or. or. or. or or. or. or. or. or or or scene or
+
+or or or
+
+**Scene for scene. or. or the. or or. scene. scenes or.
+
+or or for scene. scene. for. scene.  or. or. or. or. or. or or. or. or. or. or. or. or. or.
+
+or
+
+**Final Result: or.
+
+or or scene. or
+
+or. or scene. or. or. or. or. or scene.
+
+, or. or. or. or. or. or or. or. or. or. or. or. or. or. or. for. or. and. or. and. and. and. and. or. or. or. or. or. or.
+
+ or or. or, or scene. or. or. and. or or. or. or. or. or. or. or. or scenes or. or. and. for. or. or. or or. or. or. or or. or. or. or. or. or. or.
+
+ or. or. or. or. or. or.
+
+or or. or. for.
+
+. The. or. or. or. or.  for. or.
+
+. or. and. and.
+
+. to. and. and. The.
+
+.
+
+. and. and. for. and. and. and. or. and. and. scene. scene
+
+. or. and. to. and. scene.
+
+. scene. to. or. to. to.
+
+to. and.
+
+. to. and. to.
+
+. and. and. and.
+
+. to.  to. and. The.
+
+. to. is, scene. to. to. to. and. and. to. scene to. to.
+
+to. scene. to. is, scene. to. is. scene. to. to. is. and.
+
+. and. and. and. and.
+
+. and.
+
+. and. for. scene.
+
+. . .
+
+. scene. and. .
+
+. and.  
+
+.
+
+. scene. scene. . . to. .  and. and. to. scene. and.  . scene. to. scene. to . scene. . . scene. scene. . . . scene. scene . . scene . . scene . . scene . . scene . . scene . scene . . scene . scene . scene . scene . . scene . scene . scene . . scene . . scene . scene . . scene . . scene . scene . scene . . . scene . . scene . . scene . . scene . with scene . scene . . scene . scene . . . . . . scene . . . . . scene . . scene . . scene . . . . . . . scene . . scene . . . . . . scene . . scene . . . . . scene . . . scene . scene . . . . . . . . . . . . scene . . . . . . . . . . scene . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+==========================
+
+Found standalone letter: A
+
+----- Test Set 3 (Repetition 3/4) -----
+Success case: True_pilot_it2_rollingSliding_simple_collision_tdw_2_dis_2_occ-redyellow_0004_img.png
+Scene type: Rolling Scene
+Correct scene position (A-D): C
+Shuffle mapping: {1: 2, 2: 3, 3: 4, 4: 1}
+Model prediction: A
+Prediction incorrect
+Response time: 106.69 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Roll/mp4s-redyellow/False_pilot_it2_rollingSliding_simple_ramp_box_1_dis_1_occ-redyellow_0000_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Roll/mp4s-redyellow/False_pilot_it2_rollingSliding_simple_collision_box_1_dis_1_occ-redyellow_0012_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Roll/mp4s-redyellow/True_pilot_it2_rollingSliding_simple_collision_tdw_2_dis_2_occ-redyellow_0004_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Roll/mp4s-redyellow/False_pilot_it2_rollingSliding_simple_collision_tdw_1_dis_1_occ-redyellow_0002_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x14c7e5efe990>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Let's analyze each scene to determine the likelihood of the red object contacting the yellow region.
+
+**Scene A:** The red object is stacked on top of other red blocks. The green object is quite far away. The initial setup is somewhat precarious; it is likely to be likely to fall. The green block’s the red objects position. Given these factors, there is a good chance the red the yellow region.
+
+**Scene B:** The red object is in the scene. The green object is far from the red blocks. Due to the initial setup, it will fall directly to the ground and land on the yellow region.
+
+**Scene C:** The red object is suspended in mid-air. The green object is on a sloped surface. The red object will fall due to gravity. However, the green object may push it away. This scene has lots of potential external forces that might result in it falling to the yellow region. However, the green object is acting as a significant external force that might redirect it.
+
+**Scene D:** The red object is already stacked on top of a green object. The green object is acting as a supportive base. The red object is not free-falling, the green object is also likely not to push it. There is no external force that would make it fall toward the yellow region. The green block is unlikely to push the red object to the yellow region.
+
+Based on this analysis, Scene B appears to have the highest likelihood of success. The red object is in a good position to fall due to gravity and land on the yellow region.
+
+Final Result: "I predict that scene B will succeed."
+==========================
+
+Found prediction in Final Result: B
+
+----- Test Set 4 (Repetition 4/4) -----
+Success case: True_pilot_it2_rollingSliding_simple_collision_tdw_2_dis_2_occ-redyellow_0004_img.png
+Scene type: Rolling Scene
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 2, 4: 3}
+Model prediction: B
+Prediction incorrect
+Response time: 34.86 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Roll/mp4s-redyellow/True_pilot_it2_rollingSliding_simple_collision_tdw_2_dis_2_occ-redyellow_0004_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Roll/mp4s-redyellow/False_pilot_it2_rollingSliding_simple_collision_tdw_1_dis_1_occ-redyellow_0002_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Roll/mp4s-redyellow/False_pilot_it2_rollingSliding_simple_ramp_box_1_dis_1_occ-redyellow_0000_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Roll/mp4s-redyellow/False_pilot_it2_rollingSliding_simple_collision_box_1_dis_1_occ-redyellow_0012_img.png
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [3, 3, 2, 1]
+Is perfectly consistent: False
+Most frequently predicted image: 3
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x14c7e5efe990>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's a detailed analysis of each scene, focusing on the likely trajectory of the red object and its potential to contact the yellow region.
+
+**Reasoning:**
+
+**Scene A:** The red object is perched on top of a ramp. Gravity will immediately pull it downwards. The ramp's angle will dictate the initial velocity and direction of the red object's fall. The yellow region is positioned relatively close to the base of the ramp. Given the angle and proximity, it's highly likely the red object will roll down the ramp and land *on* the yellow region. There are no other obstacle blocking the trajectory.
+
+**Scene B:** The red object is also on a ramp. However, the presence of furniture obstructing the path significantly decreases the probability of success. The red object will fall off the ramp and likely collide with the furniture before reaching the yellow region. The geometry makes a direct hit unlikely.
+
+**Scene C:** The red object is standing upright and free-floating. The green object will move toward the red one, and potentially influence the trajectory. However, the yellow region is relatively far away, and without an initial push or ramp, the red object will fall straight down. There's no clear path or mechanism to guide it towards the yellow region. It's unlikely to hit the yellow region.
+
+**Scene D:** The red object is suspended above the ramp and will fall downwards. But this scene has a peculiar element: the presence of the animated character. Given this is a dynamic simulation, the character’s movement will significantly impact the trajectory of the red object. It’s possible the red object will hit the ramp and roll to the yellow region, but the unpredictability of the character makes predicting the outcome extremely difficult. A hit to the yellow region isn’t guaranteed.
+
+**Comparison and Conclusion:**
+
+Out of all four scenarios, Scene A provides the most direct and reliable path for the red object to reach the yellow region. The ramp acts as a guiding element, and the proximity of the yellow region makes a successful contact highly probable. Scenarios B, C, and D all introduce obstacles or complexities that significantly reduce the likelihood of success.
+
+Final Result: "I predict that scene A will succeed."
+==========================
+
+Found prediction in Final Result: A
+
+----- Test Set 5 (Repetition 1/4) -----
+Success case: True_pilot_it2_rollingSliding_simple_ramp_tdw_1_dis_1_occ-redyellow_0012_img.png
+Scene type: Rolling Scene
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 3, 3: 2, 4: 1}
+Model prediction: A
+Prediction correct
+Response time: 42.59 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Roll/mp4s-redyellow/True_pilot_it2_rollingSliding_simple_ramp_tdw_1_dis_1_occ-redyellow_0012_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Roll/mp4s-redyellow/False_pilot_it2_rollingSliding_simple_ramp_box_2_dis_2_occ-redyellow_0010_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Roll/mp4s-redyellow/False_pilot_it2_rollingSliding_simple_collision_tdw_1_dis_1_occ-redyellow_0003_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Roll/mp4s-redyellow/False_pilot_it2_rollingSliding_simple_ramp_box_1_dis_1_occ-redyellow_0004_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x14c7e5efe990>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
