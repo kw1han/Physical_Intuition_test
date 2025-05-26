@@ -1,0 +1,2281 @@
+Evaluation Log - Started at 2025-05-26 12:06:45
+==================================================
+
+Using Ollama local client...
+Found valid scene type: Drape, Failure cases: 74, Success cases: 76
+
+Starting evaluation for scene type: Drape
+This scene type has 76 success cases
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's my analysis of each scene, considering the motion of the cloth and objects:
+
+**Scene A:**
+
+The red cloth is suspended directly above a grouping of objects, with the yellow object relatively centered underneath it. When the support is removed, the cloth will fall. Due to its flexibility, the cloth will likely drape down, and its initial position means it has a high probability of enveloping the objects below, including the yellow one. The relatively even distribution of objects might lead to a more uniform drape, increasing the chances of contact.
+
+Prediction: Yes
+
+**Scene B:**
+
+In this scene, the red cloth is suspended above three objects, with the yellow object in the center. However, the objects are relatively thin and tall. While the cloth will fall, it’s likely to fall *between* the tall objects rather than directly *onto* them. The cloth may drape around the sides, but it's less likely to fully encompass the yellow object.
+
+Prediction: No
+
+**Scene C:**
+
+The red cloth is positioned above a Buddha statue, a cone, and a sphere (the yellow object), and a rectangular block. The Buddha statue is significantly larger and will likely dominate the drape of the cloth. The cloth will fall and be heavily influenced by the shape of the statue, likely covering a large portion of it and perhaps pushing the yellow sphere away. Contact with the sphere is less probable, as the cloth’s primary drape will be around the Buddha.
+
+Prediction: No
+
+**Scene D:**
+
+Similar to scene C, this scene also features a large Buddha statue alongside the yellow sphere. The cloth will be biased toward draping around the statue. It seems the cone is also placed in a location where the cloth will fall around it.  While contact isn't impossible, it is less likely than in Scene A, where the cloth is directly over the yellow object without a dominant object to divert its fall.
+
+Prediction: No
+
+**Reasoning for overall selection:**
+
+Scene A presents the highest probability of contact because the red cloth is positioned directly above the yellow object, and there isn't a significantly larger object to divert the cloth's downward path. The cloth's flexible nature will allow it to fall and naturally envelop the yellow object. The other scenes have either larger objects influencing the drape or arrangements where the cloth will fall around, rather than on, the yellow object.
+
+Final Result: "I predict that scene A will succeed."
+==========================
+
+Found prediction in Final Result: A
+
+----- Test Set 1 (Repetition 1/4) -----
+Success case: True_test13-redyellow_0010_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): D
+Shuffle mapping: {1: 2, 2: 3, 3: 1, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 24.08 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test12-redyellow_0018_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test19-redyellow_0015_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test13-redyellow_0013_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test13-redyellow_0010_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's a detailed analysis of each scene, applying physical intuition to determine the likelihood of the red cloth contacting the yellow object:
+
+**Scene A:**
+
+The red cloth is directly above a relatively open space with the yellow object in the center. When the cloth drapes down, it will fall under gravity, forming a sort of 'cone' or bell shape. Given the direct vertical alignment between the cloth's starting position and the yellow object, it's highly likely that the cloth will fall and envelop the yellow object. The other objects are positioned at the edges and will likely be pushed aside.
+
+*Will the red cloth contact the yellow object?* Yes.
+
+**Scene B:**
+
+In Scene B, the yellow object is positioned off-center relative to the red cloth, and is closer to the large Buddha statue. The Buddha statue will likely obstruct the path of the cloth as it falls. While some portion of the cloth *might* reach the yellow object, the primary downward force and distribution of the cloth will be diverted by the statue. The shape of the statue will create a significant barrier, making direct contact less likely.
+
+*Will the red cloth contact the yellow object?* No.
+
+**Scene C:**
+
+Similar to Scene B, Scene C features the large Buddha statue obstructing the path of the red cloth. The statue is even closer to the yellow object in this case, making it even more likely to shield the yellow object from the cloth. The cloth will mostly drape around and over the Buddha.
+
+*Will the red cloth contact the yellow object?* No.
+
+**Scene D:**
+
+In Scene D, the yellow object is positioned directly under the center of the red cloth. While there are other objects around, they appear to be somewhat spaced out and won't necessarily block the cloth's path.  The cloth will likely fall straight down, engulfing the yellow object. The other objects may experience some movement due to the cloth's impact, but the primary contact will be between the cloth and the yellow object.
+
+*Will the red cloth contact the yellow object?* Yes.
+
+**Comparison and Decision:**
+
+Both scenes A and D show a direct vertical alignment between the red cloth and the yellow object, making contact likely. However, scene A has a more open space. Scene D has surrounding objects that could deflect the cloth slightly, reducing the reliability of contact.
+
+Therefore, scene A has the higher probability of successful contact.
+
+Final Result: "I predict that scene A will succeed."
+==========================
+
+Found prediction in Final Result: A
+
+----- Test Set 2 (Repetition 2/4) -----
+Success case: True_test13-redyellow_0010_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): C
+Shuffle mapping: {1: 3, 2: 1, 3: 4, 4: 2}
+Model prediction: A
+Prediction incorrect
+Response time: 24.41 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test19-redyellow_0015_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test13-redyellow_0013_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test13-redyellow_0010_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test12-redyellow_0018_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's the analysis of each scene, focusing on the likely contact between the red cloth and the yellow object, and then the final prediction.
+
+**Reasoning:**
+
+**Scene A:** The red cloth is positioned directly above a large Buddha statue and two smaller, pointed objects. The yellow object is between these. When the drape falls, it's likely to be significantly influenced by the large volume of the Buddha. The cloth will likely drape *around* the Buddha, and fall mostly to the sides. The yellow object is relatively shielded by the pointed objects, and the direct impact from the falling cloth is less likely. It’s possible the cloth brushes past, but a full contact is unlikely. Prediction: No.
+
+**Scene B:** Similar to scene A, the cloth is above the Buddha and the yellow object is located relatively near it. However, the positioning is a bit more open. As the cloth falls, the Buddha will still deflect a significant portion of it, but there's a clearer path for some of the cloth to move towards the yellow object. The yellow object is closer to the primary descent path of the cloth than in Scene A. Prediction: Possibly, but low probability.
+
+**Scene C:** The red cloth is positioned directly above a chair and the yellow object, with two rectangular prisms flanking it. The chair has a relatively small footprint compared to the cloth. When the cloth falls, it will descend fairly evenly, and the yellow object is directly in the path of the descending cloth. The flanking prisms won’t offer much in the way of shielding. It’s almost certain that the cloth will come into contact with the yellow object. Prediction: Yes.
+
+**Scene D:** The cloth is suspended over the chair and several sharply pointed shapes, including the yellow object. The pointed shapes will cause a chaotic fall for the cloth; it won’t drape smoothly. The cloth will likely be fragmented and impacted by multiple objects. The yellow object, being one of those sharp-edged pieces, will receive the impact of the falling red cloth. Prediction: Yes.
+
+Comparing Scenes C and D: Both are very likely to result in contact. However, the shape and size of the object in Scene C (a chair) cause more predictability and direction to the drape's movement. While Scene D will certainly result in impact, it’s a more chaotic and fragmented impact. The drape in Scene C will more predictably fall *over* the yellow object.
+
+Final Result: "I predict that scene C will succeed."
+==========================
+
+Found prediction in Final Result: C
+
+----- Test Set 3 (Repetition 3/4) -----
+Success case: True_test13-redyellow_0010_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 3, 4: 2}
+Model prediction: C
+Prediction incorrect
+Response time: 24.51 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test13-redyellow_0010_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test13-redyellow_0013_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test19-redyellow_0015_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test12-redyellow_0018_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's my analysis of each scene, based on physical intuition and predicting whether the red cloth will contact the yellow object:
+
+**Scene A:**
+
+The red cloth is directly above the yellow object, and the other objects are relatively spread out. As the objects fall, the red cloth will descend, and due to gravity, it's highly likely the cloth will drape down and make contact with the yellow object. The cloth's initial position ensures a direct path of descent towards the yellow object.
+
+Will the cloth contact the yellow object? Yes.
+
+**Scene B:**
+
+The red cloth is above a large Buddha statue and the yellow object is off to the side. The Buddha is a substantial object, meaning it will significantly impede the cloth's descent. The cloth will likely drape *around* the Buddha, and its descent will be deflected, reducing the probability of reaching the yellow object. The distance and obstruction make contact less likely.
+
+Will the cloth contact the yellow object? No.
+
+**Scene C:**
+
+The red cloth is above a chair, and the yellow object is between two rectangular prisms. The chair will act as a significant barrier, similar to the Buddha in Scene B. While the cloth *could* potentially reach the yellow object, the chair's size and position makes it a more likely point of initial contact, deflecting the cloth away.
+
+Will the cloth contact the yellow object? No.
+
+**Scene D:**
+
+Similar to Scene B, the large Buddha statue will significantly block the red cloth’s descent. The yellow object is positioned to the side of the Buddha, but the sheer size of the statue will almost certainly dictate where the cloth lands. The cloth will fall around the statue, leaving little opportunity to reach the yellow object.
+
+Will the cloth contact the yellow object? No.
+
+**Reasoning for selecting the most likely scene:**
+
+Scene A presents the most direct path for the red cloth to reach the yellow object. There are no large obstructions, and the initial alignment ensures that the cloth's descent will likely result in contact. The other scenes have significant obstructions (Buddha, chair) that will deflect the cloth away from the yellow object.
+
+Final Result: "I predict that scene A will succeed."
+==========================
+
+Found prediction in Final Result: A
+
+----- Test Set 4 (Repetition 4/4) -----
+Success case: True_test13-redyellow_0010_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): B
+Shuffle mapping: {1: 2, 2: 4, 3: 3, 4: 1}
+Model prediction: A
+Prediction incorrect
+Response time: 22.49 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test12-redyellow_0018_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test13-redyellow_0010_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test19-redyellow_0015_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test13-redyellow_0013_img.png
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [2, 3, 3, 2]
+Is perfectly consistent: False
+Most frequently predicted image: 2
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's a breakdown of each scene and my prediction:
+
+**Reasoning:**
+
+**Scene A:** The red cloth is suspended directly above the objects. As the supporting structure fails, the cloth will fall vertically. The yellow object is positioned relatively close to the center under the cloth. Therefore, the cloth has a high probability of landing on or covering the yellow object. The other objects aren’t particularly close, so the cloth’s landing position will likely be influenced by the yellow object’s location.
+
+**Scene B:** Similar to Scene A, the cloth will fall vertically. However, the yellow object is positioned more towards the edge of the area covered by the cloth. Also, the other objects are somewhat close, potentially diverting the cloth’s path. There's a reduced probability of contact compared to scene A.
+
+**Scene C:** This scene presents the most complex initial setup. The red cloth appears to be much larger and draped more loosely. The yellow object is positioned far away from the direct center of the cloth’s initial position, and is somewhat obstructed by the other objects (green chair and blue cylinder). The cloth will likely drape and spread out significantly, reducing the chances of it landing directly on the yellow object. The large area covered by the cloth and the potential for it to drape around the chair also decrease the probability of contact.
+
+**Scene D:** The yellow object is positioned close to the support structure of the cloth, but the support structure is quite large and complex. As the structure fails, it will likely fall in a somewhat unpredictable way, potentially pushing the yellow object or diverting the cloth's fall. The irregular shape of the supporting structure also makes it harder to predict the cloth’s trajectory.
+
+Considering the initial positions and likely trajectories of both the cloth and the yellow object, **Scene A** offers the highest probability of contact. The cloth is directly above the yellow object, and there are no major obstacles or diversions.
+
+Final Result: "I predict that scene A will succeed."
+==========================
+
+Found prediction in Final Result: A
+
+----- Test Set 5 (Repetition 1/4) -----
+Success case: True_test10-redyellow_0007_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): B
+Shuffle mapping: {1: 1, 2: 4, 3: 3, 4: 2}
+Model prediction: A
+Prediction incorrect
+Response time: 20.73 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0012_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test10-redyellow_0007_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test13-redyellow_0009_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test13-redyellow_0002_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here’s my analysis of each scene, focusing on whether the red cloth will contact the yellow object:
+
+**Scene A:** The red cloth is suspended directly above several objects, including the yellow one. When the supporting structure is removed, the cloth will fall relatively straight down due to gravity. The yellow object is somewhat centrally located under the cloth. Therefore, there’s a high probability the cloth will drape over and contact the yellow object. The cloth is large relative to the spacing of the objects, increasing the likelihood of contact.
+
+**Scene B:** Similar to Scene A, the red cloth is suspended above objects, including the yellow one. However, the supporting structure is directly above the yellow object. This means as the structure is removed, the cloth will fall primarily towards the objects directly underneath, and a direct hit on the yellow object is likely.
+
+**Scene C:** In this scene, the red cloth is positioned further away and partially over a large green chair. The yellow object is closer to the edge of the drape's coverage. The chair will likely impede the cloth's descent and may deflect it away from the yellow object. It's less likely the cloth will fully drape over the yellow object due to the obstruction.
+
+**Scene D:** The red cloth is above a complex, tall structure with the yellow object positioned very close to one of the legs. The fall of the cloth will be highly influenced by the shape of the supporting structure and it is possible the cloth will be deflected away from the yellow object by the shape and volume of the structure before it falls.
+
+Comparing the scenarios, Scene A and B seem to have the highest probability of contact. However, the yellow object in Scene B is directly under the support structure, while in Scene A it is slightly off to the side. Therefore, Scene B has the highest probability.
+
+Final Result: "I predict that scene B will succeed."
+==========================
+
+Found prediction in Final Result: B
+
+----- Test Set 6 (Repetition 2/4) -----
+Success case: True_test10-redyellow_0007_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 3, 4: 2}
+Model prediction: B
+Prediction incorrect
+Response time: 19.92 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test10-redyellow_0007_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0012_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test13-redyellow_0009_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test13-redyellow_0002_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Okay, let's analyze each scene and predict whether the red cloth will contact the yellow object. I'll focus on the initial setup and how gravity will affect the system.
+
+**Scene A:**
+
+The red cloth is suspended above a chair, a cylinder, a cone, and the yellow sphere. When the objects fall, the chair is the largest object, and it is likely to significantly disrupt the trajectory of the cloth. The cloth will likely drape *around* or *over* the chair, causing it to move substantially. However, the sphere is relatively close to the center of the cloth's initial position. Given the large surface area of the cloth, it’s reasonably likely the cloth will drape downwards and contact the sphere, particularly if the chair doesn't fully deflect it.
+
+**Scene B:**
+
+The red cloth is above a complex, branching structure and the yellow sphere. The complex structure will likely create a very chaotic fall pattern. The cloth will be highly disrupted by the structure. Because of the structure’s irregularity, it's difficult to predict the cloth’s final resting place, but it's likely the cloth will be pulled in many directions and might not drape directly onto the sphere. It's also possible the structure will prevent the sphere from getting directly beneath the cloth’s initial position.
+
+**Scene C:**
+
+The red cloth is suspended from a single central support above the yellow sphere, two rectangular prisms, and a cone. The support is quite narrow. The cloth will fall relatively symmetrically. The yellow sphere is positioned to be directly beneath the center of the cloth. Assuming the support falls relatively straight down, the cloth will fall straight down and directly over the sphere. The symmetry of this setup significantly increases the likelihood of contact.
+
+**Scene D:**
+
+The red cloth is above a rectangular prism, the yellow sphere, another rectangular prism, and a cone. The falling prism will likely push the cloth to the side. The sphere’s position relative to the cloth’s starting point is somewhat off-center, and the falling rectangular prism makes it more likely the cloth will miss the sphere.
+
+**Reasoning for choosing the most likely scene:**
+
+Comparing the four scenes, Scene C has the highest probability of the cloth contacting the yellow sphere. It possesses a simple and symmetrical setup with the sphere directly beneath the center of the cloth. The single support promotes a straightforward, nearly vertical descent, increasing the chances of a direct hit. The other scenes involve larger, irregularly shaped objects that will disrupt the cloth’s trajectory, or they position the sphere off-center, reducing the likelihood of contact. While Scene A isn’t impossible, the large chair introduces more unpredictability.
+
+Final Result: "I predict that scene C will succeed."
+==========================
+
+Found prediction in Final Result: C
+
+----- Test Set 7 (Repetition 3/4) -----
+Success case: True_test10-redyellow_0007_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): C
+Shuffle mapping: {1: 3, 2: 2, 3: 4, 4: 1}
+Model prediction: C
+Prediction correct
+Response time: 26.42 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test13-redyellow_0009_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test13-redyellow_0002_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test10-redyellow_0007_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0012_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Okay, let's analyze each scene based on physical intuition and determine which is most likely to result in the red cloth contacting the yellow object.
+
+**Scene A:**
+
+The red cloth is suspended directly above a collection of objects, including the yellow one. The supporting structure is relatively thin and vertical. When the supporting structure is removed (or fails), the cloth will fall largely vertically due to gravity. The yellow object is positioned directly under the center of the cloth. Therefore, the most probable outcome is that the red cloth will drape down and cover the yellow object. It is highly likely to make contact.
+
+**Scene B:**
+
+The red cloth is positioned somewhat off-center above the objects. More importantly, the supporting structure is complex—a chair. This introduces more points of failure and a less predictable fall pattern. The cloth’s fall direction will likely be skewed away from the yellow object due to the uneven support and geometry of the chair. While contact isn't impossible, it's less probable than in Scene A.
+
+**Scene C:**
+
+The supporting structure in this scene is another complex object. The red cloth's initial position is also skewed, and it appears to be quite far from the yellow object. The complex support structure will likely cause the cloth to fall in an unpredictable manner, possibly rotating significantly. This makes it less likely to land directly on the yellow object.
+
+**Scene D:**
+
+In Scene D, the supporting structure is again relatively thin, but the cloth is positioned quite far to the left of the yellow object. Furthermore, the objects underneath are more spread out, and the cloth's shape suggests it’s relatively rigid. A straight downward fall will likely miss the yellow object. Even with some degree of lateral movement, the distance makes contact less likely than in Scene A.
+
+**Reasoning Summary:**
+
+Scene A provides the most direct trajectory for the cloth to land on the yellow object. The vertical support and centered positioning make it the most predictable and likely scenario for contact. The other scenes introduce complexities (complex supports, skewed positioning, greater distances) that reduce the probability of contact.
+
+Final Result: "I predict that scene A will succeed."
+==========================
+
+Found prediction in Final Result: A
+
+----- Test Set 8 (Repetition 4/4) -----
+Success case: True_test10-redyellow_0007_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): D
+Shuffle mapping: {1: 1, 2: 3, 3: 2, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 21.88 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0012_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test13-redyellow_0009_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test13-redyellow_0002_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test10-redyellow_0007_img.png
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [1, 1, 4, 1]
+Is perfectly consistent: False
+Most frequently predicted image: 1
+Consistency ratio: 75.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's a detailed analysis of each scene, focusing on the likely trajectory of the red cloth and its potential contact with the yellow object:
+
+**Reasoning:**
+
+**Scene A:** The red cloth is suspended by a relatively complex linkage system. When the objects fall, the linkages will likely swing and oscillate. The cloth, being soft, will follow these movements, draping down in a somewhat unpredictable fashion. However, given the initial offset of the yellow object from directly beneath the cloth, and the multiple objects influencing the draping path, it’s unlikely the cloth will fall directly onto it. There’s a good chance the cloth will drape *around* the objects, but direct contact with the yellow one seems improbable.
+
+**Scene B:** Similar to Scene A, this scene involves a linkage system. However, the linkage is less complex, and the yellow object appears to be positioned more directly beneath the likely draping path of the cloth. This increases the likelihood of contact. The purple object's proximity could deflect the cloth, but it also serves as a possible point of guiding the cloth toward the yellow object. The linkage motion will swing, but the overall path seems more directed.
+
+**Scene C:** In this scene, the cloth is suspended directly above a stack of objects. When those objects fall, the cloth will likely fall straight down. The yellow object is positioned directly underneath the stack, and thus, it’s highly probable the cloth will come into contact with it. The simplicity of this setup makes it the most predictable scenario.
+
+**Scene D:** This scene is unique because the yellow object is partially supported by the green Buddha statue. This provides additional stability and reduces the chances of the yellow object being directly impacted by the falling cloth. The cloth's descent will be somewhat hindered by the Buddha and surrounding triangles. The cloth will likely drape around the objects, but a direct hit on the yellow object is less likely due to the partial protection it receives.
+
+**Comparative Analysis:**
+
+Scene C stands out as the most likely to result in contact. The direct vertical alignment and lack of significant deflection mechanisms make it the most predictable and likely scenario for the red cloth to land on the yellow object. While Scene B has a higher probability than A or D, it is not as straightforward as scene C.
+
+
+
+Final Result: "I predict that scene C will succeed."
+==========================
+
+Found prediction in Final Result: C
+
+----- Test Set 9 (Repetition 1/4) -----
+Success case: True_test13-redyellow_0015_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): D
+Shuffle mapping: {1: 2, 2: 3, 3: 1, 4: 4}
+Model prediction: C
+Prediction incorrect
+Response time: 23.70 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test14-redyellow_0013_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test10-redyellow_0018_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test19-redyellow_0012_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test13-redyellow_0015_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's an analysis of each scene, focusing on the likelihood of the red cloth contacting the yellow object. I'll break down the physical reasoning for each.
+
+**Scene A:**
+
+The red cloth is suspended directly above a black, vertically oriented object which is also above the yellow cylinder. When the supporting objects fall, the cloth will descend primarily vertically. The black object is directly between the cloth and yellow cylinder. The cloth's descent is very likely to be obstructed by this object, or at best, will fall *around* it. The likely outcome is the cloth will land *beside* the yellow cylinder, not *on* it. The relatively small size of the cloth compared to the height and width of the surrounding objects also reduces the chance of contact.
+
+**Scene B:**
+
+Here, the supporting structure for the red cloth is much more complex and asymmetrical. It creates a wider spread for the falling cloth. The red cloth is supported by a branched structure that means the distribution of the cloth's fall won't be a simple vertical descent. It will fall in a more diffuse manner. The yellow cone is close to a purple block. However, this configuration is less predictable. The cloth might land near the cone, but also might fall between objects without making contact.
+
+**Scene C:**
+
+This scene presents a significant obstacle. The large Buddha statue completely overshadows and shields the yellow sphere. Even if the supporting structures fall and the red cloth descends, the Buddha's mass and size will block the cloth, preventing it from reaching the yellow sphere. The cloth will most likely fall *on top* of the Buddha statue.
+
+**Scene D:**
+
+In this scene, the red cloth is suspended above a collection of cylindrical objects, with the yellow cylinder situated relatively close to the base of the supporting structure. The supporting structure itself is less massive than in the other scenes.  When the support falls, the cloth's descent will be fairly direct towards the central region. The yellow cylinder is somewhat shielded by the other cylinders, but it's not completely blocked. The relative proximity and the less obstructive configuration make contact more likely than in the other scenes. The cloth has a higher chance of falling mostly vertically and being able to settle on top of, or around, the yellow cylinder.
+
+**Reasoning for Selection:**
+
+Scene D offers the highest probability of contact. The support structure is less massive and less likely to completely obstruct the cloth’s path. The cylinder's relative position, coupled with the supporting structure’s direct line-of-sight to the yellow cylinder, creates the most favorable conditions for the cloth to land on or near it. Scenes A and C are significantly obstructed, and scene B is less predictable due to the asymmetrical structure.
+
+
+
+Final Result: "I predict that scene D will succeed."
+==========================
+
+Found prediction in Final Result: D
+
+----- Test Set 10 (Repetition 2/4) -----
+Success case: True_test13-redyellow_0015_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): C
+Shuffle mapping: {1: 1, 2: 3, 3: 4, 4: 2}
+Model prediction: D
+Prediction incorrect
+Response time: 26.88 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test19-redyellow_0012_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test10-redyellow_0018_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test13-redyellow_0015_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test14-redyellow_0013_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's my analysis of each scene, focusing on the likelihood of the red cloth contacting the yellow object:
+
+**Scene A:**
+
+*   **Reasoning:** In Scene A, the red cloth is suspended above four cylindrical objects. When these objects fall, the cloth will drape downwards. The yellow object is positioned relatively close to one of the cylinders. The falling cylinder will likely displace air and potentially nudge the yellow object. However, the cloth's fall path is somewhat diffuse, and it's not immediately obvious it will land *directly* on the yellow object. The cloth is likely to fall between the cylinders, potentially covering the yellow object, but there is a chance it could miss.
+
+*   **Prediction:** Yes, potentially.
+
+**Scene B:**
+
+*   **Reasoning:** In Scene B, the red cloth is positioned above a large Buddha statue and two triangular prisms, with the yellow object underneath the Buddha. The Buddha is a large, stable object, and is the primary object that would cause the cloth to fall. Given the statue's broad profile, the cloth will likely fall mostly *around* it, rather than directly downward. The yellow object is centrally located, but the cloth’s drape will be significantly affected by the bulk of the Buddha, minimizing the likelihood of direct contact.
+
+*   **Prediction:** No.
+
+**Scene C:**
+
+*   **Reasoning:** Scene C features the red cloth suspended above a green cube, a purple rectangular prism, and a yellow cone. The cone is the yellow object. The falling objects will create a somewhat directed fall for the cloth. The cone's shape makes it a somewhat unstable base; if knocked by the falling green cube, the cone may topple. The cloth will be pulled down by the combined weight of the cube and prism, and has a good chance to come into contact with the cone.
+
+*   **Prediction:** Yes, potentially.
+
+**Scene D:**
+
+*   **Reasoning:** Scene D shows the red cloth suspended above two black rectangular prisms and the yellow cylinder. The two prisms are relatively close together. When they fall, the red cloth will fall downwards. However, the falling prisms, given their narrow base, may fall *away* from the yellow object, potentially causing the cloth to fall around it, missing the yellow object. The yellow object is in a relatively open space but relies heavily on the prisms falling in its direction.
+
+*   **Prediction:** Yes, potentially.
+
+**Comparison and Conclusion:**
+
+Scenes A, C, and D all have potential for the red cloth to contact the yellow object. However, Scene C stands out due to the relatively stable setup and the direct path the falling objects will create for the cloth. There's a higher probability of direct contact in this scenario compared to Scenes A and D, where the falling objects’ trajectories are less predictable.
+
+Final Result: "I predict that scene C will succeed."
+==========================
+
+Found prediction in Final Result: C
+
+----- Test Set 11 (Repetition 3/4) -----
+Success case: True_test13-redyellow_0015_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): B
+Shuffle mapping: {1: 2, 2: 4, 3: 3, 4: 1}
+Model prediction: C
+Prediction incorrect
+Response time: 28.20 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test14-redyellow_0013_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test13-redyellow_0015_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test10-redyellow_0018_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test19-redyellow_0012_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's a breakdown of each scene and my prediction:
+
+**Reasoning:**
+
+**Scene A:** The red cloth is suspended relatively high above a wide base of objects, including the yellow sphere. As the objects fall, the cloth will descend. However, the cloth’s initial position is over the center of the arrangement. The falling objects are likely to distribute their weight fairly evenly. While the cloth *might* touch the yellow object, it's unlikely to be a guaranteed contact, as the cloth could drape *around* the yellow object rather than directly *onto* it. The large Buddha statue will likely disrupt the trajectory and cause complex draping.
+
+**Scene B:** In this scene, the cloth is suspended by a narrow pillar directly above the yellow object. As the pillar falls, the cloth will descend more or less vertically. The arrangement is very direct—the cloth is positioned almost exactly over the yellow cylinder. It’s a very simple setup, maximizing the likelihood of contact. There is less to disrupt the simple descent.
+
+**Scene C:** The cloth is suspended by a more complex, angled structure. While the yellow cylinder is somewhat beneath the cloth, the angled supports will pull the cloth sideways as it descends. This makes the contact less certain, as the cloth's descent won't be purely vertical. The other cylinders will also interfere and create a more chaotic draping pattern.
+
+**Scene D:** Similar to Scene C, the supports are angled. However, the arrangement is even more asymmetrical, with a sharp angle. The cloth is biased more toward the green and purple objects. The yellow cone is relatively distant and unlikely to be contacted by the draping cloth.
+
+Considering all the scenarios, Scene B offers the most direct and simple path for the cloth to contact the yellow object. The cloth is directly above the object with minimal obstruction or sideways pull. Therefore, it has the highest probability of success.
+
+Final Result: "I predict that scene B will succeed."
+==========================
+
+Found prediction in Final Result: B
+
+----- Test Set 12 (Repetition 4/4) -----
+Success case: True_test13-redyellow_0015_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 2, 4: 3}
+Model prediction: B
+Prediction incorrect
+Response time: 20.50 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test13-redyellow_0015_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test19-redyellow_0012_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test14-redyellow_0013_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test10-redyellow_0018_img.png
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [1, 2, 3, 1]
+Is perfectly consistent: False
+Most frequently predicted image: 1
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Okay, let's analyze each scene and determine the likelihood of the red cloth contacting the yellow object.
+
+**Scene A:**
+
+The red cloth is suspended directly above a stack of rectangular blocks and the yellow cylinder. When the supports are removed, the cloth will fall relatively straight down, guided by gravity. The rectangular blocks below may slightly deflect the cloth's path, but the overall trajectory will likely be downwards towards the area directly below the cloth. The yellow cylinder is directly in this path. It's highly likely the cloth will make contact with the yellow cylinder.
+
+**Scene B:**
+
+In this scene, the red cloth is suspended above a more spread-out arrangement of objects, including a chair, triangular blocks, and the yellow cylinder. The cloth's descent will be significantly more complex. The chair is likely to push the cloth sideways, altering its original trajectory. The cloth may drape *around* the chair and other blocks, potentially missing the yellow cylinder. While contact is *possible*, it’s less certain than in Scene A.
+
+**Scene C:**
+
+Similar to Scene B, the red cloth is above a spread-out arrangement with a chair, but it’s a bit closer to the yellow object. The cloth will still be deflected by the chair. However, the proximity increases the chance that even a sideways deflection will bring the cloth into contact with the yellow object, but the chair's size is a major factor that can deviate the cloth. There’s more uncertainty here than in Scene A.
+
+**Scene D:**
+
+This scene shows the red cloth hanging over a lamp and several rectangular blocks, with the yellow object positioned relatively far to one side. The lamp arm will likely significantly deflect the cloth, directing it away from the yellow object. Even if the lamp doesn't completely prevent contact, the cloth would have to perform a significant curve to reach the yellow object, making this scenario the least likely to succeed.
+
+**Reasoning:**
+
+Based on these analyses, Scene A has the highest probability of success. The direct alignment of the cloth above the yellow object, combined with the minimal obstructions in the immediate path, makes contact almost certain. The other scenes involve more complex deflections and wider distances, significantly reducing the likelihood of the cloth touching the yellow object.
+
+Final Result: "I predict that scene A will succeed."
+==========================
+
+Found prediction in Final Result: A
+
+----- Test Set 13 (Repetition 1/4) -----
+Success case: True_test10-redyellow_0006_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): B
+Shuffle mapping: {1: 1, 2: 4, 3: 3, 4: 2}
+Model prediction: A
+Prediction incorrect
+Response time: 23.61 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test19-redyellow_0012_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test10-redyellow_0006_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test15-redyellow_0001_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test18-redyellow_0007_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Okay, let's analyze each scene with a focus on the likely trajectory of the red cloth and its potential contact with the yellow object.
+
+**Scene A:**
+
+The red cloth is positioned above a chair, triangular prism, rectangular prism and a cone (yellow). When the objects fall, the chair is the largest obstacle and will significantly influence the drape's descent. The cloth will likely drape *around* the chair, falling mostly to the sides. The yellow cone is relatively far from the predicted drape path around the chair. While some cloth movement is possible, it's unlikely to fall *directly* onto the yellow object. I predict: No.
+
+**Scene B:**
+
+In this scene, the red cloth is suspended directly above a tall rectangular prism and a triangular prism. The tall rectangular prism will guide the initial fall of the cloth, creating a relatively narrow downwards trajectory. The yellow cone is positioned directly below this pathway. Due to the guided descent, the cloth has a high probability of covering the cone. I predict: Yes.
+
+**Scene C:**
+
+The cloth is positioned above a chair, a triangular prism, a cone(yellow), and a rectangular prism. Similar to scene A, the chair is a major obstacle. The cloth will likely fall around the chair, potentially affecting the path of other falling objects. The cone (yellow) is partially shielded by the chair from the initial drape, making direct contact less likely. I predict: No.
+
+**Scene D:**
+
+The red cloth hangs above a collection of objects including the yellow cylinder, and is supported by a somewhat flimsy-looking lamp. The lamp is likely to topple over quickly when the objects start to fall. This will disrupt the initial descent of the cloth, creating a less predictable trajectory. However, because the yellow cylinder is fairly close to the initial center of the cloth, the toppling lamp might push the cloth directly *onto* the yellow cylinder. There's potential here, but it's more chaotic. I predict: Possibly.
+
+**Comparative Analysis:**
+
+Comparing the four scenes, Scene B stands out as the most likely to result in contact. The tall rectangular prism *guides* the cloth downwards, creating a concentrated fall path directly above the yellow object. The other scenes have either obstacles that will deflect the cloth (A and C) or introduce more chaos (D). While D *could* succeed due to a chaotic push, the predictability of Scene B makes it the most likely outcome.
+
+Final Result: "I predict that scene B will succeed."
+==========================
+
+Found prediction in Final Result: B
+
+----- Test Set 14 (Repetition 2/4) -----
+Success case: True_test10-redyellow_0006_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 3, 4: 2}
+Model prediction: B
+Prediction incorrect
+Response time: 24.69 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test10-redyellow_0006_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test19-redyellow_0012_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test15-redyellow_0001_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test18-redyellow_0007_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's my analysis of each scene, focusing on the likelihood of the red cloth contacting the yellow object, and a final prediction.
+
+**Reasoning:**
+
+**Scene A:** The red cloth is positioned above a lamp, a black cylinder, a green block, and a yellow cylinder. When the objects fall, the lamp will likely act as a significant obstruction. The falling objects are relatively spread out, and the cloth is fairly high. The lamp will push the black cylinder to the side, which will likely push the red cloth further away from the yellow cylinder. The cloth’s descent may be somewhat directed by the lamp’s shape, but it’s unlikely to fall *onto* the yellow cylinder. Probability of contact: Low.
+
+**Scene B:** The cloth is positioned directly above two black cylinders and the yellow cylinder. Upon release, gravity will pull the cylinders downwards. The red cloth will follow, and given the relatively direct alignment, it’s very likely that the cloth will drape *over* these falling objects and potentially land on or come into contact with the yellow cylinder. The cylinders are more directly underneath the cloth than in other scenarios. Probability of contact: High.
+
+**Scene C:** The scene contains a chair, and several geometric shapes, including the yellow cylinder. The red cloth is positioned rather far from the yellow cylinder, and is mostly obstructed by the chair. The chair’s complex shape and its position will significantly deflect the path of the cloth and the falling objects. It’s unlikely the cloth will follow a direct path to make contact with the yellow cylinder. Probability of contact: Low.
+
+**Scene D:** Similar to Scene C, this scene also has a chair. The red cloth is positioned relatively high above and somewhat offset from the yellow cylinder. The chair's presence will introduce significant randomness in the cloth’s trajectory, and given the offset, it’s less likely the cloth will directly cover the yellow cylinder. Also, the geometrical shapes are further away and are not likely to push the cloth toward the yellow object. Probability of contact: Low.
+
+Based on this analysis, Scene B presents the highest probability of the red cloth making contact with the yellow cylinder. It's the only scenario where the cloth is directly above the yellow object and is likely to fall directly on it.
+
+Final Result: "I predict that scene B will succeed."
+==========================
+
+Found prediction in Final Result: B
+
+----- Test Set 15 (Repetition 3/4) -----
+Success case: True_test10-redyellow_0006_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): C
+Shuffle mapping: {1: 2, 2: 1, 3: 4, 4: 3}
+Model prediction: B
+Prediction incorrect
+Response time: 24.47 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test18-redyellow_0007_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test19-redyellow_0012_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test10-redyellow_0006_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test15-redyellow_0001_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Okay, let's analyze each scene based on physical intuition to determine the likelihood of the red cloth contacting the yellow object.
+
+**Scene A:**
+
+The red cloth is suspended relatively far above the objects, and is quite expansive. The objects are spaced apart. The lamp arm is positioned near the yellow object, potentially deflecting the cloth's descent. The cloth will fall downwards due to gravity, but its large surface area will cause significant air resistance and likely a broad, somewhat slow descent. Given the distance and the lamp’s presence, the cloth is *unlikely* to directly land on the yellow object. It might fall near it, but a direct contact is improbable.
+**Prediction: No**
+
+**Scene B:**
+
+Here, the cloth is hanging directly above the yellow object, suspended from a black mass. As gravity pulls the black mass downwards, the red cloth will follow. The path is fairly direct, and there are no significant obstacles to deflect the cloth. The cloth appears to be a reasonable size relative to the distance and object size, indicating a good possibility of contact.
+**Prediction: Yes**
+
+**Scene C:**
+
+The red cloth is suspended above a chair and other objects. The chair acts as a significant obstacle, likely diverting the cloth’s trajectory. The yellow object is positioned to the side of the chair, but the cloth’s descent will likely be heavily influenced by the chair, reducing the probability of a direct hit on the yellow object.
+**Prediction: No**
+
+**Scene D:**
+
+The red cloth is high and wide, suspended above a chair, a cone, and a black rectangle. While the cloth is expansive, the chair again acts as a significant deflector, and the cone is somewhat shielded by the black rectangle. The path to the yellow object is indirect and obstructed. A direct hit is unlikely.
+**Prediction: No**
+
+Reasoning:
+
+Scene B presents the highest probability of contact. The key factor is the direct alignment between the cloth's suspension point and the yellow object. Furthermore, there are no significant obstructions in the path, as seen in the other scenes. The other scenes feature objects (lamp, chair) that will deflect the cloth’s descent, significantly reducing the likelihood of contact with the yellow object. The simple, direct path in Scene B maximizes the chances of successful contact.
+
+Final Result: "I predict that scene B will succeed."
+==========================
+
+Found prediction in Final Result: B
+
+----- Test Set 16 (Repetition 4/4) -----
+Success case: True_test10-redyellow_0006_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): D
+Shuffle mapping: {1: 2, 2: 1, 3: 3, 4: 4}
+Model prediction: B
+Prediction incorrect
+Response time: 23.96 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test18-redyellow_0007_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test19-redyellow_0012_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test15-redyellow_0001_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test10-redyellow_0006_img.png
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [1, 1, 1, 1]
+Is perfectly consistent: True
+Most frequently predicted image: 1
+Consistency ratio: 100.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's an analysis of each scene, focusing on the likelihood of the red cloth contacting the yellow object:
+
+**Scene A:**
+
+*   **Reasoning:** The red cloth is suspended directly above a relatively compact group of objects. The supporting structure is slender. Once the supporting structure is removed, the cloth will fall relatively straight down, forming a drape. The yellow object is positioned slightly to the side, but within the potential fall radius of the cloth. The cloth has a high probability of landing on or very near the yellow object as it drapes downwards.
+*   **Prediction:** Yes.
+
+**Scene B:**
+
+*   **Reasoning:** This scene features a wider, more dispersed arrangement of objects. The supporting structure is wider. The cloth is initially stretched somewhat, and the yellow object is relatively far from the center of the falling cloth. While the cloth *could* reach the yellow object, the wider distribution of weight and the distance involved reduce the probability significantly. The drape is likely to fall more broadly, missing the target.
+*   **Prediction:** No.
+
+**Scene C:**
+
+*   **Reasoning:** The supporting structure in this scene is complex and significantly offset. This offset will impart a substantial lateral force to the cloth when it falls. The yellow object is located near the edge of the potential drape area, but the primary force of the falling cloth will likely pull it away, causing it to miss. The complex structure might even cause the cloth to wrap around the larger black structure, further reducing the likelihood of contact.
+*   **Prediction:** No.
+
+**Scene D:**
+
+*   **Reasoning:** The arrangement of objects in scene D is relatively spread out. The red cloth is suspended directly above a group of objects, but the yellow object is on the outer edge of the group and is also closer to the edge of the draping cloth. The cloth will likely fall downwards in a more symmetrical manner, draping over the objects directly beneath it. This makes contact with the yellow object less probable.
+*   **Prediction:** No.
+
+Based on this analysis, scene A provides the highest likelihood of the red cloth contacting the yellow object due to its direct alignment and compact grouping. The other scenes present factors that decrease the probability of contact due to offset supports, dispersed objects, or a greater distance to the target.
+
+Final Result: "I predict that scene A will succeed."
+==========================
+
+Found prediction in Final Result: A
+
+----- Test Set 17 (Repetition 1/4) -----
+Success case: True_test10-redyellow_0015_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): B
+Shuffle mapping: {1: 3, 2: 4, 3: 1, 4: 2}
+Model prediction: A
+Prediction incorrect
+Response time: 23.92 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0012_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test10-redyellow_0015_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0018_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test16-redyellow_0007_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Okay, here's the analysis of each scene, considering the drape's motion and potential contact with the yellow object, followed by my final prediction.
+
+**Reasoning:**
+
+**Scene A:** The red cloth is positioned above a somewhat complex arrangement of objects, including a structure with a horizontal bar. As the objects fall, the drape will descend. The structure with the bar creates a significant obstacle, likely diverting the cloth’s path *away* from the yellow object. The drape will likely fall around the structure and not directly onto the yellow object. Probability of contact: Low.
+
+**Scene B:** This scene features the drape suspended directly above a relatively clear path to the yellow object. The objects are spread out, giving the drape space to descend somewhat vertically. While the falling objects will exert some influence on the drape's trajectory, the initial alignment is favorable. Probability of contact: Moderate.
+
+**Scene C:** The drape is above a cluster of falling objects. This means the cloth will encounter resistance and be significantly deflected as the objects fall. The yellow object is surrounded by other objects, making a direct hit less likely, as the drape's path will be highly disrupted by these surrounding objects. Probability of contact: Low.
+
+**Scene D:** This scene has the drape suspended above a more sparse arrangement of objects, and crucially, the supporting structure is much narrower and more vertical than in scene A. This means the drape will fall with more direct vertical descent, and less sideways deflection. The yellow object is in a more open space, making it likely to be in the path of the falling drape. This makes the yellow object likely to be impacted by the red cloth. Probability of contact: High.
+
+**Comparison & Decision:**
+
+Scene D appears to have the highest probability of success. The simple supporting structure minimizes sideways deflection, and the sparse object arrangement gives the drape a relatively unobstructed path toward the yellow object. Scene B is a second contender, but the object arrangement is less direct than in Scene D. Scene A and C are less likely as the complex object arrangements and supporting structures will likely cause the red cloth to fall around, not on top of, the yellow object.
+
+Final Result: "I predict that scene D will succeed."
+==========================
+
+Found prediction in Final Result: D
+
+----- Test Set 18 (Repetition 2/4) -----
+Success case: True_test10-redyellow_0015_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): D
+Shuffle mapping: {1: 1, 2: 3, 3: 2, 4: 4}
+Model prediction: D
+Prediction correct
+Response time: 22.33 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0018_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0012_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test16-redyellow_0007_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test10-redyellow_0015_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's a breakdown of each scene, considering the physics involved and predicting whether the red cloth will contact the yellow object:
+
+**Scene A:**
+
+The red cloth is suspended above a relatively wide spread of objects, including the yellow one. The central, brown object seems likely to fall directly downwards, potentially shifting the cloth's trajectory somewhat. However, the cloth’s initial spread is broad. It's likely to drape down in a relatively even manner, and there’s a reasonable chance it will fall *over* the yellow object, rather than making contact. The distance the cloth needs to travel horizontally to reach the yellow object is relatively significant. Prediction: No.
+
+**Scene B:**
+
+This scene features a complex, angular structure hanging below the cloth. This structure will significantly influence the way the cloth falls. Because of the offset and complex shape, the cloth will be forced to drape *around* the structure. This makes it very likely the cloth will be directed *towards* the yellow object, as the structure will act as a guide. The yellow object is close to the base of this structure. Prediction: Yes.
+
+**Scene C:**
+
+The cloth is directly over a central, dark object, and the yellow object is relatively far to the side. The cloth is large and fairly symmetrical, meaning it will likely fall in a fairly symmetrical manner. The symmetry will likely cause the cloth to fall somewhat equally around the central object, again meaning it will fall over the yellow object without contacting it. Prediction: No.
+
+**Scene D:**
+
+The cloth is suspended above a narrower spread of objects. The central, dark object is tall and narrow, meaning the cloth may fall in a fairly direct path downwards. However, the yellow object is positioned to the side, and not directly below the cloth’s central point. This suggests it's unlikely the cloth will fall directly onto the yellow object. Prediction: No.
+
+**Reasoning for Selection:**
+
+Scene B stands out because the complex structure beneath the cloth will *actively direct* the cloth’s drape downwards and potentially towards the yellow object. The structure doesn't simply support the cloth; it shapes its fall. The other scenes involve more symmetrical setups, making it more likely the cloth will fall *around* the yellow object rather than onto it. The geometry in Scene B is the most conducive to the cloth contacting the yellow object.
+
+Final Result: "I predict that scene B will succeed."
+==========================
+
+Found prediction in Final Result: B
+
+----- Test Set 19 (Repetition 3/4) -----
+Success case: True_test10-redyellow_0015_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 3, 4: 2}
+Model prediction: B
+Prediction incorrect
+Response time: 24.03 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test10-redyellow_0015_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0018_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0012_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test16-redyellow_0007_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Okay, let's analyze each scene and determine the likelihood of the red cloth contacting the yellow object.
+
+**Scene A:**
+
+*   **Initial State:** The red cloth is positioned directly above a complex structure of black objects, with the yellow object being somewhat offset to the side and forward.
+*   **Reasoning:** When the objects fall, the black structure will likely collapse somewhat messily. This collapse, while substantial, will be largely directed around the yellow object. The red cloth will fall broadly downwards, but the primary force of the collapsing structure won't directly push it *onto* the yellow object. The cloth's drape might swing, but the offset positioning decreases the probability of contact.
+*   **Prediction:** No.
+
+**Scene B:**
+
+*   **Initial State:** The red cloth is positioned above a relatively open arrangement of objects, with the yellow object directly below the center of the cloth.
+*   **Reasoning:** This is a strong candidate. When the supporting structure falls, it will create a fairly direct downward force. The red cloth, being directly above the yellow object, will likely fall downwards and drape over it as the supporting structure collapses. Even if the collapse isn't perfectly centered, the broad nature of the cloth increases the chances of coverage.
+*   **Prediction:** Yes.
+
+**Scene C:**
+
+*   **Initial State:** The red cloth is positioned above a fairly stable, cone-like configuration of objects. The yellow object is positioned on the side.
+*   **Reasoning:** The cone-shaped arrangement is more stable than the others. The yellow object is not well-positioned to be directly under the falling cloth. Even if the objects fall, the cloth will likely drape around the cones, bypassing the yellow object.
+*   **Prediction:** No.
+
+**Scene D:**
+
+*   **Initial State:** The red cloth is above a thin, vertical structure. The yellow object is positioned between the vertical structure and other objects.
+*   **Reasoning:** The thin vertical structure is susceptible to toppling. However, a sideways topple will push the cloth to the side, making contact with the yellow object less probable. There’s a possibility of contact if the structure falls straight down, but the likelihood is still lower than Scene B.
+*   **Prediction:** No.
+
+Considering the analysis, Scene B presents the highest probability of the red cloth contacting the yellow object due to its direct positioning above the yellow object and a relatively open supporting structure that allows for a more direct downward drape.
+
+Final Result: "I predict that scene B will succeed."
+==========================
+
+Found prediction in Final Result: B
+
+----- Test Set 20 (Repetition 4/4) -----
+Success case: True_test10-redyellow_0015_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): C
+Shuffle mapping: {1: 1, 2: 2, 3: 4, 4: 3}
+Model prediction: B
+Prediction incorrect
+Response time: 25.30 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0018_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test16-redyellow_0007_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test10-redyellow_0015_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0012_img.png
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [3, 4, 1, 2]
+Is perfectly consistent: False
+Most frequently predicted image: 1
+Consistency ratio: 25.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's a breakdown of the likely scenarios for each scene, focusing on whether the red cloth will contact the yellow object, and then a final selection:
+
+**Reasoning:**
+
+**Scene A:** The red cloth is suspended by a complex articulated arm. When the supporting structure falls, the cloth will drape down. The yellow object is positioned relatively far from the center of the drape. The cloth’s fall will be largely dictated by gravity, but the arm might cause some unpredictable initial movements. However, considering the distance, it’s unlikely the cloth will settle directly *on* the yellow object; it’s more likely to land *near* it.  The cloth needs to both move laterally *and* downwards to make contact, which seems improbable given the distance. 
+
+**Scene B:** The red cloth is suspended directly *above* the yellow object by a thin support. When the support fails, the cloth will fall straight down, almost certainly landing on top of the yellow object. There's very little room for error. This scene has the highest probability of contact.
+
+**Scene C:** The red cloth is suspended above multiple objects, similar to Scene A, but supported by a simpler rod. This introduces some stability initially, but also potential for the cloth to swing. The yellow object is further from the center of the drape than in Scene A, and there’s more other geometry around it. Therefore, the cloth is unlikely to land directly on the yellow object.
+
+**Scene D:** The red cloth is suspended above the yellow object, but the support is a complex structure that appears to be to the side. When the structure collapses, the cloth will be pulled laterally as well as downwards. The asymmetrical nature of the collapse makes it less likely that the cloth will fall directly onto the yellow object. It’s more likely to land beside it.
+
+
+
+Based on the above reasoning, Scene B has the highest likelihood of the red cloth making contact with the yellow object. The simple, direct suspension and the close proximity make it the most probable outcome.
+
+Final Result: "I predict that scene B will succeed."
+==========================
+
+Found prediction in Final Result: B
+
+----- Test Set 21 (Repetition 1/4) -----
+Success case: True_test14-redyellow_0014_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): C
+Shuffle mapping: {1: 3, 2: 2, 3: 4, 4: 1}
+Model prediction: B
+Prediction incorrect
+Response time: 21.32 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test18-redyellow_0012_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test11-redyellow_0002_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test14-redyellow_0014_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0018_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Okay, let's analyze each scene and determine the likelihood of the red cloth contacting the yellow object.
+
+**Scene A:**
+
+The red cloth is positioned above a complex structure and a green triangular prism, along with the yellow object. The structure is tall and somewhat obstructive. When the support structure falls, the cloth will initially fall fairly directly downwards, but the complex shape of the structure underneath means the cloth’s descent will be significantly influenced by collisions with it. These collisions will spread the cloth out, making it less likely to land neatly over the yellow object, which is relatively far away from the main structure. It’s possible, but improbable. Prediction: No.
+
+**Scene B:**
+
+The red cloth is positioned above a supporting structure and a blue cylinder, alongside the yellow object. Upon collapse of the support, the cloth will fall more or less directly down, with a wider spread as it falls. The blue cylinder may slightly deflect the cloth’s descent, but the yellow object is located directly under the center of the cloth. This makes a direct hit on the yellow object more likely than in Scene A. Prediction: Yes.
+
+**Scene C:**
+
+The red cloth is suspended directly above a supporting structure with the yellow object directly under it. The surrounding objects (purple rectangular prism, green triangular prism, black rectangular prism) are further away and will likely have minimal influence on the cloth’s descent. The cloth will fall almost vertically. This seems like a very strong contender for contact. Prediction: Yes.
+
+**Scene D:**
+
+The red cloth is positioned above a supporting structure and a teal cylinder, alongside the yellow object. The cloth will fall downwards, with the teal cylinder potentially deflecting it. The yellow object is a little offset from the direct center, but still within a reasonable landing zone. This scene is similar to Scene B but with slightly different object placements. Prediction: Yes.
+
+**Comparison & Conclusion**
+
+Comparing all four scenes, I believe Scene C has the highest probability of the red cloth contacting the yellow object. The support structure is centered directly above the yellow object, and there is minimal obstruction from other objects. This creates the most direct path for the cloth to fall onto the yellow object. Scenes B and D also have fairly high probabilities, but the positions of the cylinder are more likely to redirect the cloth away. Scene A is the least likely, due to the complex structure and greater potential for the cloth to disperse.
+
+Final Result: "I predict that scene C will succeed."
+==========================
+
+Found prediction in Final Result: C
+
+----- Test Set 22 (Repetition 2/4) -----
+Success case: True_test14-redyellow_0014_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): D
+Shuffle mapping: {1: 1, 2: 3, 3: 2, 4: 4}
+Model prediction: C
+Prediction incorrect
+Response time: 24.19 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0018_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test18-redyellow_0012_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test11-redyellow_0002_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test14-redyellow_0014_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's a breakdown of each scene, focusing on the likelihood of the red cloth contacting the yellow object, along with a final prediction.
+
+**Reasoning:**
+
+**Scene A:** The red cloth is suspended above a somewhat complex structure and a relatively clear path to the yellow object. When the supporting structure falls, the cloth will likely drape down, covering a wider area. The yellow object is positioned relatively close to the center of the potential drape area. The primary uncertainty is whether the cloth will be significantly deflected by the falling structure itself. However, the relatively direct path increases the chance of contact.
+
+**Scene B:** In this scene, the cloth is suspended directly above a cluster of cylindrical objects. These objects, when they fall, will significantly obstruct the path of the cloth. The yellow object is situated away from the immediate impact zone of the falling cylinders, making it less likely the cloth will reach it. The falling cylinders will likely act as a barrier, diverting the cloth away from the yellow object.
+
+**Scene C:** The cloth is hanging directly *above* the yellow object, supported by a thin central pillar. This is the most direct and stable setup. When the pillar falls, the cloth will fall relatively straight down. Given the central positioning and lack of significant surrounding obstacles, it is extremely likely the cloth will cover and contact the yellow object. There’s very little that could divert the cloth away from the target.
+
+**Scene D:** This scene presents a similar, though slightly less direct, situation to Scene A. However, the blue cylinder is quite large and could significantly obstruct the cloth's path, diverting it away from the yellow object. The arrangement is also more spread out, making it less likely for the cloth to simply drape over the yellow object.
+
+**Comparison & Decision:**
+
+Considering all the scenes, Scene C is the most likely to result in contact. It has the most direct path for the cloth to fall onto the yellow object, with minimal obstacles. The supporting pillar provides a near-guaranteed central descent of the cloth. The other scenes involve more uncertainties due to surrounding objects and potential deflections.
+
+Final Result: "I predict that scene C will succeed."
+==========================
+
+Found prediction in Final Result: C
+
+----- Test Set 23 (Repetition 3/4) -----
+Success case: True_test14-redyellow_0014_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): B
+Shuffle mapping: {1: 1, 2: 4, 3: 2, 4: 3}
+Model prediction: C
+Prediction incorrect
+Response time: 21.81 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0018_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test14-redyellow_0014_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test11-redyellow_0002_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test18-redyellow_0012_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's my analysis of each scene, focusing on whether the red cloth will contact the yellow object, and a final prediction:
+
+**Reasoning:**
+
+**Scene A:** The red cloth is suspended above a relatively dispersed set of objects. The supporting structure appears to be a single vertical pillar. When the support fails, the cloth will fall somewhat evenly. The yellow object is a fair distance from the center of this fall. The likelihood of the cloth directly landing on the yellow object is low. The cloth will likely drape *around* the objects, but not necessarily *on* the yellow one. I predict no contact.
+
+**Scene B:**  This scene has a more complex support structure that is leaning. This leaning will introduce a directional bias to the cloth's fall. The cloth won’t fall straight down but will be pulled towards the direction of the lean. The yellow object is positioned within the potential path of this biased fall. However, the blue cylinder might obstruct the cloth before it reaches the yellow object.  I predict a low, but non-zero, chance of contact.
+
+**Scene C:** The support structure in this scene appears to be directly *on top* of the yellow object. When the support fails, the cloth will fall directly downward. Given this direct support, the cloth will very likely land on and envelop the yellow object. It's a very direct and almost guaranteed path. I predict a very high chance of contact.
+
+**Scene D:** This scene has a complex support structure and is fairly compact. The cloth's fall will be influenced by the shape of the structure. The yellow object is positioned relatively close to the support, but the complex shape might cause the cloth to fall *around* it rather than *on* it.  There’s a reasonable chance the cloth won’t make direct contact. I predict a moderate, but not high, chance of contact.
+
+**Comparison and Final Prediction:**
+
+Comparing the four scenes, Scene C has the highest probability of the red cloth making contact with the yellow object. The support structure is directly above the yellow object, meaning the cloth’s natural downward fall will almost certainly result in contact. The other scenes either have biased falls (B), dispersed objects (A) or complex structures that may deflect the cloth (D).
+
+Final Result: "I predict that scene C will succeed."
+==========================
+
+Found prediction in Final Result: C
+
+----- Test Set 24 (Repetition 4/4) -----
+Success case: True_test14-redyellow_0014_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 3, 3: 2, 4: 1}
+Model prediction: C
+Prediction incorrect
+Response time: 23.39 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test14-redyellow_0014_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test18-redyellow_0012_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test11-redyellow_0002_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0018_img.png
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [2, 2, 2, 2]
+Is perfectly consistent: True
+Most frequently predicted image: 2
+Consistency ratio: 100.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's a breakdown of each scene, considering the likely motion of the cloth and objects, and a final prediction.
+
+**Scene A:**
+
+The red cloth is draped over a large, somewhat irregular statue. When the statue is removed, the cloth will fall relatively broadly. The yellow object is positioned somewhat far from the base of the statue. Because of the statue’s bulk, the cloth will initially fall somewhat vertically, but the wider drape and the distance to the yellow object make a direct hit unlikely. The cloth’s fall will be somewhat distributed, and the yellow object is not directly under the center of the initial drape.
+
+*Will the cloth contact the yellow object?* No.
+
+**Scene B:**
+
+Here, the red cloth is draped over a lamp. The lamp's arm and head will create a more focused descent for the cloth compared to scene A. The yellow object is relatively close to the base of the lamp, and the cloth appears to be largely concentrated directly above it. However, the lamp arm could deflect the cloth slightly, making a direct hit not guaranteed. The narrowness of the initial drape is a key factor.
+
+*Will the cloth contact the yellow object?* Maybe. It's possible, but not highly likely.
+
+**Scene C:**
+
+The red cloth is draped over another lamp. This lamp is more slender than in Scene B, and the yellow object is located *directly* beneath the center of the cloth. This is crucial. The lamp will fall straight down, and the cloth, being mostly centered above the yellow object, will likely fall directly onto it. The narrowness of the lamp encourages a more directed fall.
+
+*Will the cloth contact the yellow object?* Yes.
+
+**Scene D:**
+
+The red cloth is draped over a narrow, cylindrical object. The yellow object is positioned a considerable distance to the side. While the cloth will fall somewhat vertically initially, the distance and the relatively wide spread of the cloth as it falls will likely mean it misses the yellow object. The cylinder will likely cause the cloth to fall more like a curtain.
+
+*Will the cloth contact the yellow object?* No.
+
+**Reasoning:**
+
+Scene C stands out as having the highest probability of success. The yellow object is positioned directly beneath the center of the cloth’s initial drape and is supported by a narrow lamp that will fall straight down. The direct alignment dramatically increases the chances of the cloth landing on the yellow object. The other scenes either have the objects positioned too far away, have too wide of a drape to allow for precise targeting, or have objects that will deflect the cloth away.
+
+
+
+Final Result: "I predict that scene C will succeed."
+==========================
+
+Found prediction in Final Result: C
+
+----- Test Set 25 (Repetition 1/4) -----
+Success case: True_test12-redyellow_0003_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): B
+Shuffle mapping: {1: 2, 2: 4, 3: 3, 4: 1}
+Model prediction: C
+Prediction incorrect
+Response time: 25.82 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test16-redyellow_0014_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test12-redyellow_0003_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test10-redyellow_0011_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test11-redyellow_0017_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's a breakdown of each scene and my prediction:
+
+**Reasoning:**
+
+**Scene A:** The red cloth is suspended above a lamp and two cone-shaped objects. When the objects fall, the cloth will descend. The yellow cone is positioned relatively far from the center of the cloth. The lamp will likely obstruct the cloth’s direct descent, and it’s unlikely the cloth will drape down precisely over the yellow cone. The cloth may brush past, but direct contact is improbable.
+
+**Scene B:** The red cloth hangs directly above a central support structure and the yellow object. This is a much more favorable scenario for contact. The cloth will fall vertically, and the yellow object is positioned right under the center. There's minimal obstruction, and gravity will pull the cloth straight down onto the yellow object.
+
+**Scene C:** The red cloth is above a support and several objects, including the yellow one. However, the yellow object is off-center relative to the cloth. While the cloth will fall, the geometry of the other objects might cause the cloth to drape in a way that avoids the yellow object. It's less likely than Scene B because of the asymmetric placement.
+
+**Scene D:** The red cloth is suspended over a Buddha statue and two cone-shaped objects. The yellow cone is on the edge of the area directly under the cloth. The large Buddha statue will significantly obstruct the cloth’s descent. It is likely the cloth will hit the statue before it can drape over the yellow cone.
+
+Considering all four scenarios, Scene B provides the most direct path for the red cloth to contact the yellow object. The central alignment, minimal obstructions, and direct vertical descent create the highest probability of contact. The other scenes have either off-center alignments, significant obstructions, or are otherwise less geometrically favorable.
+
+Final Result: "I predict that scene B will succeed."
+==========================
+
+Found prediction in Final Result: B
+
+----- Test Set 26 (Repetition 2/4) -----
+Success case: True_test12-redyellow_0003_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 1, 3: 3, 4: 2}
+Model prediction: B
+Prediction incorrect
+Response time: 19.84 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test12-redyellow_0003_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test11-redyellow_0017_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test10-redyellow_0011_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test16-redyellow_0014_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's my analysis of each scene, along with the final prediction:
+
+**Reasoning:**
+
+**Scene A:** The red cloth is directly above the yellow object, and there's a relatively clear vertical path. As the objects fall, the cloth will descend. Given the direct alignment, there is a high probability that the cloth will come into contact with the yellow object. The other objects are positioned to the sides and may slightly influence the cloth's descent, but shouldn’t prevent contact.
+
+**Scene B:** In this scene, the cloth is above a larger, irregular-shaped object (the statue). This statue will act as a substantial obstruction. As the objects fall and the cloth descends, it’s unlikely to directly reach the yellow object, as it will likely be blocked or deflected by the statue.
+
+**Scene C:** The red cloth is positioned above a cluster of objects. While the yellow object is somewhat centrally located, the presence of multiple other falling objects will create chaotic motion and likely push the cloth away from the yellow object as it descends. The randomness of the impacts makes contact with the yellow object less probable.
+
+**Scene D:** The cloth is supported by a lamp structure. This structure introduces a complex dynamic. The lamp will likely topple as the objects fall, potentially pulling or shifting the cloth *away* from the yellow object. The lamp’s movement is unpredictable, and it's unlikely the cloth will descend directly onto the yellow object.
+
+Based on these analyses, Scene A offers the most direct and unobstructed path for the red cloth to contact the yellow object. The other scenes present obstacles or complex dynamics that reduce the likelihood of contact.
+
+Final Result: "I predict that scene A will succeed."
+==========================
+
+Found prediction in Final Result: A
+
+----- Test Set 27 (Repetition 3/4) -----
+Success case: True_test12-redyellow_0003_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): D
+Shuffle mapping: {1: 1, 2: 2, 3: 3, 4: 4}
+Model prediction: A
+Prediction incorrect
+Response time: 18.75 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test11-redyellow_0017_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test16-redyellow_0014_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test10-redyellow_0011_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test12-redyellow_0003_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's my analysis of each scene, predicting whether the red cloth will contact the yellow object, and the reasoning behind it:
+
+**Scene A:**
+
+The red cloth is suspended directly above the yellow object and a cylindrical and rectangular block. The cloth's initial position means that when the supporting structure is removed, the cloth will fall relatively straight down. Due to the cloth’s shape and flexibility, it will likely drape *around* the objects below, potentially enveloping the yellow object. The proximity of the yellow object to the center of the cloth's initial position increases the likelihood of contact.
+
+*Will the cloth contact the yellow object?* Yes.
+
+**Scene B:**
+
+The red cloth is suspended above a large, irregularly shaped statue, a rectangular block and the yellow object, which is nestled in-between the statue and a cone. The statue will significantly impede the cloth’s descent, creating a non-uniform drape. The cloth’s initial spread is large relative to the size of the yellow object, but the statue is likely to push the cloth away, and the yellow object is somewhat shielded. Contact is less certain here.
+
+*Will the cloth contact the yellow object?* No.
+
+**Scene C:**
+
+The red cloth is suspended above a lamp and the yellow object. The lamp has a complex shape with an extending arm. The lamp will significantly alter the way the cloth falls. The cloth will likely wrap around the lamp, but it’s less likely to drape down directly onto the yellow object, which is somewhat off-center. The lamp serves as a significant obstacle.
+
+*Will the cloth contact the yellow object?* No.
+
+**Scene D:**
+
+The red cloth is suspended above the yellow object, a cone, and two rectangular blocks. The configuration is similar to Scene A, but the objects are more spread out, and there's a cone directly next to the yellow object. The yellow object is close to the cloth’s center, but the cone's presence may divert the cloth's fall slightly. It is more likely to drape around the objects.
+
+*Will the cloth contact the yellow object?* Yes.
+
+**Comparison and Final Decision:**
+
+Both Scenes A and D appear likely to result in contact. However, Scene A has fewer objects to interfere with a direct drop onto the yellow object. The arrangement of the objects in scene D provides a little more opportunity for the cloth to be diverted away from the target. Thus, while both are plausible, Scene A provides a slightly more direct path and therefore a higher likelihood of contact.
+
+Final Result: "I predict that scene A will succeed."
+==========================
+
+Found prediction in Final Result: A
+
+----- Test Set 28 (Repetition 4/4) -----
+Success case: True_test12-redyellow_0003_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): C
+Shuffle mapping: {1: 1, 2: 2, 3: 4, 4: 3}
+Model prediction: A
+Prediction incorrect
+Response time: 25.45 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test11-redyellow_0017_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test16-redyellow_0014_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test12-redyellow_0003_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test10-redyellow_0011_img.png
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [3, 1, 1, 1]
+Is perfectly consistent: False
+Most frequently predicted image: 1
+Consistency ratio: 75.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Okay, let's analyze each scene step-by-step, focusing on the likely trajectory of the red cloth and the probability of it contacting the yellow object.
+
+**Scene A:** The red cloth is suspended directly above a relatively sparse arrangement of objects – a triangular prism, a cuboid (yellow), and a black object. When the cloth falls, it will drape downwards. The yellow object is somewhat centered beneath the cloth’s initial position. However, the cloth is quite large, and the other objects may deflect its descent slightly.  There's a good chance the cloth will fall fairly directly onto the yellow object, though it may not be a complete coverage. Prediction: Yes.
+
+**Scene B:** This scene features a large, complex statue under the cloth. The cloth's descent will be significantly shaped by the statue's form. The yellow object is positioned on one side of the statue, away from the center of the cloth's expected fall path. The statue will likely act as a barrier, diverting the cloth’s trajectory *away* from the yellow object. Prediction: No.
+
+**Scene C:** Here, the cloth is above a chair and two other objects. The chair's arms and back will strongly influence the cloth’s fall, creating a more complex draping pattern. The yellow object is positioned near the edge of the likely drape area, and the chair could easily prevent the cloth from reaching it. Prediction: No.
+
+**Scene D:** This scene includes a lamp stand and three objects including the yellow one. The lamp stand, while tall, has a relatively small base. The cloth will fall primarily downwards, with minimal deflection from the lamp. The yellow object is fairly centrally located beneath the cloth, and its shape (a cylinder) doesn’t offer much resistance to being covered. It’s more likely to be contacted than in scenes B and C. Prediction: Yes.
+
+**Comparative Analysis:**
+
+Both scenes A and D have a reasonable chance of contact. However, scene A has a slightly more unpredictable arrangement of objects, increasing the risk of the cloth being deflected. Scene D, with the lamp and more centrally located yellow object, presents a more direct and likely path for the cloth to make contact.
+
+Final Result: "I predict that scene D will succeed."
+==========================
+
+Found prediction in Final Result: D
+
+----- Test Set 29 (Repetition 1/4) -----
+Success case: True_test14-redyellow_0003_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): D
+Shuffle mapping: {1: 3, 2: 2, 3: 1, 4: 4}
+Model prediction: D
+Prediction correct
+Response time: 22.92 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0009_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test16-redyellow_0014_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test16-redyellow_0000_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test14-redyellow_0003_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here’s a breakdown of each scene, analyzing the likelihood of the red cloth contacting the yellow object, followed by the final prediction.
+
+**Scene A:**
+
+The red cloth is draped over a large, bulky statue. As the statue falls, it will likely topple over with a significant amount of horizontal displacement. The yellow object is relatively close to the statue, but also somewhat shielded by the cone. The cloth will fall *with* the statue. The statue's shape is such that it will push the cloth downwards and outwards. Given the statue’s bulk, and the yellow object’s relatively protected position, the cloth is likely to fall *around* the yellow object rather than directly *on* it. The statue's center of mass is not directly above the yellow object.
+
+**Prediction for Scene A:** No.
+
+**Scene B:**
+
+The red cloth is suspended above a chair. Chairs are relatively unstable and have a high center of gravity. This means the chair will likely tip over significantly, and possibly rotate as it falls. The yellow object is relatively close to where the chair will fall. The cloth will be pulled down by gravity and will follow the chair's trajectory. The chair’s legs, combined with its likely rotational motion, will spread the cloth out as it falls. There's a higher chance that the cloth will envelop the area where the yellow object is located.
+
+**Prediction for Scene B:** Yes.
+
+**Scene C:**
+
+The red cloth is draped over a lamp. Lamps are tall and thin and prone to toppling over in a predictable way. However, the lamp base is relatively narrow and will likely fall in a fairly straight line. The yellow object is slightly away from this fall path, and is somewhat blocked by the other objects.  The cloth will fall with the lamp, but the lamp is less likely to create a wide spread of the cloth compared to the chair or the statue. The fall of the lamp will be quite direct, minimizing the chances of the cloth making contact with the yellow block.
+
+**Prediction for Scene C:** No.
+
+**Scene D:**
+
+The red cloth is suspended over a combination of objects. The structure is unstable and will likely fall in a chaotic way, but it lacks the mass to create significant movement of the cloth. It’s a narrow structure and likely to fall more or less straight down. The cloth will likely fall *around* the yellow object.
+
+**Prediction for Scene D:** No.
+
+Considering these analyses, Scene B presents the highest probability of the red cloth contacting the yellow object. The instability of the chair, combined with its geometry and the cloth’s suspension, increases the likelihood of the cloth falling *onto* the yellow object.
+
+Final Result: "I predict that scene B will succeed."
+==========================
+
+Found prediction in Final Result: B
+
+----- Test Set 30 (Repetition 2/4) -----
+Success case: True_test14-redyellow_0003_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): C
+Shuffle mapping: {1: 2, 2: 1, 3: 4, 4: 3}
+Model prediction: B
+Prediction incorrect
+Response time: 26.58 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test16-redyellow_0014_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test16-redyellow_0000_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test14-redyellow_0003_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0009_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's a breakdown of each scene, analyzing the likelihood of the red cloth contacting the yellow object, and my final prediction.
+
+**Reasoning:**
+
+**Scene A:** The red cloth is directly above a tall, slender object (lamp stand). As the objects fall, the lamp stand will likely be the first to fall, and potentially obstruct the direct path of the cloth towards the yellow cylinder. However, the cloth is fairly broad, and the lamp stand is narrow. The cloth will likely drape around the lamp stand, but it's uncertain if it will reach the yellow cylinder, which is a bit farther away. The drape around the lamp stand might actually *deflect* the cloth *away* from the yellow object.
+
+**Scene B:** This scene has a cone-like object and a triangular prism supporting the cloth. These objects will fall quickly, leaving a relatively unobstructed path for the red cloth to fall downwards. The yellow cube is positioned fairly centrally under the cloth. The cloth, being relatively square, has a good chance of falling directly onto the yellow cube as the supports fall away.
+
+**Scene C:** In this scene, a complex chair structure supports the cloth. This chair will likely fall in a chaotic manner, with legs splaying outwards. This will create a very uneven drape of the cloth, and the yellow cube is relatively far from the central falling path of the chair. It is unlikely the cloth will fall directly on the cube. The draped cloth will likely be spread out across a large area, making contact with multiple objects, but not necessarily the yellow one.
+
+**Scene D:** The supporting structure is a statue, which is wide and relatively stable compared to the other scenes. This statue will likely fall over, creating a drape that is somewhat contained by the statue's shape. The yellow cube is positioned at the edge of the fall area and the drape will likely be wider, meaning it may fall around the cube rather than on it. The statue may also shield the cube.
+
+**Comparison:**
+
+Scene B appears to be the most likely to result in contact. The supporting objects are simple and will fall relatively quickly, leaving a direct path for the cloth to fall onto the yellow object. The cloth is also well-positioned above the yellow cube. The other scenes have either complex structures that will deflect the cloth, or positions where contact is less likely.
+
+
+
+Final Result: "I predict that scene B will succeed."
+==========================
+
+Found prediction in Final Result: B
+
+----- Test Set 31 (Repetition 3/4) -----
+Success case: True_test14-redyellow_0003_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 3, 3: 1, 4: 2}
+Model prediction: B
+Prediction incorrect
+Response time: 23.83 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test14-redyellow_0003_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0009_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test16-redyellow_0000_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test16-redyellow_0014_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's the analysis of each scene, considering the physics of the drape and falling objects:
+
+**Scene A:** The red cloth is suspended by a relatively thin, vertical support. When the support is removed (simulated by the fall), the cloth will fall downwards, spreading out due to gravity and its inherent flexibility. The yellow object is relatively far from the center of the falling drape.  The drape’s momentum might carry it past the yellow object, or the spread may be insufficient to cover it. It’s possible, but not highly likely. Prediction: No.
+
+**Scene B:**  The red cloth is attached to a wider, flatter support. This will result in a more even, pancake-like descent.  The yellow cylinder is positioned directly under the center of the drape. As the cloth falls, its spread will be significant, and it is highly probable it will come into contact with the yellow cylinder. Prediction: Yes.
+
+**Scene C:** The red cloth is suspended above a large, irregular shaped object (the Buddha statue). This statue will likely obstruct the drape's descent, causing it to fold or wrap around the statue before it reaches the ground. The yellow object is positioned to the side, and the drape's movement will be significantly altered by the statue's presence, making contact unlikely. Prediction: No.
+
+**Scene D:** The red cloth is suspended above a chair.  The chair's structure will initially support some of the cloth, but as the chair tips/falls, the cloth will descend.  However, the chair's legs are likely to interrupt the drape's fall, potentially preventing a direct hit on the yellow object. The chair is relatively wide, and the drape might fall *around* it, missing the yellow object. Prediction: No.
+
+Considering these analyses, Scene B provides the most direct path for the red cloth to contact the yellow object. The support is relatively simple, allowing the cloth to fall directly onto the yellow cylinder without significant obstruction.
+
+Final Result: "I predict that scene B will succeed."
+==========================
+
+Found prediction in Final Result: B
+
+----- Test Set 32 (Repetition 4/4) -----
+Success case: True_test14-redyellow_0003_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): B
+Shuffle mapping: {1: 3, 2: 4, 3: 2, 4: 1}
+Model prediction: B
+Prediction correct
+Response time: 21.18 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0009_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test14-redyellow_0003_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test16-redyellow_0014_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test16-redyellow_0000_img.png
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [4, 1, 3, 4]
+Is perfectly consistent: False
+Most frequently predicted image: 4
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's an analysis of each scene, focusing on whether the red cloth will likely make contact with the yellow object, and a final prediction:
+
+**Reasoning:**
+
+**Scene A:** The red cloth is draped over a large, relatively stable statue. The statue itself occupies a significant amount of space, shielding the yellow object from a direct fall-through of the cloth. The cloth's fall will be largely dictated by the statue's shape; it's likely to fall somewhat symmetrically around it. While the cloth *might* drift enough to touch the yellow object, it’s improbable given the statue's broad base and coverage.
+
+**Scene B:** The cloth is suspended from a single, narrow point. This means the cloth will fall in a more chaotic and unpredictable manner. The yellow object is relatively close to the point of suspension and in the potential path of the falling cloth. However, the other objects nearby could deflect the cloth before it reaches the yellow one. It’s a possibility, but not guaranteed.
+
+**Scene C:** The cloth is again suspended from a single, narrow point. This will lead to a quick and somewhat direct fall. The yellow object is somewhat shielded by the green block, but the overall fall path is more or less directly above it, increasing the chances of contact.
+
+**Scene D:**  Similar to Scene A, the statue provides significant shielding. The yellow object is positioned to the side, but the statue is wide and will obstruct most of the cloth’s fall. Contact seems unlikely, though not impossible if the cloth falls at an extreme angle.
+
+**Comparison & Decision:**
+
+Comparing the scenes, Scene C offers the most direct path for the falling cloth to intercept the yellow object. While the green block provides *some* shielding, it’s not as substantial as the statue in Scenes A and D. The single suspension point makes the fall more focused. Scene B is a close second, as the randomness could allow for contact, but the other objects nearby make it less certain. Scene A and D have too much shielding.
+
+Therefore, Scene C is the most likely to result in the cloth contacting the yellow object.
+
+Final Result: "I predict that scene C will succeed."
+==========================
+
+Found prediction in Final Result: C
+
+----- Test Set 33 (Repetition 1/4) -----
+Success case: True_test14-redyellow_0016_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): D
+Shuffle mapping: {1: 2, 2: 3, 3: 1, 4: 4}
+Model prediction: C
+Prediction incorrect
+Response time: 22.25 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test16-redyellow_0014_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test12-redyellow_0004_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0016_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test14-redyellow_0016_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's an analysis of each scene, focusing on the likelihood of the red cloth contacting the yellow object.
+
+**Scene A:** The red cloth is positioned directly above a large, stable Buddha statue and the yellow object is relatively far from the center. As the objects fall, the cloth will primarily drape downwards around the statue. The large mass of the statue will likely dominate the draping motion. While the cloth will certainly spread out, it’s unlikely to reach far enough laterally to come into contact with the yellow object, as the yellow object is positioned significantly to the side. The statue acts as a central point for the drape, diverting the cloth away from the yellow object.
+
+**Scene B:** Here, the red cloth is positioned above a collection of pointed objects. These objects are less stable than the statue in Scene A and will likely fall in somewhat unpredictable directions. The cloth will initially drape around the falling objects. However, the geometry of the pointed objects (and relative instability) means that they won't provide a stable core for the draping cloth to settle around. The cloth may swing and move around, potentially impacting the yellow object, but the instability of the falling shapes makes it less probable. The yellow object is relatively close to the central column, so there's a slightly better chance than Scene A, but still moderate.
+
+**Scene C:** In Scene C, the red cloth hangs above a more rectangular arrangement of objects. These objects, while not entirely stable, offer broader surfaces to interact with the draping cloth. More importantly, the yellow object is positioned *very* close to one of the larger objects, and a significant portion of the cloth will initially drape downwards over that object. The cloth is therefore highly likely to extend, as it drapes, to contact the yellow object. The arrangement promotes a more predictable draping path, directly over the yellow object.
+
+**Scene D:** This scene is similar to A, with the large Buddha statue. However, the yellow object is much closer to the statue, increasing the chance of the cloth draping over it, but still it’s not as likely as scene C because of the statue's overall shape. The statue will again dominate the drape, but the shorter distance means the cloth has a greater chance of extending laterally to reach the yellow object.
+
+
+
+Considering the above analysis, Scene C provides the most favorable conditions for contact. The cloth's initial draping path is directly over the yellow object, maximizing the likelihood of contact. The broad surfaces of the objects in Scene C provide a more predictable and stable draping path compared to the pointed objects in B or the more diffuse draping around the statue in A and D.
+
+Final Result: "I predict that scene C will succeed."
+==========================
+
+Found prediction in Final Result: C
+
+----- Test Set 34 (Repetition 2/4) -----
+Success case: True_test14-redyellow_0016_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 3, 3: 1, 4: 2}
+Model prediction: C
+Prediction incorrect
+Response time: 26.21 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test14-redyellow_0016_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test12-redyellow_0004_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0016_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test16-redyellow_0014_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Okay, here's my analysis of each scene and the prediction.
+
+**Reasoning:**
+
+**Scene A:** In this scene, the red cloth is positioned directly above four objects. When the objects fall, the cloth will descend. The yellow object is relatively far from the center of the cloth’s initial position. The cloth will likely fall somewhat evenly, and while it *could* drape over and touch the yellow object, it’s less likely due to its distance and the other objects being closer to the center. The cloth's descent might be somewhat obstructed by the taller green and brown blocks before it reaches the yellow object.
+
+**Scene B:** This scene presents a complex setup with the large Buddha statue. The statue itself will act as a significant obstacle, disrupting the direct descent of the cloth. The yellow object is positioned near the statue, but the cloth's movement will be heavily influenced by the statue's shape. It's difficult to predict if the cloth will simply drape around the statue and *not* reach the yellow object, or if it will get caught and deflected towards it. However, the complex shape makes prediction more difficult, but the cloth is more likely to be caught by the irregular surface.
+
+**Scene C:** Similar to scene B, the Buddha statue is a central feature. However, the yellow object is directly *in front* of the statue's seated position, meaning any drape will likely fall directly onto or very close to the yellow object as the cloth descends. The cloth's trajectory is more directly towards the yellow object. The statue, while an obstacle, will primarily *guide* the cloth towards the yellow object.
+
+**Scene D:** This scene presents a straightforward setup. The yellow object is positioned relatively close to the center of the red cloth’s initial hanging point. As the cloth descends, it's very likely to drape down and envelop the yellow object directly. The other dark colored blocks are far enough away so as to not affect the trajectory.
+
+Based on this analysis, Scene D offers the most direct and predictable path for the red cloth to make contact with the yellow object. The other scenes have elements that introduce more complexity and uncertainty, while Scene D is comparatively simple and straightforward.
+
+Final Result: "I predict that scene D will succeed."
+==========================
+
+Found prediction in Final Result: D
+
+----- Test Set 35 (Repetition 3/4) -----
+Success case: True_test14-redyellow_0016_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): C
+Shuffle mapping: {1: 1, 2: 2, 3: 4, 4: 3}
+Model prediction: D
+Prediction incorrect
+Response time: 22.78 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0016_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test16-redyellow_0014_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test14-redyellow_0016_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test12-redyellow_0004_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's my analysis of each scene, considering the drape of the red cloth and its potential contact with the yellow object, along with the final prediction.
+
+**Reasoning:**
+
+**Scene A:** The red cloth is draped over a large, relatively stable statue. The yellow object is positioned to the side and slightly behind the statue. As the objects fall, the cloth will likely drape downwards, guided by the shape of the statue. However, the statue provides a substantial barrier. The cloth's downward motion will be somewhat contained by the statue, making it less likely to reach the yellow object. It's possible, but not probable.
+
+**Scene B:** Similar to Scene A, the red cloth is draped over a statue. However, the yellow object in this scene is *closer* to the center, directly below where the cloth is most likely to fall. This is a key difference. The cloth will drape down relatively straight, and the yellow object is in the direct path of that downward movement. This makes contact more probable than in Scene A.
+
+**Scene C:** In this scene, the red cloth is supported by a thin, spiky object. This is a *very* unstable support. The red cloth is likely to fall downwards quickly and widely as soon as the spiky object falls. The yellow object is positioned to the side, but the *wide* drape and rapid fall of the cloth increase the chance of making contact. The cloth's shape will be less predictable, increasing the possibilities of contact.
+
+**Scene D:** The red cloth is draped over another spiky object, similar to scene C. However, the yellow object is quite close to the center, but also to the spiky object. If the spiky object falls straight down, the red cloth would likely fall directly onto the yellow object. It is a probable scene.
+
+Comparing all four scenes, **Scene B** appears most likely to result in contact. The relatively stable support (the statue) will cause a more predictable and direct drape of the cloth onto the yellow object. Scene C and D have a wider drape because of the thinner support. Scene A has the largest barrier.
+
+**Final Result: "I predict that scene B will succeed."**
+==========================
+
+Found prediction in Final Result: B
+
+----- Test Set 36 (Repetition 4/4) -----
+Success case: True_test14-redyellow_0016_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): B
+Shuffle mapping: {1: 2, 2: 4, 3: 1, 4: 3}
+Model prediction: B
+Prediction correct
+Response time: 22.36 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test16-redyellow_0014_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test14-redyellow_0016_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0016_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test12-redyellow_0004_img.png
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [1, 1, 3, 4]
+Is perfectly consistent: False
+Most frequently predicted image: 1
+Consistency ratio: 50.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's my analysis of each scene, focusing on the likely contact between the red cloth and the yellow object:
+
+**Scene A:**
+
+* **Reasoning:** The red cloth is suspended directly above a brown structure which will fall. This falling structure will create a significant disturbance in the air, and will likely push the cloth downwards. The yellow object is positioned to the right of the falling structure’s trajectory. The cloth, after being pushed down, could drape over the falling structure and then potentially land on or near the yellow object. However, the green object might intercept the cloth before it reaches the yellow object. The large space between the cloth's initial position and the yellow object makes a direct hit less likely, but the cascading effect of the falling object increases the probability.
+* **Prediction:** Yes
+
+**Scene B:**
+
+* **Reasoning:** The red cloth is suspended above a complex black structure. This structure appears to be very stable. When it falls, it will likely fall downwards with minimal horizontal displacement. The yellow object is positioned further away from the primary falling path. Therefore, the chance of the cloth contacting the yellow object is low.
+* **Prediction:** No
+
+**Scene C:**
+
+* **Reasoning:** The red cloth hangs above a robotic arm and a collection of blocks. The robotic arm will fall, but it's quite thin. The cloth will likely drape over or around the arm. The yellow object is positioned amongst other blocks, making it more likely the cloth will land on or be obstructed by a different block before reaching it. The initial height isn't exceptionally high.
+* **Prediction:** No
+
+**Scene D:**
+
+* **Reasoning:** The red cloth is directly above a chair. The chair falling will create a substantial downward push on the cloth, causing it to drape downwards. The yellow object is positioned very close to the chair’s falling path. The height difference is significant enough that the cloth will be forced downwards, increasing the chances of it landing directly on the yellow object. The limited space between the cloth, chair and yellow object makes this the most likely scenario for contact.
+* **Prediction:** Yes
+
+**Comparison and Final Decision:**
+
+Both scenes A and D have a "yes" prediction, indicating a potential for contact. However, scene D demonstrates a clearer trajectory and closer proximity between the initial cloth position, falling object (chair), and the yellow object. The relatively simple setup in Scene D makes a direct hit more probable than the cascading effect required in Scene A.
+
+Final Result: "I predict that scene D will succeed."
+==========================
+
+Found prediction in Final Result: D
+
+----- Test Set 37 (Repetition 1/4) -----
+Success case: True_test18-redyellow_0015_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): C
+Shuffle mapping: {1: 1, 2: 2, 3: 4, 4: 3}
+Model prediction: D
+Prediction incorrect
+Response time: 24.89 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test15-redyellow_0007_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test13-redyellow_0001_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test18-redyellow_0015_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test15-redyellow_0001_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Okay, here's my analysis of each scene, focusing on the likelihood of the red cloth contacting the yellow object, along with the reasoning, and my final prediction.
+
+**Scene A:**
+
+The red cloth is suspended by a relatively complex mechanical arm. When the objects fall, the arm will likely swing and oscillate. The cloth is positioned directly above the yellow object, but the complex linkage of the arm introduces significant unpredictability. The arm may rotate *away* from the yellow object as it reacts to the falling objects, or it might move erratically. The cloth is also quite far from the yellow object, meaning even a relatively accurate swing wouldn't guarantee contact. There's a possibility, but it’s relatively low.
+
+**Prediction:** No.
+
+**Scene B:**
+
+In this scene, the red cloth is draped over a dark, bulky object. This object appears somewhat unstable, and will likely tip or shift as the other objects fall. The cloth's initial position is to the *side* of the yellow object. The tipping motion of the dark object could potentially swing the cloth towards the yellow object. However, the cloth is significantly weighed down by the dark object, limiting its range of movement. It seems unlikely the cloth will swing far enough to reliably contact the yellow object.
+
+**Prediction:** No.
+
+**Scene C:**
+
+The red cloth is supported by a relatively simple, stable-looking structure. When the objects fall, the structure will likely undergo some vertical displacement, lowering the cloth. The cloth is *directly* above the yellow object. The structure appears robust enough to maintain a fairly predictable downward motion, and the cloth is close enough that a simple vertical drop will likely cause contact. The cloth has a larger surface area, increasing the likelihood of a hit.
+
+**Prediction:** Yes.
+
+**Scene D:**
+
+This scene features a slightly more complex, yet still relatively stable, support structure compared to Scene B. The red cloth is positioned above and slightly to the side of the yellow object. The support is tall and thin, so it's prone to wobble, making the motion of the cloth somewhat unpredictable.  Because it's off-center, any wobble will likely result in the cloth swinging *away* from the yellow object. It's possible the cloth could make contact, but it’s less certain than in Scene C.
+
+**Prediction:** No.
+
+**Reasoning:**
+
+Scene C has the highest probability of success. The structure supporting the cloth is simple and stable, and the cloth is already positioned directly above the yellow object. This minimizes the need for any significant lateral movement. The simple vertical displacement will almost certainly cause contact. The other scenes all feature structures that are either too complex, prone to erratic movement, or position the cloth too far away to reliably make contact with the yellow object.
+
+Final Result: "I predict that scene C will succeed."
+==========================
+
+Found prediction in Final Result: C
+
+----- Test Set 38 (Repetition 2/4) -----
+Success case: True_test18-redyellow_0015_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): A
+Shuffle mapping: {1: 4, 2: 2, 3: 3, 4: 1}
+Model prediction: C
+Prediction incorrect
+Response time: 27.43 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test18-redyellow_0015_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test13-redyellow_0001_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test15-redyellow_0001_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test15-redyellow_0007_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's my analysis of each scene, considering the physics of draping cloth and falling objects:
+
+**Scene A:** The red cloth is suspended above a chair and several objects. The chair will likely disrupt the natural drape of the cloth, causing it to fall unevenly. The yellow object is relatively far from the direct path of the falling cloth. While some part of the cloth *might* eventually land near it, the distance and the intermediary objects make contact unlikely. Prediction: No.
+
+**Scene B:** The cloth is suspended directly above the objects. The drape will likely fall relatively straight down. The yellow object is centrally located *under* the cloth, and the surrounding objects are somewhat symmetrical. This suggests the cloth has a higher probability of falling directly onto or very near the yellow object. Prediction: Yes.
+
+**Scene C:** The cloth is suspended above objects, but the support structure is offset. This will cause an asymmetric drape. The yellow object is towards one side, and the offset support will pull the cloth more strongly in that direction. However, there's a larger green object next to the yellow one, which may intercept the cloth before it reaches the yellow object. Prediction: No.
+
+**Scene D:** The red cloth is suspended directly above the objects. The objects appear to be more spaced out, and the yellow object is quite central. The relatively simple geometry of the setup, with a central yellow object under a directly falling cloth, offers a good chance for contact. Prediction: Yes.
+
+Comparing Scenes B and D, Scene B's objects are a bit more closely clustered, increasing the probability of the cloth landing *on* the yellow object. While both scenes have a reasonable chance, Scene B's geometry is more conducive to contact.
+
+Reasoning: Scene B has the highest probability of the red cloth contacting the yellow object. The cloth is positioned directly above the yellow object and is not significantly obstructed by other objects. The surrounding objects are relatively small, and their arrangement does not create significant interference with a direct fall.
+
+Final Result: "I predict that scene B will succeed."
+==========================
+
+Found prediction in Final Result: B
+
+----- Test Set 39 (Repetition 3/4) -----
+Success case: True_test18-redyellow_0015_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): D
+Shuffle mapping: {1: 2, 2: 3, 3: 1, 4: 4}
+Model prediction: B
+Prediction incorrect
+Response time: 21.29 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test13-redyellow_0001_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test15-redyellow_0001_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test15-redyellow_0007_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test18-redyellow_0015_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Okay, let's analyze each scene step by step, focusing on the likely trajectory of the red cloth and the probability of it contacting the yellow object.
+
+**Scene A:**
+
+The red cloth is directly above a brown structure, which appears to be somewhat unstable. When the supporting structure falls, the cloth will likely drape downwards. The yellow object is to the right of the structure and relatively close.  The cloth has a reasonable chance of falling broadly enough to cover the yellow object. However, the green object could potentially intercept the cloth first. There's a moderate probability of contact.
+
+Prediction: Yes
+
+**Scene B:**
+
+The red cloth is above a complex articulated structure. This structure will likely fall in a less predictable manner than a simple pillar. The cloth will follow, but the trajectory is less direct. The yellow object is positioned between other objects. The articulated structure might deflect the cloth *away* from the yellow object, or simply fall alongside it without causing contact. Probability of contact is relatively low.
+
+Prediction: No
+
+**Scene C:**
+
+Here, the red cloth is above a large, stable-looking black structure. This structure appears to be quite wide and solid. When it falls, it will likely provide a broad, stable base for the cloth to drape over. The yellow object is positioned to the side and is relatively far from where the cloth will likely land. The cloth will likely fall more vertically onto the black structure, rather than drifting towards the yellow object. Probability of contact is very low.
+
+Prediction: No
+
+**Scene D:**
+
+In Scene D, the red cloth is directly above a chair-like structure. This structure will fall, and the cloth will follow. Crucially, the yellow object is relatively close to the base of the chair. The cloth will likely fall in a fairly concentrated manner, making contact with the chair and then potentially drifting onto the yellow object, given the proximity. The low height of the chair increases the chance that the cloth will directly land on the yellow object. 
+
+Prediction: Yes
+
+Now, comparing scenes A and D, scene D offers a more direct and less obstructed path for the cloth to reach the yellow object. The chair provides a smaller, more focused base for the cloth, meaning it will likely fall in a more concentrated area and directly cover the yellow object.
+
+Final Result: "I predict that scene D will succeed."
+==========================
+
+Found prediction in Final Result: D
+
+----- Test Set 40 (Repetition 4/4) -----
+Success case: True_test18-redyellow_0015_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): B
+Shuffle mapping: {1: 1, 2: 4, 3: 2, 4: 3}
+Model prediction: D
+Prediction incorrect
+Response time: 23.31 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test15-redyellow_0007_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test18-redyellow_0015_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test13-redyellow_0001_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test15-redyellow_0001_img.png
+
+
+----- Consistency Analysis -----
+Original predictions across repetitions: [3, 3, 3, 3]
+Is perfectly consistent: True
+Most frequently predicted image: 3
+Consistency ratio: 100.00%
+Correct image was: 4
+-------------------------------
+
+
+----- Starting 4 repetition tests for the same image set -----
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
+Ollama call successful!
+
+=== Model Response Text ===
+Here's my analysis of each scene, considering the drape's motion and likelihood of contacting the yellow object:
+
+**Reasoning:**
+
+**Scene A:** The red cloth is draped over a relatively open structure. When the structure falls, the cloth will fall with it, creating a fairly wide, descending arc. The yellow object is positioned slightly to the side of the center of this arc. While a contact is possible, the cloth's spread and the offset position make it less likely than other scenes. The cloth is likely to land *around* the yellow object, rather than *on* it.
+
+**Scene B:** The cloth is draped over a tall, cylindrical structure. This setup will cause the cloth to fall in a more focused, downward trajectory. However, the yellow object is further away from the center of this descent and is somewhat shielded by the other objects. This limits the possibility of contact.
+
+**Scene C:** The cloth is stretched tautly and horizontally. When the support structure falls, the cloth will fall like a sheet. The yellow object is positioned *directly* below the center of the falling sheet. This provides the most direct pathway for contact, making it the most likely scene for success. The cloth's initial flat state will likely maintain some level of coverage as it descends.
+
+**Scene D:** The cloth is draped over a large, bulky statue. While the statue falling will bring the cloth down, the statue’s size and shape will significantly disrupt the cloth’s descent, creating a chaotic, less predictable fall. The yellow object is somewhat centrally located but shielded by the statue itself. This makes contact less probable.
+
+Considering all scenarios, Scene C has the highest probability of contact between the red cloth and the yellow object due to the direct alignment and the relatively unobstructed path of the falling cloth. The taut initial configuration will contribute to a more focused descent, increasing the likelihood of covering the yellow object.
+
+Final Result: "I predict that scene C will succeed."
+==========================
+
+Found prediction in Final Result: C
+
+----- Test Set 41 (Repetition 1/4) -----
+Success case: True_test17-redyellow_0011_img.png
+Scene type: Draping Scene
+Correct scene position (A-D): C
+Shuffle mapping: {1: 1, 2: 2, 3: 4, 4: 3}
+Model prediction: C
+Prediction correct
+Response time: 20.97 seconds
+
+Image paths:
+Scene A: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test15-redyellow_0001_img.png
+Scene B: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test17-redyellow_0007_img.png
+Scene C: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/True_test17-redyellow_0011_img.png
+Scene D: /home/student0/Physical_Intuition_test/3d/Physion/Physion_image/Drape/mp4s-redyellow/False_test11-redyellow_0003_img.png
+
+
+Attempt 1/3 to call API with model: gemma3:27b
+Using API URL: <ollama._client.Client object at 0x149946bf2780>
+API key (first 5 chars): ollam...
+Number of messages: 3
+First message role: system
+Using Ollama native API...
+
+=== Calling Ollama API ===
